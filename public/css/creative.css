@@ -10160,7 +10160,6 @@ hr.dark {
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
-
 #mainNav .navbar-brand {
   font-weight: 700;
   color: #383B62;
@@ -10170,20 +10169,33 @@ hr.dark {
 #mainNav .navbar-brand .small2 {
   font-size:19px;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.75rem 0;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
   color: #6ED3F0;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #6ED3F0 !important;
+}
+#mainNav .language-switcher .btn > i{
+  margin-right:7px;
+}
+#mainNav .language-switcher .dropdown-menu .dropdown-item:hover,
+#mainNav .language-switcher .dropdown-menu .dropdown-item:focus {
+  background-color:#e2e3f0;  
+}
+#mainNav .language-switcher .dropdown-menu .dropdown-item i{
+  margin-left:10px;
+}
+#mainNav .language-switcher .dropdown-menu {
+  min-width:85px;
+}
+#mainNav .language-switcher .dropdown-menu .dropdown-item {
+  padding:0.25rem 1.2rem;
 }
 
 @media (min-width: 992px) {
@@ -10205,6 +10217,15 @@ hr.dark {
   #mainNav .navbar-nav .nav-item .nav-link:hover {
     color: #fff;
   }
+  #mainNav .language-switcher .btn {
+    color: rgba(255, 255, 255, 0.7);
+    border:1px solid rgba(255, 255, 255, 0.7);
+  }
+  #mainNav .language-switcher .btn:hover,
+  #mainNav .language-switcher .btn:focus {
+    color: #FFF;
+    border:1px solid#FFF;
+  }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
   }
@@ -10224,6 +10245,14 @@ hr.dark {
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
     color: #6ED3F0;
+  }
+  #mainNav.navbar-scrolled .language-switcher .btn {
+    color: #383B62;
+    border:1px solid #383B62;
+  }
+  #mainNav.navbar-scrolled .language-switcher .btn:hover {
+    color: #6ED3F0;
+    border:1px solid #6ED3F0;
   }
 }
 
@@ -10264,6 +10293,9 @@ header.masthead .logo-center {
   header.masthead .logo-center {
     width:36%;
   }
+  .language-switcher {
+    margin-left:30px;
+  }
 }
 
 
@@ -10294,5 +10326,3 @@ a.block-link:hover {
   color:#383B62;
   text-decoration:none;
 }
-
-
