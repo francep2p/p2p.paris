@@ -1,0 +1,55 @@
+theme: p2pparis
+baseURL: https://p2p.paris
+title: Paris P2P (& Cryptography)
+
+languageCode: en
+DefaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+
+languages:
+  en:
+    languageName: English
+    params:
+      default_description: The Parisian community interested in P2P & Cryptography technologies
+    menu:
+      main:
+        - name: About
+          url: "#about"
+          weight: -100
+        - name: Call for papers
+          url: "#call-for-papers"
+          weight: -90
+        - name: Meetup
+          url: "#meetup"
+          weight: -80
+        - name: Github
+          url: "#github"
+          weight: -70
+        - name: Contact
+          url: "#contact"
+          weight: -60
+  fr: 
+    languageName: French
+    params:
+      default_description: La communauté parisienne intéréssée par les technologies P2P et la Cryptographie
+    menu:
+      main:
+        - name: À propos
+          url: "#about"
+          weight: -100
+        - name: Envoyez vos sujets
+          url: "#call-for-papers"
+          weight: -90
+        - name: Meetup
+          url: "#meetup"
+          weight: -80
+        - name: Github
+          url: "#github"
+          weight: -70
+        - name: Contact
+          url: "#contact"
+          weight: -60
+
+params:
+  default_featured_image: /img/paris_p2p_thumbnail.jpg
+  googleAnalyticsId: UA-124224137-5
