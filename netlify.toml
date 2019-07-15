@@ -1,0 +1,30 @@
+[build]
+publish = "public"
+command = "hugo --gc && ./minify.sh"
+
+[context.production.environment]
+HUGO_VERSION = "0.55.6"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.split1]
+command = "hugo  --gc --enableGitInfo && ./minify.sh"
+
+[context.split1.environment]
+HUGO_VERSION = "0.55.6"
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "hugo  --gc --buildFuture -b $DEPLOY_PRIME_URL && ./minify.sh"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.55.6"
+
+[context.branch-deploy]
+command = "hugo  --gc -b $DEPLOY_PRIME_URL && ./minify.sh"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.55.6"
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = "true"

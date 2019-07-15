@@ -1,0 +1,84 @@
+{{ partial "header" . }}
+
+<!-- Masthead -->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+
+            <div class="col-lg-10 align-self-end">
+                <img class="logo-center" src="/img/paris_p2p.svg">
+                <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text | markdownify }}</h1>
+                <!--<hr class="divider my-4">-->
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <!--<p class="text-white-75 font-weight-light mb-5">Join us on frequent meetups</p>-->
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://www.meetup.com/Paris-P2P/">{{ .Params.content.intro_button | markdownify }}</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section class="page-section bg-primary" id="about">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0 text-white">{{ .Params.content.about_title | markdownify }}</h2>
+                <hr class="divider light my-4">
+                <br />
+                <p class="text-white mb-4">{{ .Params.content.about_body | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call for papers  Section -->
+<section class="page-section bg-secondary" id="call-for-papers">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0 text-white">{{ .Params.content.caf_title | markdownify }}</h2>
+                <hr class="divider my-4">
+                <br />
+                <h5 class="text-white">{{ .Params.content.caf_subtitle | markdownify }}</h5>
+                <p class="text-muted text-white mb-4">{{ .Params.content.caf_body | markdownify }}</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://crpt.fyi/parisp2p-cfp">{{ .Params.content.caf_button | markdownify }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Links Section -->
+<section class="page-section" id="links">
+    <div class="container">
+        <h2 class="text-center mt-0">{{ .Params.content.links_title | markdownify }}</h2>
+        <hr class="divider my-4">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-4 text-center" id="meetup">
+                <a class="block-link" href="https://www.meetup.com/Paris-P2P/">
+                <i class="fab fa-meetup fa-5x c-meetup mb-4"></i>
+                <h3 class="h4 mb-2">{{ .Params.content.links_meetup_title | markdownify }}</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_meetup_body | markdownify }}</p>
+                </a>
+            </div>
+            <div class="col-md-4 text-center" id="github">
+                <a class="block-link" href="https://github.com/parisp2p">
+                <i class="fab fa-github fa-5x c-github mb-4"></i>
+                <h3 class="h4 mb-2">{{ .Params.content.links_github_title | markdownify }}</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_github_body | markdownify }}</p>
+                </a>
+            </div>
+            <div class="col-md-4 text-center" id="contact">
+                <a class="block-link" href="mailto:contact@p2p.paris">
+                <i class="fal fa-5x fa-envelope text-primary mb-4"></i>
+                <h3 class="h4 mb-2">{{ .Params.content.links_contact_title | markdownify }}</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_contact_body | markdownify }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer" . }}

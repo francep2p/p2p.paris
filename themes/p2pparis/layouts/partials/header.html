@@ -1,0 +1,67 @@
+{{ $.Scratch.Set "title" (print .Site.Title " - " .Title) }}
+{{ $.Scratch.Set "description" (.Description | default .Site.Params.default_description) }}
+{{ $.Scratch.Set "featured_image" .Site.Params.default_featured_image }}
+
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ $.Scratch.Get `description` }}">
+  <meta name="author" content="">
+
+  <title>{{ $.Scratch.Get "title" }}</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#383b62">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open graph tags -->
+  <meta property="og:title" content="{{ $.Scratch.Get `title` }}">
+  <meta property="og:description" content="{{ $.Scratch.Get `description` }}">
+  <meta property="og:image" content="{{ $.Scratch.Get `featured_image` }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  <!-- Twitter tags -->
+  <meta name="twitter:title" content="{{ $.Scratch.Get `title` }}">
+  <meta name="twitter:description" content="{{ $.Scratch.Get `description` }}">
+  <meta name="twitter:image" content="{{ $.Scratch.Get `featured_image` }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/903520e3bb.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Slab&display=swap" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/css/creative.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsId }}"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.Params.googleAnalyticsId }}');
+  </script>
+
+</head>
+
+<body id="page-top">
+
+{{ partial "navbar" . }}
+
+  
+
+
