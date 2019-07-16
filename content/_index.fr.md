@@ -9,7 +9,7 @@ content:
     caf_title: Envoyez vos sujets
     caf_subtitle: Vous avez un sujet à présenter ?
     caf_body: Veuillez compléter le formulaire ci-dessous afin de nous en dire plus sur votre idée
-    caf_button: Remplir le forumulaire
+    caf_button: Remplir le formulaire
     links_title: Quelques liens
     links_meetup_title: Meetup
     links_meetup_body: Rejoignez la communauté<br>pour participer aux événements
