@@ -10306,7 +10306,9 @@ header.masthead .logo-center {
 .c-meetup {
   color:#F6405E;
 }
-
+.c-discord {
+  color:#7289DA;
+}
 a {
   transition: .3s ease-in-out;
 }
