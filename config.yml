@@ -10,6 +10,7 @@ languages:
   en:
     languageName: English
     params:
+      locale: en_GB
       default_description: The Parisian community interested in P2P & Cryptography technologies
     menu:
       main:
@@ -31,6 +32,7 @@ languages:
   fr: 
     languageName: French
     params:
+      locale: fr_FR
       default_description: La communauté parisienne intéréssée par les technologies P2P et la Cryptographie
     menu:
       main:

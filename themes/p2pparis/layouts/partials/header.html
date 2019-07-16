@@ -12,6 +12,11 @@
   <meta name="description" content="{{ $.Scratch.Get `description` }}">
   <meta name="author" content="">
 
+  <meta http-equiv="content-language" content="{{ .Lang }}">
+  {{ range .Page.Translations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+  {{ end }}
+
   <title>{{ $.Scratch.Get "title" }}</title>
 
   <!-- Favicon -->
@@ -26,6 +31,10 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- Open graph tags -->
+  {{ range .Page.Translations }}
+    <meta property="og:locale:alternate" content="{{ .Site.Params.Locale }}" />
+  {{ end }}
+  <meta property="og:locale" content="{{ .Site.Params.Locale }}">
   <meta property="og:title" content="{{ $.Scratch.Get `title` }}">
   <meta property="og:description" content="{{ $.Scratch.Get `description` }}">
   <meta property="og:image" content="{{ $.Scratch.Get `featured_image` }}">
