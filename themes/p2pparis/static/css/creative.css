@@ -10220,6 +10220,7 @@ hr.dark {
   #mainNav .language-switcher .btn {
     color: rgba(255, 255, 255, 0.7);
     border:1px solid rgba(255, 255, 255, 0.7);
+    width:87px;
   }
   #mainNav .language-switcher .btn:hover,
   #mainNav .language-switcher .btn:focus {
@@ -10259,8 +10260,8 @@ hr.dark {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 59, 98, 0.8)), to(56, 59, 98, 0.9))), url("../img/bg_paris.jpg");
-  background: linear-gradient(to bottom, rgba(56, 59, 98, 0.8) 0%, rgba(56, 59, 98, 0.9) 100%), url("../img/bg_paris.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(75, 81, 149, 0.8)), to(rgba(75, 81, 149, 0.9))), url("../img/bg_paris.jpg");
+  background: linear-gradient(to bottom, rgba(75, 81, 149, 0.8) 0%, rgba(75, 81, 149, 0.9) 100%), url("../img/bg_paris.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
