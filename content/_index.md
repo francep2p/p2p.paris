@@ -13,6 +13,8 @@ content:
     links_title: Some links
     links_meetup_title: Meetup
     links_meetup_body: Join the community to<br>signup to upcoming events
+    links_discord_title: Discord
+    links_discord_body: Join the online<br>conversation
     links_github_title: Github
     links_github_body: Get access to<br>resources, code and docs
     links_contact_title: Contact

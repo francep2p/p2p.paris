@@ -4798,10 +4798,10 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.1);
+  color: #383b62;
+  border: none;
+  font-size: 1.5rem;
 }
-
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -10170,7 +10170,7 @@ hr.dark {
   font-size:19px;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: #6c757d;
+  color: #5c5f84;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.75rem 0;
@@ -10192,7 +10192,7 @@ hr.dark {
   margin-left:10px;
 }
 #mainNav .language-switcher .dropdown-menu {
-  min-width:85px;
+  min-width:87px;
 }
 #mainNav .language-switcher .dropdown-menu .dropdown-item {
   padding:0.25rem 1.2rem;
@@ -10220,6 +10220,7 @@ hr.dark {
   #mainNav .language-switcher .btn {
     color: rgba(255, 255, 255, 0.7);
     border:1px solid rgba(255, 255, 255, 0.7);
+    width:87px;
   }
   #mainNav .language-switcher .btn:hover,
   #mainNav .language-switcher .btn:focus {
@@ -10255,12 +10256,22 @@ hr.dark {
     border:1px solid #6ED3F0;
   }
 }
+@media (max-width: 991px) {
+  #mainNav .language-switcher .btn{
+    border:1px solid #5c5f84;
+    color:#5c5f84;
+  }
+  #mainNav .language-switcher .dropdown-menu-right{
+    right:auto;
+    left:0;
+  }
+}
 
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 59, 98, 0.8)), to(56, 59, 98, 0.9))), url("../img/bg_paris.jpg");
-  background: linear-gradient(to bottom, rgba(56, 59, 98, 0.8) 0%, rgba(56, 59, 98, 0.9) 100%), url("../img/bg_paris.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(75, 81, 149, 0.8)), to(rgba(75, 81, 149, 0.9))), url("../img/bg_paris.jpg");
+  background: linear-gradient(to bottom, rgba(75, 81, 149, 0.8) 0%, rgba(75, 81, 149, 0.9) 100%), url("../img/bg_paris.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10306,7 +10317,9 @@ header.masthead .logo-center {
 .c-meetup {
   color:#F6405E;
 }
-
+.c-discord {
+  color:#7289DA;
+}
 a {
   transition: .3s ease-in-out;
 }
