@@ -23,12 +23,15 @@ languages:
         - name: Meetup
           url: "#meetup"
           weight: -80
+        - name: Discord
+          url: "#discord"
+          weight: -70
         - name: Github
           url: "#github"
-          weight: -70
+          weight: -60
         - name: Contact
           url: "#contact"
-          weight: -60
+          weight: -50
   fr: 
     languageName: French
     params:
@@ -45,12 +48,15 @@ languages:
         - name: Meetup
           url: "#meetup"
           weight: -80
+        - name: Discord
+          url: "#discord"
+          weight: -70
         - name: Github
           url: "#github"
-          weight: -70
+          weight: -60
         - name: Contact
           url: "#contact"
-          weight: -60
+          weight: -50
 
 params:
   default_featured_image: /img/paris_p2p_thumbnail.jpg
