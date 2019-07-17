@@ -1,2 +1,8 @@
+# Redirect domain aliases to primary domain
+https://www.p2p.paris/* https://p2p.paris/:splat 301!
+https://francep2p.org/* https://p2p.paris/:splat 301!
+https://www.francep2p.org/* https://p2p.paris/:splat 301!
+
+# automatically redirect to the translated homepage based on user-agent's preferences
 /  /fr   302!  Language=fr
 /  /en   302!
