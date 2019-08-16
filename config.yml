@@ -17,8 +17,8 @@ languages:
         - name: About
           url: "#about"
           weight: -100
-        - name: Call for papers
-          url: "#call-for-papers"
+        - name: Call for proposal
+          url: "#call-for-proposal"
           weight: -90
         - name: Meetup
           url: "#meetup"
@@ -32,7 +32,7 @@ languages:
         - name: Contact
           url: "#contact"
           weight: -50
-  fr: 
+  fr:
     languageName: French
     params:
       locale: fr_FR
@@ -43,7 +43,7 @@ languages:
           url: "#about"
           weight: -100
         - name: Envoyez vos sujets
-          url: "#call-for-papers"
+          url: "#call-for-proposal"
           weight: -90
         - name: Meetup
           url: "#meetup"
