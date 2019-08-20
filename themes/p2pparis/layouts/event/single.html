@@ -1,14 +1,25 @@
 {{ partial "header" . }}
 
-<!-- Masthead -->
-<header class="masthead">
-    <div class="container h-50">
-        <div class="row h-50 align-items-center justify-content-center text-center">
 
+<div class="single">
+    <div class="container h-100">
+        <div class="row h-50 align-items-center justify-content-center ">
+			<div class="col-12">
+				<div class="block block-single-img">
+					<img src="{{.RelPermalink}}/{{.Params.image}}">
+				</div><!-- block-single-img -->
+			</div><!-- /.col -->
+			<div class="col-10">
+				<div class="block block-single-content">
+					{{.Content}}
+					{{ partial "content_event" . }}
+				</div><!-- /.block-single-content -->
+			</div><!-- /.col -->
+        </div><!-- /.row -->
+        {{ partial "links" . }}
+    </div><!-- /.container -->
+</div>
 
-        </div>
-    </div>
-</header>
 
 
 {{ partial "footer" . }}

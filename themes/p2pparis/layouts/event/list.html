@@ -1,9 +1,8 @@
 {{ partial "header" . }}
 
-<!-- Masthead -->
-<header class="masthead">
+<div class="">
     <div class="container h-100">
-        <div class="row">
+        <div class="row single">
  			{{ range where .Pages "Section" "event" }}
  			<div class="col-lg-4 col-sm-6">
  				{{ partial "block_event" . }}
@@ -11,10 +10,6 @@
  			{{ end }}
         </div><!-- /.row -->
     </div><!-- /.container -->
-</header>
-
+</div>
 
 {{ partial "footer" . }}
-
-
-
