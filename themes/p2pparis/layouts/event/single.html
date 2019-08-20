@@ -9,8 +9,10 @@
 					<img src="{{.RelPermalink}}/{{.Params.image}}">
 				</div><!-- block-single-img -->
 			</div><!-- /.col -->
-			<div class="col-10">
+			<div class="col-lg-10 col-md-12">
 				<div class="block block-single-content">
+					<h3><i class="far fa-calendar-alt"></i>Date</h3>
+					<h5>{{.Params.Event_date}}</h5>
 					{{.Content}}
 					{{ partial "content_event" . }}
 				</div><!-- /.block-single-content -->

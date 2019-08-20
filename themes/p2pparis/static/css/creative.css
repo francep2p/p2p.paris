@@ -2654,14 +2654,14 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #43466f;
-  border-color: #43466f;
+  background-color: #5a5a95;
+  border-color: #5a5a95;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5a5a95;
-  border-color: #5a5a95;
+  background-color: #43466f;
+  border-color: #43466f;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -10411,4 +10411,15 @@ a.block:hover {
 }
 .block-single-content h3 i {
   margin-right:10px;
+}
+@media(max-width:991px){
+  .block.block-single-img,
+  .block.block-single-img img {
+    border-radius:5px 5px 0 0;
+  }
+  .block.block-single-content {
+    margin-top:0;
+    padding:15px 25px 45px 35px;
+    border-radius:0 0 5px 5px;
+  }
 }

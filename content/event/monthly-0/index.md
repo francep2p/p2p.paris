@@ -9,7 +9,7 @@ image: paris_p2p_event_0.png
 
 ### <i class="far fa-presentation"></i>Talks
 
-#### History and current state of P2P
+##### History and current state of P2P
 
 by [Manfred Touron](https://manfred.life)
 
