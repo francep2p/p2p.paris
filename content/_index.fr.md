@@ -6,6 +6,7 @@ content:
     intro_button: Rejoignez la communauté sur Meetup
     about_title: À propos de la communauté
     about_body: Juste une bande d'enthousiastes qui souhaitaient un lieu pour discuter, échanger sur les dernières actualités et partager leurs idées autour des technologies P2P et Cryptographie à Paris
+    events_title: Évènements
     caf_title: Envoyez vos sujets
     caf_subtitle: Vous avez un sujet à présenter ?
     caf_body: Veuillez compléter le formulaire ci-dessous afin de nous en dire plus sur votre idée

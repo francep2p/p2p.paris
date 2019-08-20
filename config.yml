@@ -20,18 +20,21 @@ languages:
         - name: Call for proposal
           url: "#call-for-proposal"
           weight: -90
+        - name: Events
+          url: "#events"
+          weight: -80
         - name: Meetup
           url: "#meetup"
-          weight: -80
+          weight: -70
         - name: Discord
           url: "#discord"
-          weight: -70
+          weight: -60
         - name: Github
           url: "#github"
-          weight: -60
+          weight: -50
         - name: Contact
           url: "#contact"
-          weight: -50
+          weight: -40
   fr:
     languageName: French
     params:
@@ -45,15 +48,18 @@ languages:
         - name: Envoyez vos sujets
           url: "#call-for-proposal"
           weight: -90
+        - name: Évènements
+          url: "#events"
+          weight: -80
         - name: Meetup
           url: "#meetup"
-          weight: -80
+          weight: -70
         - name: Discord
           url: "#discord"
-          weight: -70
+          weight: -60
         - name: Github
           url: "#github"
-          weight: -60
+          weight: -50
         - name: Contact
           url: "#contact"
           weight: -50
