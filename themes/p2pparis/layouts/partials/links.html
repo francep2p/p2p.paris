@@ -1,0 +1,31 @@
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center" id="meetup">
+                <a class="block block-link" href="https://www.meetup.com/Paris-P2P/">
+                <i class="fab fa-meetup fa-5x c-meetup mb-4"></i>
+                <h3 class="h4 mb-2">Meetup</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_meetup_body | markdownify }}</p>
+                </a>
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center" id="discord">
+                <a class="block block-link" href="https://crpt.fyi/parisp2p-discord">
+                <i class="fab fa-discord fa-5x c-discord mb-4"></i>
+                <h3 class="h4 mb-2">Discord</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_discord_body | markdownify }}</p>
+                </a>
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center" id="github">
+                <a class="block block-link" href="https://github.com/parisp2p">
+                <i class="fab fa-github fa-5x c-github mb-4"></i>
+                <h3 class="h4 mb-2">Github</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_github_body | markdownify }}</p>
+                </a>
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center" id="contact">
+                <a class="block block-link" href="mailto:bootstrap@p2p.paris">
+                <i class="fal fa-5x fa-envelope text-primary mb-4"></i>
+                <h3 class="h4 mb-2">Contact</h3>
+                <p class="text-muted mb-0">{{ .Params.content.links_contact_body | markdownify }}</p>
+                </a>
+            </div><!-- /.col -->
+        </div><!-- /.row -->

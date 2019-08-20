@@ -1,24 +1,22 @@
 .DEFAULT_GOAL := dev
 SERVER_OPTS ?= --baseURL=/ --appendPort=false
-LOCAL_BIN ?= /usr/local/bin
-DEPS := node_modules $(LOCAL_BIN)/hugo
+DEPS := node_modules
 
-$(LOCAL_BIN)/npm: package.json
-	brew reinstall node
+.PHONY: dev
+dev: $(DEPS)
+	hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
 
-node_modules: $(LOCAL_BIN)/npm
+node_modules: package.json
 	npm install
-
-$(LOCAL_BIN)/hugo:
-	brew reinstall hugo
 
 .PHONY: clean
 clean:
 	rm -rf node_modules
 
-.PHONY: dev
-dev: $(DEPS)
-	hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
+.PHONY: deps
+deps:
+	brew reinstall node
+	brew reinstall hugo
 
 .PHONY: build
 build: $(DEPS)

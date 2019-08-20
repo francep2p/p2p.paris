@@ -1,0 +1,15 @@
+{{ partial "header" . }}
+
+<div class="">
+    <div class="container h-100">
+        <div class="row single">
+ 			{{ range where .Pages "Section" "event" }}
+ 			<div class="col-lg-4 col-sm-6">
+ 				{{ partial "block_event" . }}
+ 			</div><!-- /.col -->
+ 			{{ end }}
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+{{ partial "footer" . }}
