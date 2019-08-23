@@ -9,4 +9,11 @@ image: paris_p2p_event_monthly.png
 
 ### <i class="far fa-presentation"></i> Présentations
 
-* Pas encore annoncé
+1. **[Introduction aux Crypto Wallets _(Beginners)_](https://github.com/parisp2p/community/issues/24)** _(Workshop)_ -- [@LesHackeuses](https://leshackeuses.fr/)
+
+    Apprenez à installer un wallet sur vos périphériques.
+
+2. **[Web 3.0 avec IPFS](https://github.com/parisp2p/community/issues/21)** _(Talk)_ -- [@aeddi](https://github.com/aeddi)
+
+    * Introduction à IPFS.
+    * Présentation des solutions apportées pour décentraliser et distribuer le web.
