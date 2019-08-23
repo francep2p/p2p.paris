@@ -17,3 +17,9 @@ image: paris_p2p_event_monthly.png
 
     * IPFS overview
     * The solutions it provides to decentralize / distribute the web and the issues it faces
+
+3. **[Poster Session: Delegate Proof-of-Stake _(Blockchain)_)](https://github.com/parisp2p/community/issues/31)** _(Workshop)_ -- [@zooma2k18](https://github.com/zooma2k18)
+
+    * What's Delegate Proof-of-Stake Protocol?
+    * Differences with Proof-of-Work
+    * DPOS: State of the art and Mainnet examples
