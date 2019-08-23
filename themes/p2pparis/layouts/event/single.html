@@ -1,12 +1,14 @@
-{{ partial "header" . }}
+{{ $image := index (.Resources.Match .Params.image) 0 }}
+{{ $image := $image.Resize "1200x" }}
 
+{{ partial "header" . }}
 
 <div class="single">
     <div class="container h-100">
         <div class="row h-50 align-items-center justify-content-center ">
 			<div class="col-12">
 				<div class="block block-single-img">
-					<img src="{{.RelPermalink}}/{{.Params.image}}">
+					<img src="{{ $image.RelPermalink }}">
 				</div><!-- block-single-img -->
 			</div><!-- /.col -->
 			<div class="col-lg-10 col-md-12">

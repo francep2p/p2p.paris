@@ -1,6 +1,9 @@
+{{ $image := index (.Resources.Match .Params.image) 0 }}
+{{ $image := $image.Resize "350x" }}
+
 <a class="block block-event" href="{{.RelPermalink}}">
 	<div class="block-img">
-    	<img src="{{.RelPermalink}}/{{.Params.image}}">
+    	<img src="{{ $image.RelPermalink }}">
 	</div><!-- /.block-img -->
 	<div class="block-content">
 		<h4 class="event-title">{{.Title}}</h4>
