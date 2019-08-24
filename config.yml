@@ -15,25 +15,25 @@ languages:
     menu:
       main:
         - name: About
-          url: "#about"
+          url: "/en/#about"
           weight: -100
         - name: Call for proposal
-          url: "#call-for-proposal"
+          url: "/en/#call-for-proposal"
           weight: -90
         - name: Events
-          url: "#events"
+          url: "/en/#events"
           weight: -80
         - name: Meetup
-          url: "#meetup"
+          url: "/en/#meetup"
           weight: -70
         - name: Discord
-          url: "#discord"
+          url: "/en/#discord"
           weight: -60
         - name: Github
-          url: "#github"
+          url: "/en/#github"
           weight: -50
         - name: Contact
-          url: "#contact"
+          url: "/en/#contact"
           weight: -40
   fr:
     languageName: French
@@ -43,25 +43,25 @@ languages:
     menu:
       main:
         - name: À propos
-          url: "#about"
+          url: "/fr/#about"
           weight: -100
         - name: Envoyez vos sujets
-          url: "#call-for-proposal"
+          url: "/fr/#call-for-proposal"
           weight: -90
         - name: Évènements
-          url: "#events"
+          url: "/fr/#events"
           weight: -80
         - name: Meetup
-          url: "#meetup"
+          url: "/fr/#meetup"
           weight: -70
         - name: Discord
-          url: "#discord"
+          url: "/fr/#discord"
           weight: -60
         - name: Github
-          url: "#github"
+          url: "/fr/#github"
           weight: -50
         - name: Contact
-          url: "#contact"
+          url: "/fr/#contact"
           weight: -50
 
 params:
