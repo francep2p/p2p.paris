@@ -9,9 +9,9 @@ image: paris_p2p_event_monthly.png
 
 ### <i class="far fa-presentation"></i>Présentations
 
-1. **[Brainstorm for the next chapters](https://github.com/parisp2p/community/issues/33)** _(Workshop)_ -- [@lpieri](https://github.com/lpieri)
+1. **[Brainstorm for the next chapters](https://github.com/francep2p/community/issues/33)** _(Workshop)_ -- [@lpieri](https://github.com/lpieri)
 
-    Louise souhaite lancer [Lyon P2P](https://github.com/parisp2p/community/issues/10).
+    Louise souhaite lancer [Lyon P2P](https://github.com/francep2p/community/issues/10).
 
     Nous discuterons des sujets suivants:
 

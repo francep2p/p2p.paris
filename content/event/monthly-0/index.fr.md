@@ -9,6 +9,6 @@ image: paris_p2p_event_0.png
 
 ### <i class="far fa-presentation"></i>Présentations
 
-1. **[Histoire et état actuel du P2P](https://github.com/parisp2p/community/issues/16)** _(Talk)_ -- [Manfred Touron](https://manfred.life)
+1. **[Histoire et état actuel du P2P](https://github.com/francep2p/community/issues/16)** _(Talk)_ -- [Manfred Touron](https://manfred.life)
 
     Slides: [ici](https://manfred.life/history-p2p-presentation)
