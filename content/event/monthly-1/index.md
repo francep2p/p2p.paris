@@ -17,4 +17,7 @@ image: paris_p2p_event_monthly.png
 
     * The framework to open new FranceP2P chapters
     * The tooling to maintain a multi-region community
-2. _this slot available for another short talk_
+
+2. **[P2P vs Lords of the Ring](https://github.com/francep2p/community/issues/44)** _(Talk)_ -- [@zicmama](https://github.com/zicmama)
+
+    From single computers to ONE. A quest for the precious.
