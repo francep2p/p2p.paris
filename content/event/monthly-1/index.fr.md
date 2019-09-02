@@ -18,4 +18,6 @@ image: paris_p2p_event_monthly.png
     * Le _framework_ à mettre en place pour ouvrir de nouveaux chapitres FranceP2P
     * Les outils pour maintenir une communauté sur plusieurs villes
 
-2. _Ce créneau est disponible pour une deuxième présentation_
+2. **[P2P vs Lords of the Ring](https://github.com/francep2p/community/issues/44)** _(Talk)_ -- [@zicmama](https://github.com/zicmama)
+
+    From single computers to ONE. A quest for the precious.
