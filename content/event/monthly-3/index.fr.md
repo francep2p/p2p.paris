@@ -9,4 +9,8 @@ image: paris_p2p_event_monthly.png
 
 ### <i class="far fa-presentation"></i> Présentations
 
-* Pas encore annoncé
+1. **[DPOS: Under the hood _(Beginners)_](https://github.com/francep2p/community/issues/32)** _(Talk)_ -- [@louptheron](https://github.com/louptheron)
+
+    * Suite à la poster-session de @zooma2k18 sur DPOS, nous allons voir comment ces consensus sont implémentés dans une blockchain et expliquer les principales différences entre les différentes implémentations.
+
+2. _Pas encore annoncé_
