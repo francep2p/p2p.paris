@@ -1,9 +1,9 @@
 ---
-title: "Paris P2P #4"
+title: "Paris P2P #8"
 subtitle: "Monthly Peer to Beer"
-event_date: 2019-12-04
+event_date: 2020-04-01
 location: Ground Control, Paris
-meetup_link: https://www.meetup.com/Paris-P2P/events/264367847/
+meetup_link: https://www.meetup.com/France-P2P/events/265590849/
 image: paris_p2p_event_monthly.png
 event_status: future # past, current, future
 ---

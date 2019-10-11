@@ -10186,7 +10186,7 @@ hr.dark {
 }
 #mainNav .language-switcher .dropdown-menu .dropdown-item:hover,
 #mainNav .language-switcher .dropdown-menu .dropdown-item:focus {
-  background-color:#e2e3f0;  
+  background-color:#e2e3f0;
 }
 #mainNav .language-switcher .dropdown-menu .dropdown-item i{
   margin-left:10px;
@@ -10389,6 +10389,19 @@ a.block:hover {
 .block.block-event .block-content .event-info i {
   margin-right:10px;
 }
+
+.block-event.past-event {
+    opacity: 0.9;
+}
+
+.block-event.current-event {
+    opacity: 1;
+}
+
+.block-event.future-event {
+    opacity: 0.8;
+}
+
 .single {
   padding:120px 0;
 }
