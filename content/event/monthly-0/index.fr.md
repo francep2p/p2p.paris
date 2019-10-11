@@ -5,6 +5,7 @@ event_date: 2019-08-07
 location: Ground Control, Paris
 meetup_link: https://www.meetup.com/fr-FR/Paris-P2P/events/263089573/
 image: paris_p2p_event_0.png
+event_status: past
 ---
 
 ### <i class="far fa-presentation"></i>Présentations
