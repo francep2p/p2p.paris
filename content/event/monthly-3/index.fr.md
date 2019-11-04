@@ -14,4 +14,6 @@ event_status: current # past, current, future
 
     * Suite à la poster-session de @zooma2k18 sur DPOS, nous allons voir comment ces consensus sont implémentés dans une blockchain et expliquer les principales différences entre les différentes implémentations.
 
-2. _Pas encore annoncé_
+2. **[Decentralized Reputation on the Blockchain](https://github.com/francep2p/community/issues/47)** _(Talk)_ -- [@PhilippeMts](https://github.com/PhilippeMts)
+
+    * Présentation d'un projet visant à construire un systeme de réputation autonome, certifié, flexible et transparent.
