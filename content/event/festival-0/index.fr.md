@@ -6,7 +6,7 @@ event_end_date: 2020-01-12
 location: Ground Control, Paris
 #meetup_link:
 #kommunity_link:
-image: paris_p2p_event_0.png
+image: paris_p2p_festival_0.png
 event_status: future
 special_event: true
 aliases:
@@ -21,4 +21,7 @@ aliases:
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shr3szZ0ouyvZcPw8?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Participer au festival](https://crpt.fyi/join-paris-p2p-festival-form)
+<div class="text-center">
+	<br />
+	<a class="btn btn-primary btn-xl" href="https://crpt.fyi/join-paris-p2p-festival-form">Participer au festival</a>
+</div>

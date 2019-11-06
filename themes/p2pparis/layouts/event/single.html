@@ -14,9 +14,13 @@
 			<div class="col-lg-10 col-md-12">
 				<div class="block block-single-content">
 					<h3><i class="far fa-calendar-alt"></i>Date</h3>
-					<h5>{{.Params.Event_date}}</h5>
+					<h5>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</h5>
 					{{.Content}}
-					{{ partial "content_event" . }}
+
+					{{ if not .Params.special_event }}
+						{{ partial "content_event" . }}
+					{{ end }}
+
 				</div><!-- /.block-single-content -->
 			</div><!-- /.col -->
         </div><!-- /.row -->
