@@ -14,7 +14,7 @@ aliases:
 
 ### <i class="far fa-presentation"></i>Schedule
 
-<iframe src="https://calendar.google.com/calendar/embed?src=berty.tech_e5kpnvv1kip1ae69s5295dn5k8%40group.calendar.google.com&ctz=Europe%2FParis" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=berty.tech_e5kpnvv1kip1ae69s5295dn5k8%40group.calendar.google.com&ctz=Europe%2FParis&dates=20200108/20200112&mode=week" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 ### <i class="far fa-presentation"></i>Talks
 
