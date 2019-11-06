@@ -9,6 +9,7 @@ location: Ground Control, Paris
 image: paris_p2p_event_0.png
 event_status: future
 special_event: true
+aliases:
 ---
 
 ### <i class="far fa-presentation"></i>Schedule
