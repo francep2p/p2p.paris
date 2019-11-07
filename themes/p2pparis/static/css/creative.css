@@ -10276,6 +10276,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+body.page-404 {
+  background: url("../img/metro_paris.jpg");
+}
 
 header.masthead {
   padding-top: 10rem;
@@ -10309,6 +10312,10 @@ header.masthead .logo-center {
   header.masthead h1 {
     font-size: 2.8rem;
   }
+  header.masthead h1.text-xl {
+    font-size: 400px;
+    line-height: 320px;
+  }
   header.masthead .logo-center {
     width:36%;
     height:332px;
@@ -10318,6 +10325,12 @@ header.masthead .logo-center {
   }
 }
 
+@media (max-width: 991px) {
+  header.masthead h1.text-xl {
+    font-size: 120px;
+    line-height: 80px;
+  }
+}
 
 /* paris p2p */
 .c-github {
