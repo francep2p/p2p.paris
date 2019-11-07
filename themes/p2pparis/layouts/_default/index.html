@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="row">
-            {{ range where (where .Pages "Section" "event") ".Params.event_status" "!=" "past" }}
+            {{ range where (where .Site.RegularPages "Section" "event") ".Params.event_status" "!=" "past" }}
             <div class="col-lg-4 col-md-6">
                 {{ partial "block_event" . }}
             </div><!-- /.col -->
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="row">
-            {{ range where (where .Pages "Section" "event") ".Params.event_status" "==" "past" }}
+            {{ range where (where .Site.RegularPages "Section" "event") ".Params.event_status" "==" "past" }}
             <div class="col-lg-4 col-md-6">
                 {{ partial "block_event" . }}
             </div><!-- /.col -->
