@@ -10299,6 +10299,7 @@ header.masthead h1 {
 header.masthead .logo-center {
   display:block;
   width:60%;
+  height:414px;
   margin:0 auto 50px;
 }
 @media (min-width: 992px) {
@@ -10317,6 +10318,7 @@ header.masthead .logo-center {
   }
   header.masthead .logo-center {
     width:36%;
+    height:332px;
   }
   .language-switcher {
     margin-left:30px;
