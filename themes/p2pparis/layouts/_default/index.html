@@ -1,3 +1,31 @@
+{{ $s := newScratch }}
+
+{{ $events := sort (where .Site.RegularPages "Section" "event") "Params.event_date" }}
+
+{{ $now := now.Unix }}
+{{ $next_event := "" }}
+{{ range $events }}
+    {{ $status := "" }}
+
+    {{ $event_date := time .Params.event_date }}
+    {{ $today := $event_date.Unix }}
+    {{ $tomorrow := ($event_date.AddDate 0 0 1).Unix }}
+    
+    {{ if (ge $today $now) }}
+        <!-- if next event is empty, then this is the first current/upcoming event -->
+        {{ if not $next_event }}
+            {{ $next_event = . }}
+            {{ $status = "next-on" }}
+        {{ else }}
+            {{ $status = "future" }}
+        {{ end }}
+    {{ else }}
+        {{ $status = "past" }}
+    {{ end }}
+
+    {{ $s.SetInMap "event_status" .UniqueID $status }}
+{{ end }}
+
 {{ partial "header" . }}
 
 <!-- Masthead -->
@@ -46,10 +74,13 @@
             </div>
         </div>
         <div class="row">
-            {{ range sort (where (where .Site.RegularPages "Section" "event") ".Params.event_status" "!=" "past") "Params.event_date" }}
-            <div class="col-lg-4 col-md-6">
-                {{ partial "block_event" . }}
-            </div><!-- /.col -->
+            {{ range sort $events "Params.event_date" }}
+                {{ $status := index ($s.Get "event_status") .UniqueID }}
+                {{ if or (eq $status "future") (eq $status "next-on") }}
+                <div class="col-lg-4 col-md-6">
+                    {{ partial "block_event" (dict "ctx" . "status" $status) }}
+                </div><!-- /.col -->
+                {{ end }}
             {{ end }}
         </div><!-- /.row -->
         <div class="row justify-content-center">
@@ -61,10 +92,13 @@
             </div>
         </div>
         <div class="row">
-            {{ range sort (where (where .Site.RegularPages "Section" "event") ".Params.event_status" "==" "past") "Params.event_date" }}
-            <div class="col-lg-4 col-md-6">
-                {{ partial "block_event" . }}
-            </div><!-- /.col -->
+            {{ range sort $events "Params.event_date" }}
+                {{ $status := index ($s.Get "event_status") .UniqueID }}
+                {{ if eq $status "past" }}
+                <div class="col-lg-4 col-md-6">
+                    {{ partial "block_event" (dict "ctx" . "status" $status) }}
+                </div><!-- /.col -->
+                {{ end }}
             {{ end }}
         </div><!-- /.row -->
     </div>
