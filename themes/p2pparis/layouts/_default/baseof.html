@@ -6,31 +6,35 @@
 
 {{ $now := now.Unix }}
 {{ $next_event := "" }}
+
 {{ range $events }}
-    {{ $status := "" }}
+  {{ $status := "" }}
+  {{ $event_date := time .Params.event_date }}
+  {{ $today := $event_date.Unix }}
 
-    {{ $event_date := time .Params.event_date }}
-    {{ $today := $event_date.Unix }}
-    
-    {{ if (ge $today $now) }}
-        <!-- if next event is empty, then this is the first current/upcoming event -->
-        {{ if not $next_event }}
-            {{ $next_event = . }}
-            {{ $status = "next-on" }}
-        {{ else }}
-            {{ $status = "future" }}
-        {{ end }}
-        {{ $.Scratch.Add "upcoming_events" . }}
+  <!-- if the event date is after today midnight UTC, its in the future -->
+  {{ if (ge $today $now) }}
+
+    {{ $.Scratch.Add "upcoming_events" . }}
+
+    <!-- if next event is empty, then this is the first current/upcoming event -->
+    {{ if not $next_event }}
+      {{ $next_event = . }}
+      {{ $status = "next-on" }}
+
     {{ else }}
-        {{ $status = "past" }}
-        {{ $.Scratch.Add "past_events" . }}
+      {{ $status = "future" }}
     {{ end }}
+  
+  {{ else }}
+    {{ $status = "past" }}
+    {{ $.Scratch.Add "past_events" . }}
+  {{ end }}
 
-    {{ $.Scratch.SetInMap "event_status" .UniqueID $status }}
+  {{ $.Scratch.SetInMap "event_status" .UniqueID $status }}
 {{ end }}
-
 <!-- END: get event status -->
 
 {{ partial "header" . }}
-{{ block "main" . }}{{ end }}
+  {{ block "main" . }}{{ end }} 
 {{ partial "footer" .}}
