@@ -1,19 +1,17 @@
-{{ $events := sort (where .Site.RegularPages "Section" "event") "Params.event_date" }}
-
 <!-- START: get event status -->
 {{ $.Scratch.Set "upcoming_events" slice }}
 {{ $.Scratch.Set "past_events" slice }}
 
 {{ $now := now.Unix }}
 {{ $next_event := "" }}
+{{ $events := sort (where .Site.RegularPages "Section" "event") "Params.event_date" }}
 
 {{ range $events }}
   {{ $status := "" }}
-  {{ $event_date := time .Params.event_date }}
-  {{ $today := $event_date.Unix }}
+  {{ $event_date := (time .Params.event_date).Unix }}
 
   <!-- if the event date is after today midnight UTC, its in the future -->
-  {{ if (ge $today $now) }}
+  {{ if (ge $event_date $now) }}
 
     {{ $.Scratch.Add "upcoming_events" . }}
 
