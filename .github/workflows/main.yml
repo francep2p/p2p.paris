@@ -3,7 +3,7 @@ on:
   schedule:
     # every day at 00.15AM
     # - cron: '15 0 * * *'
-    - cron: '*/5 * * * *' # for testing
+    - cron: '*/2 * * * *' # for testing
 jobs:
   build:
     name: Request Netlify Webhook
