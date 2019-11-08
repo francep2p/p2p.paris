@@ -7,7 +7,6 @@ location: Ground Control, Paris
 #meetup_link:
 #kommunity_link:
 image: paris_p2p_festival_0.png
-event_status: future
 special_event: true
 aliases:
 ---

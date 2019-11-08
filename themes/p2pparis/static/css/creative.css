@@ -10409,7 +10409,7 @@ a.block:hover {
     opacity: 0.9;
 }
 
-.block-event.current-event {
+.block-event.next-on-event {
     opacity: 1;
 }
 

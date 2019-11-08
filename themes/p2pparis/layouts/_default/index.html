@@ -1,4 +1,4 @@
-{{ partial "header" . }}
+{{ define "main" }}
 
 <!-- Masthead -->
 <header class="masthead">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="row">
-            {{ range sort (where (where .Site.RegularPages "Section" "event") ".Params.event_status" "!=" "past") "Params.event_date" }}
+            {{ range ($.Scratch.Get "upcoming_events") }}
             <div class="col-lg-4 col-md-6">
                 {{ partial "block_event" . }}
             </div><!-- /.col -->
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="row">
-            {{ range sort (where (where .Site.RegularPages "Section" "event") ".Params.event_status" "==" "past") "Params.event_date" }}
+            {{ range ($.Scratch.Get "past_events") }}
             <div class="col-lg-4 col-md-6">
                 {{ partial "block_event" . }}
             </div><!-- /.col -->
@@ -102,4 +102,5 @@
         {{ partial "links" . }}
     </div><!-- /.container -->
 </section>
-{{ partial "footer" . }}
+
+{{ end }}

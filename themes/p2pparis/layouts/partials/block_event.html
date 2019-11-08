@@ -1,7 +1,13 @@
+{{ $statuses := $.Scratch.Get "event_status" }}
 {{ $image := index (.Resources.Match .Params.image) 0 }}
 {{ $image := $image.Resize "350x" }}
 
-<a class="block block-event {{.Params.event_status}}-event" href="{{.RelPermalink}}">
+{{ $status := ""}}
+{{ if ($statuses) }}
+	{{ $status = index ($statuses) .UniqueID }}
+{{ end }}
+
+<a class="block block-event {{$status}}-event" href="{{.RelPermalink}}">
 	<div class="block-img">
     	<img src="{{ $image.RelPermalink }}">
 	</div><!-- /.block-img -->
