@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl request
-        run: curl -X POST -d {} https://api.netlify.com/build_hooks/5dc599dfb23b10e8457950df
+        run: curl -X POST -d {} ${{ secrets.netlifyBuildUrl }}
