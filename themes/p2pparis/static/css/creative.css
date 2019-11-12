@@ -10149,6 +10149,12 @@ hr.dark {
   font-family:monospace;
   font-size:20px;
 }
+#mainNav .navbar-brand img{
+  display:inline-block;
+  width:38px;
+  height: 38px;
+  margin:-5px 0;
+}
 #mainNav .navbar-brand .small2 {
   font-size:19px;
 }
