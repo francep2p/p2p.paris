@@ -8,32 +8,43 @@
 <div class="single bg-light">
     <div class="container">
         <div class="row">
-			<div class="col-md-8">
-				<div class="block">
-					<div class="block-single-img">
-						<img src="{{ $image.RelPermalink }}">
-					</div><!-- block-single-img -->
-					<div class="block-single-content">
+
+
+		{{ if .Params.special_event }}
+			<div class="col-12">
+				<div class="block block-single-img">
+					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
+				</div><!-- block-single-img -->
 				
-						{{.Content}}
-
-						{{ if not .Params.special_event }}
-							{{ partial "content_event" . }}
-						{{ end }}
-
-					</div><!-- /.block-single-content -->
-				</div><!-- /.block -->
+				<div class="block block-single block-single-content">
+					{{.Content}}	
+				</div><!-- /.block-single-content -->
+			</div>
+		{{ else }}
+			<div class="col-lg-8">
+		
+				<div class="block block-single-img">
+					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
+				</div><!-- block-single-img -->
+				
+				<div class="block block-single block-single-content">
+					{{.Content}}	
+				</div><!-- /.block-single-content -->
+		
+				<div class="block block-single block-single-content">
+					{{ partial "event_about" . }}	
+				</div>
 			</div><!-- /.col -->
-			<div class="col-md-4">
-				<div class="block">
-					<h3><i class="far fa-calendar-alt"></i>Date</h3>
-					<h5>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</h5>
-				</div><!-- /.block -->
+
+			<div class="col-lg-4">
+				{{ partial "event_info" . }}
 			</div><!-- /.col -->
+		{{ end }}
 
         </div><!-- /.row -->
-        {{ partial "links" . }}
     </div><!-- /.container -->
 </div><!-- /.single -->
+
+{{ partial "section_links" . }}
 
 {{ end }}
