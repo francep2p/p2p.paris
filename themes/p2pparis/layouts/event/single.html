@@ -17,6 +17,10 @@
 				</div><!-- block-single-img -->
 				
 				<div class="block block-single block-single-content">
+					<h3><i class="far fa-calendar-alt"></i>Date</h3>
+					<strong>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</strong>
+					<br/>
+					<br/>
 					{{.Content}}	
 				</div><!-- /.block-single-content -->
 			</div>
