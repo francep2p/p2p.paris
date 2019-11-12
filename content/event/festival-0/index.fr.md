@@ -12,13 +12,19 @@ aliases:
 - /festival
 ---
 
-### <i class="far fa-presentation"></i>Présentation
+### <i class="far fa-info-circle"></i>Présentation
 
-<iframe src="https://hackmd.io/xayD-3jmRBKeiQrhoMbieA" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe src="https://hackmd.io/xayD-3jmRBKeiQrhoMbieA" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>  
 
-### <i class="far fa-presentation"></i>Programme
+<br />
+<br />
+
+### <i class="far fa-clock"></i>Programme
 
 <iframe src="https://calendar.google.com/calendar/embed?src=berty.tech_e5kpnvv1kip1ae69s5295dn5k8%40group.calendar.google.com&ctz=Europe%2FParis&dates=20200108/20200112&mode=week" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<br />
+<br />
 
 ### <i class="far fa-presentation"></i>Présentations
 
@@ -28,3 +34,5 @@ aliases:
 	<br />
 	<a class="btn btn-primary btn-xl" href="https://crpt.fyi/join-paris-p2p-festival-form">Participer au festival</a>
 </div>
+
+<br />

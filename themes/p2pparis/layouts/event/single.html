@@ -1,31 +1,54 @@
 {{ define "main" }}
 
+{{.Scratch.Set "body-class" "bg-light"}}
+
 {{ $image := index (.Resources.Match .Params.image) 0 }}
 {{ $image := $image.Resize "1200x" }}
 
-<div class="single">
-    <div class="container h-100">
-        <div class="row h-50 align-items-center justify-content-center ">
+<div class="single bg-light">
+    <div class="container">
+        <div class="row">
+
+
+		{{ if .Params.special_event }}
 			<div class="col-12">
 				<div class="block block-single-img">
-					<img src="{{ $image.RelPermalink }}">
+					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
 				</div><!-- block-single-img -->
-			</div><!-- /.col -->
-			<div class="col-lg-10 col-md-12">
-				<div class="block block-single-content">
+				
+				<div class="block block-single block-single-content">
 					<h3><i class="far fa-calendar-alt"></i>Date</h3>
-					<h5>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</h5>
-					{{.Content}}
-
-					{{ if not .Params.special_event }}
-						{{ partial "content_event" . }}
-					{{ end }}
-
+					<strong>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</strong>
+					<br/>
+					<br/>
+					{{.Content}}	
 				</div><!-- /.block-single-content -->
+			</div>
+		{{ else }}
+			<div class="col-lg-8">
+		
+				<div class="block block-single-img">
+					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
+				</div><!-- block-single-img -->
+				
+				<div class="block block-single block-single-content">
+					{{.Content}}	
+				</div><!-- /.block-single-content -->
+		
+				<div class="block block-single block-single-content">
+					{{ partial "event_about" . }}	
+				</div>
 			</div><!-- /.col -->
+
+			<div class="col-lg-4">
+				{{ partial "event_info" . }}
+			</div><!-- /.col -->
+		{{ end }}
+
         </div><!-- /.row -->
-        {{ partial "links" . }}
     </div><!-- /.container -->
-</div>
+</div><!-- /.single -->
+
+{{ partial "section_links" . }}
 
 {{ end }}

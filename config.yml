@@ -26,16 +26,16 @@ languages:
           url: "/en/#events"
           weight: -80
         - name: Meetup
-          url: "/en/#meetup"
+          url: "#meetup"
           weight: -70
         - name: Discord
-          url: "/en/#discord"
+          url: "#discord"
           weight: -60
         - name: Github
-          url: "/en/#github"
+          url: "#github"
           weight: -50
         - name: Contact
-          url: "/en/#contact"
+          url: "#contact"
           weight: -40
   fr:
     languageName: French
@@ -56,16 +56,16 @@ languages:
           url: "/fr/#events"
           weight: -80
         - name: Meetup
-          url: "/fr/#meetup"
+          url: "#meetup"
           weight: -70
         - name: Discord
-          url: "/fr/#discord"
+          url: "#discord"
           weight: -60
         - name: Github
-          url: "/fr/#github"
+          url: "#github"
           weight: -50
         - name: Contact
-          url: "/fr/#contact"
+          url: "#contact"
           weight: -50
 
 params:
