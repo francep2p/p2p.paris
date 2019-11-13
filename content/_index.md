@@ -10,8 +10,8 @@ content:
     value_1: Open and free
     value_2: Peer2Peer
     value_3: Autonomous
-    value_4: Non profit
-    values_button: Decouvrir nos valeurs en detail
+    value_4: Non-profit
+    values_button: Learn more about our values
     events_title: Events
     past_events_title: Past events
     caf_title: Call for proposal

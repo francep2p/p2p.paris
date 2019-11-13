@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3  {{if not .IsHome}}navbar-scrolled{{end}}" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/#page-top">
+        <a class="navbar-brand js-scroll-trigger" href="{{if .IsHome}}/#page-top{{else}}/{{ end }}">
             <img src="/img/paris_p2p_small.svg">
             Paris P<span class="small2">2</span>P
         </a>
@@ -15,7 +15,7 @@
                 {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
                 {{ $isActive := or $isActive (in ($currentPage.Permalink | relLangURL) (.URL | relLangURL)) }}
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{if $isActive }} active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+                    <a class="nav-link js-scroll-trigger {{if $isActive }} active{{end}} {{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
                 </li>
             {{ end }}
             </ul>

@@ -10364,6 +10364,11 @@ a {
   padding: 50px 25px;
   color:#ffffffde;
 }
+@media(min-width:768px){
+  .block-secondary.l {
+    padding:60px 50px;
+  }
+}
 
 
 a.block {
@@ -10445,13 +10450,17 @@ a.block:hover {
 .block-single h3 i {
   margin-right:10px;
 }
-.block-single a {
+.block-single a{
   color:#5c5eb2;
   font-weight:bold;
 }
 .block-single a:hover,
 .block-single a:focus {
   color:#7c7ecf;
+}
+.block-secondary a:hover,
+.block-secondary a:focus {
+  color:#6ED3F0;
 }
 .block-single-img {
   display:block;
@@ -10497,4 +10506,12 @@ a.block:hover {
   /*-webkit-box-shadow: 0 0 0 0.2rem rgba(246, 122, 88, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(246, 122, 88, 0.5);*/
   border-color:#5cdbff;
+}
+
+@media(max-width: 1199px) and (min-width: 992px){
+  #mainNav .nav-link.Meetup,
+  #mainNav .nav-link.Github,
+  #mainNav .nav-link.Discord {
+    display:none;
+  }
 }
