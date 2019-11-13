@@ -10340,6 +10340,9 @@ header.masthead .logo-center {
 .c-discord {
   color:#7289DA;
 }
+.c-primary {
+  color:#6ED3F0;
+}
 a {
   transition: .3s ease-in-out;
 }
@@ -10352,6 +10355,16 @@ a {
   box-shadow: 0 4px 12px 2px rgba(171,174,209,0.20);
   border-radius: 12px;
 }
+
+.block-secondary {
+  display:block;
+  background-color:#525381;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 50px 25px;
+  color:#ffffffde;
+}
+
 
 a.block {
     color:#383B62;

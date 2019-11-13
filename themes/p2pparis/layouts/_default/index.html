@@ -4,19 +4,16 @@
 <header class="masthead">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center text-center">
-
             <div class="col-lg-10 align-self-end">
                 <!--<img class="logo-center" src="/img/paris_p2p.svg">-->
                 <div id="lottie" class="logo-center"></div>
                 <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text | markdownify }}</h1>
-                <!--<hr class="divider my-4">-->
-            </div>
+            </div><!-- /.col -->
             <div class="col-lg-8 align-self-baseline">
-                <!--<p class="text-white-75 font-weight-light mb-5">Join us on frequent meetups</p>-->
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://www.meetup.com/France-P2P/">{{ .Params.content.intro_button | markdownify }}</a>
-            </div>
-        </div>
-    </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 </header>
 
 <!-- About Section -->
@@ -29,9 +26,56 @@
                 <hr class="divider light my-4">
                 <br />
                 <p class="text-white mb-4">{{ .Params.content.about_body | markdownify }}</p>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+<!-- Values Section -->
+<section class="page-section bg-secondary" id="values">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <i class="fal fa-heart fa-5x text-white mb-4"></i>
+                <h2 class="mt-0 text-white">{{ .Params.content.values_title | markdownify }}</h2>
+                <hr class="divider light my-4">
+                <br />
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="block-secondary" href="">
+                    <i class="fal fa-hand-peace fa-4x mb-4"></i>
+                    <h3 class="h4 mb-2">{{ .Params.content.value_1| markdownify }}</h3>
+                </div><!-- /.block-secondary -->
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="block-secondary" href="">
+                    <i class="fal fa-chart-network fa-4x mb-4"></i>
+                    <h3 class="h4 mb-2">{{ .Params.content.value_2 | markdownify }}</h3>
+                </div><!-- /.block-secondary -->
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="block-secondary" href="">
+                    <i class="fal fa-smile fa-4x mb-4"></i>
+                    <h3 class="h4 mb-2">{{ .Params.content.value_3 | markdownify }}</h3>
+                </div><!-- /.block-secondary -->
+            </div><!-- /.col -->
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="block-secondary" href="">
+                    <i class="fal fa-monkey fa-4x mb-4"></i>
+                    <h3 class="h4 mb-2">{{ .Params.content.value_4 | markdownify }}</h3>
+                </div><!-- /.block-secondary -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <br />
+                <br />
+                <a class="btn btn-primary btn-xl" href="#">{{ .Params.content.values_button | markdownify }}</a>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
 </section>
 
 <!-- Events Section -->
@@ -43,8 +87,8 @@
                 <h2 class="mt-0">{{ .Params.content.events_title | markdownify }}</h2>
                 <hr class="divider my-4">
                 <br />
-            </div>
-        </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
         <div class="row">
             {{ range ($.Scratch.Get "upcoming_events") }}
             <div class="col-lg-4 col-md-6">
@@ -59,7 +103,7 @@
                 <hr class="divider my-4">
                 <br />
             </div>
-        </div>
+        </div><!-- /.row -->
         <div class="row">
             {{ range ($.Scratch.Get "past_events") }}
             <div class="col-lg-4 col-md-6">
@@ -67,7 +111,7 @@
             </div><!-- /.col -->
             {{ end }}
         </div><!-- /.row -->
-    </div>
+    </div><!-- /.container -->
 </section>
 
 <!-- Call for proposal Section -->
@@ -82,9 +126,9 @@
                 <h5 class="text-white">{{ .Params.content.caf_subtitle | markdownify }}</h5>
                 <p class="text-white mb-4">{{ .Params.content.caf_body | markdownify }}</p>
                 <a class="btn btn-secondary btn-xl js-scroll-trigger" href="http://crpt.fyi/parisp2p-cfp">{{ .Params.content.caf_button | markdownify }}</a>
-            </div>
-        </div>
-    </div>
+            </div><!-- /.col-->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 </section>
 
 {{ partial "section_links" . }}

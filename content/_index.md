@@ -6,6 +6,12 @@ content:
     intro_button: Join the community on Meetup
     about_title: About the community
     about_body: Just a bunch of enthousiasts who wanted a place to talk, exchange the latest news and share ideas around P2P & Cryptography technologies in Paris
+    values_title: Our values
+    value_1: Open and free
+    value_2: Peer2Peer
+    value_3: Autonomous
+    value_4: Non profit
+    values_button: Decouvrir nos valeurs en detail
     events_title: Events
     past_events_title: Past events
     caf_title: Call for proposal
