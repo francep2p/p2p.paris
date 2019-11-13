@@ -1,3 +1,18 @@
+links_title:
+  other: Quelques liens
+
+links_meetup:
+  other: Rejoignez le groupe pour<br> participer aux événements
+
+links_discord:
+  other: Rejoignez la<br>conversation en ligne
+
+links_github:
+  other: Pour avoir accès aux<br>ressources, code, docs...
+
+links_contact:
+  other: Envoyez-nous un email à<br>bootstrap@p2p.paris
+
 available_slot:
   other: Créneau disponible
 
@@ -17,7 +32,7 @@ schedule_c:
   other: "<strong>19h30-20h</strong> : P2P - Person-to-person (10 minutes, 5 rencontres)"
 
 schedule_d:
-  other: "<strong>20h-23h</strong> : FFA (discutez avec qui vous voulez, faites des ateliers si ca vous chante, appréciez simplement le moment et la boisson, ...)"
+  other: "<strong>20h-23h</strong> : FFA (discutez avec qui vous voulez, faites des ateliers si ca vous chante, appréciez simplement le moment et la boisson...)"
 
 location:
   other: Le lieu
