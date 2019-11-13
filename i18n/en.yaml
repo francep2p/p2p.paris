@@ -23,7 +23,7 @@ register:
   other: Subscription
 
 register_text:
-  other: "Inscrivez-vous directement sur l'événement <a href='{{ .Params.Meetup_link }}''>Meetup</a></p><p>Il n'est pas obligatoire d'être inscrit.e sur <a href="https://www.meetup.com/France-P2P/">meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e."
+  other: Inscrivez-vous directement sur l'événement <a href=''>Meetup</a></p><p>Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
 
 talk:
   other: Proposer un talk
