@@ -10,4 +10,5 @@ draft: true # this event is embedded into paris p2p festival
 
 ### <i class="far fa-presentation"></i> Présentations
 
-* Pas encore annoncé
+{{< available_slot duration="15min" >}}
+{{< available_slot duration="15min" >}}

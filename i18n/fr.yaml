@@ -1,0 +1,86 @@
+links_title:
+  other: Quelques liens
+
+links_meetup:
+  other: Rejoignez le groupe pour<br> participer aux événements
+
+links_discord:
+  other: Rejoignez la<br>conversation en ligne
+
+links_github:
+  other: Pour avoir accès aux<br>ressources, code, docs...
+
+links_contact:
+  other: Envoyez-nous un email à<br>bootstrap@p2p.paris
+
+available_slot:
+  other: Créneau disponible
+
+propose_talk:
+  other: Proposer un talk
+
+schedule:
+  other: Programme
+
+schedule_a:
+  other: "<strong>18h30-19h</strong> : Ouverture des portes"
+
+schedule_b:
+  other: "<strong>19h-19h30</strong> : Talks (parfois il n'y en aura pas)"
+
+schedule_c:
+  other: "<strong>19h30-20h</strong> : P2P - Person-to-person (10 minutes, 5 rencontres)"
+
+schedule_d:
+  other: "<strong>20h-23h</strong> : FFA (discutez avec qui vous voulez, faites des ateliers si ca vous chante, appréciez simplement le moment et la boisson...)"
+
+location:
+  other: Le lieu
+
+location_text:
+  other: Ces rencontres se déroulent à <strong>Ground Control</strong>, à deux pas de Gare de Lyon, Paris.<br/>Espaces conviviaux, Bar (vin, bières) & snacks sont disponibles sur place.
+
+register:
+  other: Inscription
+
+register_a:
+  other: Inscrivez-vous directement sur l'événement
+
+register_b:
+  other: Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
+
+talk:
+  other: Proposer un talk
+
+talk_a:
+  other: Vous avez un sujet à présenter ?
+
+talk_b:
+  other: Veuillez compléter ce <a href="http://crpt.fyi/parisp2p-cfp">formulaire</a> afin de nous en dire plus sur votre idée.
+
+about:
+  other: À propos
+
+about_a:
+  other: Paris P2P est un rendez-vous mensuel organisé par et pour la communauté des passionné.e.s de P2P et de cryptographie.
+
+about_b:
+  other: Ces rendez-vous prennent la forme d’afterwork informels, gratuits, destinés à favoriser la rencontre et les échanges entre développeurs/développeuses, passionné.e.s et curieux/curieuses, autour d’un verre ou de discussions ouvertes.
+
+about_c:
+  other: Nous organisons des rencontres pour discuter autour des thèmes du 'peer to peer' (P2P), de la décentralisation, des réseaux et communautés autonomes, des systèmes distribués et décentralisés, des applications offline-first, de réseaux, de la confidentialité, de l'anti-surveillance, de l'anti-censure, de la sécurité, de la cryptographie, des blockchains.
+
+about_d:
+  other: P2P Paris est avant tout une occasion d'échanger et de confronter ses idées à Paris.
+
+about_e:
+  other: Chaque participant.e.s peut proposer des thématiques de discussions, et présenter ses projets à la communauté. Paris P2P est une organisation non-lucrative, décentralisée et ouverte.
+
+about_event:
+  other: Deux types d'événements
+
+about_event_a:
+  other: "<strong>Les Paris P2P mensuels</strong> : tous les premiers mercredi du mois."
+
+about_event_b:
+  other: <strong>Les Paris P2P "Hors série"</strong>

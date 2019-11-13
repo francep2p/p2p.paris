@@ -7,6 +7,8 @@ meetup_link: https://www.meetup.com/Paris-P2P/events/264367847/
 image: paris_p2p_event_monthly.png
 ---
 
-### <i class="far fa-presentation"></i> Présentations
+### <i class="far fa-presentation"></i> Présentations 
 
-* Créneau disponible
+
+{{< available_slot duration="15min" >}}
+{{< available_slot duration="15min" >}}

@@ -1,0 +1,86 @@
+links_title:
+  other: Some links
+
+links_meetup:
+  other: Join the community to<br>signup to upcoming events
+
+links_discord:
+  other: Join the online<br>conversation
+
+links_github:
+  other: Get access to<br>resources, code and docs
+
+links_contact:
+  other: Send us an email at<br>bootstrap@p2p.paris
+
+available_slot:
+  other: Available slot
+
+propose_talk:
+  other: Propose a talk
+
+schedule:
+  other: Schedule
+
+schedule_a:
+  other: "<strong>6:30-7pm</strong>: Gates open"
+
+schedule_b:
+  other: "<strong>7-7:30pm</strong>: Talks (sometimes they won't occur)"
+
+schedule_c:
+  other: "<strong>7:30-8pm</strong>: P2P - Person-to-person (10 minutes, 5 meetings)"
+
+schedule_d:
+  other: "<strong>8-11pm</strong>: FFA (talk with everyone, do workshops if you're keen, just enjoy the moment and a few drinks...)"
+
+location:
+  other: Location
+
+location_text:
+  other: This meetups are hosted at <strong>Ground Control</strong>, close to Gare de Lyon, Paris.<br/>Friendly spaces, Bar (wine, beer) & snacks available.
+
+register:
+  other: Register
+
+register_a:
+  other: Register directy to the event on 
+
+register_b:
+  other: Been registered to <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> is not mandatory to join the event. You can come accopanied.
+
+talk:
+  other: Call for proposal
+
+talk_a:
+  other: You have a subject you want to present?
+
+talk_b:
+  other: Please fill this <a href="http://crpt.fyi/parisp2p-cfp">form</a> to tell us more about your idea.
+
+about:
+  other: About
+
+about_a:
+  other: Paris P2P is a weekly meetup organized by and for the community passionate about P2P and cryptography.
+
+about_b:
+  other: These meetups are free, informal afterworks, meant to encourage meetings and exchanges between developers, passionates and curious people, around a drink or open discussions.
+
+about_c:
+  other: We organize this meetings to discuss about 'peer to peer' (P2P), decentralized systems, autonomous networks and communities, distrbuted and decentralized systems, offline-first apps, network, privacy, anti-surveillance, anti-censorship, security, cryptography, blockchains.
+
+about_d:
+  other: P2P Paris is an opportunity to exchange the latest news and share ideas in Paris.
+
+about_e:
+  other: Each member can propose a discussion topic, and introduce his projects to the community. Paris P2P is an open, decentralized and non-profit oprganization.
+
+about_event:
+  other: Two events kinds
+
+about_event_a:
+  other: "<strong>Monthly Paris P2P</strong> : first Wednesday of each month"
+
+about_event_b:
+  other: <strong>Paris P2P "Special issue"</strong>

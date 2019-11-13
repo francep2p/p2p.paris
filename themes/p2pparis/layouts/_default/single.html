@@ -1,3 +1,56 @@
 {{ define "main" }}
+
 {{ .Content }}
+
+	<div class="single">
+		<!-- Values Section -->
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+
+					<br />
+					<h1 class="text-white text-center">{{ .Params.value_title| markdownify }}</h1>
+					<br />
+					<br />
+
+	                <div class="block-secondary l">
+	                	<div class="text-center">
+	                		<i class="fal fa-hand-peace fa-5x mb-4"></i>
+	                    	<h3 class="h4 mb-2">{{ .Params.value_1| markdownify }}</h3>
+	                	</div>
+	                    <br />
+	                	{{ .Params.value_1_text| markdownify }}
+	                </div><!-- /.block-secondary -->
+	        	</div><!-- /.col -->
+
+	            <div class="col-lg-8 col-md-12 text-center">
+	                <div class="block-secondary l">
+	                    <i class="fal fa-chart-network fa-5x mb-4"></i>
+	                    <h3 class="h4 mb-2">{{ .Params.value_2 | markdownify }}</h3>
+	                    <br />
+	                    <p class="text-muted mb-0">{{ .Params.value_2_text | markdownify }}</p>
+	                </div><!-- /.block-secondary -->
+	                <div class="block-secondary l">
+	                    <i class="fal fa-monkey fa-5x mb-4"></i>
+	                    <h3 class="h4 mb-2">{{ .Params.value_4 | markdownify }}</h3>
+	                    <br />
+	                    <p class="text-muted mb-0">{{ .Params.value_4_text | markdownify }}</p>
+	                </div><!-- /.block-secondary -->
+	            </div><!-- /.col -->
+	            <div class="col-lg-4 col-md-12">
+	                <div class="block-secondary l">
+	                	<div class="text-center">
+	                    	<i class="fal fa-smile fa-5x mb-4"></i>
+	                    	<h3 class="h4 mb-2">{{ .Params.value_3 | markdownify }}</h3>
+	                	</div>
+	                    <br />
+	                    <p class="text-muted mb-0">{{ .Params.value_3_text | markdownify }}</p>
+	                </div><!-- /.block-secondary -->
+	            </div><!-- /.col -->
+
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div><!-- /.single -->
+
+	{{ partial "section_links" . }}
 {{ end }}
