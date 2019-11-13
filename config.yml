@@ -52,7 +52,7 @@ languages:
         - name: Envoyez vos sujets
           url: "/fr/#call-for-proposal"
           weight: -90
-        - name: Évènements
+        - name: Événements
           url: "/fr/#events"
           weight: -80
         - name: Meetup

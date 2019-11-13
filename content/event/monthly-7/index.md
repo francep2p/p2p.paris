@@ -9,4 +9,5 @@ image: paris_p2p_event_monthly.png
 
 ### <i class="far fa-presentation"></i> Talks
 
-* Not yet announced
+{{< available_slot duration="15min" >}}
+{{< available_slot duration="15min" >}}

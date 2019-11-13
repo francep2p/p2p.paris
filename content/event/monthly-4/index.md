@@ -9,4 +9,6 @@ image: paris_p2p_event_monthly.png
 
 ### <i class="far fa-presentation"></i> Talks
 
-* Slot available
+{{< available_slot duration="15min" >}}
+{{< available_slot duration="15min" >}}
+

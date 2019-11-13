@@ -10507,6 +10507,59 @@ a.block:hover {
   border-color:#5cdbff;
 }
 
+a.btn-slot {
+  color: #5c5eb2;
+  border: 2.6px dashed #5c5eb2;
+  border-radius:8px;
+  margin-top:40px;
+  text-transform: uppercase;
+  padding:24px 28px;
+  display:block;
+  font-size:18px;
+  position:relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition:none;
+}
+
+a.btn-slot .btn-slot-hover {
+  display:inline-block;
+  position:absolute;
+  transition:all .3s;
+  left:-300px;
+  height:100%;
+  opacity:0;
+}
+a.btn-slot:hover,
+a.btn-slot:focus {
+  border:2.6px solid #5c5eb2;
+  background-color:#5c5eb2;
+  color:#FFF;
+  text-decoration:none;
+}
+a.btn-slot:hover .btn-slot-available,
+a.btn-slot:focus .btn-slot-available {
+  display:none;
+}
+a.btn-slot:hover .btn-slot-hover,
+a.btn-slot:focus .btn-slot-hover {
+  left:28px;
+  opacity:1;
+  transition:all .05s;
+}
+.btn-slot i.mr {
+  margin-right:10px;
+}
+.btn-slot i.fa-arrow-circle-right {
+  margin-left:28px;
+  font-size:26px;
+  line-height:30px;
+}
+.btn-slot-right {
+  float:right;
+}
+
 @media(max-width: 1199px) and (min-width: 992px){
   #mainNav .nav-link.Meetup,
   #mainNav .nav-link.Github,

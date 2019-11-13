@@ -1,6 +1,6 @@
 				<div class="block block-single">
 					<h3><i class="far fa-calendar-alt"></i>Date</h3>
-					<strong>{{.Params.Event_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</strong>
+					<strong>{{ dateFormat "January 2, 2006" .Params.event_date }}</strong>
 				</div><!-- /.block -->
 
 				<div class="block block-single">
@@ -30,7 +30,8 @@
 
 				<div class="block block-single">
 					<h3><i class="far fa-clipboard-check"></i>{{ i18n "register" . | markdownify }}</h3>
-					<p>{{ i18n "register_text" . | markdownify }}</p>
+					<p>{{ i18n "register_a" . | markdownify }} <a href="{{ .Params.Meetup_link }}">Meetup</a></p>
+					<p>{{ i18n "register_b" . | markdownify }}</p>
 				</div><!-- /.block -->
 
 				<div class="block block-single">

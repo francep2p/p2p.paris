@@ -1,3 +1,9 @@
+available_slot:
+  other: Available slot
+
+propose_talk:
+  other: Propose a talk
+
 schedule:
   other: Schedule
 
@@ -20,10 +26,13 @@ location_text:
   other: Ces rencontres se déroulent à <strong>Ground Control</strong>, à deux pas de Gare de Lyon, Paris.<br/>Espaces conviviaux, Bar (vin, bières) & snacks sont disponibles sur place.
 
 register:
-  other: Subscription
+  other: Register
 
-register_text:
-  other: Inscrivez-vous directement sur l'événement <a href=''>Meetup</a></p><p>Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
+register_a:
+  other: Register directy to the event on 
+
+register_b:
+  other: Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
 
 talk:
   other: Proposer un talk

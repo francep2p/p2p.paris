@@ -1,0 +1,19 @@
+{{- $duration := .Get "duration" -}}
+
+<a class="btn-slot" href="http://crpt.fyi/parisp2p-cfp">
+	
+	<span class="btn-slot-available">
+		<i class="far fa-presentation mr"></i>
+		{{ i18n "available_slot" . | markdownify }}
+	</span>
+	<span class="btn-slot-hover">
+		<i class="far fa-pencil mr"></i>
+		{{ i18n "propose_talk" . | markdownify }}
+	</span>
+	<span class="btn-slot-right">
+		<i class="fas fa-arrow-circle-right"></i>
+	</span>
+	<span class="btn-slot-right">
+		<i class="far fa-clock mr"></i>{{ $duration }}
+	</span>
+</a>

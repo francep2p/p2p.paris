@@ -1,3 +1,9 @@
+available_slot:
+  other: Créneau disponible
+
+propose_talk:
+  other: Proposer un talk
+
 schedule:
   other: Programme
 
@@ -22,8 +28,11 @@ location_text:
 register:
   other: Inscription
 
-register_text:
-  other: Inscrivez-vous directement sur l'événement <a href=''>Meetup</a></p><p>Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
+register_a:
+  other: Inscrivez-vous directement sur l'événement
+
+register_b:
+  other: Il n'est pas obligatoire d'être inscrit.e sur <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> pour se joindre à l'événement. Vous êtes également libre de venir accompagné.e.
 
 talk:
   other: Proposer un talk
