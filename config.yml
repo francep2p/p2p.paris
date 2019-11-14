@@ -13,7 +13,7 @@ languages:
       locale: en_GB
       default_description: The Parisian community interested in P2P & Cryptography technologies
       404_desc: Page not found
-      404_cta: Go to homepage
+      404_cta: Go to homepage      
     menu:
       main:
         - name: About
@@ -44,6 +44,19 @@ languages:
       default_description: La communauté parisienne intéréssée par les technologies P2P et la Cryptographie
       404_desc: Page introuvable
       404_cta: Aller à la page d'accueil
+      months:
+        1: "janvier"
+        2: "février"
+        3: "mars"
+        4: "avril"
+        5: "mai"
+        6: "juin"
+        7: "juillet"
+        8: "août"
+        9: "septembre"
+        10: "octobre"
+        11: "novembre"
+        12: "décembre"  
     menu:
       main:
         - name: À propos
