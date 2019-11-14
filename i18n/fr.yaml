@@ -84,3 +84,9 @@ about_event_a:
 
 about_event_b:
   other: <strong>Les Paris P2P "Hors série"</strong>
+
+loadmore_upcoming_events_btn:
+  other: voir <span class="count"></span> autres événements à venir
+
+loadmore_past_events_btn:
+  other: voir <span class="count"></span> autres événements passés
