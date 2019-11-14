@@ -10488,6 +10488,42 @@ a.block:hover {
 .block-secondary a:focus {
   color:#6ED3F0;
 }
+.block-value {
+  padding:40px;
+}
+.block-value h3 {
+  margin-top:-10px;
+  margin-bottom:20px;
+}
+@media(min-width:992px) {
+  .block-value.m .content {
+    min-height:280px;
+    display:block;
+  }
+}
+@media(max-width:991px) {
+  .block-value i.fa-5x {
+    margin-bottom: 10px;
+    font-size:3em;
+  }
+  .block-value h3 {
+    display:inline-block;
+    margin-left:25px;
+    vertical-align:initial;
+  }
+}
+@media(max-width:420px) {
+  .block-value {
+    padding:30px;
+  }
+  .block-value i.fa-5x {
+    font-size:2.5em;
+    margin-bottom:0 !important;
+  }
+  .block-value h3 {
+    margin-left:15px;
+  }
+}
 .block-single-img {
   display:block;
 }
