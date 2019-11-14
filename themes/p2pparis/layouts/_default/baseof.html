@@ -33,6 +33,9 @@
 {{ end }}
 <!-- END: get event status -->
 
+<!-- Order past event to LATEST first -->
+{{ $.Scratch.Set "past_events" (sort ($.Scratch.Get "past_events") "Params.event_date" "desc") }}
+
 {{ partial "header" . }}
   {{ block "main" . }}{{ end }} 
 {{ partial "footer" .}}
