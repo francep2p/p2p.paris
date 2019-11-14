@@ -14,7 +14,13 @@
 	<div class="block-content">
 		<h4 class="event-title">{{.Title}}</h4>
 		<p class="event-subtitle">{{.Params.Subtitle}}</p>
-		<span class="event-info event-date"><i class="far fa-calendar-alt"></i>{{.Params.Event_date}}</span>
 		<span class="event-info event-location"><i class="far fa-map-marker"></i>{{.Params.Location}}</span>
+		<span class="event-info event-date"><i class="far fa-calendar-alt"></i>{{ dateFormat "January 2, 2006" .Params.event_date }}</span>
+		<span class="tag tag-{{$status}}">{{$status}}</span>
+    	<!--
+    	<span class="tag tag-past">past</span>
+    	<span class="tag tag-next">next</span>
+    	<span class="tag tag-upcoming">upcoming</span>
+    	-->
 	</div><!-- /.block-content -->
 </a><!-- /.block-event -->

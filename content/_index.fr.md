@@ -12,8 +12,8 @@ content:
     value_3: Autonome
     value_4: Non commercial
     values_button: Decouvrir nos valeurs en detail
-    events_title: Événements
-    past_events_title: Événements précédents
+    events_title: Prochains événements
+    past_events_title: Événements passés
     caf_title: Envoyez vos sujets
     caf_subtitle: Vous avez un sujet à présenter ?
     caf_body: Veuillez compléter le formulaire ci-dessous afin de nous en dire plus sur votre idée
