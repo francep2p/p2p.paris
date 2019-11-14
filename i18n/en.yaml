@@ -2,16 +2,16 @@ links_title:
   other: Some links
 
 links_meetup:
-  other: Join the community to<br>signup to upcoming events
+  other: Join the community to&nbsp;<br>signup to upcoming events
 
 links_discord:
-  other: Join the online<br>conversation
+  other: Join the online&nbsp;<br>conversation
 
 links_github:
-  other: Get access to<br>resources, code and docs
+  other: Get access to&nbsp;<br>resources, code and docs
 
 links_contact:
-  other: Send us an email at<br>bootstrap@p2p.paris
+  other: Send us an email at&nbsp;<br>bootstrap@p2p.paris
 
 available_slot:
   other: Available slot
