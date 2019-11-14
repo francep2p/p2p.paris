@@ -10361,7 +10361,7 @@ a {
   background-color:#525381;
   border-radius: 12px;
   margin: 20px 0;
-  padding: 50px 25px;
+  padding: 50px 20px;
   color:#ffffffde;
 }
 @media(min-width:768px){
@@ -10627,5 +10627,54 @@ a.btn-slot:focus .btn-slot-hover {
   #mainNav .nav-link.Github,
   #mainNav .nav-link.Discord {
     display:none;
+  }
+}
+@media(max-width: 576px) {
+  header.masthead {
+    padding:82px 0 86px;
+  }
+  header.masthead h1 {
+    font-size: 1.3rem;
+  }
+  .btn-xl {
+    font-size: 0.9rem;
+  }
+  .page-section hr.divider {
+    display:none;
+  }
+  .page-section {
+    padding: 4rem 0;
+  }
+  .page-section i.fa-5x {
+    font-size:3em;
+  }
+  .page-section h2 {
+    font-size: 1.5rem;
+  }
+  .block-secondary {
+    padding: 25px 10px;
+    margin:15px 0;
+  }
+  .block-secondary h3 {
+    font-size:1rem;
+  }
+  .block-secondary i.fa-4x {
+    font-size:2.5em;
+  }
+  .block.block-event {
+    margin:15px 0;
+  }
+  .block.block-link {
+    padding:25px 15px;
+    margin:10px 0;
+  }
+  .block-link h3 {
+    font-size:1.3rem;
+  }
+  .block-link br{
+    display:none;
+  }
+  .mb-4 {
+    margin-bottom: 0.8rem !important;
   }
 }
