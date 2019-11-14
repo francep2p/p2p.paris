@@ -10375,12 +10375,17 @@ a.block {
     color:#383B62;
 }
 a.block:hover {
-  transform: translateY(-10px);
-  /*box-shadow: 0 0 10px rgba(39,44,49,.4), 0 10px 28px rgba(39,44,49,.5);*/
-  box-shadow: 0 6px 12px 6px rgba(171,174,209,0.25);
   color:#383B62;
   text-decoration:none;
 }
+
+@media (pointer: fine) {
+  a.block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px 6px rgba(171,174,209,0.25);
+  }
+}
+
 .block.block-link {
   margin:20px 0;
   padding:50px 25px;
@@ -10676,5 +10681,34 @@ a.btn-slot:focus .btn-slot-hover {
   }
   .mb-4 {
     margin-bottom: 0.8rem !important;
+  }
+  a.btn-slot {
+    font-size:16px;
+    padding:20px 22px;
+    border: 2px dashed #5c5eb2;
+    margin-top:20px;
+  }
+  a.btn-slot .btn-slot-available,
+  a.btn-slot .btn-slot-right {
+    display:block;
+    float:left;
+    width:100%;
+  }
+  a.btn-slot .btn-slot-available i.mr {
+    margin-right:4px;
+  }
+  .single {
+    padding:100px 0 60px;
+  }
+  .single .block {
+    margin-bottom:20px;
+    font-size:85%;
+  }
+  .block-single-content,
+  .block-single {
+    padding:26px 26px 16px 26px;
+  }
+  .block-single h3 {
+    font-size:1.2rem;
   }
 }
