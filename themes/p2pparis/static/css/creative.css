@@ -10574,46 +10574,55 @@ a.block:hover {
   border-color:#5cdbff;
 }
 
-a.btn-slot {
+.btn-slot {
   color: #5c5eb2;
   border: 2.6px dashed #5c5eb2;
   border-radius:8px;
   margin-top:40px;
   text-transform: uppercase;
-  padding:24px 28px;
-  display:block;
   font-size:18px;
+  font-weight:500;
   position:relative;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition:none;
 }
-
-a.btn-slot .btn-slot-hover {
-  display:inline-block;
-  position:absolute;
-  transition:position .4s;
-  left:-100%;
+.btn-slot-inner {
+  padding:24px 28px;
+  display:block;
   height:100%;
-  opacity:0;
+  width:100%;
 }
-a.btn-slot:hover,
-a.btn-slot:focus {
+.btn-slot a {
+  display:block;
+  width:100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.btn-slot .btn-slot-hover {
+  position:absolute;
+  left:-100%;
+  top:0;
+
+}
+.btn-slot:hover,
+.btn-slot:focus {
   border:2.6px solid #5c5eb2;
   background-color:#5c5eb2;
   color:#FFF;
   text-decoration:none;
 }
-a.btn-slot:hover .btn-slot-available,
-a.btn-slot:focus .btn-slot-available {
-  display:none;
+.btn-slot:hover .btn-slot-base,
+.btn-slot:focus .btn-slot-base {
+  opacity:0;
 }
-a.btn-slot:hover .btn-slot-hover,
-a.btn-slot:focus .btn-slot-hover {
-  left:28px;
-  opacity:1;
-  transition:all .05s;
+.btn-slot:hover .btn-slot-hover,
+.btn-slot:focus .btn-slot-hover {
+  left:0;
+  transition:all .2s;
 }
 .btn-slot i.mr {
   margin-right:10px;
@@ -10682,19 +10691,15 @@ a.btn-slot:focus .btn-slot-hover {
   .mb-4 {
     margin-bottom: 0.8rem !important;
   }
-  a.btn-slot {
-    font-size:16px;
-    padding:20px 22px;
+  .btn-slot {
+    font-size:14px;
     border: 2px dashed #5c5eb2;
     margin-top:20px;
   }
-  a.btn-slot .btn-slot-available,
-  a.btn-slot .btn-slot-right {
-    display:block;
-    float:left;
-    width:100%;
+  .btn-slot-inner {
+    padding: 18px 16px;
   }
-  a.btn-slot .btn-slot-available i.mr {
+  .btn-slot i.mr {
     margin-right:4px;
   }
   .single {
