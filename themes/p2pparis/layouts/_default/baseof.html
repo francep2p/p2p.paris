@@ -18,10 +18,10 @@
     <!-- if next event is empty, then this is the first current/upcoming event -->
     {{ if not $next_event }}
       {{ $next_event = . }}
-      {{ $status = "next-on" }}
+      {{ $status = "next" }}
 
     {{ else }}
-      {{ $status = "future" }}
+      {{ $status = "upcoming" }}
     {{ end }}
   
   {{ else }}
@@ -32,6 +32,9 @@
   {{ $.Scratch.SetInMap "event_status" .UniqueID $status }}
 {{ end }}
 <!-- END: get event status -->
+
+<!-- Order past event to LATEST first -->
+{{ $.Scratch.Set "past_events" (sort ($.Scratch.Get "past_events") "Params.event_date" "desc") }}
 
 {{ partial "header" . }}
   {{ block "main" . }}{{ end }} 

@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $statuses := $.Scratch.Get "event_status" }}
 
 <!-- Masthead -->
 <header class="masthead">
@@ -92,7 +93,7 @@
         <div class="row">
             {{ range ($.Scratch.Get "upcoming_events") }}
             <div class="col-lg-4 col-md-6">
-                {{ partial "block_event" . }}
+                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
             </div><!-- /.col -->
             {{ end }}
         </div><!-- /.row -->
@@ -107,7 +108,7 @@
         <div class="row">
             {{ range ($.Scratch.Get "past_events") }}
             <div class="col-lg-4 col-md-6">
-                {{ partial "block_event" . }}
+                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
             </div><!-- /.col -->
             {{ end }}
         </div><!-- /.row -->
