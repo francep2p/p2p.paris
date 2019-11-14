@@ -1,25 +1,29 @@
 $(function() {
   const chunkSize = 3;
-  const upcomingEvents = $('#upcoming-events');
-  const loadMore = upcomingEvents.find('#loadmore');
-  const items = () => upcomingEvents.find('.event-item:hidden');
+  
+  $('.events-loadmore-list').each(function() {
+    const upcomingEvents = $(this);
 
-  changeLoadmore();
+    const loadMore = upcomingEvents.find('#loadmore');
+    const items = () => upcomingEvents.find('.event-item:hidden');
 
-  loadMore.on('click', function (e) {
-    e.preventDefault();
-
-    items().slice(0, chunkSize).slideDown();
     changeLoadmore();
-  });
 
-  function changeLoadmore() {
-    const remainingItems = items();
-    const nextItemsCount = Math.min(remainingItems.length, chunkSize);
-    loadMore.find('.count').html(nextItemsCount);
+    loadMore.on('click', function (e) {
+      e.preventDefault();
 
-    if (remainingItems.length == 0) {
-      loadMore.fadeOut('slow');
+      items().slice(0, chunkSize).slideDown();
+      changeLoadmore();
+    });
+
+    function changeLoadmore() {
+      const remainingItems = items();
+      const nextItemsCount = Math.min(remainingItems.length, chunkSize);
+      loadMore.find('.count').html(nextItemsCount);
+
+      if (remainingItems.length == 0) {
+        loadMore.fadeOut('slow');
+      }
     }
-  }
+  })
 }); 

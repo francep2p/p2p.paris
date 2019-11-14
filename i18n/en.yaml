@@ -85,5 +85,8 @@ about_event_a:
 about_event_b:
   other: <strong>Paris P2P "Special issue"</strong>
 
-loadmore_events_btn:
+loadmore_upcoming_events_btn:
   other: view <span class="count"></span> more upcoming events
+
+loadmore_past_events_btn:
+  other: view <span class="count"></span> more past events
