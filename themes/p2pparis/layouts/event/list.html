@@ -1,10 +1,12 @@
 {{ define "main" }}
+{{ $statuses := $.Scratch.Get "event_status" }}
+
 <div class="">
     <div class="container h-100">
         <div class="row single">
  			{{ range sort .RegularPages "Params.event_date" }}
  			<div class="col-lg-4 col-sm-6">
- 				{{ partial "block_event" . }}
+				{{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
  			</div><!-- /.col -->
  			{{ end }}
         </div><!-- /.row -->
