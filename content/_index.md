@@ -12,7 +12,7 @@ content:
     value_3: Autonomous
     value_4: Non-profit
     values_button: Learn more about our values
-    events_title: Events
+    events_title: Upcoming events
     past_events_title: Past events
     caf_title: Call for proposal
     caf_subtitle: You have a subject you want to present ?
