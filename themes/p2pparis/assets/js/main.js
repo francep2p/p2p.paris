@@ -16,7 +16,7 @@ $(function() {
   function changeLoadmore() {
     const remainingItems = items();
     const nextItemsCount = Math.min(remainingItems.length, chunkSize);
-    loadMore.html(`view ${nextItemsCount} more upcoming events`);
+    loadMore.find('.count').html(nextItemsCount);
 
     if (remainingItems.length == 0) {
       loadMore.fadeOut('slow');
