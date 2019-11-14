@@ -90,12 +90,16 @@
                 <br />
             </div><!-- /.col -->
         </div><!-- /.row -->
-        <div class="row">
-            {{ range ($.Scratch.Get "upcoming_events") }}
-            <div class="col-lg-4 col-md-6">
+        <div id="upcoming-events" class="row">
+            {{ range $index, $item := $.Scratch.Get "upcoming_events" }}
+            <div class="col-lg-4 col-md-6 event-item" {{ if gt $index 2 }}style="display:none;"{{ end }}>
                 {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
             </div><!-- /.col -->
             {{ end }}
+
+            <div class="col-md-12 mx-auto mb-5 text-center">
+                <a id="loadmore" class="btn btn-secondary btn-xl" href="#">View more upcoming events</a>
+            </div>
         </div><!-- /.row -->
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">

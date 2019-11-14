@@ -16,6 +16,7 @@
   <script src="/js/creative.js"></script>
   {{if .IsHome}}
   <script src="/js/lottie.js"></script>
+  <script src="{{ ((resources.Get `/js/main.js`) | resources.Minify | fingerprint).Permalink }}"></script>
   {{ end }}
 </body>
 
