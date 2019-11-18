@@ -10295,7 +10295,7 @@ header.masthead h1 {
 }
 
 header.masthead .logo-center {
-  display:block;
+  display:flex;
   width:60%;
   height:414px;
   margin:0 auto 50px;
