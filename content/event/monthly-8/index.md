@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P #8"
+id: 8
 subtitle: "Monthly Peer to Beer"
 event_date: 2020-04-01
 location: Ground Control, Paris

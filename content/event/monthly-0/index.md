@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P #0"
+id: 0
 subtitle: "Community bootstrap"
 event_date: 2019-08-07
 location: Ground Control, Paris
