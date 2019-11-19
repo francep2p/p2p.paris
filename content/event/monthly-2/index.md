@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P #2"
+id: 2
 subtitle: "Monthly Peer to Beer"
 event_date: 2019-10-02
 location: Ground Control, Paris

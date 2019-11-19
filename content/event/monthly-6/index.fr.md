@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P #6"
+id: 6
 subtitle: "Pair à Bière mensuel"
 event_date: 2020-02-05
 location: Ground Control, Paris

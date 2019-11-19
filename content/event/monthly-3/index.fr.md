@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P #3"
+id: 3
 subtitle: "Pair à Bière mensuel"
 event_date: 2019-11-06
 location: Ground Control, Paris

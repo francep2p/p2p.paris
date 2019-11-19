@@ -10635,7 +10635,15 @@ a.block:hover {
 .btn-slot-right {
   float:right;
 }
-
+.event-id {
+  color: #FFF;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  right: 59px;
+}
 @media(max-width: 1199px) and (min-width: 992px){
   #mainNav .nav-link.Meetup,
   #mainNav .nav-link.Github,
@@ -10715,5 +10723,9 @@ a.block:hover {
   }
   .block-single h3 {
     font-size:1.2rem;
+  }
+  .event-id {
+    font-size:30px;
+    right:45px;
   }
 }
