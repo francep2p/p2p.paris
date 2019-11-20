@@ -1,1 +1,5 @@
+# automatically redirect to the translated homepage based on user-agent's preferences
+/  /fr/   302! Language=fr
+/  /en/   302!
+
 /* /en/404.html 404

@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3  {{if not .IsHome}}navbar-scrolled{{end}}" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{if .IsHome}}/#page-top{{else}}/{{ end }}">
+        <a class="navbar-brand js-scroll-trigger" href="{{ `/#page-top` | relLangURL }}">
             <img src="/img/paris_p2p_small.svg">
             Paris P<span class="small2">2</span>P
         </a>
