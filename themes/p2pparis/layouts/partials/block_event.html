@@ -9,7 +9,7 @@
 		<h4 class="event-title">{{.ctx.Title}}</h4>
 		<p class="event-subtitle">{{.ctx.Params.Subtitle}}</p>
 		<span class="event-info event-location"><i class="far fa-map-marker"></i>{{.ctx.Params.Location}}</span>
-		<span class="event-info event-date"><i class="far fa-calendar-alt"></i>{{ dateFormat "January 2, 2006" .ctx.Params.event_date }}</span>
+		<span class="event-info event-date"><i class="far fa-calendar-alt"></i>{{ partial "date" (dict "ctx" .ctx "date" .ctx.Params.event_date) }}</span>
 		<span class="tag tag-{{.status}}">{{.status}}</span>
     	<!--
     	<span class="tag tag-past">past</span>

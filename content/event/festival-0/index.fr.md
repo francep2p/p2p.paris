@@ -1,5 +1,6 @@
 ---
 title: "Paris P2P Festival #0"
+id: 0
 subtitle: "Inauguration de la communauté"
 event_date: 2020-01-08
 event_end_date: 2020-01-12
