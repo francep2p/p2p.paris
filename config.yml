@@ -16,14 +16,14 @@ languages:
       404_cta: Go to homepage      
     menu:
       main:
-        - name: About
-          url: "/en/#about"
-          weight: -100
-        - name: Call for proposal
-          url: "/en/#call-for-proposal"
-          weight: -90
         - name: Events
           url: "/en/#events"
+          weight: -100
+        - name: About
+          url: "/en/#about"
+          weight: -90
+        - name: Call for proposal
+          url: "/en/#call-for-proposal"
           weight: -80
         - name: Meetup
           url: "#meetup"
@@ -59,14 +59,14 @@ languages:
         12: "décembre"  
     menu:
       main:
-        - name: À propos
-          url: "/fr/#about"
-          weight: -100
-        - name: Envoyez vos sujets
-          url: "/fr/#call-for-proposal"
-          weight: -90
         - name: Événements
           url: "/fr/#events"
+          weight: -100
+        - name: À propos
+          url: "/fr/#about"
+          weight: -90
+        - name: Envoyez vos sujets
+          url: "/fr/#call-for-proposal"
           weight: -80
         - name: Meetup
           url: "#meetup"
