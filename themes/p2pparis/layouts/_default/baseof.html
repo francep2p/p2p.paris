@@ -37,5 +37,6 @@
 {{ $.Scratch.Set "past_events" (sort ($.Scratch.Get "past_events") "Params.event_date" "desc") }}
 
 {{ partial "header" . }}
+{{ partial "navbar" . }}
   {{ block "main" . }}{{ end }} 
 {{ partial "footer" .}}
