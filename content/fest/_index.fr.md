@@ -4,7 +4,6 @@ description:
 content:
 type: fest
 presentation:
-
- 
+day: Jour
 
 ---

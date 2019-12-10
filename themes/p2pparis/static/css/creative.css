@@ -10736,8 +10736,8 @@ a.block:hover {
     min-height:280px;
     display:block;
   }
-  .s-nav .nav-link span.large {display:block;}
-  .s-nav .nav-link span.small{display:none;}
+  .s-nav .nav-link span.long {display:block;}
+  .s-nav .nav-link span.short {display:none;}
   .s-nav.nav-pills .nav-link {padding: 25px 5px;}
 }
 @media(max-width:991px) {
@@ -10750,8 +10750,8 @@ a.block:hover {
     margin-left:25px;
     vertical-align:initial;
   }
-  .s-nav .nav-link span.large {display:none;}
-  .s-nav .nav-link span.small{display:block;}
+  .s-nav .nav-link span.long {display:none;}
+  .s-nav .nav-link span.short {display:block;}
   .s-nav.nav-pills .nav-link {padding: 10px 5px;}
 }
 @media(max-width:420px) {

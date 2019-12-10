@@ -9,65 +9,27 @@
     </div><!-- /.row -->
 
     <ul class="nav nav-pills nav-fill s-nav" id="nav-schedule">
-      <li class="nav-item">
-        <a class="nav-link active" href="#c-day-1">
-          <span class="title large">Jour 1</span>
-          <span class="subtitle large">Mercredi 8 janvier</span>
-          <span class="title small">J1</span>
-          <span class="subtitle small">Mer<br/>8 jan</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#c-day-2">
-          <span class="title large">Jour 2</span>
-          <span class="subtitle large">Jeudi 9 janvier</span>
-          <span class="title small">J2</span>
-          <span class="subtitle small">Jeu<br/>9 jan</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#c-day-3">
-          <span class="title large">Jour 3</span>
-          <span class="subtitle large">Vendredi 10 janvier</span>
-          <span class="title small">J3</span>
-          <span class="subtitle small">Ven<br/>10 jan</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#c-day-4">
-          <span class="title large">Jour 4</span>
-          <span class="subtitle large">Samedi 11 janvier</span>
-          <span class="title small">J4</span>
-          <span class="subtitle small">Sam<br/>11 jan</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#c-day-5">
-          <span class="title large">Jour 5</span>
-          <span class="subtitle large">Dimanche 12 janvier</span>
-          <span class="title small">J5</span>
-          <span class="subtitle small">Dim<br/>12 jan</span>
-        </a>
-      </li>
+
+        {{ range where .Pages "Section" "fest" }}
+        <li class="nav-item">
+          <a class="nav-link {{ if eq .Params.Id 1}}active{{end}}" href="#c-day-{{.Params.Id}}">
+            <span class="title long">Jour {{ .Params.Day_long }} {{ .Params.Id }}</span>
+            <span class="subtitle long">{{ .Params.Date_long }}</span>
+            <span class="title short">J{{ .Params.Day_short }}{{ .Params.Id }}</span>
+            <span class="subtitle short">{{.Params.Date_short | markdownify }}</span>
+          </a>
+        </li>
+        {{ end }}
+
     </ul><!-- /.s-nav -->
 
     <div class="s-content">
 
-      <div class="s-day" id="c-day-1">
-      {{ partial "day" . }}
+      {{ range where .Pages "Section" "fest" }}
+      <div class="s-day" id="c-day-{{ .Params.Id }}">
+        {{ partial "day" . }}
       </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-2">
-      {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-3">
-      {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-4">
-      {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-5">
-      {{ partial "day" . }}
-      </div><!-- /.s-day -->
+      {{ end }}
 
     </div><!-- /.s-content -->
 
