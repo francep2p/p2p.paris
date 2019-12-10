@@ -40,29 +40,15 @@ function initializeClock(id, endtime) {
 (function($) {
   "use strict"; // Start of use strict
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 72)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
-
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
 
-  if($('#clockdiv').length){
-    var deadline = new Date(Date.parse(new Date('january 8, 2020 18:00:00')));
-    initializeClock('clockdiv', deadline); 
-  }
+  // Add navbar-scrolled class when togglin navbar while on top
+  $('.navbar-toggler').click(function() {
+    $('.navbar').addClass('navbar-scrolled');
+  });
 
   // Only for homepage
   if ($(".page-home").length) {
@@ -84,5 +70,43 @@ function initializeClock(id, endtime) {
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+
+
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top - 72)
+          }, 1000, "easeInOutExpo");
+          return false;
+        }
+      }
+    });
   }
+
+  // Only for festival page
+  if ($(".page-festival").length) {
+
+    // Initialize countdown clock
+    var deadline = new Date(Date.parse(new Date('january 8, 2020 18:00:00')));
+    initializeClock('clockdiv', deadline); 
+
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top + 2)
+          }, 1000, "easeInOutExpo");
+          return false;
+        }
+      }
+    });
+  }
+
 })(jQuery); // End of use strict

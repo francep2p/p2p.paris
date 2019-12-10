@@ -1,14 +1,11 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light py-3" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light py-3" id="festivalNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ `/#page-top` | relLangURL }}">
             <img src="/img/paris_p2p_small.svg">
             Paris P<span class="small2">2</span>P
         </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="far fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#schedule">Programme</a>
@@ -17,10 +14,14 @@
                     <a class="nav-link js-scroll-trigger" href="#plan">Plan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#access">Accès</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#access">Infos pratiques</a>
                 </li>
             </ul>
-            <div class="dropdown language-switcher">
+        </div>
+        <div class="dropdown language-switcher">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fal fa-globe"></i>{{ upper .Lang }}
                 </button>
@@ -30,7 +31,24 @@
                     <a class="dropdown-item" href="{{ .Permalink }}">{{ upper .Lang }}{{ if $isCurrent }}<i class="fal fa-check"></i>{{ end }}</a>
                     {{ end }}
                 </div>
-            </div>
         </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand navbar-light navbar-festival-mobile">
+    <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#schedule">Programme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#plan">Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#access">Infos pratiques</a>
+                </li>
+            </ul>
     </div>
 </nav>
