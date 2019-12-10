@@ -10650,12 +10650,12 @@ a.block:hover {
   top:20px;
   right:20px;
   padding: 7px 13px 6px;
-  font-size: 86%;
+  font-size: 95%;
   color:#FFF;
 }
 .s-item .tag i {
-  margin-right:10px;
-  font-size:100%;
+  margin-right:11px;
+  font-size:107%;
 }
 
 
@@ -10676,8 +10676,8 @@ a.block:hover {
   color: #1fc5ae;
 }
 
-.s-item.hackaton .s-item-left i,
-.s-item.hackaton .s-item-title {
+.s-item.hackathon .s-item-left i,
+.s-item.hackathon .s-item-title {
   color: #ffac31;
 }
 .s-item.workshop .s-item-left i,
@@ -10711,7 +10711,7 @@ a.block:hover {
 .tag.tag-workshop {
   background-color: #f74868;
 }
-.tag.tag-hackaton  {
+.tag.tag-hackathon  {
   background-color:#ffac31;
 }
 
