@@ -3,14 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
                 <i class="fal fa-users fa-5x text-white mb-4"></i>
-                <h2 class="mt-0 text-white">A propos</h2>
+                <h2 class="mt-0 text-white">{{ .Params.nav.about }}</h2>
                 <hr class="divider light my-4">
                 <br />
-                <h5 class="text-white text-justify">L’objectif de ce festival gratuit est de proposer 5 jours de rencontres autour de toutes les thématiques liées au Peer-to-Peer. Si la notion technologique du P2P est évidemment importante, elle est également un ensemble de valeurs, qui compose une philosophie.<br/><br/>
-Les valeurs du Peer-to-Peer peuvent s’appliquer à un très grand nombre de thématiques, comme la sécurité des communications, la protection de la vie privée, le partage de savoirs, mais aussi dans les arts, ou encore les échanges monétaires.
-Le Paris P2P Festival se veut une occasion de fédérer et permettre la rencontre des acteurs du Peer-2-Peer sous toutes ses formes.<br/><br/>
-Toutes organisations portant des projets, tech ou non tech, se reconnaissant de ces valeurs sont donc les bienvenues à se joindre à cet événement pour y organiser leur propre rencontre, y poser un stand, ou organiser un hackathon.
-Cet événement est le “prolongement” des rendez-vous mensuels de Paris P2P, tous les premiers mercredi du mois à Ground Control. Il représente l’ouverture d’un réseau de personnes, collectifs, associations, entreprises (…) souhaitant profiter ensemble d’un événement par et pour sa communauté, sans but lucratif.</h5>
+                <h5 class="text-white text-justify">{{ .Params.content.about | markdownify }}</h5>
             </div><!-- /.col-->
         </div><!-- /.row -->
     </div><!-- /.container -->

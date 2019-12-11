@@ -23,5 +23,7 @@ numbers:
     b4_text: <strong>Ground Control</strong>, at the center of Paris (gare de Lyon)
 content:
     intro_text: The free peer-to-peer gathering 
+    about:
+
 
 ---

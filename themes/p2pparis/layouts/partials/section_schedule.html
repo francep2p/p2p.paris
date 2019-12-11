@@ -26,9 +26,9 @@
     <div class="s-content">
 
       {{ range where .Pages "Section" "fest" }}
-      <div class="s-day" id="c-day-{{ .Params.Id }}">
+      <div class="s-day" id="c-day{{ .Params.Id }}">
         {{ range .Params.events }}
-          <!-- partial "s_item" . -->
+          <!-- partial "s_item" .-->
         {{ end }}
       </div><!-- /.s-day -->
       {{ end }}
