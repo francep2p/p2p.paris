@@ -10552,6 +10552,12 @@ a.block:hover {
   }
 }
 
+.c-gradient {
+  background: -webkit-linear-gradient(#d90ead, #a02ea8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .section-numbers {
   padding-top:50px;
   margin-top:50px;
@@ -10563,14 +10569,31 @@ a.block:hover {
 }
 .block-number h2 {
   font-size: 72px;
-  background: -webkit-linear-gradient(#d90ead, #a02ea8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
 }
 .block-number p {
   min-height:47px;
 }
 
+.section-goals {
+  margin-top:-50px;
+  margin-bottom:-50px;
+}
+
+.block-goal {
+  padding:25px 25px 15px 25px;
+  margin-bottom:30px;
+}
+.block-goal p{
+  min-height:72px;
+}
+.block-goal.large p{
+  min-height:96px;
+}
+.block-goal i {
+  font-size:50px;
+  margin-bottom:15px;
+}
 
 /* schedule */
 .section-schedule .container {
