@@ -6,6 +6,7 @@ nav:
     schedule: Programme
     plan: Plan
     about: A propos
+    goals: Objectifs
     info: Infos pratiques
 clock:
     days: Jours

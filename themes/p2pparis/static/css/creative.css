@@ -10575,24 +10575,33 @@ a.block:hover {
   min-height:47px;
 }
 
+.section-about {
+  padding-bottom:450px;
+}
+
 .section-goals {
-  margin-top:-50px;
-  margin-bottom:-50px;
+  margin-top:-300px;
+  margin-bottom:50px;
 }
 
 .block-goal {
   padding:25px 25px 15px 25px;
   margin-bottom:30px;
 }
-.block-goal p{
-  min-height:72px;
-}
-.block-goal.large p{
-  min-height:96px;
-}
+
 .block-goal i {
   font-size:50px;
+  line-height: 58px;
   margin-bottom:15px;
+}
+
+@media(min-width:992px){
+  .block-goal p{
+    min-height:72px;
+  }
+  .block-goal.large p{
+    min-height:96px;
+  }
 }
 
 /* schedule */

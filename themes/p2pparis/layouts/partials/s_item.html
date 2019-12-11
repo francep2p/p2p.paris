@@ -1,4 +1,4 @@
-<div class="block s-item {{ .kind }}">
+<div class="block s-item {{ .k }}">
 	<div class="s-item-left">
 		<div class="s-item-line">
 			<i class="far fa-clock"></i>
@@ -18,8 +18,8 @@
 			{{ .title }}
 		</span>
 		<span class="s-item-description">
-			{{ .subtitle }}
+			{{ .desc }}
 		</span>
 	</div><!-- /.s-item-right -->
-	<span class="tag tag-{{ .kind }}"><i class="far {{ .kind_icon }}"></i>{{ .kind_label }}</span>
+	<span class="tag tag-{{ .k }}"><i class="far {{ .k_icon }}"></i>{{ .k_label }}</span>
 </div><!-- /.s-item -->

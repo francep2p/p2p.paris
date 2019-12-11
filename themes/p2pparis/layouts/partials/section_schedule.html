@@ -28,28 +28,12 @@
       {{ range where .Pages "Section" "fest" }}
       <div class="s-day" id="c-day{{ .Params.Id }}">
         {{ range .Params.events }}
-          <!-- partial "s_item" .-->
+          {{ partial "s_item" . }}
         {{ end }}
       </div><!-- /.s-day -->
       {{ end }}
 
       <!-- fake data -->
-      <div class="s-day" id="c-day-1">
-        {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-2">
-        {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-3">
-        {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-4">
-        {{ partial "day" . }}
-      </div><!-- /.s-day -->
-      <div class="s-day" id="c-day-5">
-        {{ partial "day" . }}
-      </div><!-- /.s-day -->
-       <!-- fake data -->
 
 
     </div><!-- /.s-content -->

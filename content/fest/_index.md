@@ -6,6 +6,7 @@ nav:
     schedule: Schedule
     plan: Plan
     about: About
+    goals: Goals
     info: Infos
 clock:
     days: Days
