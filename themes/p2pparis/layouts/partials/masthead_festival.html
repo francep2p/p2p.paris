@@ -5,25 +5,25 @@
                 <div id="logo" class="logo-center">
                     <img style="max-width: 100%;" src="/img/paris_p2p_festival.svg">
                 </div>
-                <h1 class="text-uppercase text-white font-weight-bold">Le rassemblement communautaire gratuit du peer-to-peer</h1>
+                <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text }}</h1>
             </div><!-- /.col -->
             <div class="col-lg-10 align-self-baseline">
                 <div id="clockdiv">
                   <div>
                     <span class="days"></span>
-                    <div class="smalltext">Days</div>
+                    <div class="smalltext">{{ .Params.clock.Days }}</div>
                   </div>
                   <div>
                     <span class="hours"></span>
-                    <div class="smalltext">Hours</div>
+                    <div class="smalltext">{{ .Params.clock.Hours }}</div>
                   </div>
                   <div>
                     <span class="minutes"></span>
-                    <div class="smalltext">Minutes</div>
+                    <div class="smalltext">{{ .Params.clock.Minutes }}</div>
                   </div>
                   <div>
                     <span class="seconds"></span>
-                    <div class="smalltext">Seconds</div>
+                    <div class="smalltext">{{ .Params.clock.Seconds }}</div>
                   </div>
                 </div>
             </div><!-- /.col -->

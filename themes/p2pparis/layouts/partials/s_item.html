@@ -2,24 +2,24 @@
 	<div class="s-item-left">
 		<div class="s-item-line">
 			<i class="far fa-clock"></i>
-			<span>{{ .Time_start }}-{{ .Time_end }}</span>
+			<span>{{ .t_start }}-{{ .t_end }}</span>
 		</div>
 		<div class="s-item-line">
 			<i class="far fa-map-marker"></i>
-			<span>{{ .Location }}</span>
+			<span>{{ .location }}</span>
 		</div>
 		<div class="s-item-line">
 			<i class="far fa-microphone-alt"></i>
-			<span>{{ .People }}</span>
+			<span>{{ .orga }}</span>
 		</div>
 	</div><!-- /.s-item-left -->
 	<div class="s-item-right">
 		<span class="s-item-title">
-			{{ .Title }}
+			{{ .title }}
 		</span>
 		<span class="s-item-description">
-			{{ .Description }}
+			{{ .subtitle }}
 		</span>
 	</div><!-- /.s-item-right -->
-	<span class="tag tag-{{ .Kind }}"><i class="far {{ .Kind_icon }}"></i>{{ .Kind_label }}</span>
+	<span class="tag tag-{{ .kind }}"><i class="far {{ .kind_icon }}"></i>{{ .kind_label }}</span>
 </div><!-- /.s-item -->

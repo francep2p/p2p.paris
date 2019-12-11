@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <i class="fal fa-calendar-alt fa-5x mb-4"></i>
-        <h2 class="mt-0">Programme</h2>
+        <h2 class="mt-0">{{ .Params.nav.schedule }}</h2>
         <hr class="divider my-4">
       </div><!-- /.col-->
     </div><!-- /.row -->
@@ -13,9 +13,9 @@
         {{ range where .Pages "Section" "fest" }}
         <li class="nav-item">
           <a class="nav-link {{ if eq .Params.Id 1}}active{{end}}" href="#c-day-{{.Params.Id}}">
-            <span class="title long">Jour {{ .Params.Day_long }} {{ .Params.Id }}</span>
+            <span class="title long">{{ i18n "day_long" . }} {{ .Params.Day_long }} {{ .Params.Id }}</span>
             <span class="subtitle long">{{ .Params.Date_long }}</span>
-            <span class="title short">J{{ .Params.Day_short }}{{ .Params.Id }}</span>
+            <span class="title short">{{ i18n "day_short" . }}{{ .Params.Day_short }}{{ .Params.Id }}</span>
             <span class="subtitle short">{{.Params.Date_short | markdownify }}</span>
           </a>
         </li>
@@ -27,9 +27,30 @@
 
       {{ range where .Pages "Section" "fest" }}
       <div class="s-day" id="c-day-{{ .Params.Id }}">
-        {{ partial "day" . }}
+        {{ range .Params.events }}
+          <!-- partial "s_item" . -->
+        {{ end }}
       </div><!-- /.s-day -->
       {{ end }}
+
+      <!-- fake data -->
+      <div class="s-day" id="c-day-1">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+      <div class="s-day" id="c-day-2">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+      <div class="s-day" id="c-day-3">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+      <div class="s-day" id="c-day-4">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+      <div class="s-day" id="c-day-5">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+       <!-- fake data -->
+
 
     </div><!-- /.s-content -->
 

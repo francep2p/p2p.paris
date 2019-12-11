@@ -90,3 +90,9 @@ loadmore_upcoming_events_btn:
 
 loadmore_past_events_btn:
   other: view <span class="count"></span> more past events
+
+day_long:
+  other: Day
+
+day_short:
+  other: D

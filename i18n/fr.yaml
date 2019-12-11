@@ -90,3 +90,9 @@ loadmore_upcoming_events_btn:
 
 loadmore_past_events_btn:
   other: voir <span class="count"></span> autres événements passés
+
+day_long:
+  other: Jour
+
+day_short:
+  other: J
