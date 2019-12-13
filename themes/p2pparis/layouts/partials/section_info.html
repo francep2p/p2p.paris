@@ -9,19 +9,29 @@
             </div><!-- /.col-->
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <a class="block block-link" href="https://www.groundcontrolparis.com/">
+            <div class="col-md-4 text-center">
+                <div class="block block-link" href="">
                     <i class="far fa-building fa-5x c-gradient mb-4"></i>
                     <h3 class="h4 mb-2">Ground Control</h3>
-                    <p class="text-muted mb-0">{{ .Params.content.address | markdownify }}</p>
-                </a>
+                    <p class="text-muted mb-3">{{ .Params.content.address | markdownify }}</p>
+                    <a class="btn btn-purple btn-m" href="https://www.groundcontrolparis.com/">{{ .Params.content.learn_more }}</a>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <a class="block block-link" href="https://www.helloasso.com/associations/osmose%20collective/collectes/paris-p2p-festival-0-bootstrap/widget-bouton">
+            <div class="col-md-4 text-center">
+                <div class="block block-link">
                     <i class="far fa-heart fa-5x c-gradient mb-4"></i>
                     <h3 class="h4 mb-2">{{ .Params.content.donate_title | markdownify }}</h3>
-                    <p class="text-muted mb-0">{{ .Params.content.donate_text | markdownify }}</p>
-                </a>
+                    <p class="text-muted mb-3">{{ .Params.content.donate_text | markdownify }}</p>
+                    <a class="btn btn-purple btn-m" href="https://www.helloasso.com/associations/osmose-collective/collectes/paris-p2p-festival-0-bootstrap">{{ .Params.content.donate_btn }}</a>
+                </div>
+            </div><!-- /.col -->
+            <div class="col-md-4 text-center">
+                <div class="block block-link">
+                    <i class="far fa-envelope-open-text fa-5x c-gradient mb-4"></i>
+                    <h3 class="h4 mb-2">{{ .Params.content.newsletter_title | markdownify }}</h3>
+                    <p class="text-muted mb-3">{{ .Params.content.newsletter_text | markdownify }}</p>
+                    
+                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container -->
