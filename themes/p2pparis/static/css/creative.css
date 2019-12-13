@@ -10395,7 +10395,9 @@ a.block:hover {
   margin:20px 0;
   padding:50px 25px;
 }
-
+.block.block-link i.fa-5x {
+  line-height: 92px;
+}
 .block.block-event {
   margin:30px 0;
   position:relative;
