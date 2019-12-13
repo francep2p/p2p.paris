@@ -38,8 +38,8 @@ content:
     donate_title: Participer
     donate_text: Afin d'aider à financer cet événement gratuit
     donate_btn: Faire un don
-    newsletter_title: Newsletter
-    newsletter_text: Recevoir des infos de dernière minute, le programme définitif...
+    news_title: News
+    news_text: Recevoir des infos de dernière minute, le programme définitif...
     newsletter_input: votre email
 
 ---

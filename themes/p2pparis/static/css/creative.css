@@ -11028,6 +11028,26 @@ a.block:hover {
   }
 }
 
+.form-newsletter {
+  position:relative;
+}
+.form-newsletter input {
+  border: 1px solid #77237F;
+  padding:12px 28px;
+  border-radius:10rem;
+  display: block;
+  width: 100%;
+  color:#77237F;;
+}
+.form-newsletter input:focus {
+  outline:none;
+}
+.form-newsletter .btn {
+  position:absolute;
+  right:0;
+  top:1px;
+}
+
 .col-20 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 20%;

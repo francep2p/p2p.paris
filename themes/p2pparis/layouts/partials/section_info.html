@@ -28,9 +28,12 @@
             <div class="col-md-4 text-center">
                 <div class="block block-link">
                     <i class="far fa-envelope-open-text fa-5x c-gradient mb-4"></i>
-                    <h3 class="h4 mb-2">{{ .Params.content.newsletter_title | markdownify }}</h3>
-                    <p class="text-muted mb-3">{{ .Params.content.newsletter_text | markdownify }}</p>
-                    
+                    <h3 class="h4 mb-2">{{ .Params.content.news_title | markdownify }}</h3>
+                    <p class="text-muted mb-3">{{ .Params.content.news_text | markdownify }}</p>
+                    <form class="form-newsletter" action="https://formspree.io/xzbzlaqb" method="POST">
+                        <input class="forn-control" type="text" name="_replyto" placeholder="{{ .Params.content.newsletter_input | markdownify }}">
+                        <button class="btn btn-purple btn-m" type="submit"><i class="far fa-arrow-right"></i></button>
+                    </form>
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
