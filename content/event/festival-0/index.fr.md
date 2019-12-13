@@ -9,6 +9,7 @@ location: Ground Control, Paris
 #kommunity_link:
 image: paris_p2p_festival_0.png
 special_event: true
+layout: festival
 aliases:
 - /festival
 ---

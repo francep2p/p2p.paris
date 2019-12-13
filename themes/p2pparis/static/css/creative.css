@@ -10846,6 +10846,23 @@ a.block:hover {
   border-color:#5cdbff;
 }
 
+
+.btn-purple {
+  color: #fff !important;
+  background-image: -webkit-linear-gradient(left, #681f71 0%, #a02ea8 100%);
+  background-image: linear-gradient(to right, #681f71 0%, #a02ea8 100%);
+  border: none;
+}
+
+.btn-purple:hover {
+  color: #fff !important;
+  background-image: -webkit-linear-gradient(left, #56205d 0%, #912b98 100%);
+  background-image: linear-gradient(to right, #56205d 0%, #912b98 100%);
+}
+
+
+
+
 .btn-slot {
   color: #5c5eb2;
   border: 2.6px dashed #5c5eb2;
