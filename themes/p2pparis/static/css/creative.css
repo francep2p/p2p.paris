@@ -10575,14 +10575,13 @@ a.block:hover {
   min-height:47px;
 }
 
-.section-about {
-  padding-bottom:450px;
-}
-
 .section-goals {
+  margin-top:100px;
+}
+/*.section-goals {
   margin-top:-300px;
   margin-bottom:50px;
-}
+}*/
 
 .block-goal {
   padding:25px 25px 15px 25px;
@@ -10648,7 +10647,7 @@ a.block:hover {
   /*border:1.5px dashed #DE528E;*/
   margin:20px 0;
   position:relative;
-  min-height:125px;
+  min-height:150px;
 }
 .s-item .s-item-left {
   float:left;
