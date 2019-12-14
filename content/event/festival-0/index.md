@@ -1,6 +1,6 @@
 ---
 title: "Paris P2P Festival #0"
-description: "Bootstrap Edition"
+subtitle: "Bootstrap Edition"
 layout: festival
 event_date: 2020-01-08
 event_end_date: 2020-01-12
