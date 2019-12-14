@@ -10737,6 +10737,12 @@ a.block:hover {
     display:block;
   }
 }
+@media(max-width:425px){
+  .s-item .s-item-line {
+    display:block;
+    margin-top:1px;
+  }
+}
 .s-item .tag {
   position:absolute;
   top:20px;
