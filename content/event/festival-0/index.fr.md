@@ -1,7 +1,7 @@
 ---
 title: "Paris P2P Festival #0"
-id: 0
-subtitle: "Inauguration de la communauté"
+description: "Inauguration de la communauté"
+layout: festival
 event_date: 2020-01-08
 event_end_date: 2020-01-12
 location: Ground Control, Paris
@@ -12,29 +12,26 @@ special_event: true
 layout: fest
 aliases:
 - /festival
+nav:
+    schedule: Programme
+    plan: Plan
+    about: A propos
+    info: Infos pratiques
+clock:
+    days: Jours
+    hours: Heures
+    minutes: Minutes
+    seconds: Secondes
+numbers:
+    b1_title: Jours
+    b1_text: Du <strong>8</strong> au <strong>12</strong> janvier 2020
+    b2_title: Evénements
+    b2_text: Meetups, conférences, projections, hackathon...
+    b3_title: Intervenants
+    b3_text: Venus du monde entier pour parler de l'internet de demain
+    b4_title: Lieu
+    b4_text: <strong>Ground Control</strong>, au coeur de Paris (gare de Lyon)
+content:
+    intro_text: Le rassemblement communautaire gratuit du peer-to-peer
+    about: L’objectif de ce festival gratuit est de proposer 5 jours de rencontres autour de toutes les thématiques liées au Peer-to-Peer. Si la notion technologique du P2P est évidemment importante, elle est également un ensemble de valeurs, qui compose une philosophie.<br/><br/>Les valeurs du Peer-to-Peer peuvent s’appliquer à un très grand nombre de thématiques, comme la sécurité des communications, la protection de la vie privée, le partage de savoirs, mais aussi dans les arts, ou encore les échanges monétaires.<br/><br/>Le Paris P2P Festival se veut une occasion de fédérer et permettre la rencontre des acteurs du Peer-2-Peer sous toutes ses formes.<br/><br/>Toutes organisations portant des projets, tech ou non tech, se reconnaissant de ces valeurs sont donc les bienvenues à se joindre à cet événement pour y organiser leur propre rencontre, y poser un stand, ou organiser un hackathon.<br/><br/>Cet événement est le “prolongement” des rendez-vous mensuels de Paris P2P, tous les premiers mercredi du mois à Ground Control. Il représente l’ouverture d’un réseau de personnes, collectifs, associations, entreprises (…) souhaitant profiter ensemble d’un événement par et pour sa communauté, sans but lucratif.
 ---
-
-### <i class="far fa-info-circle"></i>Présentation
-
-<iframe src="https://hackmd.io/xayD-3jmRBKeiQrhoMbieA" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>  
-
-<br />
-<br />
-
-### <i class="far fa-clock"></i>Programme
-
-<iframe src="https://calendar.google.com/calendar/embed?src=berty.tech_e5kpnvv1kip1ae69s5295dn5k8%40group.calendar.google.com&ctz=Europe%2FParis&dates=20200108/20200112&mode=week" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-
-<br />
-<br />
-
-### <i class="far fa-presentation"></i>Présentations
-
-<iframe class="airtable-embed" src="https://airtable.com/embed/shr3szZ0ouyvZcPw8?backgroundColor=purple" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-
-<div class="text-center">
-	<br />
-	<a class="btn btn-primary btn-xl" href="https://crpt.fyi/join-paris-p2p-festival-form">Participer au festival</a>
-</div>
-
-<br />

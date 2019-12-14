@@ -10,13 +10,29 @@
 
     <ul class="nav nav-pills nav-fill s-nav" id="nav-schedule">
 
-        {{ range where .Pages "Section" "fest" }}
+        {{ range (index .Site.Data.festival .Lang) }}
+
+        {{- $date := time .date -}}
+        {{- $month_num := printf "%d" $date.Month -}}
+        {{- $day_num := printf "%d" $date.Weekday -}}
+        {{- $month := $date.Month | title -}}
+        {{- $day := $date.Weekday | title -}}
+
+        {{- if isset $.Site.Params "months" -}}
+        {{- $month = index $.Site.Params.months $month_num | title -}}
+        {{- end -}}
+        {{- if isset $.Site.Params "days" -}}
+        {{- $day = index $.Site.Params.days $day_num | title -}}
+        {{- end -}}
+
+        {{- $date = print $day " " (dateFormat "2" .date) " " $month -}}
+
         <li class="nav-item">
-          <a class="nav-link {{ if eq .Params.Id 1}}active{{end}}" href="#c-day-{{.Params.Id}}">
-            <span class="title long">{{ i18n "day_long" . }} {{ .Params.Day_long }} {{ .Params.Id }}</span>
-            <span class="subtitle long">{{ .Params.Date_long }}</span>
-            <span class="title short">{{ i18n "day_short" . }}{{ .Params.Day_short }}{{ .Params.Id }}</span>
-            <span class="subtitle short">{{.Params.Date_short | markdownify }}</span>
+          <a class="nav-link {{ if eq .id 1}}active{{end}}" href="#c-day-{{.id}}">
+            <span class="title long">{{ i18n "day_long" . }}  {{ .id }}</span>
+            <span class="subtitle long">{{ $date }}</span>
+            <span class="title short">{{ i18n "day_short" . }}{{ .date }}{{ .id }}</span>
+            <span class="subtitle short">{{ .date | markdownify }}</span>
           </a>
         </li>
         {{ end }}
@@ -25,13 +41,21 @@
 
     <div class="s-content">
 
-      {{ range where .Pages "Section" "fest" }}
-      <div class="s-day" id="c-day{{ .Params.Id }}">
-        {{ range .Params.events }}
+      {{ range (index .Site.Data.festival .Lang) }}
+      <div class="s-day" id="c-day{{ .id }}">
+        {{ range .events }}
           {{ partial "s_item" . }}
         {{ end }}
       </div><!-- /.s-day -->
       {{ end }}
+
+      <!-- fake data -->
+      <div class="s-day" id="c-day-1">
+        {{ partial "day" . }}
+      </div><!-- /.s-day -->
+
+       <!-- fake data -->
+
 
     </div><!-- /.s-content -->
 

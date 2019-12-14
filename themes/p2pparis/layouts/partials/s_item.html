@@ -2,7 +2,19 @@
 	<div class="s-item-left">
 		<div class="s-item-line">
 			<i class="far fa-clock"></i>
-			<span>{{ .t_start }}-{{ .t_end }}</span>
+			<span>
+				{{ if or (eq .t_start "TBA") (eq .t_start "") }}
+				TBA
+				{{ else }}
+				{{ dateFormat "15h04" .t_start }}
+				{{ end }}
+				-
+				{{ if or (eq .t_end "TBA") (eq .t_end "") }}
+				TBA
+				{{ else }}
+				{{ dateFormat "15h04" .t_end }}
+				{{ end }}
+			</span>
 		</div>
 		{{if .language}}
 		<div class="s-item-line">
