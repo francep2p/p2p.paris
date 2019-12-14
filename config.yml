@@ -57,6 +57,19 @@ languages:
         10: "octobre"
         11: "novembre"
         12: "décembre"  
+      months_short:
+        1: "janv"
+        2: "févr"
+        3: "mars"
+        4: "avr"
+        5: "mai"
+        6: "juin"
+        7: "juil"
+        8: "août"
+        9: "sept"
+        10: "oct"
+        11: "nov"
+        12: "déc"  
       days:
         0: "dimanche"
         1: "lundi"
@@ -65,6 +78,14 @@ languages:
         4: "jeudi"
         5: "vendredi"
         6: "samedi"
+      days_short:
+        0: "dim"
+        1: "lun"
+        2: "mar"
+        3: "mer"
+        4: "jue"
+        5: "ven"
+        6: "sam"
     menu:
       main:
         - name: Événements
