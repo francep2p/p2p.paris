@@ -1,0 +1,12 @@
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <i class="fal fa-users fa-5x text-white mb-4"></i>
+                <h2 class="mt-0 text-white">{{ .Params.nav.about }}</h2>
+                <hr class="divider light my-4">
+                <br />
+                <h5 class="text-white text-justify">{{ .Params.content.about | markdownify }}</h5>
+            </div><!-- /.col-->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
