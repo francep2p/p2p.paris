@@ -1,6 +1,7 @@
-{{ define "main" }}
+
 
 {{.Scratch.Set "body-class" "page-festival"}}
+{{ partial "header" . }}
 
 {{ partial "navbar_festival" . }}
 {{ partial "masthead_festival" . }}
@@ -13,5 +14,5 @@
 </section>
 {{ partial "section_info" . }}
 {{ partial "section_links" . }}
+{{ partial "footer" . }}
 
-{{ end }}
