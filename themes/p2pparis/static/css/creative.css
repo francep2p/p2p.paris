@@ -10656,9 +10656,9 @@ a.block:hover {
   /*border:1.5px dashed #DE528E;*/
   margin:20px 0;
   position:relative;
-  min-height:150px;
+  /*min-height:150px;*/
 }
-.s-item .s-item-left {
+/*.s-item .s-item-left {
   float:left;
   display:inline-block;
   width: 235px;
@@ -10680,10 +10680,62 @@ a.block:hover {
   padding:25px 10px;
 }
 .s-item .s-item-right .s-item-title {
+  padding-right:85px;
+}*/
+
+.s-day {
+  margin: 20px 0;
+  padding: 1px 0 25px 0;
+  border-bottom: 2px dashed #bc22ab;
+}
+#c-day-5.s-day {
+  border-bottom:none;
+}
+
+.s-item .s-item-top {
+  display:block;
+  padding:15px 25px 5px 25px;
+}
+.s-item .s-item-line {
+  display:inline-block;
+  margin-top:10px;
+}
+.s-item .s-item-line.mr {
+  margin-right:10px;
+}
+.s-item .s-item-line span{
+  font-size:0.85rem;
+  opacity:0.8;
+}
+.s-item .s-item-line i {
+  width:16px;
+  text-align:center;
+  margin-right:2px;
+}
+.s-item .s-item-bottom {
+  padding:10px 25px 25px 25px;
+}
+.s-item .s-item-title {
   font-size: 1.4rem;
   font-weight:bold;
   display: block;
-  padding-right:85px;
+  margin-bottom:5px;
+}
+
+.s-item .s-item-line-top{
+  display:inline;
+}
+@media(min-width:768px){
+  .s-item .s-item-top {
+    padding-right:170px;
+  }
+}
+@media(max-width:767px){
+  .s-item .s-item-line-top,
+  .s-item .s-item-line.s-loc,
+  .s-item .s-item-line.s-orga{
+    display:block;
+  }
 }
 .s-item .tag {
   position:absolute;
@@ -10703,32 +10755,32 @@ a.block:hover {
 
 /* schedule colors */
 
-.s-item.stand .s-item-left i,
+.s-item.stand .s-item-line i,
 .s-item.stand .s-item-title {
   color:#d90ead;
 }
-.s-item.meetup .s-item-left i,
-.s-item.meetup .s-item-title{
+.s-item.meet-up .s-item-line i,
+.s-item.meet-up .s-item-title{
   color: #2660e0;
 }
-.s-item.talk .s-item-left i,
+.s-item.talk .s-item-line i,
 .s-item.talk .s-item-title{
   color: #1fc5ae;
 }
 
-.s-item.hackathon .s-item-left i,
+.s-item.hackathon .s-item-line i,
 .s-item.hackathon .s-item-title {
   color: #ffac31;
 }
-.s-item.workshop .s-item-left i,
+.s-item.workshop .s-item-line i,
 .s-item.workshop .s-item-title{
   color: #f74868;
 }
-.s-item.projection .s-item-left i,
+.s-item.projection .s-item-line i,
 .s-item.projection .s-item-title{
   color: #a02ea8;
 }
-.s-item.party .s-item-left i,
+.s-item.party .s-item-line i,
 .s-item.party .s-item-title{
   color: #6ED3F0;
 }
@@ -10736,7 +10788,7 @@ a.block:hover {
 .tag.tag-stand {
   background-color: #d90ead;
 }
-.tag.tag-meetup {
+.tag.tag-meet-up {
   background-color: #2660e0;
 }
 .tag.tag-projection {

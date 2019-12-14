@@ -1,43 +1,45 @@
 <div class="block s-item {{ .k }}">
-	<div class="s-item-left">
-		<div class="s-item-line">
-			<i class="far fa-clock"></i>
-			<span>
-				{{ if or (eq .t_start "TBA") (eq .t_start "") }}
-				TBA
-				{{ else }}
-				{{ dateFormat "15h04" .t_start }}
-				{{ end }}
-				-
-				{{ if or (eq .t_end "TBA") (eq .t_end "") }}
-				TBA
-				{{ else }}
-				{{ dateFormat "15h04" .t_end }}
-				{{ end }}
-			</span>
+	<div class="s-item-top">
+		<div class="s-item-line-top">
+			<div class="s-item-line s-time mr">
+				<i class="far fa-clock"></i>
+				<span>
+					{{ if or (eq .t_start "TBA") (eq .t_start "") }}
+					TBA
+					{{ else }}
+					{{ dateFormat "15h04" .t_start }}
+					{{ end }}
+					-
+					{{ if or (eq .t_end "TBA") (eq .t_end "") }}
+					TBA
+					{{ else }}
+					{{ dateFormat "15h04" .t_end }}
+					{{ end }}
+				</span>
+			</div>
+			{{if .language}}
+			<div class="s-item-line s-lang mr">
+				<i class="far fa-globe"></i>
+				<span>{{ .language }}</span>
+			</div>
+			{{end}}
 		</div>
-		{{if .language}}
-		<div class="s-item-line">
-			<i class="far fa-globe"></i>
-			<span>{{ .language }}</span>
-		</div>
-		{{end}}
-		<div class="s-item-line">
+		<div class="s-item-line s-loc mr">
 			<i class="far fa-map-marker"></i>
 			<span>{{ .location }}</span>
 		</div>
-		<div class="s-item-line">
-			<i class="far fa-microphone-alt"></i>
+		<div class="s-item-line s-orga">
+			<i class="far fa-user"></i>
 			<span>{{ .orga }}</span>
 		</div>
-	</div><!-- /.s-item-left -->
-	<div class="s-item-right">
+	</div><!-- /.s-item-top -->
+	<div class="s-item-bottom">
 		<span class="s-item-title">
 			{{ .title }}
 		</span>
 		<span class="s-item-description">
 			{{ .description }}
 		</span>
-	</div><!-- /.s-item-right -->
+	</div><!-- /.s-item-bottom -->
 	<span class="tag tag-{{ .k }}"><i class="far {{ .k_icon }}"></i>{{ .k_label }}</span>
 </div><!-- /.s-item -->
