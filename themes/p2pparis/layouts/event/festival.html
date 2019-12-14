@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+{{.Scratch.Set "body-class" "page-festival"}}
+
+{{ partial "navbar_festival" . }}
+{{ partial "masthead_festival" . }}
+{{ partial "section_numbers" . }}
+{{ partial "section_schedule" . }}
+{{ partial "section_plan" . }}
+{{ partial "section_about" . }}
+{{ partial "section_info" . }}
+{{ partial "section_links" . }}
+
+{{ end }}
