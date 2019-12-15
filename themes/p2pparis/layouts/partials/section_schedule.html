@@ -15,24 +15,37 @@
         {{- $date := time .date -}}
         {{- $month_num := printf "%d" $date.Month -}}
         {{- $day_num := printf "%d" $date.Weekday -}}
+
+        <!-- Date Long -->
+        {{- $date_long := $date -}}
         {{- $month := $date.Month | title -}}
         {{- $day := $date.Weekday | title -}}
-
         {{- if isset $.Site.Params "months" -}}
         {{- $month = index $.Site.Params.months $month_num | title -}}
         {{- end -}}
         {{- if isset $.Site.Params "days" -}}
         {{- $day = index $.Site.Params.days $day_num | title -}}
         {{- end -}}
-
-        {{- $date = print $day " " (dateFormat "2" .date) " " $month -}}
+        {{- $date_long = print $day " " (dateFormat "2" .date) " " $month -}}
+        
+        <!-- Date Short -->
+        {{- $date_short := $date -}}
+        {{- $month := dateFormat "Jan" .date | title -}}
+        {{- $day := dateFormat "Mon" .date | title -}}
+        {{- if isset $.Site.Params "months_short" -}}
+        {{- $month = index $.Site.Params.months_short $month_num | title -}}
+        {{- end -}}
+        {{- if isset $.Site.Params "days_short" -}}
+        {{- $day = index $.Site.Params.days_short $day_num | title -}}
+        {{- end -}}
+        {{- $date_short = print $day "<br> " (dateFormat "2" .date) " " $month -}}
 
         <li class="nav-item">
           <a class="nav-link {{ if eq .id 1}}active{{end}}" href="#c-day-{{.id}}">
             <span class="title long">{{ i18n "day_long" . }}  {{ .id }}</span>
-            <span class="subtitle long">{{ $date }}</span>
+            <span class="subtitle long">{{ $date_long }}</span>
             <span class="title short">{{ i18n "day_short" . }}{{ .id }}</span>
-            <!--<span class="subtitle short">{{ .date | markdownify }}</span>-->
+            <span class="subtitle short">{{ $date_short | safeHTML }}</span>
           </a>
         </li>
         {{ end }}
