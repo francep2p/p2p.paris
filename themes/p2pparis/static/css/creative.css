@@ -10312,10 +10312,14 @@ header.masthead h1 {
 }
 
 header.masthead .logo-center {
-  /*display:flex;*/
-  display:block;
   width:60%;
   margin:0 auto 50px;
+}
+.page-home header.masthead .logo-center {
+  display:flex;
+}
+.page-festival header.masthead .logo-center {
+  display:block;
 }
 header.masthead .logo-center img {
   max-width:100%;
@@ -10338,12 +10342,18 @@ header.masthead .logo-center img {
     width:36%;
     height:332px;
   }
+  .page-festival header.masthead .logo-center {
+    width:32%;
+  }
   .language-switcher {
     margin-left:30px;
   }
 }
 
 @media (max-width: 991px) {
+  .page-festival header.masthead .logo-center {
+    width:42%;
+  }
   header.masthead h1.text-xl {
     font-size: 120px;
     line-height: 80px;
