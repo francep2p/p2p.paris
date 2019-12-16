@@ -41,7 +41,7 @@ languages:
     languageName: French
     params:
       locale: fr_FR
-      default_description: La communauté parisienne intéréssée par les technologies P2P et la Cryptographie
+      default_description: La communauté parisienne intéressée par les technologies P2P et la Cryptographie
       404_desc: Page introuvable
       404_cta: Aller à la page d'accueil
       months:
