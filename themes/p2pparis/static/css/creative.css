@@ -10731,6 +10731,12 @@ a.block:hover {
   }
 }
 @media(max-width:767px){
+  .block-number {
+    padding:12px 15px 5px;
+  }
+  .block-number p {
+    min-height:10px;
+  }
   .s-item .s-item-line-top,
   .s-item .s-item-line.s-loc,
   .s-item .s-item-line.s-orga{
