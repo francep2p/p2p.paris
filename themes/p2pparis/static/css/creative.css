@@ -10273,11 +10273,8 @@ body.page-404 {
   background-size: cover;
 }
 body.page-festival {
-  /*background: -webkit-gradient(linear, left top, left bottom, from(rgba(222, 82, 142, 0.5) ), to(rgba(116, 37, 126, 0.9) 100%))), url("../img/bg_festival.png");
-  background:linear-gradient(to bottom, rgba(222, 82, 142, 0.5) 0%, rgba(116, 37, 126, 0.9) 100%), url(../img/bg_festival.png);
-*/
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(217, 14, 173, 0.3) ), to(rgba(160, 46, 168, 0.8) 100%))), url("../img/bg_festival.png");
-  background:linear-gradient(to bottom, rgba(2217, 14, 173, 0.3) 0%, rgba(160, 46, 168, 0.8) 100%), url(../img/bg_festival.png);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(217, 14, 173, 0.3)), to(rgba(160, 46, 168, 0.8))), url("../img/bg_festival.png");
+  background: linear-gradient(to bottom, rgba(217, 14, 173, 0.3) 0%, rgba(160, 46, 168, 0.8) 100%), url("../img/bg_festival.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10570,7 +10567,7 @@ a.block:hover {
 @media(max-width:500px){
   #clockdiv > div {
     padding:0;
-    margin:0 6px;
+    margin:0 4px;
   }
   #clockdiv div > span {
     width:70px;
