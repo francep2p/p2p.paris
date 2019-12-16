@@ -10297,10 +10297,14 @@ body.page-festival {
   background-repeat: repeat;
 }
 
-header.masthead {
+.page-home header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
 }
+.page-festival header.masthead {
+  padding: 20px 0;
+}
+
 
 header.masthead h1 {
   font-size: 2rem;
@@ -10314,7 +10318,7 @@ header.masthead .logo-center {
   margin:0 auto 50px;
 }
 @media (min-width: 992px) {
-  header.masthead {
+  .page-home .page-header.masthead {
     height: 100vh;
     min-height: 40rem;
     padding-top: 72px;
@@ -10328,7 +10332,7 @@ header.masthead .logo-center {
     line-height: 320px;
   }
   header.masthead .logo-center {
-    width:36%;
+    width:31%;
     height:332px;
   }
   .language-switcher {
