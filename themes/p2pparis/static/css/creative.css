@@ -10570,6 +10570,7 @@ a.block:hover {
 @media(max-width:500px){
   #clockdiv > div {
     padding:0;
+    margin:0 6px;
   }
   #clockdiv div > span {
     width:70px;

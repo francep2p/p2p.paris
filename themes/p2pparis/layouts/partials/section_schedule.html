@@ -41,7 +41,7 @@
         {{- $date_short = print $day "<br> " (dateFormat "2" .date) " " $month -}}
 
         <li class="nav-item">
-          <a class="nav-link {{ if eq .id 1}}active{{end}}" href="#c-day-{{.id}}">
+          <a class="nav-link {{ if eq .id 1}}active{{end}} js-scroll-trigger" href="#c-day-{{.id}}">
             <span class="title long">{{ i18n "day_long" . }}  {{ .id }}</span>
             <span class="subtitle long">{{ $date_long }}</span>
             <span class="title short">{{ i18n "day_short" . }}{{ .id }}</span>
