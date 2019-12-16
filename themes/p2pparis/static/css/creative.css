@@ -10312,10 +10312,13 @@ header.masthead h1 {
 }
 
 header.masthead .logo-center {
-  display:flex;
+  /*display:flex;*/
+  display:block;
   width:60%;
-  /*height:414px;*/
   margin:0 auto 50px;
+}
+header.masthead .logo-center img {
+  max-width:100%;
 }
 @media (min-width: 992px) {
   .page-home .page-header.masthead {
@@ -10332,7 +10335,7 @@ header.masthead .logo-center {
     line-height: 320px;
   }
   header.masthead .logo-center {
-    width:31%;
+    width:36%;
     height:332px;
   }
   .language-switcher {
