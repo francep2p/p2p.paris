@@ -10588,7 +10588,7 @@ a.block:hover {
   margin-bottom:-100px;
 }
 .block-number {
-  padding:25px 5px;
+  padding:25px 18px;
   margin-bottom:20px;
 }
 .block-number h2 {
@@ -10596,7 +10596,8 @@ a.block:hover {
 
 }
 .block-number p {
-  min-height:47px;
+  min-height:72px;
+  margin-bottom:5px;
 }
 
 .section-goals {
@@ -10788,7 +10789,7 @@ a.block:hover {
 }
 @media(max-width:767px){
   .block-number {
-    padding:12px 15px 5px;
+    padding:12px 15px 15px;
   }
   .block-number p {
     min-height:10px;

@@ -16,7 +16,7 @@ nav:
     plan: Plan
     about: About
     goals: Goals
-    info: Infos
+    info: Info
 clock:
     days: Days
     hours: Hours
@@ -32,21 +32,25 @@ numbers:
     b4_title: Location
     b4_text: <strong>Ground Control</strong>, at the center of Paris (gare de Lyon)
 goals:
-    b1: Permettre aux communautés basées sur des philosophies/technologies P2P de se rassembler durant plusieurs jours autour de talks, hackathons, réunions…
-    b2: Sensibiliser le grand public à la protection de la vie privée, aux valeurs du P2P, des logiciels libres, de l’open source, ou encore à la cybersécurité
-    b3: Permettre la découverte et la rencontre d’acteurs, de projets, permettre le débat, etc
-    b4: Encourager le partage de connaissances, la croisée des compétences
-    b5: Mettre en lumière des projets auprès du grand public
-    b6: Just spend a good time
+    b1: Gather P2P communities around talks, workshops, movies, performances, hack sessions, meetings…
+    b2: Promote to the general public the value of privacy protection, free and open source software, commons and decentralized governance
+    b3: Trigger serendipitous encounters and healthy debates between teams and individuals involved in the space
+    b4: Encourage knowledge-sharing between projects, entrepreneurs, researchers, developers
+    b5: Showcase important projects to the general public
+    b6: Just enjoy a great moment, in a great place, with great people!
 content:
     intro_text: The free peer-to-peer gathering 
-    about:
+    about_title: About the Festival
+    about_text: "Our goal is to offer 5 days of sharing, learning, meeting and playing around all the dimensions of the Peer-to-Peer (P2P) revolution. The technological aspect of P2P is essential, but we also believe that it materializes philosophical and ethical principles.<br/><br/>P2P applies to a wide array of aspects, from secure and privacy-preserving communication, to knowledge-sharing, to participative governance, to digital currencies, or even art!<br/><br/>Paris P2P Festival will be a fantastic opportunity to gather P2P supporters, regardless of their particular approach and interests.<br/><br/>We are calling any team or individual with an active interest in P2P to join the Festival, use it to set up their own meeting, offer a workshop, share a talk or a presentation, take part to the hackathon.<br/><br/>The event was born out of our Paris P2P monthly meetups at Ground Control. We are willing to open it to a wider audience: individuals, collectives, associations, and businesses willing to be part of a community event, without lucrative purpose."
+    participate: I want to participate!
+    info_title: Useful information
     address : 81 Rue du Charolais, 75012 Paris, FRANCE
     learn_more: Learn more
-    donate_title: Participate
-    donate_text: By becoming a donato you can help funding this free event
-    donate_btn: Make a donation
+    donate_title: Support
+    donate_text: It's free for all but it has a cost! Thanks to help us to make it possible.
+    donate_btn: Donate
     news_title: News
-    news_text: Receive last minute news, definitive schedule...
+    news_text: Receive last minute news, final schedule...
     newsletter_input: your email
+
 ---
