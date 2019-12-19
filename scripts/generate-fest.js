@@ -1,37 +1,48 @@
 const fs = require('fs'),
-      csvtojson = require('csvtojson');
+      csvtojson = require('csvtojson')
+      fetch = require('node-fetch');
 
-const csvFile = process.argv[2];
-const destDir = process.argv[3];
+const TMP_CSV = 'data.csv';
+const SPREADSHEET_ID = '1z5GaDeDu2Ei_pCEFpFWSS53NZSmseBdDXuadUPh9qWE';
+const SHEET_ID = 1547075518;
+const DESTINATION_FOLDER = 'data/festival';
 
-if (!csvFile) {
-  throw Error('CSV file not specified');
+main();
+
+async function main() {
+  const spreadsheetUrl = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/export?gid=${SHEET_ID}&format=csv&id=${SPREADSHEET_ID}`;
+
+  await downloadCsv(spreadsheetUrl);
+  await generateJson(TMP_CSV);
+  fs.unlinkSync(TMP_CSV);
 }
 
-if (!destDir) {
-  throw Error('Destination directory not specified');
-}
-
-csvtojson().fromFile(csvFile).then(rows => {
+function generateJson(csvFile) {
+  return new Promise((resolve, reject) => {
+    csvtojson().fromFile(csvFile).then(rows => {
   
-  const days = {};
-  let lastDay = '';
-
-  rows.forEach(row => {
-    if (row.day) {
-      lastDay = row.day;
-      days[row.day] = [getTranslations(row)]
-    } else {
-      days[lastDay].push(getTranslations(row));
-    }
-  });
-
-  const en = generateEvents('en', days);
-  const fr = generateEvents('fr', days);
-
-  fs.writeFileSync(`${destDir}/en.json`, JSON.stringify(en));
-  fs.writeFileSync(`${destDir}/fr.json`, JSON.stringify(fr));
-});
+      const days = {};
+      let lastDay = '';
+    
+      rows.forEach(row => {
+        if (row.day) {
+          lastDay = row.day;
+          days[row.day] = [getTranslations(row)]
+        } else {
+          days[lastDay].push(getTranslations(row));
+        }
+      });
+    
+      const en = generateEvents('en', days);
+      const fr = generateEvents('fr', days);
+    
+      fs.writeFileSync(`${DESTINATION_FOLDER}/en.json`, JSON.stringify(en));
+      fs.writeFileSync(`${DESTINATION_FOLDER}/fr.json`, JSON.stringify(fr));
+      resolve();
+    });
+  })
+  
+}
 
 function generateEvents(lang, days) {
   let result = [];
@@ -82,4 +93,18 @@ function getTranslations(row) {
 
 function isTranslated(key) {
   return ['en_', 'fr_'].includes(key.substring(0, 3));
+}
+
+async function downloadCsv(url) {
+  const res = await fetch(url);
+  return new Promise((resolve, reject) => {
+    const fileStream = fs.createWriteStream(TMP_CSV);
+    res.body.pipe(fileStream);
+    res.body.on("error", (err) => {
+      reject(err);
+    });
+    fileStream.on("finish", function() {
+      resolve();
+    });
+  });
 }
