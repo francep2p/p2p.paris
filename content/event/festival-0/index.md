@@ -28,7 +28,7 @@ numbers:
     b2_title: Events
     b2_text: Meetups, conferences, projections, hackathon...
     b3_title: Speakers
-    b3_text: From all around the globe to talk about tommorrow's internet
+    b3_text: From everywhere to talk about the internet of tomorrow
     b4_title: Location
     b4_text: <strong>Ground Control</strong>, at the center of Paris (gare de Lyon)
 goals:
