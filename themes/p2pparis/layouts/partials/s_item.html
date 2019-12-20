@@ -37,6 +37,9 @@
 		<span class="s-item-title">
 			{{ .title }}
 		</span>
+		{{ if .image }}
+		<img class="img-schedule" src="/img/festival/{{.image}}">
+		{{ end }}
 		<p class="s-item-description">
 			{{ .description }}
 		</p>
