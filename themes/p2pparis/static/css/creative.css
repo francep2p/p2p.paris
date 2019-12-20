@@ -10764,6 +10764,7 @@ a.block:hover {
   font-size:0.9rem;
   margin-bottom:0;
   opacity:0.8;
+  word-wrap: break-word;
 }
 
 .s-item .s-item-line-top{
@@ -11069,6 +11070,11 @@ a.block:hover {
   top: 20px;
   right: 59px;
 }
+.img-plan {
+  max-width:100%;
+  margin-top:70px;
+}
+
 @media(max-width: 1199px) and (min-width: 992px){
   #mainNav .nav-link.Meetup,
   #mainNav .nav-link.Github,
