@@ -10753,6 +10753,7 @@ a.block:hover {
 }
 .s-item .s-item-bottom {
   padding:10px 25px 25px 25px;
+  overflow:auto;
 }
 .s-item .s-item-title {
   font-size: 1.4rem;
@@ -10773,7 +10774,7 @@ a.block:hover {
 .s-item .tag {
   position:absolute;
   top:20px;
-  right:20px;
+  right:25px;
   padding: 7px 13px 6px;
   font-size: 95%;
   color:#FFF;
@@ -10781,6 +10782,12 @@ a.block:hover {
 .s-item .tag i {
   margin-right:11px;
   font-size:107%;
+}
+.s-item .img-schedule {
+  border-radius:5px;
+  height:140px;
+  float:right;
+  margin-left:10px;
 }
 
 @media(min-width:768px){
@@ -10819,6 +10826,16 @@ a.block:hover {
     right: 15px;
     padding: 5px 11px 4px;
     font-size: 85%;
+  }
+  .s-item .img-schedule {
+    display:block;
+    float:left;
+    margin:10px 0;
+    width:100%;
+    height:auto;
+  }
+  .s-item .img-schedule p {
+    display:block;
   }
 }
 @media(max-width:425px){
