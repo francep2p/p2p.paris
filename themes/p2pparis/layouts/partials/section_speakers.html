@@ -1,0 +1,19 @@
+<section class="page-section bg-people section-speakers" id="speakers">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <i class="fal fa-microphone-alt fa-5x mb-4 text-white"></i>
+                <h2 class="mt-0 text-white">{{ .Params.nav.speakers }}</h2>
+                <hr class="divider light my-4">
+                <br/>
+            </div><!-- /.col-->
+        </div><!-- /.row -->
+        <div class="row">
+            <!-- range (index .Site.Data.festival speakers) -->
+            <div class="col-lg-3 col-md-4 col-6">
+                {{ partial "block_speaker" . }}
+            </div>
+            <!-- end -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
