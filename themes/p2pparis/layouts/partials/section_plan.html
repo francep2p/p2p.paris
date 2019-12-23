@@ -8,7 +8,30 @@
             </div><!-- /.col-->
             <div class="col-12">
                 <img class="img-plan" nopin="nopin" src="/img/ground_control_floor_plan.svg">
-            </div>
+            
+                <div class="accordion legend-accordion block" id="legend">
+                    {{ range .Params.legend }}
+                      <div class="block-legend c-{{.id}}">
+                        <a class="block-legend-header collapsed" role="button" id="l-title-{{ .id }}" data-toggle="collapse" href="#l-content-{{ .id }}" aria-controls="l-content-{{ .id }}">
+                            {{ .title }}<i class="far fa-chevron-down"></i>
+                        </a><!-- /.block-legend-header -->
+
+                        <div id="l-content-{{ .id }}" class="collapse" aria-labelledby="l-title-{{ .id }}" data-parent="#legend">
+                          <div class="block-legend-content">
+                            <ul>
+                            {{ range .content}}
+                                <li>{{ if .id }}<span class="number">{{.id}}. </span>{{ end }}{{.title}}
+                                </li>
+                            {{ end }}
+                            </ul>
+                          </div><!-- /.block-legend-content -->
+                        </div><!-- /.collapse -->
+                      </div><!-- /.block-legend -->
+                    {{ end }}
+                </div><!-- /.accordion -->
+
+            </div><!-- /.col-->
+
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section>
