@@ -1,4 +1,4 @@
-{{ $festival_speakers := index .Site.Data.festival (print "speakers_" .Lang) }}
+{{ $festival_speakers := index .Site.Data.gen.festival (print "speakers_" .Lang) }}
 
 <section class="page-section bg-people section-speakers" id="speakers">
     <div class="container">
