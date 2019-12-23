@@ -4,45 +4,45 @@
 			<div class="s-item-line s-time mr">
 				<i class="far fa-clock"></i>
 				<span>
-					{{ if or (eq .t_start "TBA") (eq .t_start "") }}
+					{{ if or (eq .data.t_start "TBA") (eq .data.t_start "") }}
 					TBA
 					{{ else }}
-					{{ dateFormat "15h04" .t_start }}
+					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.t_start }}
 					{{ end }}
 					-
-					{{ if or (eq .t_end "TBA") (eq .t_end "") }}
+					{{ if or (eq .data.t_end "TBA") (eq .data.t_end "") }}
 					TBA
 					{{ else }}
-					{{ dateFormat "15h04" .t_end }}
+					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.t_end }}
 					{{ end }}
 				</span>
 			</div>
-			{{if .language}}
+			{{if .data.language}}
 			<div class="s-item-line s-lang mr">
 				<i class="far fa-globe"></i>
-				<span>{{ .language }}</span>
+				<span>{{ .data.language }}</span>
 			</div>
 			{{end}}
 		</div>
 		<div class="s-item-line s-loc mr">
 			<i class="far fa-map-marker"></i>
-			<span>{{ .location }}</span>
+			<span>{{ .data.location }}</span>
 		</div>
 		<div class="s-item-line s-orga">
 			<i class="far fa-user"></i>
-			<span>{{ .orga }}</span>
+			<span>{{ .data.orga }}</span>
 		</div>
 	</div><!-- /.s-item-top -->
 	<div class="s-item-bottom">
 		<span class="s-item-title">
-			{{ .title }}
+			{{ .data.title }}
 		</span>
-		{{ if .image }}
-		<img class="img-schedule" src="/img/festival/{{.image}}">
+		{{ if .data.image }}
+		<img class="img-schedule" src="/img/festival/{{.data.image}}">
 		{{ end }}
 		<p class="s-item-description">
-			{{ .description }}
+			{{ .data.description }}
 		</p>
 	</div><!-- /.s-item-bottom -->
-	<span class="tag tag-{{ .k }}"><i class="far {{ .k_icon }}"></i>{{ .k_label }}</span>
+	<span class="tag tag-{{ .data.k }}"><i class="far {{ .data.k_icon }}"></i>{{ .data.k_label }}</span>
 </div><!-- /.s-item -->

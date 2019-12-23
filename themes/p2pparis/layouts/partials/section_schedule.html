@@ -62,7 +62,7 @@
             <div class="pill">{{ i18n "day_long" . }}  {{ .id }}</div>
         </div>
         {{ range .events }}
-          {{ partial "s_item" . }}
+          {{ partial "s_item" (dict "ctx" $ "data" .) }}
         {{ end }}
       </div><!-- /.s-day -->
       {{ end }}
