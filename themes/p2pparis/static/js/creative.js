@@ -103,7 +103,7 @@ function initializeClock(id, endtime) {
           $('html, body').animate({
             scrollTop: (target.offset().top + 2)
           }, 1000, "easeInOutExpo");
-          return false;
+          return true;
         }
       }
     });

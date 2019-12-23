@@ -16,7 +16,7 @@ nav:
     schedule: Programme
     about: À propos
     goals: Objectifs
-    info: Infos pratiques
+    info: Infos<span class="tbr"> utiles</span>
     speakers: Speakers
     plan: Plan
 clock:
