@@ -1,11 +1,13 @@
 const fs = require('fs'),
+      path = require('path'),
       csvtojson = require('csvtojson')
       fetch = require('node-fetch');
 
 const SPREADSHEET_ID = process.argv[2];
 const SHEET_ID = process.argv[3];
-const DEST_FILE_BASENAME = process.argv[4];
+const DEST_FILE_BASENAME = process.argv[4]; // Relative from /data folder
 const TYPE = process.argv[5]; // Optional. Possible value: 'festival'
+const ABS_DEST_FILE_BASENAME = `data/gen/${DEST_FILE_BASENAME}`;
 
 // Example: node gsheetstojson <SPREADHEET_ID> <SHEET_ID> <DESTINATION_FILE> <TYPE>
 
@@ -19,6 +21,11 @@ if (!SHEET_ID) {
 
 if (!DEST_FILE_BASENAME) {
   throw Error('Destination file basename not specified');
+}
+
+const destFileDirname = path.dirname(ABS_DEST_FILE_BASENAME);
+if (!fs.existsSync(destFileDirname)) {
+  fs.mkdirSync(destFileDirname, { recursive: true });
 }
 
 main();
@@ -61,7 +68,7 @@ function generateJson(csvFile) {
       }
 
       Object.keys(result).forEach(key => {
-        fs.writeFileSync(`${DEST_FILE_BASENAME}_${key}.json`, JSON.stringify(result[key]));
+        fs.writeFileSync(`${ABS_DEST_FILE_BASENAME}_${key}.json`, JSON.stringify(result[key]));
       });    
       
       resolve();
