@@ -1,4 +1,4 @@
-{{ $festival_events := index .Site.Data.festival (print "events_" .Lang) }}
+{{ $festival_events := index .Site.Data.gen.festival (print "events_" .Lang) }}
 
 <section class="page-section bg-light section-schedule" >
   <div class="container" id="schedule">
