@@ -12,6 +12,7 @@ languages:
     params:
       locale: en_GB
       default_description: The Parisian community interested in P2P & Cryptography technologies
+      default_event_description: Paris P2P is a monthly meetup organized by and for the community passionate about P2P and cryptography. These meetups are free, informal afterworks, meant to encourage meetings and exchanges between developers, passionate and curious people, around a drink or open discussions.
       404_desc: Page not found
       404_cta: Go to homepage      
     menu:
@@ -42,6 +43,7 @@ languages:
     params:
       locale: fr_FR
       default_description: La communauté parisienne intéressée par les technologies P2P et la Cryptographie
+      default_event_description: Paris P2P est un rendez-vous mensuel organisé par et pour la communauté des passionné.e.s de P2P et de cryptographie. Ces rendez-vous prennent la forme d’afterwork informels, gratuits, destinés à favoriser la rencontre et les échanges entre développeurs/développeuses, passionné.e.s et curieux/curieuses, autour d’un verre ou de discussions ouvertes.
       404_desc: Page introuvable
       404_cta: Aller à la page d'accueil
       months:

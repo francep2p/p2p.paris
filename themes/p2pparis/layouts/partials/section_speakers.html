@@ -1,3 +1,5 @@
+{{ $festival_speakers := index .Site.Data.gen.festival (print "speakers_" .Lang) }}
+
 <section class="page-section bg-people section-speakers" id="speakers">
     <div class="container">
         <div class="row justify-content-center">
@@ -9,7 +11,7 @@
             </div><!-- /.col-->
         </div><!-- /.row -->
         <div class="row">
-            {{ range (index .Site.Data.festival "speakers" ) }}
+            {{ range $festival_speakers }}
             <div class="col-lg-3 col-md-4 col-6">
                 {{ partial "block_speaker" . }}
             </div>
