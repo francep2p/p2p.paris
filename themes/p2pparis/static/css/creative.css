@@ -11148,7 +11148,7 @@ a.block:hover {
 }
 
 .block-speaker .speaker-links a {
-  margin:10px;
+  margin:7px;
   font-size:20px;
 }
 
@@ -11216,6 +11216,7 @@ a.block-legend-header:focus {
 @media(max-width:767px) {
   .legend-accordion {
     position:relative;
+    top:25px;
   }
 }
 
