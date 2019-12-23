@@ -11148,6 +11148,73 @@ a.block:hover {
   font-size:20px;
 }
 
+.legend-accordion {
+  border:none;
+  position:absolute;
+  top:80px;
+  left:0;
+}
+
+.block-legend:not(:first-child) .block-legend-header {
+  border-top:1px solid #eaeaea;
+}
+a.block-legend-header {
+  padding:20px 45px 20px 20px;
+  display:block;
+  position:relative;
+  transition:all .4s;
+  color:#383B62;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+a.block-legend-header:hover,
+a.block-legend-header:focus {
+  text-decoration:none;
+}
+.block-legend-header i {
+  position:absolute;
+  right:15px;
+  top:23px;
+  transition:all .4s;
+}
+.block-legend-header.collapsed i {
+  transform: rotate(-90deg);
+}
+.block-legend-content ul {
+  padding:0;
+}
+.block-legend-content ul li {
+  list-style:none;
+  padding:5px 20px;
+  margin:0;
+  transition:all .2s;
+}
+.block-legend-content .number {
+  font-weight:bold;
+}
+.block-legend.c-festival li:hover{
+  color:#FFF;
+  background-color:#732E85;
+}
+.block-legend.c-resto li:hover{
+  color:#D34541;
+  background-color:#FE7362;
+}
+.block-legend.c-bar li:hover{
+  color:#1D8D69;
+  background-color:#4BC591;
+}
+.block-legend.c-other li:hover{
+  color:#D68E2B;
+  background-color:#FBCC5B;
+}
+
+@media(max-width:767px) {
+  .legend-accordion {
+    position:relative;
+  }
+}
+
 @media(max-width:1024px) {
   .block-speaker {
     min-height:272px;
