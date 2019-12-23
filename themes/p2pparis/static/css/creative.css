@@ -10275,6 +10275,7 @@ body.page-404 {
 body.page-festival {
   background: rgb(160,46,168);
   background: linear-gradient(0deg, rgba(160,46,168,1) 0%, rgba(217,14,173,1) 100%);
+  background-attachment: fixed;
 }
 @media(min-width:768px){
   body.page-festival {
@@ -10382,6 +10383,9 @@ header.masthead .logo-center img {
 }
 .c-mastodon {
   color:#2F86D3;
+}
+.c-facebook {
+  color:#3b5998;
 }
 a {
   transition: .3s ease-in-out;
@@ -11367,7 +11371,11 @@ a.block-legend-header:focus {
     font-size: 32px;
   }
 }
-
+@media (max-width: 410px) {
+  .navbar-nav .tbr {
+    display:none;
+  }
+}
 @media(min-width:768px){
   .block-secondary.l {
     padding:60px 50px;
