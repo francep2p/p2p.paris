@@ -1,0 +1,31 @@
+<div class="block block-speaker">
+    <div class="speaker-picture">
+    {{ if .picture }}
+        {{ if .picture_valid }}
+            <img src="{{ .picture }}">
+        {{ else }}
+            <i class="fal fa-user-circle c-gradient"></i>
+        {{ end }}
+    {{ else }}
+      <i class="fal fa-user-circle c-gradient"></i>
+    {{ end }}
+    </div>
+    <div class="speaker-content">
+        <h5>{{ .name }}</h5>
+        <p>{{ .title }}</p>
+    </div>
+    <div class="speaker-links">
+        {{ if .twitter }}
+        <a href="{{ .twitter }}"><i class="fab fa-twitter text-primary"></i></a>
+        {{ end }}
+        {{ if .github }}
+        <a href="{{ .github }}"><i class="fab fa-github c-github"></i></a>
+        {{ end }}
+        {{ if .linkedin }}
+        <a href="{{ .linkedin }}"><i class="fab fa-linkedin c-linkedin"></i></a>
+        {{ end }}
+        {{ if .mastodon }}
+        <a href="{{ .mastodon }}"><i class="fab fa-mastodon c-mastodon"></i></a>
+        {{ end }}
+    </div>
+</div><!-- /.block -->

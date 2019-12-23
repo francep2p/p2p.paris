@@ -13,10 +13,11 @@ aliases:
 - /festival
 nav:
     schedule: Programme
-    plan: Plan
     about: À propos
     goals: Objectifs
     info: Infos pratiques
+    speakers: Speakers
+    plan: Plan
 clock:
     days: Jours
     hours: Heures
