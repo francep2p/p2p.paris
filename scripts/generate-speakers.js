@@ -21,10 +21,11 @@ function generateJson(csvFile) {
   return new Promise((resolve, reject) => {
     csvtojson().fromFile(csvFile).then(rows => {
 
-      rows.forEach(row => {
+    const speakers = [];
 
+      rows.forEach(row => {
+        speakers.push(row)
       });
-    
     
       fs.writeFileSync(`${DESTINATION_FOLDER}/speakers.json`, JSON.stringify(speakers));
       resolve();

@@ -9,11 +9,11 @@
             </div><!-- /.col-->
         </div><!-- /.row -->
         <div class="row">
-            <!-- range (index .Site.Data.festival speakers) -->
+            {{ range (index .Site.Data.festival "speakers" ) }}
             <div class="col-lg-3 col-md-4 col-6">
                 {{ partial "block_speaker" . }}
             </div>
-            <!-- end -->
+            {{ end }}
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section>

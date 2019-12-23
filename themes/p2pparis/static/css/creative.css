@@ -11114,6 +11114,7 @@ a.block:hover {
   padding:25px;
   text-align:center;
   margin-bottom:30px;
+  min-height:248px;
 }
 .block-speaker .speaker-picture {
   display:block;
@@ -11140,9 +11141,16 @@ a.block:hover {
   margin-bottom:0;
   min-height:50px;
 }
+
 .block-speaker .speaker-links a {
   margin:10px;
   font-size:20px;
+}
+
+@media(max-width:1024px) {
+  .block-speaker {
+    min-height:272px;
+  }
 }
 
 @media(max-width: 1199px) and (min-width: 992px){
