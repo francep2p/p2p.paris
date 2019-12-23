@@ -11140,6 +11140,7 @@ a.block:hover {
 .block-speaker p {
   margin-bottom:0;
   min-height:50px;
+  opacity:0.7;
 }
 
 .block-speaker .speaker-links a {
