@@ -1,6 +1,7 @@
 ---
 title: "Paris P2P Festival #0"
 subtitle: "Bootstrap Edition"
+description: "Paris P2P Festival #0, Jan 8-12, 2020 - Ground Control, Paris. Everything you want to know about Peer-to-Peer, with talks, workshops, movies, performances, and more."
 layout: festival
 event_date: 2020-01-08
 event_end_date: 2020-01-12
