@@ -107,6 +107,9 @@ function initializeClock(id, endtime) {
         }
       }
     });
+
+    $('[data-toggle="tooltip"]').tooltip()
+
   }
 
 })(jQuery); // End of use strict

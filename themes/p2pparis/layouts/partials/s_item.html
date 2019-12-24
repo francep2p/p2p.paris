@@ -43,6 +43,11 @@
 		<p class="s-item-description">
 			{{ .data.description }}
 		</p>
+		{{ if .data.tags }}
+		<p class="s-item-tags">
+			{{ .data.tags | markdownify }}
+		</p>
+		{{ end }}
 	</div><!-- /.s-item-bottom -->
 	<span class="tag tag-{{ .data.k }}"><i class="far {{ .data.k_icon }}"></i>{{ .data.k_label }}</span>
 </div><!-- /.s-item -->
