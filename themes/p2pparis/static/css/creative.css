@@ -10369,6 +10369,12 @@ header.masthead .logo-center img {
 .c-github {
   color:#373737;
 }
+.c-gitlab {
+  color:#fca326;
+}
+.c-telegram {
+  color:#0088cc;
+}
 .c-meetup {
   color:#F6405E;
 }
@@ -10386,6 +10392,9 @@ header.masthead .logo-center img {
 }
 .c-facebook {
   color:#3b5998;
+}
+.c-pink {
+  color:#bd1fab;
 }
 a {
   transition: .3s ease-in-out;
