@@ -10521,15 +10521,15 @@ tag.r {
 
 tag.g {
   color: #1fc5ae;
-  background-color: #cbf4e1;
+  background-color: #c9f3ed;
 }
 tag.b {
   color: #2660e0;
-  background-color: #fee4e9;
+  background-color: #dce7ff;
 }
 tag.p {
   color: #d90ead;
-  background-color: #fee4e9; 
+  background-color: #ffdff8; 
 }
 tag.v {
   color: #a02ea8;
@@ -10839,7 +10839,13 @@ tag.v {
   float:right;
   margin-left:10px;
 }
-
+.s-item .s-item-tags {
+  margin-top:10px;
+}
+.s-item .s-item-tags tag {
+  margin-right:5px;
+  margin-top:5px;
+}
 @media(min-width:768px){
   .s-item .s-item-top {
     padding-right:170px;
