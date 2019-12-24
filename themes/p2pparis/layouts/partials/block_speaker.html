@@ -21,14 +21,26 @@
         {{ if .github }}
         <a href="{{ .github }}"><i class="fab fa-github c-github"></i></a>
         {{ end }}
+        {{ if .gitlab }}
+        <a href="{{ .gitlab }}"><i class="fab fa-gitlab c-gitlab"></i></a>
+        {{ end }}
+        {{ if .telegram }}
+        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ .telegram }}"><i class="fab fa-telegram-plane c-telegram"></i></button>
+        {{ end }}
         {{ if .linkedin }}
         <a href="{{ .linkedin }}"><i class="fab fa-linkedin c-linkedin"></i></a>
+        {{ end }}
+        {{ if .mastodon }}
+        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ .mastodon }}"><i class="fab fa-mastodon c-mastodon"></i></button>
         {{ end }}
         {{ if .facebook }}
         <a href="{{ .facebook }}"><i class="fab fa-facebook-square c-facebook"></i></a>
         {{ end }}
-        {{ if .mastodon }}
-        <a href="{{ .mastodon }}"><i class="fab fa-mastodon c-mastodon"></i></a>
+        {{ if .instagram }}
+        <a href="{{ .instagram }}"><i class="fab fa-instagram c-github"></i></a>
+        {{ end }}
+        {{ if .website }}
+        <a href="{{ .website }}"><i class="fal fa-globe c-pink"></i></a>
         {{ end }}
     </div>
 </div><!-- /.block -->
