@@ -4,7 +4,7 @@ DEPS := node_modules
 
 .PHONY: dev
 dev: $(DEPS)
-	hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
+	./pre-build.sh && hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
 
 node_modules: package.json
 	npm install
@@ -20,7 +20,7 @@ deps:
 
 .PHONY: build
 build: $(DEPS)
-	hugo --gc --minify
+	./pre-build.sh && hugo --gc --minify
 
 .PHONY: publish
 publish:
