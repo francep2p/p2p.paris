@@ -15,32 +15,32 @@
         <p>{{ .title }}</p>
     </div>
     <div class="speaker-links">
-        {{ if .twitter }}
-        <a href="{{ .twitter }}"><i class="fab fa-twitter text-primary"></i></a>
+        {{ with .twitter }}
+        <a target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-twitter text-primary"></i></a>
         {{ end }}
-        {{ if .github }}
-        <a href="{{ .github }}"><i class="fab fa-github c-github"></i></a>
+        {{ with .github }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-github c-github"></i></a>
         {{ end }}
-        {{ if .gitlab }}
-        <a href="{{ .gitlab }}"><i class="fab fa-gitlab c-gitlab"></i></a>
+        {{ with .gitlab }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-gitlab c-gitlab"></i></a>
         {{ end }}
-        {{ if .telegram }}
-        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ .telegram }}"><i class="fab fa-telegram-plane c-telegram"></i></button>
+        {{ with .telegram }}
+        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ . }}"><i class="fab fa-telegram-plane c-telegram"></i></button>
         {{ end }}
-        {{ if .linkedin }}
-        <a href="{{ .linkedin }}"><i class="fab fa-linkedin c-linkedin"></i></a>
+        {{ with .linkedin }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-linkedin c-linkedin"></i></a>
         {{ end }}
-        {{ if .mastodon }}
-        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ .mastodon }}"><i class="fab fa-mastodon c-mastodon"></i></button>
+        {{ with .mastodon }}
+        <button type="button" data-toggle="tooltip" data-placement="top" title="{{ . }}"><i class="fab fa-mastodon c-mastodon"></i></button>
         {{ end }}
-        {{ if .facebook }}
-        <a href="{{ .facebook }}"><i class="fab fa-facebook-square c-facebook"></i></a>
+        {{ with .facebook }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-facebook-square c-facebook"></i></a>
         {{ end }}
-        {{ if .instagram }}
-        <a href="{{ .instagram }}"><i class="fab fa-instagram c-github"></i></a>
+        {{ with .instagram }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-instagram c-github"></i></a>
         {{ end }}
-        {{ if .website }}
-        <a href="{{ .website }}"><i class="fal fa-globe c-pink"></i></a>
+        {{ with .website }}
+        <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fal fa-globe c-pink"></i></a>
         {{ end }}
     </div>
 </div><!-- /.block -->
