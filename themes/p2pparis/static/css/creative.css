@@ -10781,6 +10781,28 @@ tag.v {
   border-bottom:none;
 }
 
+.s-filters {
+  margin:40px 0;
+}
+.s-filters .tag i {
+  margin-right: 7px;
+}
+.s-filters .tag {
+  margin: 0 10px 10px 0;
+}
+.s-filters .tag input {
+  margin-right:10px;
+}
+.s-filters .tag notif {
+  background-color:#FFF;
+  border-radius: 12px;
+  padding: 1px 7px;
+  font-size: 13px;
+  margin-left:10px;
+  vertical-align: top;
+  line-height: 23px;
+}
+
 .s-item .s-item-top {
   display:block;
   padding:15px 25px 5px 25px;
@@ -10830,17 +10852,21 @@ tag.v {
 .s-item .s-item-line-top{
   display:inline;
 }
-.s-item .tag {
-  position:absolute;
-  top:20px;
-  right:25px;
+.section-schedule .tag {
   padding: 7px 13px 6px;
   font-size: 95%;
   color:#FFF;
 }
+.section-schedule .tag i {
+  font-size:107%;
+}
 .s-item .tag i {
   margin-right:11px;
-  font-size:107%;
+}
+.s-item .tag {
+  position:absolute;
+  top:20px;
+  right:25px;
 }
 .s-item .img-schedule {
   border-radius:5px;
@@ -10914,32 +10940,39 @@ tag.v {
 /* schedule colors */
 
 .s-item.stand .s-item-line i,
-.s-item.stand .s-item-title {
+.s-item.stand .s-item-title,
+.s-filters .tag.tag-stand notif {
   color:#d90ead;
 }
 .s-item.meet-up .s-item-line i,
-.s-item.meet-up .s-item-title{
+.s-item.meet-up .s-item-title,
+.s-filters .tag.tag-meet-up notif {
   color: #2660e0;
 }
 .s-item.talk .s-item-line i,
-.s-item.talk .s-item-title{
+.s-item.talk .s-item-title,
+.s-filters .tag.tag-talk notif {
   color: #1fc5ae;
 }
 
 .s-item.hackathon .s-item-line i,
-.s-item.hackathon .s-item-title {
+.s-item.hackathon .s-item-title,
+.s-filters .tag.tag-hackathon notif {
   color: #ffac31;
 }
 .s-item.workshop .s-item-line i,
-.s-item.workshop .s-item-title{
+.s-item.workshop .s-item-title,
+.s-filters .tag.tag-workshop notif{
   color: #f74868;
 }
 .s-item.projection .s-item-line i,
-.s-item.projection .s-item-title{
+.s-item.projection .s-item-title,
+.s-filters .tag.tag-projection notif {
   color: #a02ea8;
 }
 .s-item.party .s-item-line i,
-.s-item.party .s-item-title{
+.s-item.party .s-item-title,
+.s-filters .tag.tag-party notif {
   color: #6ED3F0;
 }
 
