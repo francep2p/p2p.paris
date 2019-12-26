@@ -40,9 +40,9 @@
 		{{ if .data.image }}
 		<img class="img-schedule" src="/img/festival/{{.data.image}}">
 		{{ end }}
-		<p class="s-item-description">
+		<div class="s-item-description">
 			{{ .data.description | markdownify }}
-		</p>
+		</div>
 		{{ if .data.tags }}
 		<div class="s-item-tags">
 			{{ .data.tags | markdownify }}

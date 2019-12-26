@@ -10811,11 +10811,20 @@ tag.v {
   display: block;
   margin-bottom:5px;
 }
-.s-item p.s-item-description {
+.s-item .s-item-description {
   font-size:0.9rem;
-  margin-bottom:0;
   opacity:0.8;
   word-wrap: break-word;
+}
+.s-item .s-item-description p:last-child {
+  margin-bottom:0;
+}
+.s-item .s-item-description a {
+  color:#bd1fab;
+}
+.s-item .s-item-description a:hover,
+.s-item .s-item-description a:focus {
+  color:#a02ea8;
 }
 
 .s-item .s-item-line-top{
