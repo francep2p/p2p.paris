@@ -11193,6 +11193,24 @@ tag.v {
   font-size:20px;
 }
 
+@media(min-width:768px){
+  .block-speaker {
+    min-height: 268px;
+  }
+  .block-speaker .speaker-picture {
+    height:90px;
+  }
+  .block-speaker .speaker-picture img {
+    height:90px;
+    width:90px;
+    border: 5.5px solid #bd1fab;
+  }
+  .block-speaker .speaker-picture i {
+    font-size:90px;
+    width:91px;
+  }
+}
+
 .legend-accordion {
   border:none;
   position:absolute;
@@ -11263,7 +11281,7 @@ a.block-legend-header:focus {
 
 @media(max-width:1024px) {
   .block-speaker {
-    min-height:272px;
+    min-height:292px;
   }
 }
 
