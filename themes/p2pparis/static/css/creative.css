@@ -10819,14 +10819,6 @@ tag.v {
 .s-item .s-item-description p:last-child {
   margin-bottom:0;
 }
-.s-item .s-item-description a {
-  color:#bd1fab;
-}
-.s-item .s-item-description a:hover,
-.s-item .s-item-description a:focus {
-  color:#a02ea8;
-}
-
 .s-item .s-item-line-top{
   display:inline;
 }
@@ -10914,32 +10906,53 @@ tag.v {
 /* schedule colors */
 
 .s-item.stand .s-item-line i,
-.s-item.stand .s-item-title {
+.s-item.stand .s-item-title,
+.s-item.stand .s-item-description a,
+.s-item.stand .s-item-description a:hover,
+.s-item.stand .s-item-description a:focus {
   color:#d90ead;
 }
 .s-item.meet-up .s-item-line i,
-.s-item.meet-up .s-item-title{
+.s-item.meet-up .s-item-title,
+.s-item.meet-up .s-item-description a,
+.s-item.meet-up .s-item-description a:hover,
+.s-item.meet-up .s-item-description a:focus{
   color: #2660e0;
 }
 .s-item.talk .s-item-line i,
-.s-item.talk .s-item-title{
+.s-item.talk .s-item-title,
+.s-item.talk .s-item-description a,
+.s-item.talk .s-item-description a:hover,
+.s-item.talk .s-item-description a:focus{
   color: #1fc5ae;
 }
 
 .s-item.hackathon .s-item-line i,
-.s-item.hackathon .s-item-title {
+.s-item.hackathon .s-item-title,
+.s-item.hackathon .s-item-description a,
+.s-item.hackathon .s-item-description a:hover,
+.s-item.hackathon .s-item-description a:focus {
   color: #ffac31;
 }
 .s-item.workshop .s-item-line i,
-.s-item.workshop .s-item-title{
+.s-item.workshop .s-item-title,
+.s-item.workshop .s-item-description a,
+.s-item.workshop .s-item-description a:hover,
+.s-item.workshop .s-item-description a:focus{
   color: #f74868;
 }
 .s-item.projection .s-item-line i,
-.s-item.projection .s-item-title{
+.s-item.projection .s-item-title,
+.s-item.projection .s-item-description a,
+.s-item.projection .s-item-description a:hover,
+.s-item.projection .s-item-description a:focus{
   color: #a02ea8;
 }
 .s-item.party .s-item-line i,
-.s-item.party .s-item-title{
+.s-item.party .s-item-title,
+.s-item.party .s-item-description a,
+.s-item.party .s-item-description a:hover,
+.s-item.party .s-item-description a:focus{
   color: #6ED3F0;
 }
 
