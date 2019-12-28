@@ -1,7 +1,7 @@
 {{ $related := slice }}
 {{ $indexes := slice }}
 {{ $statuses := $.Scratch.Get "event_status" }}
-{{ $events := sort (where .Site.RegularPages "Section" "event") "Params.event_date" }}
+{{ $events := sort (where .Site.RegularPages "Section" "event") "Params.start_date" }}
 
 {{ range $index, $el := $events }}
   {{ if eq $ $el }} 
@@ -31,7 +31,7 @@
 {{ $related = $related | append (index $events .) }}
 {{ end }}
 
-{{ range sort $related "Params.event_date" }}
+{{ range sort $related "Params.start_date" }}
   <div class="col-lg-4 col-sm-6">
     {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
   </div><!-- /.col -->
