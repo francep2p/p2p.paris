@@ -1,11 +1,7 @@
 <div class="block block-speaker">
     <div class="speaker-picture">
     {{ if .picture }}
-        {{ if .picture_valid }}
-            <img src="{{ .picture }}">
-        {{ else }}
-            <i class="fal fa-user-circle c-gradient"></i>
-        {{ end }}
+        <img src="{{ (resources.Get .picture.local).RelPermalink }}">
     {{ else }}
       <i class="fal fa-user-circle c-gradient"></i>
     {{ end }}

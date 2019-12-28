@@ -2,6 +2,7 @@ const fs = require('fs'),
       path = require('path'),
       fetch = require('node-fetch');
 
+const CHAPTER = 'Paris P2P';
 const AIRTABLE_BASE_ID = 'appVBIJFBUheVWS0Q';
 const {
   AIRTABLE_API_KEY
@@ -10,11 +11,24 @@ const {
 main();
 
 async function main() {
-  const talks = (await fetchTable('Talk')).filter(item => item.chapter.indexOf('Paris P2P') > -1);
-  const speakers = (await fetchTable('Speaker')).filter(item => item.chapters.indexOf('Paris P2P') > -1);
-  const events = await fetchTable('Event');
-  const chapters = await fetchTable('Chapter');
+  const talks = (await fetchTable('Talk'))
+    .filter(isPublished)
+    .filter(item => item.chapter.indexOf(CHAPTER) > -1)
+    .map(transformAirtableRecordsToPageProps)
+    .filter(i => i);
 
+  const speakers = (await fetchTable('Speaker'))
+    .filter(item => item.chapters.indexOf(CHAPTER) > -1)
+    .map(transformAirtableRecordsToPageProps)
+    .filter(i => i);
+
+  const events = (await fetchTable('Event'))
+    .map(transformAirtableRecordsToPageProps)
+    .filter(i => i);
+
+  const tags = await fetchTable('Tag');  
+  const chapters = await fetchTable('Chapter');
+  
   speakers.forEach(async speaker => {
     try {
       if (speaker.picture) {
@@ -29,7 +43,8 @@ async function main() {
     ...talks,
     ...speakers,
     ...events,
-    ...chapters
+    ...chapters,
+    ...tags
   ]);
 
   const en = joinRelations(translated.en);
@@ -41,6 +56,47 @@ async function main() {
     generateMarkdownFiles(enPages);
     generateMarkdownFiles(frPages, 'fr');
   });
+
+  const festivalEN = en.find(event => event.name == 'Paris P2P Festival #0');
+  const festivalFR = fr.find(event => event.name == 'Paris P2P Festival #0');
+
+  const festivalSpeakersEN = en
+    .filter(item => item.from_table == 'speaker')
+    .filter(item => item.in_paris_p2p__0_speakers_list);
+
+  const festivalSpeakersFR = fr
+    .filter(item => item.from_table == 'speaker')
+    .filter(item => item.in_paris_p2p__0_speakers_list);
+
+  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'speakers_en.json'), JSON.stringify(festivalSpeakersEN, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'speakers_fr.json'), JSON.stringify(festivalSpeakersFR, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'events_en.json'), JSON.stringify(groupFestivalTalksByDay(festivalEN), null, 2));
+  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'events_fr.json'), JSON.stringify(groupFestivalTalksByDay(festivalFR), null, 2));
+  
+  function groupFestivalTalksByDay(festival) {
+    T// ODO: Order talks by date/time
+    let result = [];
+    const days = {};
+  
+    festival.talks.forEach(talk => {
+      if (!talk.day) return;
+      if (days[talk.day]) {
+        days[talk.day].push(talk);
+      }
+      else {
+        days[talk.day] = [ talk ];
+      }
+    }); 
+
+    Object.keys(days).forEach((date) => {
+      result.push({
+        date: date,
+        events: days[date]
+      });
+    });
+
+    return result;
+  }
 
   function filterDuplicates(items) {
     const slugs = [];
@@ -149,7 +205,7 @@ async function fetchTable(tableName) {
       }
     });
 
-    return transformAirtableResponse(tableName, (await res.json()).records);
+    return flattenAirtableRecords(tableName, (await res.json()).records);
   } catch (error) {
     log({error})
     process.exit(1);
@@ -195,8 +251,8 @@ function log(message) {
   console.log(message);
 }
 
-function transformAirtableResponse(tableName, records) {
-  return records.map(item => {
+function flattenAirtableRecords(tableName, items) {
+  return items.map(item => {
     let result = {};
     result.id = item.id;
     result.date = item.createdTime;
@@ -218,39 +274,43 @@ function transformAirtableResponse(tableName, records) {
       result[newKey] = value;
     });
 
-    let title = '';
-    let basedir = '';
-    switch (result.from_table) {
-      case 'talk':
-        title = result['title_(en)']
-        basedir = '/talks/';
-        break;
-      case 'speaker':
-        title = result.name;
-        basedir = '/speakers/'; 
-        break;
-      case 'event': 
-        title = result.name;
-        basedir = '/event/'; 
-        break;
-      case 'chapter': 
-        title = result.name;
-        basedir = '/chapters/'; 
-        break;
-      default:
-        title = '';
-        basedir = ''; 
-    }
-
-    if (!title) {
-      return null;
-    }
-
-    result.title = title;
-    result.file_path = `${basedir}${result.slug}`;
-
     return result;
-  }).filter(item => item);
+  })
+}
+
+function transformAirtableRecordsToPageProps(item) {
+  let title = '';
+  let basedir = '';
+  switch (item.from_table) {
+    case 'talk':
+      title = item['title_(en)']
+      basedir = '/talks/';
+      break;
+    case 'speaker':
+      title = item.name;
+      basedir = '/speakers/'; 
+      break;
+    case 'event': 
+      title = item.name;
+      basedir = '/event/'; 
+      break;
+    case 'chapter': 
+      title = item.name;
+      basedir = '/chapters/'; 
+      break;
+    default:
+      title = '';
+      basedir = ''; 
+  }
+
+  if (!title) {
+    return null;
+  }
+
+  item.title = title;
+  item.file_path = `${basedir}${item.slug}`;
+
+  return item;
 }
 
 async function downloadImage(url) {

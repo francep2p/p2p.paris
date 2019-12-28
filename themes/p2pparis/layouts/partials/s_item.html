@@ -4,23 +4,23 @@
 			<div class="s-item-line s-time mr">
 				<i class="far fa-clock"></i>
 				<span>
-					{{ if or (eq .data.t_start "TBA") (eq .data.t_start "") }}
+					{{ if or (eq .data.start_date "TBA") (eq .data.start_date nil) }}
 					TBA
 					{{ else }}
-					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.t_start }}
+					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.start_date }}
 					{{ end }}
 					-
-					{{ if or (eq .data.t_end "TBA") (eq .data.t_end "") }}
+					{{ if or (eq .data.end_date "TBA") (eq .data.end_date nil) }}
 					TBA
 					{{ else }}
-					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.t_end }}
+					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.end_date }}
 					{{ end }}
 				</span>
 			</div>
 			{{if .data.language}}
 			<div class="s-item-line s-lang mr">
 				<i class="far fa-globe"></i>
-				<span>{{ .data.language }}</span>
+				<span>{{ range .data.language }} {{ . }} {{ end }}</span>
 			</div>
 			{{end}}
 		</div>
@@ -45,7 +45,7 @@
 		</div>
 		{{ if .data.tags }}
 		<div class="s-item-tags">
-			{{ .data.tags | markdownify }}
+			{{ .data.tags_html | markdownify }}
 		</div>
 		{{ end }}
 	</div><!-- /.s-item-bottom -->
