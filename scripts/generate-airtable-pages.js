@@ -96,10 +96,6 @@ function joinRelations(items) {
   
     return result;
   })
-
-  function relationObj(record) {
-    return { id: record.id, path: record.file_path };
-  }
 }
 
 async function fetchTable(tableName) {
