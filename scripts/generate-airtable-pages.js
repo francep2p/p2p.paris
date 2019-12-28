@@ -10,8 +10,8 @@ const {
 main();
 
 async function main() {
-  const talks = await fetchTable('Talk');
-  const speakers = await fetchTable('Speaker');
+  const talks = (await fetchTable('Talk')).filter(item => item.chapter.indexOf('Paris P2P') > -1);
+  const speakers = (await fetchTable('Speaker')).filter(item => item.chapters.indexOf('Paris P2P') > -1);
   const events = await fetchTable('Event');
   const chapters = await fetchTable('Chapter');
 
@@ -26,9 +26,32 @@ async function main() {
   const fr = joinRelations(translated.fr);
 
   ['speaker', 'talk'].forEach(topic => {
-    generateMarkdownFiles(en.filter(item => item.from_table === topic));
-    generateMarkdownFiles(fr.filter(item => item.from_table === topic), 'fr');
+    const enPages = filterDuplicates(en.filter(item => item.from_table === topic).filter(hasSlug));
+    const frPages = filterDuplicates(fr.filter(item => item.from_table === topic).filter(hasSlug));
+    generateMarkdownFiles(enPages);
+    generateMarkdownFiles(frPages, 'fr');
   });
+
+  function filterDuplicates(items) {
+    const slugs = [];
+    return items.filter(item => {
+      if (slugs.includes(item)) {
+        log(`WARNING: ${item.from_table} ${item.title} is duplicated`);
+        return false;
+      }
+      slugs.push(item.slug)
+      return true;
+    });
+  }
+
+  function hasSlug(item) {
+    if (item.slug) {
+      return true;
+    }
+
+    log(`WARNING: ${item.from_table} ${item.title} doesn't have a slug`);
+    return false;
+  }
 }
 
 function generateMarkdownFiles(items, langSuffix = '') {
@@ -39,8 +62,8 @@ function generateMarkdownFiles(items, langSuffix = '') {
 
     fs.mkdirSync(dirpath, { recursive: true });
     fs.writeFileSync(filepath, JSON.stringify(item, null, 2));
-    console.log(`Created file: ${filepath}`);
-  })
+    log(`Created file: ${filepath}`);
+  });
 }
 
 function splitToMultiLanguage(items) {
@@ -79,10 +102,17 @@ function joinRelations(items) {
 
       if (value instanceof Array) {
         newValue = value.map(v => {
-          return normalized[v]
-            ? normalized[v]
-            : v;
-        });
+          if (normalized[v]) {
+            return normalized[v];
+          }
+
+          if (isId(v)) {
+            log(`WARNING: ${item.from_table} ${item.title} referenced "${v}" as a relation, but is not found. Probably this is because it references a different chapter which is filtered out.`)
+            return null;
+          }
+
+          return v;
+        }).filter(i => i);
       } 
       else if (normalized[value]) {
         return normalized[value];
@@ -138,6 +168,14 @@ function removeLanguageKey(key) {
   return key.replace(`_(${lang})`, '');
 }
 
+function isId(value) {
+  return value.startsWith('rec') && value.length == 17;
+}
+
+function log(message) {
+  console.log(message);
+}
+
 function transformAirtableResponse(tableName, records) {
   return records.map(item => {
     let result = {};
@@ -183,9 +221,7 @@ function transformAirtableResponse(tableName, records) {
     }
 
     result.title = title;
-
-    const filename = title.replace(/\s/g, '-').toLowerCase();
-    result.file_path = `${basedir}${filename}`;
+    result.file_path = `${basedir}${result.slug}`;
 
     return result;
   }).filter(item => item);
