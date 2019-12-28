@@ -15,6 +15,16 @@ async function main() {
   const events = await fetchTable('Event');
   const chapters = await fetchTable('Chapter');
 
+  speakers.forEach(async speaker => {
+    try {
+      if (speaker.picture) {
+        await downloadImage(speaker.picture.remote);
+      }
+    } catch (err) {
+      log(`Image download error: ${speaker.picture.remote}, ${err}`);
+    }
+  });
+
   const translated = splitToMultiLanguage([
     ...talks,
     ...speakers,
@@ -51,6 +61,10 @@ async function main() {
 
     log(`WARNING: ${item.from_table} ${item.title} doesn't have a slug`);
     return false;
+  }
+
+  function isPublished(item) {
+    return item.published;
   }
 }
 
@@ -97,9 +111,9 @@ function joinRelations(items) {
     let result = {};
 
     Object.keys(item).forEach(key => {
-      let newValue;
       const value = item[key];
-
+      let newValue = value;
+      
       if (value instanceof Array) {
         newValue = value.map(v => {
           if (normalized[v]) {
@@ -116,9 +130,6 @@ function joinRelations(items) {
       } 
       else if (normalized[value]) {
         return normalized[value];
-      }
-      else {
-        newValue = value;
       }
 
       result[key] = newValue;
@@ -140,7 +151,7 @@ async function fetchTable(tableName) {
 
     return transformAirtableResponse(tableName, (await res.json()).records);
   } catch (error) {
-    console.error({error})
+    log({error})
     process.exit(1);
   }
 }
@@ -169,7 +180,15 @@ function removeLanguageKey(key) {
 }
 
 function isId(value) {
+  if (typeof value != 'string') return false;
   return value.startsWith('rec') && value.length == 17;
+}
+
+function getImagePath(filepath, absolute = true) {
+  const filename = path.basename(filepath);
+  return absolute
+    ? path.join(__dirname, `../assets/gen/img/${filename}`)
+    : path.join(`/gen/img/${filename}`);
 }
 
 function log(message) {
@@ -184,12 +203,19 @@ function transformAirtableResponse(tableName, records) {
     result.from_table = tableName.toLowerCase();
 
     Object.keys(item.fields).forEach(key => {
+      let value = item.fields[key];
       const newKey = key
         .toLowerCase()
         .replace(/\#/g, '_')
         .replace(/\(s\)/g, '_')
         .replace(/\s/g, '_');
-      result[newKey] = item.fields[key];
+      
+      if (newKey == 'picture') {
+        const url = value[0].thumbnails.large.url;
+        value = { remote: url, local: getImagePath(url, false)};
+      }
+      
+      result[newKey] = value;
     });
 
     let title = '';
@@ -225,4 +251,22 @@ function transformAirtableResponse(tableName, records) {
 
     return result;
   }).filter(item => item);
+}
+
+async function downloadImage(url) {
+  log(`Downloading image ${url}`);
+  const filepath = getImagePath(url);
+  fs.mkdirSync(path.dirname(filepath), { recursive: true });
+
+  const res = await fetch(url);
+  return new Promise((resolve, reject) => {
+    const fileStream = fs.createWriteStream(filepath);
+    res.body.pipe(fileStream);
+    res.body.on("error", (err) => {
+      reject(err);
+    });
+    fileStream.on("finish", function() {
+      resolve();
+    });
+  });
 }

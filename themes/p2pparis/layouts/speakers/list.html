@@ -5,13 +5,22 @@
       <div class="col-md-12 mb-5">
         <h1>Speakers</h1>
       </div>
-      <div class="col">
-        <ul>
-          {{ range .RegularPages }}
-          <li><a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a></li>
-          {{ end }}
-        </ul>
+    </div>
+    <div class="row">
+      {{ range .RegularPages }}
+      <div class="col-md-4">
+        <div class="p-4">
+          <div>
+            {{ with .Params.picture }}
+            <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get .local).RelPermalink }}" />
+            {{ end }}
+          </div>
+          <div>
+            <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
+          </div>
+        </div>
       </div>
+      {{ end }}
     </div>
   </div>
 </section>
