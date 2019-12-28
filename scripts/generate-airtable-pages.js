@@ -114,7 +114,8 @@ async function fetchTable(tableName) {
 
     return transformAirtableResponse(tableName, (await res.json()).records);
   } catch (error) {
-    throw Error(error);
+    console.error({error})
+    process.exit(1);
   }
 }
 
