@@ -8,3 +8,6 @@ package-lock.json
 resources
 public
 data/gen
+
+content/speakers
+content/talks
