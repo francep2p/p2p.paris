@@ -3,7 +3,7 @@ title: "Paris P2P Festival #0"
 subtitle: "Inauguration de la communauté"
 description: "Paris P2P Festival #0, du 8 au 12 janvier 2020 - Ground Control, Paris. Le festival de toutes les formes du Peer-to-Peer : conférences, ateliers, films, performances artistiques..."
 layout: festival
-event_date: 2020-01-08
+start_date: 2020-01-08
 event_end_date: 2020-01-12
 location: Ground Control, Paris
 #meetup_link:

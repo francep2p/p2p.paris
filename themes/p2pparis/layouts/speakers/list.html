@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section style="height: 100%; background: #fff; padding-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <h1>Speakers</h1>
+      </div>
+      <div class="col">
+        <ul>
+          {{ range .RegularPages }}
+          <li><a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

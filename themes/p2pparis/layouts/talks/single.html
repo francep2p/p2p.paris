@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<section style="height: 100%; background: #fff; padding-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <a href="{{ .Parent.RelPermalink }}">< Show all talks</a>
+      </div>
+      <div class="col-md-12 mb-5">
+        <h5 style="color: grey;">{{ .Params.from_table | title }}</h5>
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Speakers</h5>
+      </div>
+      <div class="col-md-12">
+        <ul>      
+        {{ range .Params.speaker_ }}
+          {{ $speaker := $.GetPage .file_path }}  
+          <li>
+            <a href="{{ $speaker.RelPermalink }}">
+              <h3>{{ $speaker.Title }}</h3>
+            </a>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+
+      <div class="col-md-12">
+        <h5>From events:</h5>
+      </div>
+      <div class="col-md-12">
+        <ul>      
+        {{ range .Params.event }}
+          <li>
+            <h3>{{ .title }}</h3>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
