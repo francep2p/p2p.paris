@@ -248,7 +248,7 @@ function getImagePath(filepath, absolute = true) {
 }
 
 function log(message) {
-  console.log(message);
+  // console.log(message);
 }
 
 function flattenAirtableRecords(tableName, items) {
