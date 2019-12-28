@@ -74,7 +74,7 @@ async function main() {
   fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'events_fr.json'), JSON.stringify(groupFestivalTalksByDay(festivalFR), null, 2));
   
   function groupFestivalTalksByDay(festival) {
-    T// ODO: Order talks by date/time
+    // TODO: Order talks by date/time
     let result = [];
     const days = {};
   
