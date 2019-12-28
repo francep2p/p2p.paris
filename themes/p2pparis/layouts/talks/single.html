@@ -17,56 +17,30 @@
       </div>
       <div class="col-md-12">
         <ul>      
-          {{ range .Params.speaker_ }}
-            {{ $speaker := $.GetPage .path }}  
-            <li>
-              <a href="{{ $speaker.RelPermalink }}">
-                <h3>{{ $speaker.Title }}</h3>
-              </a>
-            </li>
-          {{ end }}
+        {{ range .Params.speaker_ }}
+          {{ $speaker := $.GetPage .file_path }}  
+          <li>
+            <a href="{{ $speaker.RelPermalink }}">
+              <h3>{{ $speaker.Title }}</h3>
+            </a>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+
+      <div class="col-md-12">
+        <h5>From events:</h5>
+      </div>
+      <div class="col-md-12">
+        <ul>      
+        {{ range .Params.event }}
+          <li>
+            <h3>{{ .title }}</h3>
+          </li>
+        {{ end }}
         </ul>
       </div>
     </div>
   </div>
 </section>
 {{ end }}
-
-{{/*  {
-  "date": "2019-12-27T15:13:37.000Z",
-  "from_table": "talk",
-  "event": [
-    {
-      "id": "recVbBLrJo6BuQNSJ",
-      "path": "/event/paris-p2p-festival-#0"
-    }
-  ],
-  "kind": "talk",
-  "language": [
-    "fr"
-  ],
-  "speaker(s)": [
-    {
-      "id": "recDb5KQoo7EJmiHa",
-      "path": "/speakers/weedcoder"
-    }
-  ],
-  "relative_time": "future",
-  "title": "A History of the CypherPunk Movement",
-  "file_path": "/talks/a-history-of-the-cypherpunk-movement"
-}  */}}
-
-  {{/*  {
-    "date": "2019-12-27T15:04:24.000Z",
-    "from_table": "speaker",
-    "talk": [
-      {
-        "id": "rec5D9MNb8KOUkwru",
-        "path": "/talks/poster-session:-dpos"
-      }
-    ],
-    "name": "Antoine Breuil",
-    "#_talks": 1,
-    "title": "Antoine Breuil",
-    "file_path": "/speakers/antoine-breuil"
-  }  */}}

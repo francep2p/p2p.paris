@@ -80,12 +80,12 @@ function joinRelations(items) {
       if (value instanceof Array) {
         newValue = value.map(v => {
           return normalized[v]
-            ? relationObj(normalized[v])
+            ? normalized[v]
             : v;
         });
       } 
       else if (normalized[value]) {
-        return relationObj(normalized[value]);
+        return normalized[value];
       }
       else {
         newValue = value;

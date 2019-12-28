@@ -15,8 +15,12 @@
         <h5>Number of talks: {{ .Params.__talks }}</h5>
       </div>
 
+      <div class="col-md-12">
+        <h5>Talks</h5>
+      </div>
+
       {{ range .Params.talk }}
-        {{ $talk := $.GetPage .path }}  
+        {{ $talk := $.GetPage .file_path }}  
         <div class="col-md-12">
           <a href="{{ $talk.RelPermalink }}">
             <h3>{{ $talk.Title }}</h3>
