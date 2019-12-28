@@ -17,12 +17,12 @@
 
       {{ range .Params.talk }}
         {{ $talk := $.GetPage .path }}  
-        <a href="{{ $talk.RelPermalink }}">
-          <div class="col-md-12">
+        <div class="col-md-12">
+          <a href="{{ $talk.RelPermalink }}">
             <h3>{{ $talk.Title }}</h3>
             <p>Language: {{ $talk.Params.language }}</p>
-          </div>
-        </a>
+          </a>
+        </div>
       {{ end }}
     </div>
   </div>
