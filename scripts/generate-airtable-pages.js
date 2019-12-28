@@ -149,7 +149,12 @@ function transformAirtableResponse(tableName, records) {
     result.from_table = tableName.toLowerCase();
 
     Object.keys(item.fields).forEach(key => {
-      result[key.toLowerCase().replace(/\s/g, '_')] = item.fields[key];
+      const newKey = key
+        .toLowerCase()
+        .replace(/\#/g, '_')
+        .replace(/\(s\)/g, '_')
+        .replace(/\s/g, '_');
+      result[newKey] = item.fields[key];
     });
 
     let title = '';
@@ -179,6 +184,8 @@ function transformAirtableResponse(tableName, records) {
     if (!title) {
       return null;
     }
+
+    result.title = title;
 
     const filename = title.replace(/\s/g, '-').toLowerCase();
     result.file_path = `${basedir}${filename}`;
