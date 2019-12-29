@@ -11,16 +11,20 @@
 			<div class="s-item-line s-time mr">
 				<i class="far fa-clock"></i>
 				<span>
-					{{ if or (eq .data.start_date "TBA") (eq .data.start_date nil) }}
-					TBA
+					{{ if .data.tba_time }}
+					TBA - TBA 
 					{{ else }}
-					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.start_date }}
-					{{ end }}
-					-
-					{{ if or (eq .data.end_date "TBA") (eq .data.end_date nil) }}
-					TBA
-					{{ else }}
-					{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.end_date }}
+						{{ if or (eq .data.start_date "TBA") (eq .data.start_date nil) }}
+						TBA
+						{{ else }}
+						{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.start_date }}
+						{{ end }}
+						-
+						{{ if or (eq .data.end_date "TBA") (eq .data.end_date nil) }}
+						TBA
+						{{ else }}
+						{{ dateFormat (cond (eq .ctx.Lang "en") "3:04PM" "15h04") .data.end_date }}
+						{{ end }}
 					{{ end }}
 				</span>
 			</div>
