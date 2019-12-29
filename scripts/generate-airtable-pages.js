@@ -14,70 +14,114 @@ async function main() {
   const talks = (await fetchTable('Talk'))
     .filter(isPublished)
     .filter(item => item.chapter.indexOf(CHAPTER) > -1)
-    .map(transformAirtableRecordsToPageProps)
+    .map(addPageProps)
     .filter(i => i);
 
   const speakers = (await fetchTable('Speaker'))
-    .filter(item => item.chapters.indexOf(CHAPTER) > -1)
-    .map(transformAirtableRecordsToPageProps)
+    .filter(item => item.chapters && item.chapters.indexOf(CHAPTER) > -1)
+    .map(addPageProps)
     .filter(i => i);
 
   const events = (await fetchTable('Event'))
-    .map(transformAirtableRecordsToPageProps)
+    .map(addPageProps)
     .filter(i => i);
 
   const tags = await fetchTable('Tag');  
   const chapters = await fetchTable('Chapter');
-  
-  speakers.forEach(async speaker => {
-    try {
-      if (speaker.picture) {
-        await downloadImage(speaker.picture.remote);
-      }
-    } catch (err) {
-      log(`Image download error: ${speaker.picture.remote}, ${err}`);
-    }
-  });
+  const talkKind = await fetchTable('Talk%20Kind');
 
-  const translated = splitToMultiLanguage([
+  const entities = [
     ...talks,
     ...speakers,
     ...events,
     ...chapters,
-    ...tags
-  ]);
+    ...tags,
+    ...talkKind
+  ]
 
-  const en = joinRelations(translated.en);
-  const fr = joinRelations(translated.fr);
+  const translated = splitToMultiLanguage(entities);
 
-  ['speaker', 'talk'].forEach(topic => {
-    const enPages = filterDuplicates(en.filter(item => item.from_table === topic).filter(hasSlug));
-    const frPages = filterDuplicates(fr.filter(item => item.from_table === topic).filter(hasSlug));
-    generateMarkdownFiles(enPages);
-    generateMarkdownFiles(frPages, 'fr');
+  downloadImagesFromItems(speakers);
+
+  const defaultLanguage = 'en';
+  ['en', 'fr'].forEach(lang => {
+    // Join relations. 1 level deep
+    const joined = joinRelations(translated[lang]);
+
+    // Create normalized .Data.airtable_LANG.json file with all entities
+    const filepath = path.join(__dirname, `../data/gen/airtable_${lang}.json`);
+    fs.mkdirSync(path.dirname(filepath), { recursive: true });
+    fs.writeFileSync(filepath, JSON.stringify(normalizeArray(translated[lang]), null, 2));
+
+    // create Festival data
+    createFestivalData(
+      lang,
+      joined.find(event => event.name == 'Paris P2P Festival #0'),
+      joined.filter(item => item.from_table == 'speaker').filter(item => item.in_paris_p2p__0_speakers_list),
+    );
+
+    // Create pages
+    ['speaker', 'talk'].forEach(topic => {
+      const langSuffix = (lang != defaultLanguage ? lang : '')
+      generateMarkdownFiles(joined.filter(item => item.from_table === topic), langSuffix);
+    });
   });
+}
 
-  const festivalEN = en.find(event => event.name == 'Paris P2P Festival #0');
-  const festivalFR = fr.find(event => event.name == 'Paris P2P Festival #0');
+function addPageProps(item) {
+  let title = '';
+  let basedir = '';
+  switch (item.from_table) {
+    case 'talk':
+      title = item['title_(en)']
+      basedir = '/talks/';
+      break;
+    case 'speaker':
+      title = item.name;
+      basedir = '/speakers/'; 
+      break;
+    case 'event': 
+      title = item.name;
+      basedir = '/event/'; 
+      break;
+    case 'chapter': 
+      title = item.name;
+      basedir = '/chapters/'; 
+      break;
+    default:
+      title = '';
+      basedir = ''; 
+  }
 
-  const festivalSpeakersEN = en
-    .filter(item => item.from_table == 'speaker')
-    .filter(item => item.in_paris_p2p__0_speakers_list);
+  if (!title) {
+    log(`WARNING ${item.from_table} ${item} doesn't have a title`);
+    return null;
+  }
 
-  const festivalSpeakersFR = fr
-    .filter(item => item.from_table == 'speaker')
-    .filter(item => item.in_paris_p2p__0_speakers_list);
+  item.title = title;
+  item.file_path = `${basedir}${item.slug}`;
 
-  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'speakers_en.json'), JSON.stringify(festivalSpeakersEN, null, 2));
-  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'speakers_fr.json'), JSON.stringify(festivalSpeakersFR, null, 2));
-  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'events_en.json'), JSON.stringify(groupFestivalTalksByDay(festivalEN), null, 2));
-  fs.writeFileSync(path.join(__dirname, '../data/gen/festival', 'events_fr.json'), JSON.stringify(groupFestivalTalksByDay(festivalFR), null, 2));
-  
+  return item;
+}
+
+
+//
+// Create festival data
+//
+function createFestivalData(lang, festival, speakers) {
+  if (!festival) {
+    log(`WARNING festival data not found`);
+  }
+
+  const basedir = path.join(__dirname, '../data/gen/festival');
+  fs.mkdirSync(basedir, { recursive: true });
+  fs.writeFileSync(path.join(basedir, `speakers_${lang}.json`), JSON.stringify(speakers, null, 2));
+  fs.writeFileSync(path.join(basedir, `events_${lang}.json`), JSON.stringify(groupFestivalTalksByDay(festival), null, 2));
+
   function groupFestivalTalksByDay(festival) {
-    // TODO: Order talks by date/time
     let result = [];
     const days = {};
-  
+
     festival.talks.forEach(talk => {
       if (!talk.day) return;
       if (days[talk.day]) {
@@ -89,53 +133,100 @@ async function main() {
     }); 
 
     Object.keys(days).forEach((date) => {
-      result.push({
-        date: date,
-        events: days[date]
+      const events = days[date];
+      events.sort((a,b) => {
+        return new Date(a.start_date) - new Date(b.start_date);
       });
+
+      result.push({ date, events });
     });
 
     return result;
   }
+}
 
-  function filterDuplicates(items) {
-    const slugs = [];
-    return items.filter(item => {
-      if (slugs.includes(item)) {
-        log(`WARNING: ${item.from_table} ${item.title} is duplicated`);
-        return false;
-      }
-      slugs.push(item.slug)
-      return true;
-    });
+
+//
+// Filters
+//
+function hasSlug(item) {
+  if (item.slug) {
+    return true;
   }
 
-  function hasSlug(item) {
-    if (item.slug) {
-      return true;
+  log(`WARNING: ${item.from_table} ${item.title} doesn't have a slug`);
+  return false;
+}
+
+function isPublished(item) {
+  return item.published;
+}
+
+
+//
+// Airtable
+//
+async function fetchTable(tableName) {
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableName}`;
+  const headers = {
+    'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+    'Content-Type': 'application/json'
+  };
+
+  return fetch(url, { headers })
+    .then(checkStatus)
+    .then(records => flattenAirtableRecords(tableName, records))
+    .catch(error => {
+      log(`AIRTABLE ERROR: ${error}`);
+      process.exit(1);
+    })
+
+  async function checkStatus(res) {
+    if (res.ok) {
+      return (await res.json()).records;
+    } else {
+      log(`AIRTABLE ERROR: ${res.statusText}`);
+      process.exit(1);
     }
-
-    log(`WARNING: ${item.from_table} ${item.title} doesn't have a slug`);
-    return false;
-  }
-
-  function isPublished(item) {
-    return item.published;
   }
 }
 
-function generateMarkdownFiles(items, langSuffix = '') {
-  const suffix = langSuffix ? `.${langSuffix}.md` : '.md';
-  items.forEach(item => {
-    const filepath = path.join(__dirname, '../content', item.file_path, `index${suffix}`);
-    const dirpath = path.dirname(filepath);
+function flattenAirtableRecords(tableName, items) {
+  return items.map(item => {
+    let result = {};
+    result.id = item.id;
+    result.date = item.createdTime;
+    result.from_table = tableName.toLowerCase();
 
-    fs.mkdirSync(dirpath, { recursive: true });
-    fs.writeFileSync(filepath, JSON.stringify(item, null, 2));
-    log(`Created file: ${filepath}`);
-  });
+    Object.keys(item.fields).forEach(key => {
+      let value = item.fields[key];
+      const newKey = key
+        .toLowerCase()
+        .replace(/\#/g, '_')
+        .replace(/\(s\)/g, '_')
+        .replace(/\s/g, '_');
+      
+      // if is file
+      if (value instanceof Array) {
+        value = value.map(item => {
+          if (item && item.filename) {
+            const url = item.thumbnails.large.url;
+            return { is_image: true, remote: url, local: getImagePath(url, false)};
+          }
+          return item;
+        })
+      }
+      
+      result[newKey] = value;
+    });
+
+    return result;
+  })
 }
 
+//
+// Language
+//
 function splitToMultiLanguage(items) {
   let result = { en: [], fr: [] };
 
@@ -160,6 +251,69 @@ function splitToMultiLanguage(items) {
   return result;
 }
 
+function isTranslated(key) {
+  return key.lastIndexOf('(en)') > -1 || key.lastIndexOf('(fr)')  > -1;
+}
+
+function getLanguage(key) {
+  return key.substring(
+    key.lastIndexOf("(") + 1, 
+    key.lastIndexOf(")")
+  );
+}
+
+function removeLanguageKey(key) {
+  const lang = getLanguage(key);
+  return key.replace(`_(${lang})`, '');
+}
+
+
+//
+// Generate markdown files
+//
+function generateMarkdownFiles(items, langSuffix = '') {
+  const _items = filterDuplicates(safeFrontmatterProps(items)).filter(hasSlug);
+  const suffix = langSuffix ? `.${langSuffix}.md` : '.md';
+  _items.forEach(item => {
+    const filepath = path.join(__dirname, '../content', item.file_path, `index${suffix}`);
+    const dirpath = path.dirname(filepath);
+
+    fs.mkdirSync(dirpath, { recursive: true });
+    fs.writeFileSync(filepath, JSON.stringify(item, null, 2));
+    log(`Created file: ${filepath}`);
+  });
+}
+
+function safeFrontmatterProps(items) {
+  const prefix = 'at_';
+  const reservedsKeys = ['tags'];
+  return items.map(item => {
+    Object.keys(item).forEach(key => {
+      if (reservedsKeys.includes(key)) {
+        item[`${prefix}${key}`] = item[key];
+        delete item[key];
+      }
+    });
+    return item;
+  });
+}  
+
+function filterDuplicates(items) {
+  const slugs = [];
+  return items.filter(item => {
+    if (slugs.includes(item)) {
+      log(`WARNING: ${item.from_table} ${item.title} is duplicated`);
+      return false;
+    }
+    slugs.push(item.slug)
+    return true;
+  });
+}
+
+
+//
+// Relations
+//
 function joinRelations(items) {
   const normalized = normalizeArray(items)
 
@@ -195,122 +349,28 @@ function joinRelations(items) {
   })
 }
 
-async function fetchTable(tableName) {
-  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableName}`;
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
+
+
+//
+// Download images
+//
+function downloadImagesFromItems(items) {
+  items.forEach(item => {
+    Object.keys(item).forEach(key => {
+      const value = item[key];
+      if (value instanceof Array) {
+        value.forEach(async v => {
+          if (v && v.is_image) {
+            try {
+              await downloadImage(v.remote);
+            } catch (err) {
+              log(`Image download error: ${v.remote}, ${err}`);
+            }
+          }
+        })
       }
-    });
-
-    return flattenAirtableRecords(tableName, (await res.json()).records);
-  } catch (error) {
-    log({error})
-    process.exit(1);
-  }
-}
-
-// helper
-function normalizeArray(items) {
-  let result = {};
-  items.forEach(item => { result[item.id] = item; });
-  return result;
-}
-
-function isTranslated(key) {
-  return key.lastIndexOf('(en)') > -1 || key.lastIndexOf('(fr)')  > -1;
-}
-
-function getLanguage(key) {
-  return key.substring(
-    key.lastIndexOf("(") + 1, 
-    key.lastIndexOf(")")
-  );
-}
-
-function removeLanguageKey(key) {
-  const lang = getLanguage(key);
-  return key.replace(`_(${lang})`, '');
-}
-
-function isId(value) {
-  if (typeof value != 'string') return false;
-  return value.startsWith('rec') && value.length == 17;
-}
-
-function getImagePath(filepath, absolute = true) {
-  const filename = path.basename(filepath);
-  return absolute
-    ? path.join(__dirname, `../assets/gen/img/${filename}`)
-    : path.join(`/gen/img/${filename}`);
-}
-
-function log(message) {
-  // console.log(message);
-}
-
-function flattenAirtableRecords(tableName, items) {
-  return items.map(item => {
-    let result = {};
-    result.id = item.id;
-    result.date = item.createdTime;
-    result.from_table = tableName.toLowerCase();
-
-    Object.keys(item.fields).forEach(key => {
-      let value = item.fields[key];
-      const newKey = key
-        .toLowerCase()
-        .replace(/\#/g, '_')
-        .replace(/\(s\)/g, '_')
-        .replace(/\s/g, '_');
-      
-      if (newKey == 'picture') {
-        const url = value[0].thumbnails.large.url;
-        value = { remote: url, local: getImagePath(url, false)};
-      }
-      
-      result[newKey] = value;
-    });
-
-    return result;
-  })
-}
-
-function transformAirtableRecordsToPageProps(item) {
-  let title = '';
-  let basedir = '';
-  switch (item.from_table) {
-    case 'talk':
-      title = item['title_(en)']
-      basedir = '/talks/';
-      break;
-    case 'speaker':
-      title = item.name;
-      basedir = '/speakers/'; 
-      break;
-    case 'event': 
-      title = item.name;
-      basedir = '/event/'; 
-      break;
-    case 'chapter': 
-      title = item.name;
-      basedir = '/chapters/'; 
-      break;
-    default:
-      title = '';
-      basedir = ''; 
-  }
-
-  if (!title) {
-    return null;
-  }
-
-  item.title = title;
-  item.file_path = `${basedir}${item.slug}`;
-
-  return item;
+    })
+  });
 }
 
 async function downloadImage(url) {
@@ -329,4 +389,30 @@ async function downloadImage(url) {
       resolve();
     });
   });
+}
+
+
+//
+// Other helpers
+// 
+function normalizeArray(items) {
+  let result = {};
+  items.forEach(item => { result[item.id] = item; });
+  return result;
+}
+
+function isId(value) {
+  if (typeof value != 'string') return false;
+  return value.startsWith('rec') && value.length == 17;
+}
+
+function getImagePath(filepath, absolute = true) {
+  const filename = path.basename(filepath);
+  return absolute
+    ? path.join(__dirname, `../assets/gen/img/${filename}`)
+    : path.join(`/gen/img/${filename}`);
+}
+
+function log(message) {
+  console.log(message);
 }

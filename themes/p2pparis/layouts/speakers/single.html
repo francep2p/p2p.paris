@@ -11,7 +11,8 @@
         
         <div>
           {{ with .Params.picture }}
-          <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get .local).RelPermalink }}" />
+          {{ $img := index . 0 }}
+          <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
           {{ end }}
         </div>  
       </div>

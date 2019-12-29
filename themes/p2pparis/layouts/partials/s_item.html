@@ -1,4 +1,11 @@
-<div class="block s-item {{ .data.k }}">
+{{ $at := index .ctx.Site.Data.gen (print "airtable_" .ctx.Lang) }}
+{{ $kind := "" }}
+
+{{ if .data.kind }}
+	{{ $kind = index $at (index .data.kind 0) }}
+{{ end }}
+
+<div class="block s-item {{ $kind.name }}">
 	<div class="s-item-top">
 		<div class="s-item-line-top">
 			<div class="s-item-line s-time mr">
@@ -20,7 +27,7 @@
 			{{if .data.language}}
 			<div class="s-item-line s-lang mr">
 				<i class="far fa-globe"></i>
-				<span>{{ range .data.language }} {{ . }} {{ end }}</span>
+				<span>{{ delimit .data.language "/" }}</span>
 			</div>
 			{{end}}
 		</div>
@@ -49,5 +56,5 @@
 		</div>
 		{{ end }}
 	</div><!-- /.s-item-bottom -->
-	<span class="tag tag-{{ .data.k }}"><i class="far {{ .data.k_icon }}"></i>{{ .data.k_label }}</span>
+	<span class="tag tag-{{ $kind.name }}"><i class="far {{ .data.k_icon }}"></i>{{ .data.k_label }}</span>
 </div><!-- /.s-item -->
