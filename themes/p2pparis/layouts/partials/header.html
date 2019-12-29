@@ -1,4 +1,4 @@
-{{ $.Scratch.Set "title" (print .Site.Title " - " .Title) }}
+{{ $.Scratch.Set "title" (print .Title " - " .Site.Title) }}
 {{ $.Scratch.Set "description" (.Description | default .Site.Params.default_description) }}
 {{ $.Scratch.Set "featured_image" (.Site.Params.default_featured_image | absURL) }}
 {{ if eq .Section "event" }}
