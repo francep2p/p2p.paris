@@ -11,24 +11,31 @@ const {
 main();
 
 async function main() {
-  const talks = (await fetchTable('Talk'))
-    .filter(isPublished)
-    .filter(item => item.chapter.indexOf(CHAPTER) > -1)
-    .map(addPageProps)
-    .filter(i => i);
+  let talks, speakers, events, tags, chapters, talkKind;
 
-  const speakers = (await fetchTable('Speaker'))
-    .filter(item => item.chapters && item.chapters.indexOf(CHAPTER) > -1)
-    .map(addPageProps)
-    .filter(i => i);
+  try {
+    talks = (await fetchTable('Talk'))
+      .filter(isPublished)
+      .filter(item => item.chapter && item.chapter.indexOf(CHAPTER) > -1)
+      .map(addPageProps)
+      .filter(i => i);
 
-  const events = (await fetchTable('Event'))
-    .map(addPageProps)
-    .filter(i => i);
+    speakers = (await fetchTable('Speaker'))
+      .filter(item => item.chapters && item.chapters.indexOf(CHAPTER) > -1)
+      .map(addPageProps)
+      .filter(i => i);
 
-  const tags = await fetchTable('Tag');  
-  const chapters = await fetchTable('Chapter');
-  const talkKind = await fetchTable('Talk%20Kind');
+    events = (await fetchTable('Event'))
+      .map(addPageProps)
+      .filter(i => i);
+
+    tags = await fetchTable('Tag');  
+    chapters = await fetchTable('Chapter');
+    talkKind = await fetchTable('Talk%20Kind');
+  } catch (error) {
+    log(`ERROR ${error}`);
+    process.exit(1);
+  }
 
   const entities = [
     ...talks,
@@ -178,7 +185,7 @@ async function fetchTable(tableName) {
     .then(records => flattenAirtableRecords(tableName, records))
     .catch(error => {
       log(`AIRTABLE ERROR: ${error}`);
-      process.exit(1);
+      process.exit(2);
     })
 
   async function checkStatus(res) {
@@ -186,7 +193,7 @@ async function fetchTable(tableName) {
       return (await res.json()).records;
     } else {
       log(`AIRTABLE ERROR: ${res.statusText}`);
-      process.exit(1);
+      process.exit(3);
     }
   }
 }
@@ -363,6 +370,7 @@ function downloadImagesFromItems(items) {
               await downloadImage(v.remote);
             } catch (err) {
               log(`Image download error: ${v.remote}, ${err}`);
+              process.exit(4);
             }
           }
         })
