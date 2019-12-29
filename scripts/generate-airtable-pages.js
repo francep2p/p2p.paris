@@ -130,10 +130,8 @@ function createFestivalData(lang, festival, speakers) {
     log(`WARNING festival data not found`);
   }
 
-  const basedir = path.join(__dirname, '../data/gen/festival');
-  fs.mkdirSync(basedir, { recursive: true });
-  fs.writeFileSync(path.join(basedir, `speakers_${lang}.json`), JSON.stringify(speakers, null, 2));
-  fs.writeFileSync(path.join(basedir, `events_${lang}.json`), JSON.stringify(groupFestivalTalksByDay(festival), null, 2));
+  generateDataFile(`festival/speakers_${lang}.json`, speakers);
+  generateDataFile(`festival/events_${lang}.json`, groupFestivalTalksByDay(festival));
 
   function groupFestivalTalksByDay(festival) {
     let result = [];
