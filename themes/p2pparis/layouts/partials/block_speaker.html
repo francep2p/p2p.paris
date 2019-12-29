@@ -1,11 +1,8 @@
 <div class="block block-speaker">
     <div class="speaker-picture">
     {{ if .picture }}
-        {{ if .picture_valid }}
-            <img src="{{ .picture }}">
-        {{ else }}
-            <i class="fal fa-user-circle c-gradient"></i>
-        {{ end }}
+        {{ $img := index .picture 0 }}
+        <img src="{{ (resources.Get $img.local).RelPermalink }}">
     {{ else }}
       <i class="fal fa-user-circle c-gradient"></i>
     {{ end }}

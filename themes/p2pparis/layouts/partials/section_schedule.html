@@ -12,7 +12,8 @@
 
     <ul class="nav nav-pills nav-fill s-nav" id="nav-schedule">
 
-        {{ range $festival_events }}
+        {{ range $index, $el := $festival_events }}
+        {{ $id := (add $index 1) }}
 
         {{- $date := time .date -}}
         {{- $month_num := printf "%d" $date.Month -}}
@@ -43,10 +44,10 @@
         {{- $date_short = print $day "<br> " (dateFormat "2" .date) " " $month -}}
 
         <li class="nav-item">
-          <a class="nav-link {{ if eq .id 1}}active{{end}} js-scroll-trigger" href="#c-day-{{.id}}">
-            <span class="title long">{{ i18n "day_long" . }}  {{ .id }}</span>
+          <a class="nav-link {{ if eq $id 1}}active{{end}} js-scroll-trigger" href="#c-day-{{ $id }}">
+            <span class="title long">{{ i18n "day_long" . }}  {{ $id }}</span>
             <span class="subtitle long">{{ $date_long }}</span>
-            <span class="title short">{{ i18n "day_short" . }}{{ .id }}</span>
+            <span class="title short">{{ i18n "day_short" . }}{{ $id }}</span>
             <span class="subtitle short">{{ $date_short | safeHTML }}</span>
           </a>
         </li>
@@ -56,10 +57,12 @@
 
     <div class="s-content">
 
-      {{ range $festival_events }}
-      <div class="s-day" id="c-day-{{ .id }}">
+      {{ range $index, $el := $festival_events }}
+      {{ $id := (add $index 1) }}
+
+      <div class="s-day" id="c-day-{{ $id }}">
         <div class="s-day-title text-center">
-            <div class="pill">{{ i18n "day_long" . }}  {{ .id }}</div>
+            <div class="pill">{{ i18n "day_long" . }}  {{ $id }}</div>
         </div>
         {{ range .events }}
           {{ partial "s_item" (dict "ctx" $ "data" .) }}
