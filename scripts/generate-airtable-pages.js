@@ -272,7 +272,7 @@ function removeLanguageKey(key) {
 // Generate markdown files
 //
 function generateMarkdownFiles(items, langSuffix = '') {
-  const _items = filterDuplicates(safeFrontmatterProps(items)).filter(hasSlug);
+  const _items = filterDuplicates(items.map(safeFrontmatterProps).filter(hasSlug));
   const suffix = langSuffix ? `.${langSuffix}.md` : '.md';
   _items.forEach(item => {
     const filepath = path.join(__dirname, '../content', item.file_path, `index${suffix}`);
@@ -284,18 +284,16 @@ function generateMarkdownFiles(items, langSuffix = '') {
   });
 }
 
-function safeFrontmatterProps(items) {
+function safeFrontmatterProps(item) {
   const prefix = 'at_';
   const reservedsKeys = ['tags'];
-  return items.map(item => {
-    Object.keys(item).forEach(key => {
-      if (reservedsKeys.includes(key)) {
-        item[`${prefix}${key}`] = item[key];
-        delete item[key];
-      }
-    });
-    return item;
+  Object.keys(item).forEach(key => {
+    if (reservedsKeys.includes(key)) {
+      item[`${prefix}${key}`] = item[key];
+      delete item[key];
+    }
   });
+  return item;
 }  
 
 function filterDuplicates(items) {

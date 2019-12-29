@@ -48,11 +48,11 @@
 		<img class="img-schedule" src="/img/festival/{{.data.image}}">
 		{{ end }}
 		<div class="s-item-description">
-			{{ .data.description | markdownify }}
+			{{ .data.description | safeHTML }}
 		</div>
 		{{ if .data.tags }}
 		<div class="s-item-tags">
-			{{ .data.tags_html | markdownify }}
+			{{ .data.tags_html | safeHTML }}
 		</div>
 		{{ end }}
 	</div><!-- /.s-item-bottom -->
