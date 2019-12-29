@@ -29,9 +29,10 @@ async function main() {
       .map(addPageProps)
       .filter(i => i);
 
-    tags = await fetchTable('Tag');  
+    tags = await fetchTable('Tag');
     chapters = await fetchTable('Chapter');
     talkKind = await fetchTable('Talk%20Kind');
+    settings = await fetchTable('Settings');
   } catch (error) {
     log(`ERROR ${error}`);
     process.exit(1);
@@ -43,12 +44,14 @@ async function main() {
     ...events,
     ...chapters,
     ...tags,
-    ...talkKind
+    ...talkKind,
+    ...settings
   ]
 
   const translated = splitToMultiLanguage(entities);
 
-  downloadImagesFromItems(speakers);
+    downloadImagesFromItems(speakers);
+    downloadImagesFromItems(talks);
 
   const defaultLanguage = 'en';
   ['en', 'fr'].forEach(lang => {
@@ -85,19 +88,19 @@ function addPageProps(item) {
       break;
     case 'speaker':
       title = item.name;
-      basedir = '/speakers/'; 
+      basedir = '/speakers/';
       break;
-    case 'event': 
+    case 'event':
       title = item.name;
-      basedir = '/event/'; 
+      basedir = '/event/';
       break;
-    case 'chapter': 
+    case 'chapter':
       title = item.name;
-      basedir = '/chapters/'; 
+      basedir = '/chapters/';
       break;
     default:
       title = '';
-      basedir = ''; 
+      basedir = '';
   }
 
   if (!title) {
@@ -137,12 +140,12 @@ function createFestivalData(lang, festival, speakers) {
       else {
         days[talk.day] = [ talk ];
       }
-    }); 
+    });
 
     Object.keys(days).forEach((date) => {
       const events = days[date];
       events.sort((a,b) => {
-        return new Date(a.start_date) - new Date(b.start_date);
+        return a.weight - b.weight;
       });
 
       result.push({ date, events });
@@ -212,7 +215,18 @@ function flattenAirtableRecords(tableName, items) {
         .replace(/\#/g, '_')
         .replace(/\(s\)/g, '_')
         .replace(/\s/g, '_');
-      
+
+      try {
+        if (newKey == "json_(fr)") {
+          result["parsed_json_(fr)"] = JSON.parse(value);
+        }
+        if (newKey == "json_(en)") {
+          result["parsed_json_(en)"] = JSON.parse(value);
+        }
+      } catch (err) {
+        log(`Parse JSON error: ${newKey}, ${value}`);
+      }
+
       // if is file
       if (value instanceof Array) {
         value = value.map(item => {
@@ -223,7 +237,7 @@ function flattenAirtableRecords(tableName, items) {
           return item;
         })
       }
-      
+
       result[newKey] = value;
     });
 
@@ -264,7 +278,7 @@ function isTranslated(key) {
 
 function getLanguage(key) {
   return key.substring(
-    key.lastIndexOf("(") + 1, 
+    key.lastIndexOf("(") + 1,
     key.lastIndexOf(")")
   );
 }
@@ -301,7 +315,7 @@ function safeFrontmatterProps(item) {
     }
   });
   return item;
-}  
+}
 
 function filterDuplicates(items) {
   const slugs = [];
@@ -328,7 +342,7 @@ function joinRelations(items) {
     Object.keys(item).forEach(key => {
       const value = item[key];
       let newValue = value;
-      
+
       if (value instanceof Array) {
         newValue = value.map(v => {
           if (normalized[v]) {
@@ -342,14 +356,14 @@ function joinRelations(items) {
 
           return v;
         }).filter(i => i);
-      } 
+      }
       else if (normalized[value]) {
         return normalized[value];
       }
 
       result[key] = newValue;
     });
-  
+
     return result;
   })
 }
@@ -400,7 +414,7 @@ async function downloadImage(url) {
 
 //
 // Other helpers
-// 
+//
 function normalizeArray(items) {
   let result = {};
   items.forEach(item => { result[item.id] = item; });
