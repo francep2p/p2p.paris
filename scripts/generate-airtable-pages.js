@@ -11,7 +11,7 @@ const {
 main();
 
 async function main() {
-  let talks, speakers, events, tags, chapters, talkKind;
+  let talks, speakers, events, tags, chapters, talkKind, settings;
 
   try {
     talks = (await fetchTable('Talk'))
@@ -50,18 +50,25 @@ async function main() {
 
   const translated = splitToMultiLanguage(entities);
 
-    downloadImagesFromItems(speakers);
-    downloadImagesFromItems(talks);
+  downloadImagesFromItems(speakers);
+  downloadImagesFromItems(talks);
 
   const defaultLanguage = 'en';
   ['en', 'fr'].forEach(lang => {
     // Join relations. 1 level deep
     const joined = joinRelations(translated[lang]);
 
-    // Create normalized .Data.airtable_LANG.json file with all entities
-    const filepath = path.join(__dirname, `../data/gen/airtable_${lang}.json`);
-    fs.mkdirSync(path.dirname(filepath), { recursive: true });
-    fs.writeFileSync(filepath, JSON.stringify(normalizeArray(translated[lang]), null, 2));
+    // Create normalized .Data.gen.airtable_LANG.json file with all entities
+    generateDataFile(
+      `airtable_${lang}.json`,
+      normalizeArray(translated[lang])
+    );
+
+    // Create settings data file in .Data.gen.settings_LANG.json file
+    generateDataFile(
+      `settings_${lang}.json`,
+      normalizeArray(translated[lang].filter(item => item.from_table == 'settings'), 'key')
+    );
 
     // create Festival data
     createFestivalData(
@@ -290,6 +297,16 @@ function removeLanguageKey(key) {
 
 
 //
+// Generate Data file
+//
+function generateDataFile(filepath, obj) {
+  const fullpath = path.join(__dirname, '../data/gen', filepath);
+  fs.mkdirSync(path.dirname(fullpath), { recursive: true });
+  fs.writeFileSync(fullpath, JSON.stringify(obj, null, 2));
+}
+
+
+//
 // Generate markdown files
 //
 function generateMarkdownFiles(items, langSuffix = '') {
@@ -415,9 +432,16 @@ async function downloadImage(url) {
 //
 // Other helpers
 //
-function normalizeArray(items) {
+function normalizeArray(items, key = 'id') {
   let result = {};
-  items.forEach(item => { result[item.id] = item; });
+  items.forEach(item => { 
+    if (!item[key]) {
+      log(`WARNING item - ${item.id} - doesn't have the property ${key}`)
+      return;
+    }
+
+    result[item[key]] = item;
+   });
   return result;
 }
 
