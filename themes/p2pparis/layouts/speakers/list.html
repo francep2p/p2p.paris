@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row">
-      {{ range .RegularPages }}
+      {{ range sort .RegularPages ".Params.name" }}
       <div class="col-md-4">
         <div class="p-4">
           <div>
