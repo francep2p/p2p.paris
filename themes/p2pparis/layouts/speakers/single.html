@@ -1,38 +1,47 @@
 {{ define "main" }}
-<section style="height: 100%; background: #fff; padding-top: 100px;">
+<section style="background: #fff; padding-top: 100px; padding-bottom: 100px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-4">
         <a href="{{ .Parent.RelPermalink }}">< Show all speakers</a>
       </div>
       <div class="col-md-12">
-        <h5 style="color: grey;">{{ .Params.from_table | title }}</h5>
-        <h1>{{ .Title }}</h1>
-        
-        <div>
+        <h5 class="pb-3" style="color: grey;">{{ .Params.from_table | title }}</h5>
+        <div class="pb-3">
           {{ with .Params.picture }}
           {{ $img := index . 0 }}
           <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
           {{ end }}
         </div>  
+
+        <h1 class="mb-0">{{ .Title }}</h1>
+        <h4 class="mb-4" style="color: grey; font-size: 20px;">{{ .Params.headline }}</h4>
+        <p>{{ .Description }}</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 mb-5 pd-5">
-        <h5>Number of talks: {{ with .Params.talks }}{{ len . }}{{ end }}</h5>
-      </div>
 
-      <div class="col-md-12">
-        <h5>Talks</h5>
+    <hr>
+
+    <div class="row mt-3">
+
+      <div class="col-md-12 mb-3 mt-3">
+        <h2>Talks</h2>
+        <h5 style="color: grey; font-size: 20px;">Number of talks: {{ with .Params.talks }}{{ len . }}{{ end }}</h5>
       </div>
 
       {{ range .Params.talks }}
         {{ $talk := $.GetPage .file_path }} 
         {{ if $talk }} 
+        {{ $event := index $talk.Params.event 0 }}
         <div class="col-md-12">
           <a href="{{ $talk.RelPermalink }}">
             <h3>{{ $talk.Title }}</h3>
-            <p>Language: {{ $talk.Params.language }}</p>
+            <p style="color: initial;">
+              <span>Date: <strong>{{ dateFormat "02 January 2006" $event.start_date }}</strong></span>, 
+              <span>From event: <strong>{{ $event.title }}</strong></span>, 
+              <span>Language: <strong>{{ with $talk.Params.language }}{{ delimit . "/" }}{{ end }}</strong></span>
+            </p>
+            <p style="color: initial;">{{ $talk.Description }}</p>
           </a>
         </div>
         {{ end }}
