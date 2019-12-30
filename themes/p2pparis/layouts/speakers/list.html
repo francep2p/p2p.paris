@@ -1,24 +1,28 @@
 {{ define "main" }}
-<section style="height: 100%; background: #fff; padding-top: 100px;">
+<section style="min-height: 100vh; background: #fff; padding-top: 100px; padding-bottom: 100px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-5">
         <h1>Speakers</h1>
+        <h4 class="mb-4" style="color: grey; font-size: 20px;">Total number of speakers: {{ len .RegularPages }}</h4>
       </div>
     </div>
     <div class="row">
-      {{ range .RegularPages }}
-      <div class="col-md-4">
+      {{ range sort .RegularPages ".Params.name" }}
+      <div class="col-md-4 text-center">
         <div class="p-4">
-          <div>
-            {{ with .Params.picture }}
-            {{ $img := index . 0 }}
-            <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
-            {{ end }}
-          </div>
-          <div>
-            <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
-          </div>
+          <a href="{{ .RelPermalink }}">
+            <div>
+              {{ with .Params.picture }}
+              {{ $img := index . 0 }}
+              <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
+              {{ end }}
+            </div>
+            <div>
+              <h2 class="mb-0">{{ .Title }}</h2>
+              <h4 style="color: grey; font-size: 20px;">{{ .Params.headline }}</h4>
+            </div>
+          </a>
         </div>
       </div>
       {{ end }}

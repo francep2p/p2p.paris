@@ -11,7 +11,7 @@
             </div><!-- /.col-->
         </div><!-- /.row -->
         <div class="row">
-            {{ range $festival_speakers }}
+            {{ range sort $festival_speakers ".name" }}
             <div class="col-lg-3 col-md-4 col-6">
                 {{ partial "block_speaker" . }}
             </div>
