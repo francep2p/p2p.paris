@@ -37,11 +37,20 @@
           <a href="{{ $talk.RelPermalink }}">
             <h3>{{ $talk.Title }}</h3>
             <p style="color: initial;">
-              <span>Date: <strong>{{ dateFormat "02 January 2006" $event.start_date }}</strong></span>, 
+              <span>Date: 
+                <strong>
+                  {{ if $talk.Params.tba_time }}
+                  TBA - TBA
+                  {{ else }}
+                  {{ with $talk.Params.start_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }} - 
+                  {{ with $talk.Params.end_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }}
+                  {{ end }}
+                </strong>
+              </span>, 
               <span>From event: <strong>{{ $event.title }}</strong></span>, 
               <span>Language: <strong>{{ with $talk.Params.language }}{{ delimit . "/" }}{{ end }}</strong></span>
             </p>
-            <p style="color: initial;">{{ $talk.Description }}</p>
+            <p style="color: initial;">{{ $talk.Description | safeHTML }}</p>
           </a>
         </div>
         {{ end }}
