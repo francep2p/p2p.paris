@@ -92,7 +92,7 @@ function addPageProps(item) {
   let basedir = '';
   switch (item.from_table) {
     case 'talk':
-      title = item['title_(en)']
+      // No need to define here, as it has a multi language title title_(en) title_(fr)
       basedir = '/talks/';
       break;
     case 'speaker':
@@ -112,12 +112,14 @@ function addPageProps(item) {
       basedir = '';
   }
 
-  if (!title) {
+  if (title) {
+    item.title = title;
+  }
+  else if (!title && !item['title_(en)'] && !item['title_(fr)']) {
     log(`WARNING ${item.from_table} ${item} doesn't have a title`);
     return null;
   }
 
-  item.title = title;
   item.file_path = `${basedir}${item.slug}`;
 
   return item;
