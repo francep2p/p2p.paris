@@ -10277,10 +10277,13 @@ body.page-festival {
   background: linear-gradient(0deg, rgba(160,46,168,1) 0%, rgba(217,14,173,1) 100%);
   background-attachment: fixed;
 }
+
+{{ $bg_festival := (resources.Get "/img/bg_festival.png").Resize "1280x Linear q90 jpg" }}
+
 @media(min-width:768px){
   body.page-festival {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(217, 14, 173, 0.3)), to(rgba(160, 46, 168, 0.8))), url("../img/bg_festival.png");
-    background: linear-gradient(to bottom, rgba(217, 14, 173, 0.3) 0%, rgba(160, 46, 168, 0.8) 100%), url("../img/bg_festival.png");
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(217, 14, 173, 0.3)), to(rgba(160, 46, 168, 0.8))), url("{{ $bg_festival.RelPermalink }}");
+    background: linear-gradient(to bottom, rgba(217, 14, 173, 0.3) 0%, rgba(160, 46, 168, 0.8) 100%), url("{{ $bg_festival.RelPermalink }}");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
