@@ -241,7 +241,13 @@ function flattenAirtableRecords(tableName, items) {
         value = value.map(item => {
           if (item && item.filename) {
             const url = item.thumbnails.large.url;
-            return { is_image: true, remote: url, local: getImagePath(url, false)};
+            const extension = item.type.split('/')[1];
+            return { 
+              is_image: true, 
+              type: item.type,
+              remote: url, 
+              local: getImagePath(`${url}.${extension}`, false)
+            };
           }
           return item;
         })
@@ -400,7 +406,7 @@ function downloadImagesFromItems(items) {
         value.forEach(async v => {
           if (v && v.is_image) {
             try {
-              await downloadImage(v.remote);
+              await downloadImage(v.remote, v.local);
             } catch (err) {
               log(`Image download error: ${v.remote}, ${err}`);
               process.exit(4);
@@ -412,9 +418,9 @@ function downloadImagesFromItems(items) {
   });
 }
 
-async function downloadImage(url) {
+async function downloadImage(url, destination) {
   log(`Downloading image ${url}`);
-  const filepath = getImagePath(url);
+  const filepath = getImagePath(destination);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
 
   const res = await fetch(url);
