@@ -92,7 +92,7 @@ function addPageProps(item) {
   let basedir = '';
   switch (item.from_table) {
     case 'talk':
-      title = item['title_(en)']
+      // No need to define here, as it has a multi language title title_(en) title_(fr)
       basedir = '/talks/';
       break;
     case 'speaker':
@@ -112,12 +112,14 @@ function addPageProps(item) {
       basedir = '';
   }
 
-  if (!title) {
+  if (title) {
+    item.title = title;
+  }
+  else if (!title && !item['title_(en)'] && !item['title_(fr)']) {
     log(`WARNING ${item.from_table} ${item} doesn't have a title`);
     return null;
   }
 
-  item.title = title;
   item.file_path = `${basedir}${item.slug}`;
 
   return item;
@@ -239,7 +241,13 @@ function flattenAirtableRecords(tableName, items) {
         value = value.map(item => {
           if (item && item.filename) {
             const url = item.thumbnails.large.url;
-            return { is_image: true, remote: url, local: getImagePath(url, false)};
+            const extension = item.type.split('/')[1];
+            return { 
+              is_image: true, 
+              type: item.type,
+              remote: url, 
+              local: getImagePath(`${url}.${extension}`, false)
+            };
           }
           return item;
         })
@@ -398,7 +406,7 @@ function downloadImagesFromItems(items) {
         value.forEach(async v => {
           if (v && v.is_image) {
             try {
-              await downloadImage(v.remote);
+              await downloadImage(v.remote, v.local);
             } catch (err) {
               log(`Image download error: ${v.remote}, ${err}`);
               process.exit(4);
@@ -410,9 +418,9 @@ function downloadImagesFromItems(items) {
   });
 }
 
-async function downloadImage(url) {
+async function downloadImage(url, destination) {
   log(`Downloading image ${url}`);
-  const filepath = getImagePath(url);
+  const filepath = getImagePath(destination);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
 
   const res = await fetch(url);

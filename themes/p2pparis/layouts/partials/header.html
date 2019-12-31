@@ -58,7 +58,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Slab&display=swap" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/css/creative.css" rel="stylesheet">
+  <link href="{{ (resources.Get `/css/creative.css` | resources.ExecuteAsTemplate `style.css` .).RelPermalink }}" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsId }}"></script>

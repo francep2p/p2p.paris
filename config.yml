@@ -115,3 +115,7 @@ languages:
 params:
   default_featured_image: /img/paris_p2p_thumbnail.jpg
   googleAnalyticsId: UA-124224137-5
+
+imaging:
+  resampleFilter: Linear
+  quality: 90
