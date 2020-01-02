@@ -5,20 +5,11 @@
       <div class="col-md-12 mb-4">
         <a href="{{ .Parent.RelPermalink }}">< Show all speakers</a>
       </div>
-      <div class="col-md-12">
-        <h5 class="pb-3" style="color: grey;">{{ .Params.from_table | title }}</h5>
-        <div class="pb-3">
-          {{ with .Params.picture }}
-          {{ $img := index . 0 }}
-          <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
-          {{ end }}
-        </div>  
 
-        <h1 class="mb-0">{{ .Title }}</h1>
-        <h4 class="mb-4" style="color: grey; font-size: 20px;">{{ .Params.headline }}</h4>
-        <p>{{ .Description }}</p>
+      <div class="col-lg-3 col-md-6 col-12">
+          {{ partial "block_speaker" .Params }}
+        </div>
       </div>
-    </div>
 
     <hr>
 

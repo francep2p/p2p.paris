@@ -11181,9 +11181,34 @@ tag.v {
 }
 .block-speaker .speaker-picture {
   display:block;
-   height:70px;
-   margin-bottom:20px;
+  height:70px;
+  margin-bottom:20px;
+  position:relative;
 } 
+.block-speaker .speaker-picture-hover{
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+.block-speaker .speaker-picture-hover .speaker-picture-inner {
+  height:100%;
+  width:90px;
+  border-radius:50%;
+  margin:0 auto;
+  display:block;
+  position:relative;
+  background:rgba(189,31,171,.8);
+  transition:all ease .5s;
+  opacity:0;
+}
+.block-speaker .speaker-picture:hover .speaker-picture-hover .speaker-picture-inner {
+  opacity:1;
+}
+.block-speaker .speaker-picture .speaker-picture-hover i {
+  font-size:36px;
+  padding-top:26px;
+  color:#FFF;
+}
 .block-speaker .speaker-picture img{
   margin:0 auto;
   width:70px;
@@ -11472,7 +11497,7 @@ a.block-legend-header:focus {
 }
 
 @media (pointer: fine) {
-  a.block:hover {
+  a.block:hover{
     transform: translateY(-10px);
     box-shadow: 0 6px 12px 6px rgba(171,174,209,0.25);
   }

@@ -50,6 +50,8 @@ function initializeClock(id, endtime) {
     $('.navbar').addClass('navbar-scrolled');
   });
 
+  $('[data-toggle="tooltip"]').tooltip();
+
   // Only for homepage
   if ($(".page-home").length) {
     // Activate scrollspy to add active class to navbar items on scroll
@@ -107,8 +109,6 @@ function initializeClock(id, endtime) {
         }
       }
     });
-
-    $('[data-toggle="tooltip"]').tooltip()
 
   }
 
