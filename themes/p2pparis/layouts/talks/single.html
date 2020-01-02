@@ -37,17 +37,8 @@
 
       {{ range .Params.speaker_ }}
       {{ $speaker := $.GetPage .file_path }}  
-      <div class="col-md-3 text-center mt-4">
-        <a href="{{ $speaker.RelPermalink }}">
-          {{ with $speaker.Params.picture }}
-          {{ $img := index . 0 }}
-          <div class="m-auto" style="width: 100px;">
-            <img class="img-fluid" src="{{ (resources.Get $img.local).RelPermalink }}" />
-          </div>
-          {{ end }}
-          <h3>{{ $speaker.Title }}</h3>
-          <h4 class="mb-4" style="color: grey; font-size: 20px;">{{ $speaker.Params.headline }}</h4>
-        </a>
+      <div class="col-lg-3 col-md-4 col-6">
+          {{ partial "block_speaker" $speaker.Params }}
       </div>
     {{ end }}
 
