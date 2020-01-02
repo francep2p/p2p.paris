@@ -1,11 +1,15 @@
 {{ define "main" }}
-<section style="min-height: 100vh; background: #fff; padding-top: 100px; padding-bottom: 100px;">
+{{.Scratch.Set "body-class" "bg-light"}}
+
+<section class="single bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-5">
-        <h1>Talks</h1>
-        <h4 class="mb-4" style="color: grey; font-size: 20px;">Total number of talks: {{ len .RegularPages }}</h4>
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-5 mb-5 text-center">
+        <i class="fal fa-presentation fa-5x mb-4"></i>
+        <h1 class="mt-0">Talks<notif>{{ len .RegularPages }}</notif></h1>
+        <hr class="divider my-4">
+      </div><!-- /.col -->
+
       {{ range .RegularPages }}
       {{ $event := index .Params.event 0 }}
 
@@ -29,13 +33,15 @@
           </p>
           <p style="color: initial;">{{ .Description | safeHTML }}</p>
         </a>
-
         <hr>
-      </div>
-      
+      </div><!-- /.col -->
+    
       {{ end }}
       
-    </div>
-  </div>
-</section>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.single -->
+
+{{ partial "section_links" . }}
+
 {{ end }}

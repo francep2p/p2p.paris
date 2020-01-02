@@ -1,12 +1,13 @@
 {{ define "main" }}
 
 {{.Scratch.Set "body-class" "bg-light"}}
-<div class="single bg-light">
+<section class="single bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-5">
-        <h1>{{.Title}}</h1>
-        <h4 class="mb-4" style="color: grey; font-size: 20px;">Total number of speakers: {{ len .RegularPages }}</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-5 mb-5 text-center">
+        <i class="fal fa-microphone-alt fa-5x mb-4"></i>
+        <h1 class="mt-0">{{.Title}}<notif>{{ len .RegularPages }}</notif></h1>
+        <hr class="divider my-4">
       </div>
     </div><!-- /.row -->
     <div class="row">
@@ -17,5 +18,8 @@
       {{ end }}
     </div><!-- /.row -->
   </div><!-- /.container -->
-</div>
+</section>
+
+{{ partial "section_links" . }}
+
 {{ end }}

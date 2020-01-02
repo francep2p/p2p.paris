@@ -10140,6 +10140,9 @@ hr.dark {
 .btn-m {
   padding: 12px 28px;
 }
+.btn.icon-left i {
+  margin-right:10px;
+}
 .page-section {
   padding: 8rem 0;
 }

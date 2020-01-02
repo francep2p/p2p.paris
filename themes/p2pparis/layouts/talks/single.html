@@ -1,11 +1,15 @@
 {{ define "main" }}
 
-<section style="min-height: 100vh; background: #fff; padding-top: 100px; padding-bottom: 100px;">
+{{.Scratch.Set "body-class" "bg-light"}}
+
+<div class="single bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-4">
-        <a href="{{ .Parent.RelPermalink }}">< Show all talks</a>
-      </div>
+        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>Show all talks</a>
+      </div><!-- /.col -->
+
+
       <div class="col-md-12">
         <h5 style="color: grey;">{{ .Params.from_table | title }}</h5>
         <h1 class="mb-4">{{ .Title }}</h1 class="mb-4">
@@ -25,24 +29,32 @@
           <div>Kind: <strong>{{ with .Params.kind }}{{ (index . 0).name }}{{ end }}</strong></div>
         </div>
         <p>{{ .Description | safeHTML }}</p>
-      </div>
-    </div>
+      </div><!-- /.col -->
 
-    <hr>
+    </div><!-- /.row -->
 
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Speakers</h2>
-      </div>
+  <section class="page-section">
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-0 mb-5 text-center">
+        <i class="fal fa-microphone-alt fa-5x mb-4"></i>
+        <h1 class="mt-0">Speakers<notif></h1>
+        <hr class="divider my-4">
+      </div><!-- /.col -->
+    </div><!-- /.row -->
 
+    <div class="row justify-content-center">
       {{ range .Params.speaker_ }}
       {{ $speaker := $.GetPage .file_path }}  
       <div class="col-lg-3 col-md-4 col-6">
           {{ partial "block_speaker" $speaker.Params }}
-      </div>
+      </div><!-- /.col -->
     {{ end }}
+    </div><!-- /.row -->
+  </section>
 
-    </div>
-  </div>
-</section>
+  </div><!-- /.container -->
+</div><!-- /.single -->
+
+{{ partial "section_links" . }}
+
 {{ end }}
