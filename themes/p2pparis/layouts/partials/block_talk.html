@@ -6,6 +6,7 @@
 {{ end }}
 
 <div class="block block-talk s-item {{ with .Params.kind }}{{ (index . 0).name }}{{ end }}">
+	<span class="tag tag-{{ with .Params.kind }}{{ (index . 0).name }}{{ end }}"><i class="far {{ .Params.k_icon }}"></i>{{ .Params.k_label }}</span>
 	<div class="s-item-top">
 		<div class="s-item-line-top">
 			<div class="s-item-line s-date mr">
@@ -72,10 +73,11 @@
 			{{ end }}
 		</div>
 		{{ end }}
-
-		 {{ $event := index .Params.event 0 }}
-	 <span>From event: <strong>{{ $event.title }}</strong></span>
-
+		{{ $event := index .Params.event 0 }}
 	</div><!-- /.s-item-bottom -->
-	<span class="tag tag-{{ with .Params.kind }}{{ (index . 0).name }}{{ end }}"><i class="far {{ .Params.k_icon }}"></i>{{ .Params.k_label }}</span>
+	<a class="block-event-small" href="/{{.Lang }}/event/festival-0/">
+		<div class="block-img">
+    	<img src="/fr/event/festival-0/paris_p2p_festival_0_small.png">
+		</div><!-- /.block-img -->
+	</a>
 </div><!-- /.s-item -->
