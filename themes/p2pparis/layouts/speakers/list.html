@@ -13,7 +13,7 @@
     <div class="row">
       {{ range sort .RegularPages ".Params.name" }}
         <div class="col-lg-3 col-md-4 col-6">
-          {{ partial "block_speaker" .Params }}
+          {{ partial "block_speaker" . }}
         </div>
       {{ end }}
     </div><!-- /.row -->
