@@ -78,7 +78,7 @@
 	</div><!-- /.s-item-bottom -->
 
 	{{ $festival_page := $.GetPage "/event/festival-0" }}
-	{{ if $festival_page }}
+	{{ if and $festival_page (eq $event.title "Paris P2P Festival #0") }}
 	<a class="block-event-small" href="{{ $festival_page.RelPermalink }}">
 		<div class="block-img">
     	<img src="{{ ($festival_page.Resources.GetMatch `paris_p2p_festival_0_small.png`).RelPermalink }}">
