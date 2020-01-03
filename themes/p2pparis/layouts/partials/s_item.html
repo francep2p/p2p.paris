@@ -1,8 +1,13 @@
 {{ $at := index .ctx.Site.Data.gen (print "airtable_" .ctx.Lang) }}
 {{ $kind := "" }}
+{{ $tags := slice }}
 
 {{ if .data.kind }}
 	{{ $kind = index $at (index .data.kind 0) }}
+{{ end }}
+
+{{ range .data.tags }}
+	{{ $tags = $tags | append (index $at .) }}
 {{ end }}
 
 <div class="block s-item {{ $kind.name }}">
@@ -55,9 +60,11 @@
 		<div class="s-item-description">
 			{{ .data.description | safeHTML }}
 		</div>
-		{{ if .data.tags }}
+		{{ if gt (len $tags) 0 }}
 		<div class="s-item-tags">
-			{{ .data.tags_html | safeHTML }}
+			{{ range $tags }}
+			{{ .custom_html | safeHTML }}
+			{{ end }}
 		</div>
 		{{ end }}
 	</div><!-- /.s-item-bottom -->

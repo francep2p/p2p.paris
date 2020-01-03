@@ -11,24 +11,7 @@
 
 
       <div class="col-md-12">
-        <h5 style="color: grey;">{{ .Params.from_table | title }}</h5>
-        <h1 class="mb-4">{{ .Title }}</h1 class="mb-4">
-        <div class="mb-2">
-          <div>From event: <strong>{{ (index .Params.event 0).name }}</strong></div>
-          <div>Date: 
-            <strong>
-              {{ if .Params.tba_time }}
-              TBA - TBA
-              {{ else }}
-              {{ with .Params.start_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }} - 
-              {{ with .Params.end_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }}
-              {{ end }}
-            </strong>
-          </div>
-          {{ with .Params.language }}<div>Languages: <strong>{{ delimit . "/" }}</strong></div>{{ end }}
-          <div>Kind: <strong>{{ with .Params.kind }}{{ (index . 0).name }}{{ end }}</strong></div>
-        </div>
-        <p>{{ .Description | safeHTML }}</p>
+        {{ partial "block_talk" . }} 
       </div><!-- /.col -->
 
     </div><!-- /.row -->
