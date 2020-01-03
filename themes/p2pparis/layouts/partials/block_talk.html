@@ -1,5 +1,6 @@
 {{ $at := index .Site.Data.gen (print "airtable_" .Lang) }}
 {{ $tags := slice }}
+{{ $from_event := (index .Params.event 0) }}
 
 {{ range .Params.tags }}
 	{{ $tags = $tags | append (index $at .) }}
@@ -75,9 +76,13 @@
 		{{ end }}
 		{{ $event := index .Params.event 0 }}
 	</div><!-- /.s-item-bottom -->
-	<a class="block-event-small" href="/{{.Lang }}/event/festival-0/">
+
+	{{ $festival_page := $.GetPage "/event/festival-0" }}
+	{{ if $festival_page }}
+	<a class="block-event-small" href="{{ $festival_page.RelPermalink }}">
 		<div class="block-img">
-    	<img src="/fr/event/festival-0/paris_p2p_festival_0_small.png">
+    	<img src="{{ ($festival_page.Resources.GetMatch `paris_p2p_festival_0_small.png`).RelPermalink }}">
 		</div><!-- /.block-img -->
 	</a>
+	{{ end }}
 </div><!-- /.s-item -->
