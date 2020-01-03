@@ -6,9 +6,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-4">
-        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>Show all talks</a>
+        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>{{ i18n "show_all" . }} talks</a>
       </div><!-- /.col -->
-
 
       <div class="col-md-12">
         {{ partial "block_talk" . }} 
@@ -16,11 +15,12 @@
 
     </div><!-- /.row -->
 
+  {{ if .Params.speaker_ }}
   <section class="page-section">
     <div class="row justify-content-center">
       <div class="col-md-12 mt-0 mb-5 text-center">
         <i class="fal fa-microphone-alt fa-5x mb-4"></i>
-        <h1 class="mt-0">Speakers<notif></h1>
+        <h1 class="mt-0">{{ i18n "speakers" . }}<notif></h1>
         <hr class="divider my-4">
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -34,6 +34,7 @@
     {{ end }}
     </div><!-- /.row -->
   </section>
+  {{ end }}
 
   </div><!-- /.container -->
 </div><!-- /.single -->

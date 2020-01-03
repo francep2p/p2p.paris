@@ -96,3 +96,9 @@ day_long:
 
 day_short:
   other: J
+
+show_all:
+  other: Voir tous les
+
+speakers:
+  other: Intervenants

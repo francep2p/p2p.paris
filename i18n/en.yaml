@@ -96,3 +96,9 @@ day_long:
 
 day_short:
   other: D
+
+show_all:
+  other: Show all
+
+speakers:
+  other: Speakers

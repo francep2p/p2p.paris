@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-4">
-        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>Show all speakers</a>
+        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>{{ i18n "show_all" . }} {{ i18n "speakers" . }}</a>
       </div><!-- /.col -->
     </div><!-- /.row -->
     
@@ -16,7 +16,7 @@
       </div><!-- /.col -->
     </div><!-- /.row -->
 
-
+   {{ if .Params.talks }}
     <section class="page-section">
       <div class="row justify-content-center">
         <div class="col-md-12 mt-0 mb-5 text-center">
@@ -33,8 +33,9 @@
            {{ partial "block_talk" $talk }} 
           {{ end }}
         {{ end }}
-    </div><!-- /.row -->
-  </section>
+      </div><!-- /.row -->
+    </section>
+  {{ end }}
 
   </div><!-- /.container -->
 
