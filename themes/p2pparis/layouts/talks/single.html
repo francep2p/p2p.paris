@@ -27,9 +27,9 @@
 
     <div class="row justify-content-center">
       {{ range .Params.speaker_ }}
-      {{ $speaker := $.GetPage .file_path }}  
+      {{ $speaker_page := $.GetPage .file_path }}  
       <div class="col-lg-3 col-md-4 col-6">
-          {{ partial "block_speaker" $speaker.Params }}
+          {{ partial "block_speaker" $speaker_page }}
       </div><!-- /.col -->
     {{ end }}
     </div><!-- /.row -->
