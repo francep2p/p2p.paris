@@ -11372,6 +11372,24 @@ a.block-legend-header:focus {
   background-color:#FBCC5B;
 }
 
+@media(min-width:1200px) {
+  .section-info .block.block-link {
+    min-height:391px;
+  }
+  .lang-fr .section-info .block.block-link.a .btn{
+    margin-top:27px;
+  }
+  .lang-en .section-info .block.block-link.b p{
+    margin-bottom:40px !important;
+  }
+}
+
+@media(min-width:992px) and (max-width:1200px) {
+ .lang-en .section-info .block.block-link p{
+    min-height:48px;
+ } 
+}
+
 @media(max-width:767px) {
   .legend-accordion {
     position:relative;

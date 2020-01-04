@@ -187,5 +187,7 @@ content:
     news_title: News
     news_text: Receive last minute news, final schedule...
     newsletter_input: your email
+    hotel_title: Hotel
+    hotel_text: "Get a 20% discount at the Zazie Hotel using the code: <tag class='p'>P2PFESTIVAL</tag>"
 
 ---
