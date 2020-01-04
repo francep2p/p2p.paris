@@ -10,6 +10,8 @@
 	{{ $tags = $tags | append (index $at .) }}
 {{ end }}
 
+{{ $talk_page := .ctx.GetPage .data.file_path }}
+
 <div class="block s-item {{ $kind.name }}">
 	<div class="s-item-top">
 		<div class="s-item-line-top">
@@ -50,7 +52,7 @@
 		</div>
 	</div><!-- /.s-item-top -->
 	<div class="s-item-bottom">
-		<a class="s-item-title" href="{{ .data.RelPermalink }}">
+		<a class="s-item-title" href="{{ $talk_page.RelPermalink }}">
 			{{ .data.title }}
 		</a>
 		{{ if .data.picture }}
