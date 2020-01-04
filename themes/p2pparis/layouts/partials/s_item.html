@@ -58,7 +58,7 @@
   		<img class="img-schedule" src="{{ ((resources.Get $img.local).Resize `250x jpg`).RelPermalink }}">
 		{{ end }}
 		<div class="s-item-description">
-			{{ .data.description | safeHTML }}
+			{{ .data.description | markdownify }}
 		</div>
 		{{ if gt (len $tags) 0 }}
 		<div class="s-item-tags">
