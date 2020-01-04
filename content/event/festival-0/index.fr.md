@@ -186,5 +186,7 @@ content:
     donate_btn: Faire un don
     news_title: News
     news_text: Recevoir des infos de dernière minute, le programme définitif...
+    hotel_title: Hôtel à proximité
+    hotel_text: "Bénéficiez d'une reduction de 20% sur le Zazie Hotel avec le code : <tag class='p'>P2PFESTIVAL</tag>"
     newsletter_input: votre email
 ---
