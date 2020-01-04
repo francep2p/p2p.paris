@@ -1,32 +1,25 @@
 {{ define "main" }}
-<section style="min-height: 100vh; background: #fff; padding-top: 100px; padding-bottom: 100px;">
+
+{{.Scratch.Set "body-class" "bg-light"}}
+<section class="single bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-5">
-        <h1>{{.Title}}</h1>
-        <h4 class="mb-4" style="color: grey; font-size: 20px;">Total number of speakers: {{ len .RegularPages }}</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-5 mb-5 text-center">
+        <i class="fal fa-microphone-alt fa-5x mb-4"></i>
+        <h1 class="mt-0">{{.Title}}<notif>{{ len .RegularPages }}</notif></h1>
+        <hr class="divider my-4">
       </div>
-    </div>
+    </div><!-- /.row -->
     <div class="row">
       {{ range sort .RegularPages ".Params.name" }}
-      <div class="col-md-4 text-center">
-        <div class="p-4">
-          <a href="{{ .RelPermalink }}">
-            <div>
-              {{ with .Params.picture }}
-              {{ $img := index . 0 }}
-              <img class="img-fluid" style="width: 200px; border-radius: 10px;" src="{{ (resources.Get $img.local).RelPermalink }}" />
-              {{ end }}
-            </div>
-            <div>
-              <h2 class="mb-0">{{ .Title }}</h2>
-              <h4 style="color: grey; font-size: 20px;">{{ .Params.headline }}</h4>
-            </div>
-          </a>
+        <div class="col-lg-3 col-md-4 col-6">
+          {{ partial "block_speaker" . }}
         </div>
-      </div>
       {{ end }}
-    </div>
-  </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 </section>
+
+{{ partial "section_links" . }}
+
 {{ end }}

@@ -1,41 +1,24 @@
 {{ define "main" }}
-<section style="min-height: 100vh; background: #fff; padding-top: 100px; padding-bottom: 100px;">
+{{.Scratch.Set "body-class" "bg-light"}}
+
+<section class="single bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-5">
-        <h1>Talks</h1>
-        <h4 class="mb-4" style="color: grey; font-size: 20px;">Total number of talks: {{ len .RegularPages }}</h4>
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-5 mb-5 text-center">
+        <i class="fal fa-presentation fa-5x mb-4"></i>
+        <h1 class="mt-0">Talks<notif>{{ len .RegularPages }}</notif></h1>
+        <hr class="divider my-4">
+      </div><!-- /.col -->
+
+      <div class="col-12">
       {{ range .RegularPages }}
-      {{ $event := index .Params.event 0 }}
-
-      <div class="col-md-12">
-        <a href="{{ .RelPermalink }}">
-          <h2 class="mb-0">{{ .Title }}</h2>
-          <div class="mb-3" style="color: grey;"><strong>{{ with .Params.kind }}{{ (index . 0).name }}{{ end }}</strong></div>
-          <p style="color: initial;">
-            <span>Date: 
-              <strong>
-                {{ if .Params.tba_time }}
-                TBA - TBA
-                {{ else }}
-                {{ with .Params.start_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }} - 
-                {{ with .Params.end_date }}{{ dateFormat "02 January 2006 15:04PM" . }}{{ else }}TBA{{ end }}
-                {{ end }}
-              </strong>
-            </span>, 
-            <span>From event: <strong>{{ $event.title }}</strong></span>, 
-            <span>Language: <strong>{{ with .Params.language }}{{ delimit . "/" }}{{ end }}</strong></span>
-          </p>
-          <p style="color: initial;">{{ .Description | safeHTML }}</p>
-        </a>
-
-        <hr>
-      </div>
-      
+      {{ partial "block_talk" . }}
       {{ end }}
-      
-    </div>
-  </div>
-</section>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.single -->
+
+{{ partial "section_links" . }}
+
 {{ end }}
