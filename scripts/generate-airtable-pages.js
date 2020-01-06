@@ -186,28 +186,44 @@ function isPublished(item) {
 // Airtable
 //
 async function fetchTable(tableName) {
-  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableName}`;
-  const headers = {
-    'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-    'Content-Type': 'application/json'
-  };
+  let records = [];
+  await _fetchTable();
+  
+  async function _fetchTable(offset) {
+    let url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableName}`;
+        url = offset ? `${url}?offset=${offset}`: url;
 
-  return fetch(url, { headers })
-    .then(checkStatus)
-    .then(records => flattenAirtableRecords(tableName, records))
-    .catch(error => {
-      log(`AIRTABLE ERROR: ${error}`);
-      process.exit(2);
-    })
+    const headers = {
+      'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+      'Content-Type': 'application/json'
+    };
 
-  async function checkStatus(res) {
-    if (res.ok) {
-      return (await res.json()).records;
-    } else {
-      log(`AIRTABLE ERROR: ${res.statusText}`);
-      process.exit(3);
+    await fetch(url, { headers })
+      .then(checkStatus)
+      .then(res => {
+        records = [ ...records, ...flattenAirtableRecords(tableName, res.records)];
+        if (res.offset) {
+          return _fetchTable(res.offset);
+        }
+
+        return records;
+      })
+      .catch(error => {
+        log(`AIRTABLE ERROR: ${error}`);
+        process.exit(2);
+      })
+
+    async function checkStatus(res) {
+      if (res.ok) {
+        return res.json();
+      } else {
+        log(`AIRTABLE ERROR: ${res.statusText}`);
+        process.exit(3);
+      }
     }
   }
+
+  return records;
 }
 
 function flattenAirtableRecords(tableName, items) {
