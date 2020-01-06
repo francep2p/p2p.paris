@@ -10769,14 +10769,14 @@ tag.v {
 .btn.btn-meetup {
   background-color:#F6405E;
   border-color:#F6405E;
-  color:#FFF;
+  color:#FFF !important;
   border-radius:24px;
 }
 .btn.btn-meetup:hover,
 .btn.btn-meetup:focus {
   background-color:#dd203f;
   border-color:#dd203f;
-  color:#FFF;
+  color:#FFF !important;
 } 
 .btn-meetup i.fa-meetup {
   margin-right:8px;
