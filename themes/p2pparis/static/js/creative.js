@@ -112,4 +112,46 @@ function initializeClock(id, endtime) {
 
   }
 
+  if($(".s-filters").length) {
+    $(document).on('click', '.s-filters .dropdown-menu', function (e) {
+    e.stopPropagation();
+    });
+
+
+    var kind_first_click = 0;
+    var location_first_click = 0;
+    $('input[type="checkbox"]').click(function(){
+      var checkboxId = $(this).attr("id");
+      var checkboxType = checkboxId[0];
+      console.log('kind_first_click: ' + kind_first_click);
+      console.log('location_first_click: ' + location_first_click);
+      console.log('checkboxId: ' + checkboxId);
+      console.log('checkboxType: ' + checkboxType);
+      if (checkboxType == 'k'){
+        console.log('if checkboxTypeis k');
+        if (kind_first_click == 0){
+          $("div[class*='f-k-']").hide();
+          $(".f-" + checkboxId).show();
+          kind_first_click = 1;
+        }
+        else {
+          $(".f-" + checkboxId).toggle();
+        }
+      }
+      else {
+        console.log('if checkboxTypeis l');
+        if (location_first_click == 0){
+          $("div[class*='f-l-']").hide();
+          $(".f-" + checkboxId).show();
+          location_first_click = 1;
+        }
+        else {
+          $(".f-" + checkboxId).toggle();
+        }
+      } 
+      console.log('kind_first_click: ' + kind_first_click);
+      console.log('location_first_click: ' + location_first_click);     
+    });
+  }
+
 })(jQuery); // End of use strict

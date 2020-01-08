@@ -102,3 +102,12 @@ show_all:
 
 speakers:
   other: Speakers
+
+filters:
+  other: Filter events
+
+kind:
+  other: Kind
+
+location:
+  other: Location
