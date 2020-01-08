@@ -11006,6 +11006,13 @@ tag.v {
   }
 }
 @media(max-width:767px){
+  .navbar.s-filters .navbar-brand .to-hide {
+    display:none;
+  }
+  .navbar.s-filters .dropdown-menu-location {
+    left:auto;
+    right:-59px;
+  }
   .block-number {
     padding:12px 15px 15px;
   }

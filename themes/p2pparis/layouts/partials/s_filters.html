@@ -1,39 +1,39 @@
 
-<nav class="navbar s-filters navbar-expand-lg">
-  <span class="navbar-brand" href="#"><i class="far fa-sliders-v"></i>{{ i18n "filters" . }}</span>
+<nav class="navbar s-filters navbar-expand">
+  <span class="navbar-brand" href="#"><i class="far fa-sliders-v"></i>{{ i18n "filters" . | markdownify }}</span>
 
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown-kind" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ i18n "kind" . }}
         </a>
-        <div class="dropdown-menu dropdown-menu-tags" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu dropdown-menu-tags" aria-labelledby="dropdown-kind">
           <label class="dropdown-item">
-          	 <input type="checkbox" id="k-party">
+          	 <input type="checkbox" class="checkbox-k" id="k-party">
 	           <span class="tag tag-party"><i class="far fa-music"></i>DJ set</span>
 	        </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-hackathon">
+          	<input type="checkbox" class="checkbox-k" id="k-hackathon">
          	  <span class="tag tag-hackathon"><i class="far fa-robot"></i>hackathon</span>
      	    </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-meet-up">
+          	<input type="checkbox" class="checkbox-k" id="k-meet-up">
 	          <span class="tag tag-meet-up"><i class="far fa-glass-cheers"></i>meet-up</span>
 	        </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-projection">
+          	<input type="checkbox" class="checkbox-k" id="k-projection">
 	          <span class="tag tag-projection"><i class="far fa-camera-movie"></i>projection</span>
 	        </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-stand">
+          	<input type="checkbox" class="checkbox-k" id="k-stand">
 	          <span class="tag tag-stand"><i class="far fa-flag"></i>stand</span>
 	        </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-talk">
+          	<input type="checkbox" class="checkbox-k" id="k-talk">
 	          <span class="tag tag-talk"><i class="far fa-presentation"></i>talk</span>
 	        </label>
           <label class="dropdown-item">
-          	<input type="checkbox" id="k-workshop">
+          	<input type="checkbox" class="checkbox-k" id="k-workshop">
 	          <span class="tag tag-workshop"><i class="far fa-laptop-code"></i>workshop</span>
 	      </label>
         <!--<div class="dropdown-divider"></div>
@@ -44,36 +44,36 @@
         </div><!-- /.dropdown-menu -->
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown-location" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ i18n "location" . }}
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu dropdown-menu-location" aria-labelledby="dropdown-location">
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-avion">
+           	<input type="checkbox" class="checkbox-l" id="l-avion">
            	<span>Avion</span>
            </label>
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-conference">
+           	<input type="checkbox" class="checkbox-l" id="l-conference">
            	<span>Conférence</span>
        	  </label>
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-hackzone">
+           	<input type="checkbox" class="checkbox-l" id="l-hackzone">
            	<span>Hackzone</span>
        	  </label>
           <label class="dropdown-item">
-            <input type="checkbox" id="l-p2p-art-zone">
+            <input type="checkbox" class="checkbox-l" id="l-p2p-art-zone">
             <span>P2P Art Zone</span>
           </label>
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-p2p-meet-up-Zone">
+           	<input type="checkbox" class="checkbox-l" id="l-p2p-meet-up-Zone">
            	<span>P2P Meet-up Zone</span>
        	  </label>
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-projection">
+           	<input type="checkbox" class="checkbox-l" id="l-projection">
            	<span>Projection</span>
        	  </label>
        	  <label class="dropdown-item">
-           	<input type="checkbox" id="l-village">
+           	<input type="checkbox" class="checkbox-l" id="l-village">
            	<span>Village</span>
        	  </label>
          <!--<div class="dropdown-divider"></div>
