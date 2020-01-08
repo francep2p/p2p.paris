@@ -55,6 +55,8 @@
 
     </ul><!-- /.s-nav -->
 
+    {{ partial "s_filters" . }}
+
     <div class="s-content">
 
       {{ range $index, $el := $festival_events }}

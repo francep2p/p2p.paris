@@ -102,3 +102,12 @@ show_all:
 
 speakers:
   other: Intervenants
+
+filters:
+  other: Filtrer<span class="to-hide"> les événements</span>
+
+kind:
+  other: Type
+
+location:
+  other: Lieu

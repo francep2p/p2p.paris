@@ -37,6 +37,40 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
+function myToggle(){
+  if (!$('.checkbox-k:checked').length == 0) {
+    $('.s-item').hide();
+    $('.checkbox-k').each(function(){
+      var k_id = $(this).attr("id");
+      if($(this).prop('checked')) {
+        $(".f-" + k_id).show();
+      }
+    });
+    if (!$('.checkbox-l:checked').length == 0) {
+      $('.checkbox-l').each(function(){
+        if(!$(this).prop('checked')){
+          var l_id = $(this).attr("id");
+          $('.f-' + l_id).each(function(){
+            if ($(this).is(':visible')){
+              $($(this)).hide();
+            }
+          });
+        }
+      });
+    }
+  }
+  else {
+    $('.s-item').hide();
+    $('.checkbox-l').each(function(){
+      var l_id = $(this).attr("id");
+      if($(this).prop('checked')) {
+        $(".f-" + l_id).show();
+      }
+    });
+  }
+}
+
+
 (function($) {
   "use strict"; // Start of use strict
 
@@ -110,6 +144,37 @@ function initializeClock(id, endtime) {
       }
     });
 
+  }
+
+
+
+  if($(".s-filters").length) {
+
+    // prevent dropdown menu from closing when clicking checkbox label
+    $(document).on('click', '.s-filters .dropdown-menu', function (e) {
+      e.stopPropagation();
+    });
+
+    // vars to check if nothing has been clicked yet (start mode)
+    var first_click = 0;
+    $('input[type="checkbox"]').click(function(){
+      var checkboxId = $(this).attr("id");
+      var checkboxType = checkboxId[0];
+      var checkboxChecked = $(this).prop('checked');
+      if (first_click == 0 && checkboxChecked == true){
+        $(".s-item").hide();
+        $(".f-" + checkboxId).show();
+        first_click = 1;
+      }
+      else {
+        myToggle();
+      }
+      //if nothing is checked display everything (back to start)
+      if ($('input[type="checkbox"]:checked').length == 0) {
+        $(".s-item").show();
+        first_click = 0;
+      }
+    });
   }
 
 })(jQuery); // End of use strict

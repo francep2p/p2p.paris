@@ -1,0 +1,34 @@
+
+{{ partial "header" . }}
+
+
+{{ $festival_events := index .Site.Data.gen.festival (print "events_" .Lang) }}
+
+<section class="page-section bg-white section-schedule section-print">
+  <div class="container" id="schedule">
+
+ 	{{ partial "s_filters" . }}
+
+    <div class="s-content">
+
+      {{ range $index, $el := $festival_events }}
+      {{ $id := (add $index 1) }}
+
+      <div class="s-day" id="c-day-{{ $id }}">
+        <div class="s-day-title text-center">
+            <div class="pill">{{ i18n "day_long" . }}  {{ $id }}</div>
+        </div>
+        {{ range .events }}
+          {{ partial "s_item" (dict "ctx" $ "data" .) }}
+        {{ end }}
+      </div><!-- /.s-day -->
+      {{ end }}
+
+    </div><!-- /.s-content -->
+
+  </div><!-- /.container -->
+</section>
+
+
+{{ partial "footer" . }}
+
