@@ -104,7 +104,7 @@ speakers:
   other: Speakers
 
 filters:
-  other: Filter events
+  other: Filter<span class="to-hide">  events</span>
 
 kind:
   other: Kind
