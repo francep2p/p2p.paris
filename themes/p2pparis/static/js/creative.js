@@ -37,6 +37,15 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
+function myToggle(checkboxId, checkboxChecked){
+  if(checkboxChecked == true) {
+    $(".f-" + checkboxId).show();
+  }
+  else {
+    $(".f-" + checkboxId).hide();
+  }
+}
+
 (function($) {
   "use strict"; // Start of use strict
 
@@ -112,43 +121,49 @@ function initializeClock(id, endtime) {
 
   }
 
+
+
   if($(".s-filters").length) {
+
+    // prevent dropdown menu from closing when clicking checkbox label
     $(document).on('click', '.s-filters .dropdown-menu', function (e) {
-    e.stopPropagation();
+      e.stopPropagation();
     });
 
-
+    // vars to check if nothing has been clicked yet
     var kind_first_click = 0;
     var location_first_click = 0;
     $('input[type="checkbox"]').click(function(){
       var checkboxId = $(this).attr("id");
       var checkboxType = checkboxId[0];
+      var checkboxChecked = $(this).prop('checked');
       console.log('kind_first_click: ' + kind_first_click);
       console.log('location_first_click: ' + location_first_click);
       console.log('checkboxId: ' + checkboxId);
       console.log('checkboxType: ' + checkboxType);
+      console.log('checkboxChecked: ' + checkboxChecked);
       if (checkboxType == 'k'){
         console.log('if checkboxTypeis k');
-        if (kind_first_click == 0){
+        if (kind_first_click == 0 && checkboxChecked == true){
           $("div[class*='f-k-']").hide();
           $(".f-" + checkboxId).show();
           kind_first_click = 1;
         }
         else {
-          $(".f-" + checkboxId).toggle();
+          myToggle(checkboxId, checkboxChecked);
         }
       }
       else {
         console.log('if checkboxTypeis l');
-        if (location_first_click == 0){
+        if (location_first_click == 0 && checkboxChecked == true){
           $("div[class*='f-l-']").hide();
           $(".f-" + checkboxId).show();
           location_first_click = 1;
         }
         else {
-          $(".f-" + checkboxId).toggle();
+          myToggle(checkboxId, checkboxChecked);
         }
-      } 
+      }
       console.log('kind_first_click: ' + kind_first_click);
       console.log('location_first_click: ' + location_first_click);     
     });
