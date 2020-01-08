@@ -8,7 +8,12 @@
                 <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text }}</h1>
             </div><!-- /.col -->
             <div class="col-lg-10">
-                <div id="clockdiv">
+              <h2 id="it-soon" class="text-uppercase text-white font-weight-bold" style="display: none;">{{ .Params.content.it_soon }}<br/><br/></h2>
+              <h2 id="it-current" class="text-uppercase text-white font-weight-bold" style="display: none;">{{ .Params.content.it_current }}<br/><br/></h2>
+              <h2 id="it-finish" class="text-uppercase text-white font-weight-bold" style="display: none;">{{ .Params.content.it_finish | markdownify }}</h2>
+            </div>
+            <div class="col-lg-10">
+                <div id="clockdiv" style="display: none;">
                   <div>
                     <span class="days"></span>
                     <div class="smalltext">{{ .Params.clock.Days }}</div>
