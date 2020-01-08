@@ -127,8 +127,23 @@ function myToggle(){
   if ($(".page-festival").length) {
 
     // Initialize countdown clock
-    var deadline = new Date(Date.parse(new Date('january 8, 2020 18:00:00')));
-    initializeClock('clockdiv', deadline); 
+    var festival_start = new Date(Date.parse(new Date('january 8, 2020 18:00:00')));
+    var festival_end = new Date(Date.parse(new Date('january 12, 2020 20:00:00')));
+    var date_now = Date.now();
+    
+    if(date_now < festival_start){
+      $('#it-soon').show();
+      initializeClock('clockdiv', festival_start);
+      $('#clockdiv').show();
+    }
+    else if(date_now < festival_end){
+      $('#it-current').show();
+      initializeClock('clockdiv', festival_end);
+      $('#clockdiv').show();
+    }
+    else {
+      $('#it-finish').show();  
+    }
 
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
