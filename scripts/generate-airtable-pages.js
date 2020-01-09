@@ -8,7 +8,7 @@ const {
   AIRTABLE_API_KEY
 } = process.env;
 
-main(); 
+main();
 
 async function main() {
   let talks, speakers, events, tags, chapters, talkKind, settings, organizations, locations;
