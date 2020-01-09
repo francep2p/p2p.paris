@@ -11,7 +11,7 @@ const {
 main();
 
 async function main() {
-  let talks, speakers, events, tags, chapters, talkKind, settings, organizations;
+  let talks, speakers, events, tags, chapters, talkKind, settings, organizations, locations;
 
   try {
     talks = (await fetchTable('Talk'))
@@ -34,6 +34,7 @@ async function main() {
     talkKind = await fetchTable('Talk%20Kind');
     settings = await fetchTable('Settings');
     organizations = await fetchTable('Organization');
+    locations = await fetchTable('Location');
   } catch (error) {
     log(`ERROR ${error}`);
     process.exit(1);
@@ -47,7 +48,8 @@ async function main() {
     ...tags,
     ...talkKind,
     ...settings,
-    ...organizations
+    ...organizations,
+    ...locations
   ]
 
   const translated = splitToMultiLanguage(entities);
@@ -235,11 +237,16 @@ function flattenAirtableRecords(tableName, items) {
 
     Object.keys(item.fields).forEach(key => {
       let value = item.fields[key];
-      const newKey = key
+      let newKey = key
         .toLowerCase()
         .replace(/\#/g, '_')
         .replace(/\(s\)/g, '_')
         .replace(/\s/g, '_');
+
+      // if key already exists, prefix it
+      if (result[newKey]) {
+        newKey = `at_${newKey}`;
+      }
 
       try {
         if (newKey == "json_(fr)") {
@@ -256,7 +263,7 @@ function flattenAirtableRecords(tableName, items) {
       if (value instanceof Array) {
         value = value.map(item => {
           if (item && item.filename) {
-            const url = item.thumbnails.large.url;
+            const url = item.url;
             const extension = item.type.split('/')[1];
             return { 
               is_image: true, 
