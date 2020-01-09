@@ -264,7 +264,10 @@ function flattenAirtableRecords(tableName, items) {
         value = value.map(item => {
           if (item && item.filename) {
             const url = item.url;
-            const extension = item.type.split('/')[1];
+            let extension = item.type.split('/')[1];
+            if (extension == "vnd.openxmlformats-officedocument.presentationml.presentation") {
+              extension = "pptx"
+            }
             return { 
               is_image: true, 
               type: item.type,

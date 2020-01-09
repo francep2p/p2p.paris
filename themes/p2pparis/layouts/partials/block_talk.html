@@ -61,7 +61,7 @@
 			<span>{{ .Params.redacted_speakers }}</span>
 		</div>
 	</div><!-- /.s-item-top -->
-	<div class="s-item-bottom">
+	<div class="s-item-middle">
 		<a class="s-item-title" href="{{ .RelPermalink }}">
 			{{ .Params.title }}
 		</a>
@@ -81,6 +81,7 @@
 		{{ end }}
 		{{ $event := index .Params.event 0 }}
 
+		{{ if eq .Params.talk_relative_time "finished" }}
 		<div class="row">
 			<div class="col-12">
 				{{ if or .Params.slides_link .Params.slides }}
@@ -96,23 +97,9 @@
 				{{ end }}
 			</div><!-- /.col -->
 		</div><!-- /.row -->
+		{{ end }}
 
 		<div class="row">
-			{{ if .Params.talk_youtube_url }}
-			<div class="col-md-6">
-				<div class="s-item-video">
-					<div class="s-item-line s-video mr">
-						<i class="far fa-camera-movie"></i>
-						<span>Video</span>
-					</div>
-					<div class="responsive-embed">
-						<div class="responsive-embed-inner">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ .Params.talk_youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div><!-- /.responsive-embed-inner -->
-					</div><!-- /.responsive-embed -->
-				</div><!-- /.s-item-video -->
-			</div><!-- /.col -->
-			{{end}}
 			{{ if .Params.interview_youtube_url }}
 			<div class="col-md-6">
 				<div class="s-item-video">
@@ -123,6 +110,21 @@
 					<div class="responsive-embed">
 						<div class="responsive-embed-inner">
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ .Params.interview_youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div><!-- /.responsive-embed-inner -->
+					</div><!-- /.responsive-embed -->
+				</div><!-- /.s-item-video -->
+			</div><!-- /.col -->
+			{{end}}
+			{{ if .Params.talk_youtube_url }}
+			<div class="col-md-6">
+				<div class="s-item-video">
+					<div class="s-item-line s-video mr">
+						<i class="far fa-camera-movie"></i>
+						<span>Video</span>
+					</div>
+					<div class="responsive-embed">
+						<div class="responsive-embed-inner">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ .Params.talk_youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div><!-- /.responsive-embed-inner -->
 					</div><!-- /.responsive-embed -->
 				</div><!-- /.s-item-video -->

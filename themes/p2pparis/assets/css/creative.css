@@ -10880,8 +10880,12 @@ tag.v {
   text-align:center;
   margin-right:2px;
 }
+.s-item .s-item-middle {
+  padding: 10px 25px 10px 25px;
+  overflow:auto;
+}
 .s-item .s-item-bottom {
-  padding:10px 25px 25px 25px;
+  padding:10px 25px 25px 20px;
   overflow:auto;
 }
 .s-item .s-item-title {
@@ -10939,12 +10943,12 @@ tag.v {
 .s-item a.video-preview {
   display:block;
   position:relative;
-  z-index: 100;
+  z-index: 5;
 }
 .s-item a.video-preview i {
   position: absolute;
-  top: 46px;
-  left: 99px;
+  top: 37%;
+  left: 41%;
   font-size: 50px;
   color: #FFF;
 }
@@ -11125,8 +11129,11 @@ tag.v {
   .s-item .s-item-top {
     padding:15px 20px 5px 20px;
   }
+  .s-item .s-item-middle {
+    padding: 10px 20px 3px 20px;
+  }
   .s-item .s-item-bottom {
-    padding: 10px 20px 20px 20px;
+    padding: 3px 20px 20px 20px;
   }
   .s-item .tag {
     top: 15px;
@@ -11137,7 +11144,8 @@ tag.v {
   .block-talk.s-item .tag {
     margin:20px 20px -5px 20px;
   }
-  .s-item .img-schedule {
+  .s-item .img-schedule,
+  .s-item .video-preview {
     display:block;
     float:left;
     margin:10px 0;
