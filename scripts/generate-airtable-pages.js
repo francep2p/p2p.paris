@@ -258,7 +258,7 @@ function flattenAirtableRecords(tableName, items) {
       if (value instanceof Array) {
         value = value.map(item => {
           if (item && item.filename) {
-            const url = item.thumbnails.large.url;
+            const url = item.url;
             const extension = item.type.split('/')[1];
             return { 
               is_image: true, 
