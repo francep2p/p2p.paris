@@ -237,11 +237,16 @@ function flattenAirtableRecords(tableName, items) {
 
     Object.keys(item.fields).forEach(key => {
       let value = item.fields[key];
-      const newKey = key
+      let newKey = key
         .toLowerCase()
         .replace(/\#/g, '_')
         .replace(/\(s\)/g, '_')
         .replace(/\s/g, '_');
+
+      // if key already exists, prefix it
+      if (result[newKey]) {
+        newKey = `at_${newKey}`;
+      }
 
       try {
         if (newKey == "json_(fr)") {
