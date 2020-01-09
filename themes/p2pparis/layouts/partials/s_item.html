@@ -17,7 +17,7 @@
 
 {{ $talk_page := .ctx.GetPage .data.file_path }}
 
-<div class="block s-item {{ $kind.name }} f-k-{{ $kind.name }} {{ if (eq .data.location "Conférence") }}f-l-conference{{ else }}f-l-{{ .data.location | urlize }}{{ end }}">
+<div class="block s-item {{ $kind.name }} f-k-{{ $kind.name }} {{ if (eq $location.name "Conférence") }}f-l-conference{{ else }}f-l-{{ $location.name | urlize }}{{ end }}">
 	<div class="s-item-top">
 		<div class="s-item-line-top">
 			<div class="s-item-line s-time mr">
