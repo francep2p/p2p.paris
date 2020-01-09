@@ -111,3 +111,9 @@ kind:
 
 location:
   other: Location
+
+view_slides:
+  other: View slides
+
+download_slides:
+  other: Download slides

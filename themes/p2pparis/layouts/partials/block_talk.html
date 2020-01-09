@@ -66,8 +66,8 @@
 			{{ .Params.title }}
 		</a>
 		{{ if .Params.picture }}
-      {{$img := index .Params.picture 0 }}
-  		<img class="img-schedule" src="{{ ((resources.Get $img.local).Resize `250x jpg`).RelPermalink }}">
+      	{{ $img := index .Params.picture 0 }}
+  		<img class="img-schedule picture" data-pin-nopin="true" src="{{ ((resources.Get $img.local).Resize `250x jpg`).RelPermalink }}">
 		{{ end }}
 		<div class="s-item-description">
 			{{ .Params.description | markdownify }}
@@ -80,8 +80,56 @@
 		</div>
 		{{ end }}
 		{{ $event := index .Params.event 0 }}
-	</div><!-- /.s-item-bottom -->
 
+		<div class="row">
+			<div class="col-12">
+				{{ if or .Params.slides_link .Params.slides }}
+				<div class="s-item-slides">
+					{{ if .Params.slides_link }}
+						<a href="{{ .Params.slides_link }}" class="btn btn-slides"><i class="far fa-presentation"></i>{{ i18n "view_slides" . }}<i class="far fa-chevron-right"></i></a>
+					{{ end }}
+					{{ if .Params.slides }}
+					{{ $slides := index .Params.slides 0 }}
+						<a href="{{ (resources.Get $slides.local).RelPermalink }}" class="btn btn-slides"><i class="far fa-download"></i>{{ i18n "download_slides" . }}</a>
+					{{ end }}
+					</div><!-- /.s-item-slides -->
+				{{ end }}
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+
+		<div class="row">
+			{{ if .Params.talk_youtube_url }}
+			<div class="col-md-6">
+				<div class="s-item-video">
+					<div class="s-item-line s-video mr">
+						<i class="far fa-camera-movie"></i>
+						<span>Video</span>
+					</div>
+					<div class="responsive-embed">
+						<div class="responsive-embed-inner">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ .Params.talk_youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div><!-- /.responsive-embed-inner -->
+					</div><!-- /.responsive-embed -->
+				</div><!-- /.s-item-video -->
+			</div><!-- /.col -->
+			{{end}}
+			{{ if .Params.interview_youtube_url }}
+			<div class="col-md-6">
+				<div class="s-item-video">
+					<div class="s-item-line s-video mr">
+						<i class="far fa-microphone-alt"></i>
+						<span>Interview</span>
+					</div>
+					<div class="responsive-embed">
+						<div class="responsive-embed-inner">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ .Params.interview_youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div><!-- /.responsive-embed-inner -->
+					</div><!-- /.responsive-embed -->
+				</div><!-- /.s-item-video -->
+			</div><!-- /.col -->
+			{{end}}
+		</div><!-- /.row -->
+	</div><!-- /.s-item-bottom -->
 	{{ $festival_page := $.GetPage "/event/festival-0" }}
 	{{ if and $festival_page (eq $event.title "Paris P2P Festival #0") }}
 	<a class="block-event-small" href="{{ $festival_page.RelPermalink }}">

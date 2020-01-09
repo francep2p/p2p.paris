@@ -111,3 +111,9 @@ kind:
 
 location:
   other: Lieu
+
+view_slides:
+  other: Voir les slides
+
+download_slides:
+  other: Télecharger les slides

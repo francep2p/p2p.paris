@@ -61,9 +61,27 @@
 			{{ .data.title }}
 		</a>
 		{{ if .data.picture }}
-      {{$img := index .data.picture 0 }}
-  		<img class="img-schedule" src="{{ ((resources.Get $img.local).Resize `250x jpg`).RelPermalink }}">
+      	{{$img := index .data.picture 0 }}
+  		<img class="img-schedule picture" data-pin-nopin="true" src="{{ ((resources.Get $img.local).Resize `250x jpg`).RelPermalink }}">
 		{{ end }}
+
+
+		{{ if .data.interview_youtube_preview_image }}
+      	{{$img_interview := index .data.interview_youtube_preview_image 0 }}
+      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
+  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_interview.local).Resize `250x jpg`).RelPermalink }}">
+  			<i class="fab fa-youtube"></i>
+  		</a>
+		{{ end }}
+
+		{{ if .data.talk_youtube_preview_image }}
+      	{{$img_talk := index .data.talk_youtube_preview_image 0 }}
+      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
+  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_talk.local).Resize `250x jpg`).RelPermalink }}">
+  			<i class="fab fa-youtube"></i>
+  		</a>
+		{{ end }}
+
 		<div class="s-item-description">
 			{{ .data.description | markdownify }}
 		</div>
@@ -73,6 +91,11 @@
 			{{ .custom_html | safeHTML }}
 			{{ end }}
 		</div>
+		{{ end }}
+		{{ if or .data.slides_link .data.slides }}
+		<div class="s-item-slides">
+			<a href="{{ $talk_page.RelPermalink }}" class="btn btn-slides"><i class="far fa-presentation"></i>Slides</a>
+		</div><!-- /.s-item-slides -->
 		{{ end }}
 	</div><!-- /.s-item-bottom -->
 	<span class="tag tag-{{ $kind.name }}"><i class="far {{ .data.k_icon }}"></i>{{ .data.k_label }}</span>
