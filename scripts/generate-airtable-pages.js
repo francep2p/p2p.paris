@@ -11,7 +11,7 @@ const {
 main();
 
 async function main() {
-  let talks, speakers, events, tags, chapters, talkKind, settings, organizations;
+  let talks, speakers, events, tags, chapters, talkKind, settings, organizations, locations;
 
   try {
     talks = (await fetchTable('Talk'))
@@ -34,6 +34,7 @@ async function main() {
     talkKind = await fetchTable('Talk%20Kind');
     settings = await fetchTable('Settings');
     organizations = await fetchTable('Organization');
+    locations = await fetchTable('Location');
   } catch (error) {
     log(`ERROR ${error}`);
     process.exit(1);
@@ -47,7 +48,8 @@ async function main() {
     ...tags,
     ...talkKind,
     ...settings,
-    ...organizations
+    ...organizations,
+    ...locations
   ]
 
   const translated = splitToMultiLanguage(entities);
