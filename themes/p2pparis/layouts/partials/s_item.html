@@ -1,6 +1,11 @@
 {{ $at := index .ctx.Site.Data.gen (print "airtable_" .ctx.Lang) }}
 {{ $kind := "" }}
 {{ $tags := slice }}
+{{ $location := "" }}
+
+{{ if .data.location }}
+	{{ $location = index $at (index .data.location 0) }}
+{{ end }}
 
 {{ if .data.kind }}
 	{{ $kind = index $at (index .data.kind 0) }}
@@ -44,7 +49,7 @@
 		</div>
 		<div class="s-item-line s-loc mr">
 			<i class="far fa-map-marker"></i>
-			<span>{{ .data.location }}</span>
+			<span>{{ $location.name }}</span>
 		</div>
 		<div class="s-item-line s-orga">
 			<i class="far fa-user"></i>
