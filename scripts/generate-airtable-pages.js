@@ -419,7 +419,9 @@ function joinRelations(items) {
           }
 
           if (isId(v)) {
-            log(`WARNING: ${item.from_table} ${item.title} referenced "${v}" as a relation, but is not found. Probably this is because it references a different chapter which is filtered out.`)
+            log(`
+              WARNING: ${item.from_table} ${item.title} referenced "${v}" as a relation, but is not found. 
+              It's either filtered out or the table is'nt fetched.`)
             return null;
           }
 
