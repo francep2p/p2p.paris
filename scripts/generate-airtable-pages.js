@@ -268,11 +268,14 @@ function flattenAirtableRecords(tableName, items) {
             if (extension == "vnd.openxmlformats-officedocument.presentationml.presentation") {
               extension = "pptx"
             }
+
             return { 
+              filename: item.filename,
+              size: item.size,
               is_image: true, 
               type: item.type,
               remote: url, 
-              local: getImagePath(`${url}.${extension}`, false)
+              local: getImagePath(`${item.id}-${item.filename}.${extension}`, false)
             };
           }
           return item;
