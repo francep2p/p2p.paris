@@ -66,19 +66,23 @@
 		{{ end }}
 
 		<div class="s-item-videos">
-			{{ if .data.talk_youtube_preview_image }}
-	      	{{$img_talk := index .data.talk_youtube_preview_image 0 }}
-	      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
-	  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_talk.local).Resize `250x jpg`).RelPermalink }}">
-	  			<i class="fab fa-youtube"></i>
-	  		</a>
+			{{ if .data.talk_youtube_url }}
+				{{ if .data.talk_youtube_preview_image }}
+		      	{{$img_talk := index .data.talk_youtube_preview_image 0 }}
+		      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
+		  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_talk.local).Resize `250x jpg`).RelPermalink }}">
+		  			<i class="fab fa-youtube"></i>
+		  		</a>
+				{{ end }}
 			{{ end }}
-			{{ if .data.interview_youtube_preview_image }}
-	      	{{$img_interview := index .data.interview_youtube_preview_image 0 }}
-	      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
-	  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_interview.local).Resize `250x jpg`).RelPermalink }}">
-	  			<i class="fab fa-youtube"></i>
-	  		</a>
+			{{ if .data.interview_youtube_url }}
+				{{ if .data.interview_youtube_preview_image }}
+		      	{{$img_interview := index .data.interview_youtube_preview_image 0 }}
+		      	<a href="{{ $talk_page.RelPermalink }}" class="video-preview">
+		  			<img class="img-schedule" data-pin-nopin="true" src="{{ ((resources.Get $img_interview.local).Resize `250x jpg`).RelPermalink }}">
+		  			<i class="fab fa-youtube"></i>
+		  		</a>
+		  		{{ end }}
 			{{ end }}
 		</div><!-- /.s-item-videos -->
 		<div class="s-item-description">
