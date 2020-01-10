@@ -55,11 +55,16 @@ async function main() {
 
   const translated = splitToMultiLanguage(entities);
 
-  await Promise.all([
-    downloadImagesFromItems(speakers),
-    downloadImagesFromItems(talks)
-  ]);
-
+  try {
+    await Promise.all([
+      downloadImagesFromItems(speakers),
+      downloadImagesFromItems(talks)
+    ]);
+  } catch (err) {
+    log(`ERROR: image download error: ${err}`);
+    process.exit(5);
+  }
+  
   const defaultLanguage = 'en';
   ['en', 'fr'].forEach(lang => {
     // Join relations. 1 level deep
@@ -277,7 +282,6 @@ function flattenAirtableRecords(tableName, items) {
               isfile: true,
               filename: item.filename,
               size: item.size,
-              is_image: true, 
               type: item.type,
               remote: url, 
               local: getImagePath(`${item.id}-${item.filename.replace(/\s/g, '_')}.${extension}`, false)
