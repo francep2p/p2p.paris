@@ -57,11 +57,11 @@ async function main() {
 
   try {
     await Promise.all([
-      downloadImagesFromItems(speakers),
-      downloadImagesFromItems(talks)
+      downloadAttachmentsFromItems(speakers),
+      downloadAttachmentsFromItems(talks)
     ]);
   } catch (err) {
-    log(`ERROR: image download error: ${err}`);
+    log(`ERROR: attachment download error: ${err}`);
     process.exit(5);
   }
   
@@ -284,7 +284,7 @@ function flattenAirtableRecords(tableName, items) {
               size: item.size,
               type: item.type,
               remote: url, 
-              local: getImagePath(`${item.id}-${item.filename.replace(/\s/g, '_')}.${extension}`, false)
+              local: getAttachmentPath(`${item.id}-${item.filename.replace(/\s/g, '_')}.${extension}`, false)
             };
           }
           return item;
@@ -434,9 +434,9 @@ function joinRelations(items) {
 
 
 //
-// Download images
+// Download attachments
 //
-async function downloadImagesFromItems(items) {
+async function downloadAttachmentsFromItems(items) {
   const promises = [];
 
   items.forEach(item => {
@@ -445,7 +445,7 @@ async function downloadImagesFromItems(items) {
       if (value instanceof Array) {
         value.forEach(v => {
           if (v && v.isfile) {
-            promises.push(downloadImage(v.remote, v.local));
+            promises.push(downloadAttachment(v.remote, v.local));
           }
         })
       }
@@ -456,14 +456,14 @@ async function downloadImagesFromItems(items) {
     await Promise.all(promises);
     return;
   } catch (err) {
-    log(`Images download error: ${err}`);
+    log(`Attachment download error: ${err}`);
     process.exit(4);
   }
 }
 
-async function downloadImage(url, destination) {
-  log(`Downloading image ${url}`);
-  const filepath = getImagePath(destination);
+async function downloadAttachment(url, destination) {
+  log(`Downloading attachment ${url}`);
+  const filepath = getAttachmentPath(destination);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
 
   const res = await fetch(url);
@@ -501,11 +501,11 @@ function isId(value) {
   return value.startsWith('rec') && value.length == 17;
 }
 
-function getImagePath(filepath, absolute = true) {
+function getAttachmentPath(filepath, absolute = true) {
   const filename = path.basename(filepath);
   return absolute
-    ? path.join(__dirname, `../assets/gen/img/${filename}`)
-    : path.join(`/gen/img/${filename}`);
+    ? path.join(__dirname, `../assets/gen/${filename}`)
+    : path.join(`/gen/${filename}`);
 }
 
 function log(message) {
