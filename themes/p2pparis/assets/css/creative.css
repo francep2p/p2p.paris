@@ -10950,7 +10950,7 @@ tag.v {
   top: 37%;
   left: 41%;
   font-size: 50px;
-  color: #FFF;
+  color: rgba(255,255,255,0.4);
 }
 .s-item a.video-preview:hover i,
 .s-item a.video-preview:focus i {
