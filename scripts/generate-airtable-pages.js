@@ -1,6 +1,7 @@
 const fs = require('fs'),
       path = require('path'),
-      fetch = require('node-fetch');
+      fetch = require('node-fetch'),
+      mime = require('mime');
 
 const CHAPTER = 'Paris P2P';
 const AIRTABLE_BASE_ID = 'appVBIJFBUheVWS0Q';
@@ -264,9 +265,10 @@ function flattenAirtableRecords(tableName, items) {
         value = value.map(item => {
           if (item && item.filename) {
             const url = item.url;
-            let extension = item.type.split('/')[1];
-            if (extension == "vnd.openxmlformats-officedocument.presentationml.presentation") {
-              extension = "pptx"
+            const extension = mime.getExtension(item.type);
+
+            if (!extension) {
+              log(`WARNING: file extension unknown for ${item.type}`);
             }
 
             return { 
