@@ -178,6 +178,8 @@ content:
     it_soon: Starting in a few hours!
     it_current: It's happening now! Ending in
     it_finish: It's already finished!<br/><br/>See you soon for the next edition...
+    s_donate_title: You like this initiative and want to help us?
+    s_donate_text: You can show your support by donating to help funding this free event and the next ones...
     about_title: About the Festival
     about_text: "Our goal is to offer 5 days of sharing, learning, meeting and playing around all the dimensions of the Peer-to-Peer (P2P) revolution. The technological aspect of P2P is essential, but we also believe that it materializes philosophical and ethical principles.<br/><br/>P2P applies to a wide array of aspects, from secure and privacy-preserving communication, to knowledge-sharing, to participative governance, to digital currencies, or even art!<br/><br/>Paris P2P Festival will be a fantastic opportunity to gather P2P supporters, regardless of their particular approach and interests.<br/><br/>We are calling any team or individual with an active interest in P2P to join the Festival, use it to set up their own meeting, offer a workshop, share a talk or a presentation, take part to the hackathon.<br/><br/>The event was born out of our Paris P2P monthly meetups at Ground Control. We are willing to open it to a wider audience: individuals, collectives, associations, and businesses willing to be part of a community event, without lucrative purpose."
     participate: I want to participate!
