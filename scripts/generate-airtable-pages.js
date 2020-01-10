@@ -277,7 +277,7 @@ function flattenAirtableRecords(tableName, items) {
               is_image: true, 
               type: item.type,
               remote: url, 
-              local: getImagePath(`${item.id}-${item.filename}.${extension}`, false)
+              local: getImagePath(`${item.id}-${item.filename.replace(/\s/g, '_')}.${extension}`, false)
             };
           }
           return item;
