@@ -273,6 +273,12 @@ function flattenAirtableRecords(tableName, items) {
           if (item && item.filename) {
             const url = item.url;
             const extension = mime.getExtension(item.type);
+            const type = mime.getType(item.filename);
+
+            let localPath = `${item.id}-${item.filename.replace(/\s/g, '_')}`;
+            localPath = type
+              ? localPath
+              : `${localPath}.${extension}`
 
             if (!extension) {
               log(`WARNING: file extension unknown for ${item.type}`);
@@ -284,7 +290,7 @@ function flattenAirtableRecords(tableName, items) {
               size: item.size,
               type: item.type,
               remote: url, 
-              local: getAttachmentPath(`${item.id}-${item.filename.replace(/\s/g, '_')}.${extension}`, false)
+              local: getAttachmentPath(localPath, false)
             };
           }
           return item;
