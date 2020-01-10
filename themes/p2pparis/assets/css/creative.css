@@ -11453,8 +11453,23 @@ tag.v {
   margin-top:70px;
 }
 
+
+.section-donate {
+  padding-top:150px;
+}
+.block-pink {
+  background-attachment: unset;
+  background-position: bottom;
+}
+.block-donate {
+  padding: 40px 40px 30px 20px;
+}
+.block-donate .col-btn {
+  padding-left:0px;
+  padding-right:5px;
+}
 .block-speaker {
-  padding:25px;
+  padding:25px 15px;
   text-align:center;
   margin-bottom:30px;
   min-height:248px;
@@ -11502,14 +11517,21 @@ tag.v {
   line-height:initial;
   width:72px;
 }
+.block-speaker .speaker-content {
+  min-height:80px;
+}
 .block-speaker h5 {
   margin-bottom:3px;
   font-size:1.2rem;
 }
 .block-speaker p {
   margin-bottom:0;
-  min-height:50px;
+  /*min-height:50px;*/
   opacity:0.7;
+}
+
+.block-speaker .speaker-links {
+  min-height:30px;
 }
 
 .block-speaker .speaker-links button {
@@ -11526,7 +11548,7 @@ tag.v {
 
 @media(min-width:768px){
   .block-speaker {
-    min-height: 268px;
+    min-height: 270px;
   }
   .block-speaker .speaker-picture {
     height:90px;
@@ -11635,11 +11657,11 @@ a.block-legend-header:focus {
   }
 }
 
-@media(max-width:1024px) {
+/*@media(max-width:1024px) {
   .block-speaker {
     min-height:292px;
   }
-}
+}*/
 
 @media(max-width: 1199px) and (min-width: 992px){
   #mainNav .nav-link.Meetup,
@@ -11761,6 +11783,10 @@ a.block-legend-header:focus {
 }
 
 @media (max-width: 991px) {
+  .block-donate h3,
+  .block-donate p {
+    text-align:center;
+  }
   #links.page-section .justify-content-center {
     display:none;
   }
@@ -11788,6 +11814,9 @@ a.block-legend-header:focus {
 @media (max-width: 425px) {
   .col-20 .block-link i.fa-4x{
     font-size: 32px;
+  }
+  .block-speaker .speaker-content {
+    min-height: 100px;
   }
 }
 @media (max-width: 410px) {
