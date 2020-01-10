@@ -12,54 +12,53 @@ const {
 main();
 
 async function main() {
-  let talks, speakers, events, tags, chapters, talkKind, settings, organizations, locations;
+  let entities;
+
+  const pagesToCreate = ['Talk', 'Speaker'];
+  const tableNames = [
+    'Talk',
+    'Speaker',
+    'Event',
+    'Tag',
+    'Chapter',
+    'Talk%20Kind',
+    'Settings',
+    'Organization',
+    'Location',
+  ];
 
   try {
-    talks = (await fetchTable('Talk'))
-      .filter(isPublished)
-      .filter(item => item.chapter && item.chapter.indexOf(CHAPTER) > -1)
-      .map(addPageProps)
-      .filter(i => i);
+    const promises = tableNames.map(name => fetchTable(name));
+    entities = (await Promise.all(promises)).map((items, index) => {
+      const tableName = tableNames[index];
+      if (tableName == 'Talk') {
+        items = items
+          .filter(isPublished)
+          .filter(item => item.chapter && item.chapter.indexOf(CHAPTER) > -1);
+      }
 
-    speakers = (await fetchTable('Speaker'))
-      .filter(item => item.chapters && item.chapters.indexOf(CHAPTER) > -1)
-      .map(addPageProps)
-      .filter(i => i);
+      if (tableName == 'Speaker') {
+        items = items
+          .filter(item => item.chapters && item.chapters.indexOf(CHAPTER) > -1);
+      }
 
-    events = (await fetchTable('Event'))
-      .map(addPageProps)
-      .filter(i => i);
+      if (pagesToCreate.includes(tableName)) {
+        items = items
+          .map(addPageProps)
+          .filter(i => i);
+      }
 
-    tags = await fetchTable('Tag');
-    chapters = await fetchTable('Chapter');
-    talkKind = await fetchTable('Talk%20Kind');
-    settings = await fetchTable('Settings');
-    organizations = await fetchTable('Organization');
-    locations = await fetchTable('Location');
+      return items;
+    }).reduce((a, b) => a.concat(b), []);
   } catch (error) {
     log(`ERROR ${error}`);
     process.exit(1);
   }
 
-  const entities = [
-    ...talks,
-    ...speakers,
-    ...events,
-    ...chapters,
-    ...tags,
-    ...talkKind,
-    ...settings,
-    ...organizations,
-    ...locations
-  ]
-
   const translated = splitToMultiLanguage(entities);
 
   try {
-    await Promise.all([
-      downloadAttachmentsFromItems(speakers),
-      downloadAttachmentsFromItems(talks)
-    ]);
+    await downloadAttachmentsFromItems(entities);
   } catch (err) {
     log(`ERROR: attachment download error: ${err}`);
     process.exit(5);
@@ -90,7 +89,7 @@ async function main() {
     );
 
     // Create pages
-    ['speaker', 'talk'].forEach(topic => {
+    pagesToCreate.map(p => p.toLowerCase()).forEach(topic => {
       const langSuffix = (lang != defaultLanguage ? lang : '')
       generateMarkdownFiles(joined.filter(item => item.from_table === topic), langSuffix);
     });
