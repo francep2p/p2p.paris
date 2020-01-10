@@ -55,8 +55,10 @@ async function main() {
 
   const translated = splitToMultiLanguage(entities);
 
-  downloadImagesFromItems(speakers);
-  downloadImagesFromItems(talks);
+  await Promise.all([
+    downloadImagesFromItems(speakers),
+    downloadImagesFromItems(talks)
+  ]);
 
   const defaultLanguage = 'en';
   ['en', 'fr'].forEach(lang => {
@@ -272,6 +274,7 @@ function flattenAirtableRecords(tableName, items) {
             }
 
             return { 
+              isfile: true,
               filename: item.filename,
               size: item.size,
               is_image: true, 
@@ -429,24 +432,29 @@ function joinRelations(items) {
 //
 // Download images
 //
-function downloadImagesFromItems(items) {
+async function downloadImagesFromItems(items) {
+  const promises = [];
+
   items.forEach(item => {
     Object.keys(item).forEach(key => {
       const value = item[key];
       if (value instanceof Array) {
-        value.forEach(async v => {
-          if (v && v.is_image) {
-            try {
-              await downloadImage(v.remote, v.local);
-            } catch (err) {
-              log(`Image download error: ${v.remote}, ${err}`);
-              process.exit(4);
-            }
+        value.forEach(v => {
+          if (v && v.isfile) {
+            promises.push(downloadImage(v.remote, v.local));
           }
         })
       }
     })
   });
+
+  try {
+    await Promise.all(promises);
+    return;
+  } catch (err) {
+    log(`Images download error: ${err}`);
+    process.exit(4);
+  }
 }
 
 async function downloadImage(url, destination) {
