@@ -190,6 +190,26 @@ function myToggle(){
         first_click = 0;
       }
     });
+
+
+    if ($('.btn-group-toggle').is(':visible')){
+      $('.s-items-full').show();
+      $('.s-items-light').hide();
+      $( ".btn-items-display" ).click(function() {
+        if($(this).attr("id") == 'btn-items-light'){
+          $(this).addClass('active');
+          $('#btn-items-full').removeClass('active');
+          $('.s-items-full').hide();
+          $('.s-items-light').show();
+        }
+        else if($(this).attr("id") == 'btn-items-full'){
+          $(this).addClass('active');
+          $('#btn-items-light').removeClass('active');
+          $('.s-items-light').hide();
+          $('.s-items-full').show();
+        }
+      });
+    }
   }
 
 })(jQuery); // End of use strict
