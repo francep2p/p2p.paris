@@ -17,6 +17,14 @@
 
 {{ $talk_page := .ctx.GetPage .data.file_path }}
 
+{{ $item_id := "" }}
+{{ if .data.slug }}
+{{ $item_id = .data.slug }}
+{{else}}
+{{ $item_id_tmp := .data.title | urlize }}
+{{ $item_id = replace $item_id_tmp "/" "-" }}
+{{end}}
+
 <div class="block s-item s-item-light {{ $kind.name }} f-k-{{ $kind.name }} {{ if (eq $location.name "Conférence") }}f-l-conference{{ else if (eq $location.name "Airplane") }}f-l-avion{{ else }}f-l-{{ $location.name | urlize }}{{ end }}">
 	<div class="s-item-top">
 		<div class="s-item-line-top">
@@ -60,11 +68,11 @@
 		<a class="s-item-title" href="{{ $talk_page.RelPermalink }}">
 			{{ .data.title }}
 		</a>
-		 <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#sic-{{.data.slug}}" aria-expanded="false" aria-controls="sic-{{.data.slug}}">
+		 <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#sic-{{$item_id}}" aria-expanded="false" aria-controls="sic-{{$item_id}}">
    			<i class="far fa-chevron-up"></i>
   		</button>
 	</div><!-- /.s-item-middle -->
-	<div class="s-item-collapse collapse" id="sic-{{.data.slug}}">
+	<div class="s-item-collapse collapse" id="sic-{{$item_id}}">
 		<div class="s-item-bottom">
 		{{ if .data.picture }}
       	{{$img := index .data.picture 0 }}
