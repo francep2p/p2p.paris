@@ -6,7 +6,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-4">
-        <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>{{ i18n "show_all" . }} talks</a>
+
+      {{ $festival_page := $.GetPage "/event/festival-0" }}
+      {{ $event := index .Params.event 0 }}
+      {{ if and $festival_page (eq $event.name "Paris P2P Festival #0") }}
+      <a class="btn btn-purple btn-m icon-left" href="{{ $festival_page.RelPermalink }}#schedule">
+        <i class="far fa-arrow-left"></i>{{ i18n "back_to_festival_schedule" . }}
+      </a>
+      {{ else }}
+      <a class="btn btn-secondary btn-m icon-left" href="{{ .Parent.RelPermalink }}"><i class="far fa-arrow-left"></i>{{ i18n "show_all" . }} talks</a>
+      {{ end }}
+
+        
       </div><!-- /.col -->
 
       <div class="col-md-12">

@@ -66,9 +66,16 @@
         <div class="s-day-title text-center">
             <div class="pill">{{ i18n "day_long" . }}  {{ $id }}</div>
         </div>
-        {{ range .events }}
-          {{ partial "s_item" (dict "ctx" $ "data" .) }}
-        {{ end }}
+        <div class="s-items-full" style="display:none;">
+            {{ range .events }}
+                {{ partial "s_item" (dict "ctx" $ "data" .) }}
+            {{ end }}
+        </div><!-- /.s-items-full -->
+        <div class="s-items-light">
+            {{ range .events }}
+                {{ partial "s_item_light" (dict "ctx" $ "data" .) }}
+            {{ end }}
+        </div><!-- /.s-items-light -->
       </div><!-- /.s-day -->
       {{ end }}
 
