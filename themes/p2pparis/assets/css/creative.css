@@ -11326,6 +11326,7 @@ tag.v {
   border-radius: 7px;
   position: absolute;
   right: 12px;
+  height: 43px;
 }
 .btn-group-toggle .btn {
   color:#be21ab;
