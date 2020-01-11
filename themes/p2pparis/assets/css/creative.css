@@ -11186,7 +11186,7 @@ tag.v {
   transition: all .4s;
 }
 .s-item .btn-collapse.collapsed i {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
 }
 
 /* schedule colors */
@@ -11369,11 +11369,35 @@ tag.v {
   }
   .s-item .btn-collapse {
     position:relative;
-    margin-top:5px;
+    /*margin-top:5px;*/
+    width:100%;
+    padding:0;
+    background-color:transparent !important;
   }
-  .s-item .btn-collapse span {
+  .s-item.stand .btn-collapse {
+    color:#d90ead;
+  }
+  .s-item.meet-up .btn-collapse {
+    color:#2660e0;
+  }
+  .s-item.talk .btn-collapse {
+    color:#1fc5ae;
+  }
+  .s-item.hackathon .btn-collapse {
+    color:#ffac31;
+  }
+  .s-item.workshop .btn-collapse {
+    color:#f74868;
+  }
+  .s-item.projection .btn-collapse {
+    color:#a02ea8;
+  }
+  .s-item.party .btn-collapse {
+    color:#6ED3F0;
+  }
+  /*.s-item .btn-collapse span {
     margin-right:10px;
-  }
+  }*/
   .section-schedule .s-item-light .tag {
     right: 20px;
   }
