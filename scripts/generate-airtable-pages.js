@@ -45,7 +45,6 @@ async function main() {
       if (pagesToCreate.includes(tableName)) {
         items = items
           .map(addPageProps)
-          .filter(hasSlug)
           .filter(i => i);
       }
 

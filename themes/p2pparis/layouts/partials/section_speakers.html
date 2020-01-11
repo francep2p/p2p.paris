@@ -12,10 +12,11 @@
         </div><!-- /.row -->
         <div class="row">
             {{ range sort $festival_speakers ".name" }}
-            {{ $speaker_page := $.GetPage .file_path }}
+            {{ with $.GetPage .file_path}}
             <div class="col-lg-3 col-md-4 col-6">
-                {{ partial "block_speaker" $speaker_page }}
+                {{ partial "block_speaker" . }}
             </div>
+            {{ end }}
             {{ end }}
         </div><!-- /.row -->
     </div><!-- /.container -->
