@@ -19,6 +19,7 @@ nav:
     info: Info
     speakers: Speakers
     plan: Plan
+    donate: Donate
 clock:
     days: Days
     hours: Hours

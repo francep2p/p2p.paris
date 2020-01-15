@@ -2,6 +2,14 @@
 title: Faire un don à Paris P2P
 date: 2020-01-15
 layout: donate
+nav:
+    schedule: Programme
+    about: À propos
+    goals: Objectifs
+    info: Infos<span class="tbr"> utiles</span>
+    speakers: Speakers
+    plan: Plan
+    donate: Dons
 content:
     intro_text: Le Paris P2P festival, c'est fini...<br/>pour le moment !
     testimonial: "<p>Nous pensons plus que jamais qu'il est nécessaire d'offrir des rencontres P2P gratuites et libres d'accès, invitant chacun à participer et intervenir, et portant aussi bien sur des sujets techniques que grand public.

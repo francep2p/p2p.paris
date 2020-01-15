@@ -19,6 +19,7 @@ nav:
     info: Infos<span class="tbr"> utiles</span>
     speakers: Speakers
     plan: Plan
+    donate: Dons
 clock:
     days: Jours
     hours: Heures
