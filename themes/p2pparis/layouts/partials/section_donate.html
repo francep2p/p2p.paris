@@ -12,7 +12,7 @@
                                 <p class="mb-0">{{ .Params.content.s_donate_text | markdownify }}</p>
                             </div>
                             <div class="col-lg-2 text-center col-btn">
-                                <a class="btn btn-purple btn-m mt-2" href="https://www.helloasso.com/associations/osmose-collective/collectes/paris-p2p-festival-0-bootstrap" target="_blank" rel="noopener">{{ .Params.content.donate_btn }}</a>
+                                <a class="btn btn-purple btn-m mt-2" href="{{ `/donate` | relLangURL }}" >{{ .Params.content.donate_btn }}</a>
                             </div>
                         </div>
                     </div><!-- /.block-number -->

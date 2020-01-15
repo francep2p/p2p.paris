@@ -1,0 +1,13 @@
+<div class="block block-donator text-center">
+
+        {{ if .stay_anonymous }}
+        Anonymous
+        {{ else }}
+            {{ if .link }}
+                <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+            {{ else }}
+                {{ .title }}
+            {{ end }}
+        {{ end }}
+
+</div><!-- /.block -->

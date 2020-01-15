@@ -5,7 +5,7 @@
                 <div id="logo" class="logo-center">
                     <img src="/img/paris_p2p_festival.svg">
                 </div>
-                <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text }}</h1>
+                <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text | markdownify }}</h1>
             </div><!-- /.col -->
             <div class="col-lg-10">
               <h2 id="it-soon" class="text-uppercase text-white font-weight-bold" style="display: none;">{{ .Params.content.it_soon }}<br/><br/></h2>
