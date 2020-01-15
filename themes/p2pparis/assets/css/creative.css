@@ -10661,8 +10661,7 @@ tag.v {
 }
 
 .block-testimonial {
-  padding:40px 50px;
-  font-size:106%;
+  padding:20px 30px;
 }
 
 .section-goals {
@@ -10693,6 +10692,14 @@ tag.v {
   margin-top:-300px;
   margin-bottom:50px;
 }*/
+
+@media(min-width:768px) {
+  .block-testimonial {
+    padding:40px 50px;
+    font-size:106%;
+  }
+}
+
 
 .block-goal {
   padding:25px 25px 15px 25px;
