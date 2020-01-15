@@ -70,6 +70,11 @@
   gtag('config', '{{ .Site.Params.googleAnalyticsId }}');
   </script>
 
+  <!-- LD+JSON -->
+  {{ partial "ldjson/organization" . }}
+  {{ partial "ldjson/website" . }}
+  {{ partial "ldjson/webpage" . }}
+
 </head>
 
 <body{{with .Scratch.Get "body-class"}} class="{{.}}"{{end}} {{if .IsHome}}class="page-home"{{else}} data-spy="scroll" data-target="#nav-schedule"{{end}} id="page-top" >
