@@ -10697,18 +10697,28 @@ tag.v {
 }
 
 .block-donate-small {
-  padding:25px;
+  padding:18px 25px 25px 25px;
   margin-bottom:30px;
 }
-.block-donate-small i {
+.block-donate-small i,
+.block-donate-small img {
   height:60px;
+  width:60px;
   padding:6px;
-  margin-bottom:10px;
+  margin-bottom:7px;
+  float:left;
+}
+.block-donate-small h4 {
+  display:inline-block;
+  margin:14px 0 25px 10px;
+}
+.block-donate-small .btn {
+  display:block;
 }
 .block-donate-small tag {
   max-width: 100%;
   overflow-wrap: break-word;
-  font-size:75%;
+  font-size:85%;
 }
 /*.section-goals {
   margin-top:-300px;
@@ -10717,7 +10727,7 @@ tag.v {
 
 @media(min-width:768px) {
   .block-testimonial {
-    padding:56px 50px 37px;
+    padding:60px 50px 45px;
     font-size:106%;
   }
 }
