@@ -113,8 +113,15 @@ languages:
           weight: -50
 
 params:
+  logo: /img/logo.png
   default_featured_image: /img/paris_p2p_thumbnail.jpg
   googleAnalyticsId: UA-124224137-5
+  organization_name: P2P Paris
+  email: bootstrap@p2p.paris
+  meetup: https://www.meetup.com/France-P2P/
+  twitter: https://twitter.com/ParisP2P
+  github: https://github.com/francep2p
+  discord: https://crpt.fyi/parisp2p-discord
 
 imaging:
   resampleFilter: Linear
