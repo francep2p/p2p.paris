@@ -427,7 +427,7 @@ function joinRelations(items) {
           return v;
         }).filter(i => i);
       }
-      else if (normalized[value]) {
+      else if (normalized[value] && key != 'id') {
         return normalized[value];
       }
 
