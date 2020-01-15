@@ -1,13 +1,16 @@
 <div class="block block-donator text-center">
 
+		
         {{ if .stay_anonymous }}
-        Anonymous
+        	<span class="title anon">Anonymous</span>
         {{ else }}
+        	<span class="title">{{ .title }}</span>
             {{ if .link }}
-                <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
-            {{ else }}
-                {{ .title }}
+                <a href="{{ .link }}" target="_blank" rel="noopener">{{ .link }}</a>
             {{ end }}
         {{ end }}
+    	
+
+        
 
 </div><!-- /.block -->
