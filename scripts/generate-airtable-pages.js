@@ -25,6 +25,7 @@ async function main() {
     'Settings',
     'Organization',
     'Location',
+    'Donation'
   ];
 
   try {
@@ -79,6 +80,12 @@ async function main() {
     generateDataFile(
       `settings_${lang}.json`,
       normalizeArray(translated[lang].filter(item => item.from_table == 'settings'), 'key')
+    );
+
+    // Create donation data file in .Data.gen.donation_LANG.json file
+    generateDataFile(
+      `donation_${lang}.json`,
+      normalizeArray(translated[lang].filter(item => item.from_table == 'donation'), 'key')
     );
 
     // create Festival data

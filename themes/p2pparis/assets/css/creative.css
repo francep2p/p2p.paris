@@ -10659,6 +10659,13 @@ tag.v {
   min-height:72px;
   margin-bottom:5px;
 }
+.section-testimonial {
+  margin-top:100px;
+  padding-bottom:100px;
+}
+.section-testimonial .block-top {
+  margin-top:-70px;
+}
 
 .block-testimonial {
   padding:20px 30px;
@@ -10673,10 +10680,8 @@ tag.v {
 }
 
 .block-donate-small {
-  border:2px solid #bd21ab;
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:20px;
+  padding:25px;
+  margin-bottom:30px;
 }
 .block-donate-small i {
   height:60px;
@@ -10695,7 +10700,7 @@ tag.v {
 
 @media(min-width:768px) {
   .block-testimonial {
-    padding:40px 50px;
+    padding:40px 50px 37px;
     font-size:106%;
   }
 }
