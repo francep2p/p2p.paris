@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+{{ partial "ldjson/person" (dict "ctx" . "id" .Params.id) }}
+
 {{.Scratch.Set "body-class" "bg-light"}}
 
 <div class="single bg-light">

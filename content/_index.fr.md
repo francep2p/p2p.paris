@@ -1,6 +1,7 @@
 ---
 title: La communauté parisienne intéressée par les technologies P2P et la Cryptographie
 description: La communauté parisienne intéressée par les technologies P2P et la Cryptographie
+breadcrumb_title: Home
 content:
     intro_text: LA COMMUNAUTÉ PARISIENNE INTÉRESSÉE PAR LES TECHNOLOGIES P2P ET LA CRYPTOGRAPHIE
     intro_button: Rejoignez la communauté sur Meetup
