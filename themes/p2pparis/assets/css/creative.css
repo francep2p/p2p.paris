@@ -10678,11 +10678,24 @@ tag.v {
 .block-donator {
   padding:20px;
   margin-bottom:20px;
-  font-size:110%;
+  min-height:90px;
 }
+
+.block-donator .title {
+  font-weight:bold;
+  font-size:110%;
+  display:block;
+}
+
 .block-donator a {
   text-decoration:underline;
   color:#383B62;
+  font-size:90%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:block;
 }
 .block-donator a:hover,
 .block-donator a:focus {
