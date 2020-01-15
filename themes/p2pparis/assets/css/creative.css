@@ -10660,8 +10660,34 @@ tag.v {
   margin-bottom:5px;
 }
 
+.block-testimonial {
+  padding:40px 50px;
+  font-size:106%;
+}
+
 .section-goals {
   margin-top:100px;
+}
+.img-photos {
+  max-width: 100%;
+  margin:30px 0 20px;
+}
+
+.block-donate-small {
+  border:2px solid #bd21ab;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:20px;
+}
+.block-donate-small i {
+  height:60px;
+  padding:6px;
+  margin-bottom:10px;
+}
+.block-donate-small tag {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  font-size:75%;
 }
 /*.section-goals {
   margin-top:-300px;
