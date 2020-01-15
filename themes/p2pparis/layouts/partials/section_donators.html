@@ -1,4 +1,4 @@
-{{ $donators := index .Site.Data.gen (print "donation_" .Lang) }}
+{{ $airtable := index .Site.Data.gen (print "airtable_" .Lang) }}
 
 <section class="section-donators bg-light" id="donators">
     <div class="container">
@@ -11,10 +11,14 @@
             </div><!-- /.col-->
         </div><!-- /.row -->
         <div class="row">
-            {{ range sort $donators ".date" }}
-            <div class="col-lg-3 col-md-4 col-6">
-                {{ partial "block_donator" . }}
-            </div>
+            {{ range $airtable }}
+                {{ if eq .from_table "donation" }}
+                    {{ if .title }}
+                    <div class="col-lg-3 col-md-4 col-6">
+                        {{ partial "block_donator" . }}
+                    </div>
+                    {{ end }}
+                {{ end }}
             {{ end }}
         </div><!-- /.row -->
     </div><!-- /.container -->

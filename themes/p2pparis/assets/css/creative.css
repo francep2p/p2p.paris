@@ -10670,7 +10670,24 @@ tag.v {
 .block-testimonial {
   padding:20px 30px;
 }
+.block-testimonial a {
+  color:#d90ead;
+}
 
+
+.block-donator {
+  padding:20px;
+  margin-bottom:20px;
+  font-size:110%;
+}
+.block-donator a {
+  text-decoration:underline;
+  color:#383B62;
+}
+.block-donator a:hover,
+.block-donator a:focus {
+  color:#d90ead;
+}
 .section-goals {
   margin-top:100px;
 }
@@ -10700,11 +10717,15 @@ tag.v {
 
 @media(min-width:768px) {
   .block-testimonial {
-    padding:40px 50px 37px;
+    padding:56px 50px 37px;
     font-size:106%;
   }
 }
-
+@media(max-width:767px) {
+  .block-testimonial {
+    margin-bottom:100px
+  }
+}
 
 .block-goal {
   padding:25px 25px 15px 25px;

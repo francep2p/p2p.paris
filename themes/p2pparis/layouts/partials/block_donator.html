@@ -1,8 +1,13 @@
-<div class="block block-speaker">
-    <div class="speaker-content">
-        <h5>{{ .Params.title }}</h5>
-        {{ if .params.link }}
-        <a href="{{ .params.link }}">{{ .params.link }}</a>
+<div class="block block-donator text-center">
+
+        {{ if .stay_anonymous }}
+        Anonymous
+        {{ else }}
+            {{ if .link }}
+                <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+            {{ else }}
+                {{ .title }}
+            {{ end }}
         {{ end }}
-    </div>
+
 </div><!-- /.block -->
