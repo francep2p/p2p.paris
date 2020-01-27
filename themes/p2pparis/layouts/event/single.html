@@ -19,10 +19,17 @@
 				</div><!-- block-single-img -->
 				
 				<div>
-					{{ if .Params.talks }}
+					{{ if or .Params.talks (eq .Params.relative_time "future") }}
 					<div class="col-md-12">
-						<h3><i class="far fa-presentation"></i> {{ i18n "talks" }} </h3>
+						<h3 class="mb-4"><i class="far fa-presentation"></i> {{ i18n "talks" }} </h3>
 					</div> 
+
+					{{ if eq .Params.relative_time "future" }}
+					<div class="block block-single block-single-content pt-1">
+						{{ partial "available_slot" "15" }}	
+						{{ partial "available_slot" "15" }}	
+					</div>
+					{{ end }}
 					
 					{{ range .Params.talks }}
 						{{ $talk := $.GetPage .file_path }} 
