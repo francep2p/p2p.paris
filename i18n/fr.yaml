@@ -217,10 +217,10 @@ festival_content_it_finish:
   other: C'est déjà fini !<br/><br/>À bientôt pour la prochaine édition...
 
 festival_content_s_donate_title:
-  other: Vous aimez l'initiative et souhaitez contribuer ?
+  other: Participer
 
 festival_content_s_donate_text:
-  other: Vous pouvez nous aider à financer cet événement gratuit et les suivants...
+  other: Afin d’aider à financer cet événement gratuit
 
 festival_content_about_title:
   other: À propos du Festival
@@ -238,10 +238,10 @@ festival_content_learn_more:
   other: En savoir plus
 
 festival_content_donate_title:
-  other: Participer
+  other: Vous aimez l'initiative et souhaitez contribuer ?
 
 festival_content_donate_text:
-  other: Afin d'aider à financer cet événement gratuit
+  other: Vous pouvez nous aider à financer cet événement gratuit et les suivants…
 
 festival_content_donate_btn:
   other: Faire un don

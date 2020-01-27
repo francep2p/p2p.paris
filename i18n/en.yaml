@@ -215,10 +215,10 @@ festival_content_it_finish:
   other: It's already finished!<br/><br/>See you soon for the next edition...
 
 festival_content_s_donate_title:
-  other: You like this initiative and want to help us?
+  other: Support
 
 festival_content_s_donate_text:
-  other: You can show your support by donating to help funding this free event and the next ones...
+  other: It’s free for all but it has a cost! Thanks to help us to make it possible.
 
 festival_content_about_title:
   other: About the Festival
@@ -236,10 +236,10 @@ festival_content_learn_more:
   other: Learn more
 
 festival_content_donate_title:
-  other: Support
+  other: You like this initiative and want to help us?
 
 festival_content_donate_text:
-  other: It's free for all but it has a cost! Thanks to help us to make it possible.
+  other: You can show your support by donating to help funding this free event and the next ones…
 
 festival_content_donate_btn:
   other: Donate
