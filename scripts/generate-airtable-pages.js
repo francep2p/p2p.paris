@@ -376,10 +376,13 @@ function joinRelations(items) {
     let result = {};
 
     Object.keys(item).forEach(key => {
-      const value = item[key];
+      let value = item[key];
       let newValue = value;
 
       if (value instanceof Array) {
+        // remove duplicates        
+        value = value.filter((a, b) => value.indexOf(a) === b);
+
         newValue = value.map(v => {
           if (normalized[v]) {
             return normalized[v];
