@@ -9,5 +9,10 @@ public
 data/gen
 assets/gen
 
-content/speakers
-content/talks
+content/speakers/*
+content/talks/*
+content/event/*
+
+!content/*/_index*md
+
+event-bak
