@@ -126,3 +126,135 @@ back_to_festival_schedule:
 
 talks:
   other: Talks
+
+festival_nav_schedule:
+  other: Schedule
+
+festival_nav_about:
+  other: About
+
+festival_nav_goals:
+  other: Goals
+
+festival_nav_info:
+  other: Info
+
+festival_nav_speakers:
+  other: Speakers
+
+festival_nav_plan:
+  other: Plan
+
+festival_nav_donate:
+  other: Donate
+
+festival_clock_days:
+  other: Days
+
+festival_clock_hours:
+  other: Hours
+
+festival_clock_minutes:
+  other: Minutes
+
+festival_clock_seconds:
+  other: Seconds
+
+festival_numbers_b1_title:
+  other: Days
+
+festival_numbers_b1_text:
+  other: "{{ .start_date.Month }} <strong>{{ .start_date.Day }}</strong> to <strong>{{ .end_date.Day }}</strong>, {{ .end_date.Year }}"
+
+festival_numbers_b2_title:
+  other: Events
+
+festival_numbers_b2_text:
+  other: Meetups, conferences, projections, hackathon...
+
+festival_numbers_b3_title:
+  other: Speakers
+
+festival_numbers_b3_text:
+  other: From everywhere to talk about the internet of tomorrow
+
+festival_numbers_b4_title:
+  other: Location
+
+festival_numbers_b4_text:
+  other: <strong>Ground Control</strong>, at the center of Paris (gare de Lyon)
+
+festival_goals_b1:
+  other: Gather P2P communities around talks, workshops, movies, performances, hack sessions, meetings…
+
+festival_goals_b2:
+  other: Promote to the general public the value of privacy protection, free and open source software, commons and decentralized governance
+
+festival_goals_b3:
+  other: Trigger serendipitous encounters and healthy debates between teams and individuals involved in the space
+
+festival_goals_b4:
+  other: Encourage knowledge-sharing between projects, entrepreneurs, researchers, developers
+
+festival_goals_b5:
+  other: Showcase important projects to the general public
+
+festival_goals_b6:
+  other: Just enjoy a great moment, in a great place, with great people!
+
+festival_content_intro_text:
+  other: The free peer-to-peer gathering
+
+festival_content_it_soon:
+  other: Starting in a few hours!
+
+festival_content_it_current:
+  other: It's happening now! Ending in
+
+festival_content_it_finish:
+  other: It's already finished!<br/><br/>See you soon for the next edition...
+
+festival_content_s_donate_title:
+  other: You like this initiative and want to help us?
+
+festival_content_s_donate_text:
+  other: You can show your support by donating to help funding this free event and the next ones...
+
+festival_content_about_title:
+  other: About the Festival
+
+festival_content_about_text:
+  other: "Our goal is to offer 5 days of sharing, learning, meeting and playing around all the dimensions of the Peer-to-Peer (P2P) revolution. The technological aspect of P2P is essential, but we also believe that it materializes philosophical and ethical principles.<br/><br/>P2P applies to a wide array of aspects, from secure and privacy-preserving communication, to knowledge-sharing, to participative governance, to digital currencies, or even art!<br/><br/>Paris P2P Festival will be a fantastic opportunity to gather P2P supporters, regardless of their particular approach and interests.<br/><br/>We are calling any team or individual with an active interest in P2P to join the Festival, use it to set up their own meeting, offer a workshop, share a talk or a presentation, take part to the hackathon.<br/><br/>The event was born out of our Paris P2P monthly meetups at Ground Control. We are willing to open it to a wider audience: individuals, collectives, associations, and businesses willing to be part of a community event, without lucrative purpose."
+
+festival_content_participate:
+  other: I want to participate!
+
+festival_content_info_title:
+  other: Useful information
+
+festival_content_learn_more:
+  other: Learn more
+
+festival_content_donate_title:
+  other: Support
+
+festival_content_donate_text:
+  other: It's free for all but it has a cost! Thanks to help us to make it possible.
+
+festival_content_donate_btn:
+  other: Donate
+
+festival_content_news_title:
+  other: News
+
+festival_content_news_text:
+  other: Receive last minute news, final schedule...
+
+festival_content_newsletter_input:
+  other: your email
+
+festival_content_hotel_title:
+  other: Hotel
+
+festival_content_hotel_text:
+  other: "Get a 20% discount at the Zazie Hotel using the code: <tag class='p'>P2PFESTIVAL</tag>"
