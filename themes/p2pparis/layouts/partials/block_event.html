@@ -1,5 +1,10 @@
-{{ $image := index (.ctx.Resources.Match .ctx.Params.image) 0 }}
+{{ $image := resources.Get (index .ctx.Params.picture 0).local }}
 {{ $image := $image.Resize "350x" }}
+
+{{ $place := "" }}
+{{ with .ctx.Params.place }}
+	{{ $place = (index . 0) }}
+{{ end }}
 
 <a class="block block-event {{.status}}-event" href="{{.ctx.RelPermalink}}">
 	<div class="block-img">
@@ -7,8 +12,8 @@
 	</div><!-- /.block-img -->
 	<div class="block-content">
 		<h4 class="event-title">{{.ctx.Title}}</h4>
-		<p class="event-subtitle">{{.ctx.Params.Subtitle}}</p>
-		<span class="event-info event-location"><i class="far fa-map-marker"></i>{{.ctx.Params.Location}}</span>
+		<p class="event-subtitle">{{.ctx.Params.subtitle}}</p>
+		<span class="event-info event-location"><i class="far fa-map-marker"></i>{{ $place.name }}, {{ $place.city }}</span>
 		<span class="event-info event-date"><i class="far fa-calendar-alt"></i>{{ partial "date" (dict "ctx" .ctx "date" .ctx.Params.start_date) }}</span>
 		<span class="tag tag-{{.status}}">{{.status}}</span>
     	<!--

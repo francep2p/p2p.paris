@@ -6,9 +6,9 @@
 	{{ $tags = $tags | append (index $at .) }}
 {{ end }}
 
-{{ $location := "" }}
-{{ if .Params.location }}
-	{{ $location = (index .Params.location 0) }}
+{{ $place := "" }}
+{{ with .Params.place }}
+	{{ $place = (index . 0) }}
 {{ end }}
 
 <div class="block block-talk s-item {{ with .Params.kind }}{{ (index . 0).name }}{{ end }}">
@@ -52,10 +52,12 @@
 			</div>
 			{{end}}
 		</div>
+		{{ if $place }}
 		<div class="s-item-line s-loc mr">
 			<i class="far fa-map-marker"></i>
-			<span>{{ $location.name }}</span>
+			<span>{{ $place.name }}</span>
 		</div>
+		{{ end }}
 		<div class="s-item-line s-orga">
 			<i class="far fa-user"></i>
 			<span>{{ .Params.redacted_speakers }}</span>
@@ -133,12 +135,14 @@
 			{{end}}
 		</div><!-- /.row -->
 	</div><!-- /.s-item-bottom -->
-	{{ $festival_page := $.GetPage "/event/festival-0" }}
-	{{ if and $festival_page (eq $event.name "Paris P2P Festival #0") }}
-	<a class="block-event-small" href="{{ $festival_page.RelPermalink }}">
+	{{ if $event.file_path }}
+	{{ $event_page := $.GetPage $event.file_path }}
+	{{ with $event.picture_small }}
+	<a class="block-event-small" href="{{ $event_page.RelPermalink }}">
 		<div class="block-img">
-    	<img src="{{ ($festival_page.Resources.GetMatch `paris_p2p_festival_0_small.png`).RelPermalink }}">
+    		<img src="{{ (resources.Get (index . 0).local).RelPermalink }}">
 		</div><!-- /.block-img -->
 	</a>
+	{{ end }}
 	{{ end }}
 </div><!-- /.s-item -->

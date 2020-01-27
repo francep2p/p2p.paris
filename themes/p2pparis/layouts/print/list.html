@@ -2,7 +2,7 @@
 {{ partial "header" . }}
 
 
-{{ $festival_events := index .Site.Data.gen.festival (print "events_" .Lang) }}
+{{ $festival_page := (index (where .Site.Pages "Title" "Paris P2P Festival #0") 0) }}
 
 <section class="page-section bg-white section-schedule section-print">
   <div class="container" id="schedule">
@@ -11,7 +11,7 @@
 
     <div class="s-content">
 
-      {{ range $index, $el := $festival_events }}
+      {{ range $index, $el := $festival_page.Params.talks_by_day }}
       {{ $id := (add $index 1) }}
 
       <div class="s-day" id="c-day-{{ $id }}">

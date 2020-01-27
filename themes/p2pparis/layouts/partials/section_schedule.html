@@ -1,5 +1,3 @@
-{{ $festival_events := index .Site.Data.gen.festival (print "events_" .Lang) }}
-
 <section class="page-section bg-light section-schedule">
   <div class="container" id="schedule">
     <div class="row justify-content-center">
@@ -12,7 +10,7 @@
 
     <ul class="nav nav-pills nav-fill s-nav" id="nav-schedule">
 
-        {{ range $index, $el := $festival_events }}
+      {{ range $index, $el := .Params.talks_by_day }}
         {{ $id := (add $index 1) }}
 
         {{- $date := time .date -}}
@@ -59,7 +57,7 @@
 
     <div class="s-content">
 
-      {{ range $index, $el := $festival_events }}
+      {{ range $index, $el := .Params.talks_by_day }}
       {{ $id := (add $index 1) }}
 
       <div class="s-day" id="c-day-{{ $id }}">

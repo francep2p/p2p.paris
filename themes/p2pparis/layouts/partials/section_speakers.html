@@ -1,5 +1,3 @@
-{{ $festival_speakers := index .Site.Data.gen.festival (print "speakers_" .Lang) }}
-
 <section class="page-section bg-light section-speakers" id="speakers">
     <div class="container">
         <div class="row justify-content-center">
@@ -11,7 +9,7 @@
             </div><!-- /.col-->
         </div><!-- /.row -->
         <div class="row">
-            {{ range sort $festival_speakers ".name" }}
+            {{ range sort .Params.speakers ".name" }}
             {{ with $.GetPage .file_path}}
             <div class="col-lg-3 col-md-4 col-6">
                 {{ partial "block_speaker" . }}
