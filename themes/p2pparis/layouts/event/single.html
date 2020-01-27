@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+{{ partial "ldjson/event" (dict "ctx" . "id" .Params.id) }}
+
 {{.Scratch.Set "body-class" "bg-light"}}
 
 {{ $image := (resources.Get (index .Params.picture 0).local) }}

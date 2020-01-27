@@ -1,4 +1,4 @@
-
+{{ partial "ldjson/event" (dict "ctx" . "id" .Params.id) }}
 
 {{.Scratch.Set "body-class" "page-festival"}}
 {{ partial "header" . }}
