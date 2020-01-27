@@ -135,14 +135,16 @@
 			{{end}}
 		</div><!-- /.row -->
 	</div><!-- /.s-item-bottom -->
-	{{ if $event.file_path }}
+	{{ if and $event.file_path }}
 	{{ $event_page := $.GetPage $event.file_path }}
+	{{ if ne $event.title $event_page.Title }}
 	{{ with $event.picture_small }}
 	<a class="block-event-small" href="{{ $event_page.RelPermalink }}">
 		<div class="block-img">
     		<img src="{{ (resources.Get (index . 0).local).RelPermalink }}">
 		</div><!-- /.block-img -->
 	</a>
+	{{ end }}
 	{{ end }}
 	{{ end }}
 </div><!-- /.s-item -->
