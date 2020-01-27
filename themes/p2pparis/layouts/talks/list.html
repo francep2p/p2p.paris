@@ -12,7 +12,7 @@
 
       <div class="col-12">
       {{ range .RegularPages }}
-      {{ partial "block_talk" . }}
+      {{ partial "block_talk" (dict "ctx" . "talk" .) }}
       {{ end }}
       </div><!-- /.col -->
     </div><!-- /.row -->

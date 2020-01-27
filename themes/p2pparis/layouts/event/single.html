@@ -25,7 +25,7 @@
 					{{ range .Params.talks }}
 						{{ $talk := $.GetPage .file_path }} 
 						{{ if $talk }}
-						{{ partial "block_talk" $talk }} 
+						{{ partial "block_talk" (dict "ctx" $ "talk" $talk) }} 
 						{{ end }}
 					{{ end }}
 

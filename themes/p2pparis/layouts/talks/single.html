@@ -21,7 +21,7 @@
       </div><!-- /.col -->
 
       <div class="col-md-12">
-        {{ partial "block_talk" . }} 
+        {{ partial "block_talk" (dict "ctx" . "talk" .) }} 
       </div><!-- /.col -->
 
     </div><!-- /.row -->
