@@ -76,8 +76,7 @@ async function main() {
     // Join relations. 1 level deep
     const joined = joinRelations(translated[lang])
     .map(item => {
-      if (item.from_table == 'eventwip') {
-        console.log({item})
+      if (item.from_table == 'event') {
         item.talks_by_day = groupTalksByDay(item);
       }
 
@@ -216,7 +215,8 @@ function flattenAirtableRecords(tableName, items) {
         .toLowerCase()
         .replace(/\#/g, '_')
         .replace(/\(s\)/g, '_')
-        .replace(/\s/g, '_');
+        .replace(/\s/g, '_')
+        .replace(/\./g, '_');
 
       // if key already exists, prefix it
       if (result[newKey]) {
@@ -488,10 +488,10 @@ function getAttachmentPath(filepath, absolute = true) {
 
 function groupTalksByDay(event) {
   console.log({event})
-  if (!event.talk) return [];
+  if (!event.talks) return [];
   let result = [];
   const days = {};
-  event.talk.forEach(talk => {
+  event.talks.forEach(talk => {
     if (!talk.day) return;
     if (days[talk.day]) {
       days[talk.day].push(talk);
