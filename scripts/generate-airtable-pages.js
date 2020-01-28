@@ -490,7 +490,6 @@ function getAttachmentPath(filepath, absolute = true) {
 }
 
 function groupTalksByDay(event) {
-  console.log({event})
   if (!event.talks) return [];
   let result = [];
   const days = {};
