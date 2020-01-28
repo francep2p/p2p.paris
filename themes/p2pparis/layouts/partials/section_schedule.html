@@ -1,18 +1,16 @@
-{{ $festival_events := index .Site.Data.gen.festival (print "events_" .Lang) }}
-
 <section class="page-section bg-light section-schedule">
   <div class="container" id="schedule">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <i class="fal fa-calendar-alt fa-5x mb-4"></i>
-        <h2 class="mt-0">{{ .Params.nav.schedule }}</h2>
+        <h2 class="mt-0">{{ i18n "festival_nav_schedule" }}</h2>
         <hr class="divider my-4">
       </div><!-- /.col-->
     </div><!-- /.row -->
 
     <ul class="nav nav-pills nav-fill s-nav" id="nav-schedule">
 
-        {{ range $index, $el := $festival_events }}
+      {{ range $index, $el := .Params.talks_by_day }}
         {{ $id := (add $index 1) }}
 
         {{- $date := time .date -}}
@@ -59,7 +57,7 @@
 
     <div class="s-content">
 
-      {{ range $index, $el := $festival_events }}
+      {{ range $index, $el := .Params.talks_by_day }}
       {{ $id := (add $index 1) }}
 
       <div class="s-day" id="c-day-{{ $id }}">

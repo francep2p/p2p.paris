@@ -1,38 +1,44 @@
 {{ define "main" }}
 
+{{ partial "ldjson/event" (dict "ctx" . "id" .Params.id) }}
+
 {{.Scratch.Set "body-class" "bg-light"}}
 
-{{ $image := index (.Resources.Match .Params.image) 0 }}
+{{ $image := (resources.Get (index .Params.picture 0).local) }}
 {{ $image := $image.Resize "1200x" }}
 
 <div class="single bg-light">
     <div class="container">
         <div class="row">
 
-		{{ if .Params.special_event }}
-			<div class="col-12">
-				<div class="block block-single-img">
-					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
-				</div><!-- block-single-img -->
-				
-				<div class="block block-single block-single-content">
-					<h3><i class="far fa-calendar-alt"></i>Date</h3>
-					<strong>{{.Params.start_date}}{{ if .Params.Event_end_date }} - {{.Params.Event_end_date}}{{ end }}</strong>
-					<br/>
-					<br/>
-					{{.Content}}	
-				</div><!-- /.block-single-content -->
-			</div>
-		{{ else }}
 			<div class="col-lg-8">
 		
 				<div class="block block-single-img">
-					<img src="{{ $image.RelPermalink }}" alt="{{.Params.Title}}">
-					<div class="event-id">#{{.Params.Id}}</div>
+					<img src="{{ $image.RelPermalink }}" alt="{{.Title}}">
+					<div class="event-id">#{{.Params.edition}}</div>
 				</div><!-- block-single-img -->
 				
-				<div class="block block-single block-single-content">
-					{{.Content}}	
+				<div>
+					{{ if or .Params.talks (eq .Params.relative_time "future") }}
+					<div class="col-md-12">
+						<h3 class="mb-4"><i class="far fa-presentation"></i> {{ i18n "talks" }} </h3>
+					</div> 
+
+					{{ if eq .Params.relative_time "future" }}
+					<div class="block block-single block-single-content pt-1">
+						{{ partial "available_slot" "15" }}	
+						{{ partial "available_slot" "15" }}	
+					</div>
+					{{ end }}
+					
+					{{ range .Params.talks }}
+						{{ $talk := $.GetPage .file_path }} 
+						{{ if $talk }}
+						{{ partial "block_talk" (dict "ctx" $ "talk" $talk) }} 
+						{{ end }}
+					{{ end }}
+
+					{{ end }}
 				</div><!-- /.block-single-content -->
 		
 				<div class="block block-single block-single-content">
@@ -43,7 +49,6 @@
 			<div class="col-lg-4">
 				{{ partial "event_info" . }}
 			</div><!-- /.col -->
-		{{ end }}
 
 		</div><!-- /.row -->
 		

@@ -1,22 +1,20 @@
-{{- $duration := .Get "duration" -}}
-
 <div class="btn-slot">
 	<div class="btn-slot-inner btn-slot-base">
 		<span class="btn-slot-left">
 			<i class="far fa-presentation mr"></i>
-			{{ i18n "available_slot" . | markdownify }}
+			{{ i18n "available_slot" | markdownify }}
 		</span>
 		<span class="btn-slot-right">
-			<i class="far fa-clock mr"></i>{{ $duration }}
+			<i class="far fa-clock mr"></i>{{ . }}
 		</span>
 	</div><!-- /.btn-slot-base -->
 	<div class="btn-slot-inner btn-slot-hover">
 		<span class="btn-slot-left">
 			<i class="far fa-pencil mr"></i>
-			{{ i18n "propose_talk" . | markdownify }}
+			{{ i18n "propose_talk" | markdownify }}
 		</span>
 		<span class="btn-slot-right">
-			<i class="far fa-clock mr"></i>{{ $duration }}
+			<i class="far fa-clock mr"></i>{{ . }}
 		</span>
 	</div><!-- /.btn-slot-base -->
 	<a href="http://crpt.fyi/parisp2p-cfp"></a>

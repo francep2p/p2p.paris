@@ -1,3 +1,5 @@
+{{ $place := index .Params.place 0 }}	
+		
 				<div class="block block-single">
 					<h3><i class="far fa-calendar-alt"></i>Date</h3>
 					<strong>{{ partial "date" (dict "ctx" . "date" .Params.start_date) }}</strong>
@@ -22,15 +24,15 @@
 						{{ i18n "location_text" . | markdownify }}
 						<br/>
 						<br/>
-						<strong>Ground Control
+						<strong>{{ $place.name }}
 						<br/>
-						Gare de Lyon – 81 rue du Charolais – 75012 Paris</strong>
+						{{ $place.address }} – {{ $place.postal_code }} {{ $place.city }}</strong>
 					</p>
 				</div><!-- /.block -->
 
 				<div class="block block-single">
 					<h3><i class="far fa-clipboard-check"></i>{{ i18n "register" . | markdownify }}</h3>
-					<p>{{ i18n "register_a" . | markdownify }} <a href="{{ .Params.Meetup_link }}">Meetup</a></p>
+					<p>{{ i18n "register_a" . | markdownify }} <a href="{{ .Params.meetup_com_link }}">Meetup</a></p>
 					<p>{{ i18n "register_b" . | markdownify }}</p>
 				</div><!-- /.block -->
 
