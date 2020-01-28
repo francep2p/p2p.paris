@@ -4,7 +4,7 @@ const fs = require('fs'),
       mime = require('mime');
 
 const CHAPTER = 'Paris P2P';
-const AIRTABLE_BASE_ID = 'appQibhXiRNVZ8pg0';
+const AIRTABLE_BASE_ID = 'appVBIJFBUheVWS0Q';
 const {
   AIRTABLE_API_KEY
 } = process.env;
