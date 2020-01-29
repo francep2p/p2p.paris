@@ -9,7 +9,7 @@
 {{ end }}
 
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" class="lang-{{ .Lang }}">
+<html lang="{{ .Lang }}" class="lang-{{ .Lang }}" xml:lang="{{ .Lang }}" xmlns= "http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -23,6 +23,8 @@
   {{ end }}
 
   <title>{{ $.Scratch.Get "title" }}</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <meta http-equiv="Content-Language" content="{{ .Lang }}">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
