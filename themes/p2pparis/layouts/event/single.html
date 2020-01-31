@@ -23,11 +23,15 @@
 					<div class="col-md-12">
 						<h3 class="mb-4"><i class="far fa-presentation"></i> {{ i18n "talks" }} </h3>
 					</div> 
-
-					{{ if eq .Params.relative_time "future" }}
+					{{ $slots := 2 }}
+					{{ if .Params.talks }}
+						{{ $slots = sub $slots (len .Params.talks) }}
+					{{ end }}
+					{{ if and (eq .Params.relative_time "future") (gt $slots 0) }}
 					<div class="block block-single block-single-content pt-1">
+						{{ range seq $slots }}
 						{{ partial "available_slot" "15" }}	
-						{{ partial "available_slot" "15" }}	
+						{{ end }}
 					</div>
 					{{ end }}
 					
