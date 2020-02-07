@@ -21,7 +21,7 @@
 					{{ if or (eq .talk.Params.start_date "TBA") (eq .talk.Params.start_date nil) }}
 						TBA
 						{{ else }}
-						{{ dateFormat (cond (eq .Lang "en") "02 January 2006" "2 Janvier 2006") .talk.Params.start_date }}
+						{{ partial "date" (dict "ctx" .ctx "date" .talk.Params.start_date) }}
 					{{ end }}
 				</span>
 			</div>
