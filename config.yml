@@ -1,6 +1,6 @@
 theme: p2pparis
 baseURL: https://p2p.paris
-title: Paris P2P (& Cryptography)
+title: Paris P2P
 
 languageCode: en
 DefaultContentLanguage: en
@@ -11,10 +11,10 @@ languages:
     languageName: English
     params:
       locale: en_GB
-      default_description: The Parisian community interested in P2P & Cryptography technologies
+      default_description: The Parisian community interested in all things P2P & Cryptography
       default_event_description: Paris P2P is a monthly meetup organized by and for the community passionate about P2P and cryptography. These meetups are free, informal afterworks, meant to encourage meetings and exchanges between developers, passionate and curious people, around a drink or open discussions.
       404_desc: Page not found
-      404_cta: Go to homepage      
+      404_cta: Go to homepage
     menu:
       main:
         - name: Events
@@ -42,7 +42,7 @@ languages:
     languageName: French
     params:
       locale: fr_FR
-      default_description: La communauté parisienne intéressée par les technologies P2P et la Cryptographie
+      default_description: La communauté parisienne intéressée par tout ce qui touche au P2P et à la cryptographie
       default_event_description: Paris P2P est un rendez-vous mensuel organisé par et pour la communauté des passionné.e.s de P2P et de cryptographie. Ces rendez-vous prennent la forme d’afterwork informels, gratuits, destinés à favoriser la rencontre et les échanges entre développeurs/développeuses, passionné.e.s et curieux/curieuses, autour d’un verre ou de discussions ouvertes.
       404_desc: Page introuvable
       404_cta: Aller à la page d'accueil
@@ -58,7 +58,7 @@ languages:
         9: "septembre"
         10: "octobre"
         11: "novembre"
-        12: "décembre"  
+        12: "décembre"
       months_short:
         1: "janv"
         2: "févr"
@@ -71,7 +71,7 @@ languages:
         9: "sept"
         10: "oct"
         11: "nov"
-        12: "déc"  
+        12: "déc"
       days:
         0: "dimanche"
         1: "lundi"

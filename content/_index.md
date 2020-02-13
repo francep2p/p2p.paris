@@ -1,9 +1,9 @@
 ---
-title: The Parisian community interested in P2P & Cryptography technologies
-description: The Parisian community interested in P2P & Cryptography technologies
+title: The Parisian community interested in all things P2P
+description: The Parisian community interested in P2P, Security & Cryptography technologies
 breadcrumb_title: Home
 content:
-    intro_text: THE PARISIAN COMMUNITY INTERESTED IN P2P & CRYPTOGRAPHY TECHNOLOGIES
+    intro_text: THE PARISIAN COMMUNITY INTERESTED IN ALL THINGS P2P
     intro_button: Join the community on Meetup
     about_title: About the community
     about_body: Just a bunch of enthousiasts who wanted a place to talk, exchange the latest news and share ideas around P2P & Cryptography technologies in Paris

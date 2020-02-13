@@ -44,7 +44,7 @@ register:
   other: Register
 
 register_a:
-  other: Register directy to the event on 
+  other: Register directy to the event on
 
 register_b:
   other: Been registered to <a href='https://www.meetup.com/France-P2P/'>meetup.com</a> is not mandatory to join the event. You can come accopanied.
@@ -62,7 +62,7 @@ about:
   other: About
 
 about_a:
-  other: Paris P2P is a monthly meetup organized by and for the community passionate about P2P and cryptography.
+  other: Paris P2P is a monthly meetup organized by and for the community passionate about all things P2P
 
 about_b:
   other: These meetups are free, informal afterworks, meant to encourage meetings and exchanges between developers, passionate and curious people, around a drink or open discussions.
