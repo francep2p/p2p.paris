@@ -11,7 +11,7 @@
       </div><!-- /.col -->
 
       <div class="col-12">
-      {{ range .RegularPages }}
+      {{ range sort (sort .RegularPages "Params.weight") "Params.start_date" "desc" }}
       {{ partial "block_talk" (dict "ctx" . "talk" .) }}
       {{ end }}
       </div><!-- /.col -->
