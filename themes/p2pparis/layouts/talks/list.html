@@ -11,9 +11,24 @@
       </div><!-- /.col -->
 
       <div class="col-12">
-      {{ range sort (sort .RegularPages "Params.weight") "Params.start_date" "desc" }}
-      {{ partial "block_talk" (dict "ctx" . "talk" .) }}
-      {{ end }}
+        {{ $date_items := slice }}
+        {{ $non_date_items := slice }}
+
+        {{ range .RegularPages }}
+          {{ if (eq .Params.start_date nil) }}
+          {{ $non_date_items = $non_date_items | append . }}
+          {{ else }}
+          {{ $date_items = $date_items | append . }}
+          {{ end }}
+        {{ end }}
+
+        {{ range $non_date_items }}
+        {{ partial "block_talk" (dict "ctx" . "talk" .) }}
+        {{ end }}
+        
+        {{ range sort (sort $date_items "Params.weight" "desc") "Params.start_date" "desc" }}
+        {{ partial "block_talk" (dict "ctx" . "talk" .) }}
+        {{ end }}
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.container -->
