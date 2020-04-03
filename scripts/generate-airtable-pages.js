@@ -242,7 +242,7 @@ function flattenAirtableRecords(tableName, items) {
             const extension = mime.getExtension(item.type);
             const type = mime.getType(item.filename);
 
-            let localPath = `${item.id}-${item.filename.replace(/\s/g, '_')}`;
+            let localPath = `${item.id}-${item.filename.replace(/\s/g, '_').replace(/\#/g, '_')}`;
             localPath = type
               ? localPath
               : `${localPath}.${extension}`
