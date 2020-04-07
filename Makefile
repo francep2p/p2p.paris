@@ -3,8 +3,13 @@ SERVER_OPTS ?= --baseURL=/ --appendPort=false
 DEPS := node_modules
 
 .PHONY: dev
-dev: $(DEPS)
-	./pre-build.sh && hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
+dev: $(DEPS) pre-build hugo-dev
+
+pre-build:
+	./pre-build.sh
+
+hugo-dev:
+	hugo server -D -F --disableFastRender --bind=0.0.0.0 $(SERVER_OPTS)
 
 node_modules: package.json
 	npm install

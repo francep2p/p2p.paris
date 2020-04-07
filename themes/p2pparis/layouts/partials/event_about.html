@@ -1,4 +1,13 @@
 <h3><i class="far fa-info-circle"></i>{{ i18n "about" . | markdownify }}</h3>
+
+{{ with .Description }}
+<p>
+    {{. | markdownify}}
+</p>
+
+<hr />
+{{end}}
+
 <p>{{ i18n "about_a" . | markdownify }}</p>
 <p>{{ i18n "about_b" . | markdownify }}</p>
 <p>{{ i18n "about_c" . | markdownify }}</p>
