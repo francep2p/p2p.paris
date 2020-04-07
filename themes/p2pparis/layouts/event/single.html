@@ -29,9 +29,9 @@
 					{{ end }}
 					{{ if and (eq .Params.relative_time "future") (gt $slots 0) }}
 					<div class="block block-single block-single-content pt-1">
-						{{ range seq $slots }}
-						{{ partial "available_slot" "15" }}
-						{{ end }}
+						  {{ range seq $slots }}
+						  {{ partial "available_slot" "15" }}
+						  {{ end }}
 					</div>
 					{{ end }}
 
@@ -46,7 +46,7 @@
 				</div><!-- /.block-single-content -->
 
 				<div class="block block-single block-single-content">
-					{{ partial "event_about" . }}
+					  {{ partial "event_about" . }}
 				</div>
 			</div><!-- /.col -->
 
