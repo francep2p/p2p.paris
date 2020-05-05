@@ -2,8 +2,7 @@ name: Trigger Netlify Build
 
 on:
   schedule:
-    # every day at 00.15AM, 04.15AM, 08.15AM, ...
-    - cron: '15 */4 * * *'
+    - cron: '15 5,17 * * *'
 
 jobs:
   build:
