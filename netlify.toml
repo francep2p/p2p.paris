@@ -28,3 +28,9 @@ HUGO_VERSION = "0.59.1"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
