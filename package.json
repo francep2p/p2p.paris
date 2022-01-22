@@ -12,7 +12,7 @@
     "mime": "^2.4.4",
     "netlify-plugin-hugo-cache-resources": "^0.1.4",
     "netlify-plugin-submit-sitemap": "^0.1.4",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.1.1"
   },
   "browserslist": [
     "> 1%"
