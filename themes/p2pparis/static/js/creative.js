@@ -161,7 +161,42 @@ function myToggle(){
 
   }
 
+    // Only for festival page
+    if ($(".page-festival-1").length) {
 
+      // Initialize countdown clock
+      var festival_start = new Date(Date.parse(new Date('april 27, 2022 18:00:00')));
+      var festival_end = new Date(Date.parse(new Date('may 1, 2022 20:00:00')));
+      var date_now = Date.now();
+      
+      if(date_now < festival_start){
+        $('#it-soon').show();
+        initializeClock('clockdiv', festival_start);
+        $('#clockdiv').show();
+      }
+      else if(date_now < festival_end){
+        $('#it-current').show();
+        initializeClock('clockdiv', festival_end);
+        $('#clockdiv').show();
+      }
+      else {
+        $('#it-finish').show();  
+      }
+  
+      // Smooth scrolling using jQuery easing
+      $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: (target.offset().top + 2)
+            }, 1000, "easeInOutExpo");
+            return true;
+          }
+        }
+      });
+    }
 
   if($(".s-filters").length) {
 
