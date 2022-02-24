@@ -164,7 +164,7 @@ festival_numbers_b1_title:
   other: Days
 
 festival_numbers_b1_text:
-  other: "{{ .start_date.Month }} <strong>{{ .start_date.Day }}</strong> to <strong>{{ .end_date.Day }}</strong>, {{ .end_date.Year }}"
+  other: "{{ .start_date.Month }} <strong>{{ .start_date.Day }}</strong> to {{ .end_date.Month }} <strong>{{ .end_date.Day }}</strong>, {{ .end_date.Year }}"
 
 festival_numbers_b2_title:
   other: Events
@@ -206,7 +206,7 @@ festival_content_intro_text:
   other: The free peer-to-peer gathering
 
 festival_content_it_soon:
-  other: Starting in a few hours!
+  other: Starting soon!
 
 festival_content_it_current:
   other: It's happening now! Ending in

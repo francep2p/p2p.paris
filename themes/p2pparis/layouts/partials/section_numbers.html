@@ -1,7 +1,7 @@
 <section class="section-numbers" id="numbers">
     <div class="container">
-    	<div class="row">
-    		  <div class="col-lg-3 col-md-6 text-center">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
                     <div class="block block-number" href="">
                         <h2 class="mb-2 c-gradient">{{ .Params.num_days }}</h2>
                         <h3 class="mb-4">{{ i18n "festival_numbers_b1_title" }}</h3>
@@ -10,14 +10,14 @@
                 </div><!-- /.col -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="block block-number" href="">
-                        <h2 class="mb-2 c-gradient">{{ .Params.num_events }}</h2>
+                        <h2 class="mb-2 c-gradient">{{ if gt .Params.num_events 10}}{{ .Params.num_events }}{{else}}&#8211;{{end}}</h2>
                         <h3 class="mb-4">{{ i18n "festival_numbers_b2_title" }}</h3>
                         <p>{{ i18n "festival_numbers_b2_text" | markdownify }}</p>
                     </div><!-- /.block-number -->
                 </div><!-- /.col -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="block block-number" href="">
-                        <h2 class="mb-2 c-gradient">{{ .Params.num_speakers }}</h2>
+                        <h2 class="mb-2 c-gradient">{{ if gt .Params.num_speakers 10}}{{ .Params.num_speakers }}{{else}}&#8211;{{end}}</h2>
                         <h3 class="mb-4">{{ i18n "festival_numbers_b3_title" }}</h3>
                         <p>{{ i18n "festival_numbers_b3_text" | markdownify }}</p>
                     </div><!-- /.block-number -->
@@ -29,6 +29,6 @@
                         <p>{{ i18n "festival_numbers_b4_text" | markdownify }}</p>
                     </div><!-- /.block-number -->
                 </div><!-- /.col -->
-    	</div><!-- /.row -->
+      </div><!-- /.row -->
     </div><!-- /.container -->
 </section>
