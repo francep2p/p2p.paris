@@ -109,9 +109,6 @@ filters:
 kind:
   other: Type
 
-location:
-  other: Lieu
-
 view_slides:
   other: Voir les slides
 
@@ -164,7 +161,7 @@ festival_numbers_b1_title:
   other: Jours
 
 festival_numbers_b1_text:
-  other: Du <strong>{{ .start_date.Day }}</strong> au <strong>{{ .end_date.Day }}</strong> {{ index .ctx.Site.Params.months (printf "%d" .end_date.Month) }} {{ .end_date.Year }}
+  other: Du <strong>{{ .start_date.Day }}</strong> {{ index .ctx.Site.Params.months (printf "%d" .start_date.Month) }} au <strong>{{ .end_date.Day }}</strong> {{ index .ctx.Site.Params.months (printf "%d" .end_date.Month) }} {{ .end_date.Year }}
 
   # other: "{{ .start_date.Month }} <strong>{{ .start_date.Day }}</strong> to <strong>{{ .end_date.Day }}</strong>, {{ .end_date.Year }}"
 
@@ -208,7 +205,7 @@ festival_content_intro_text:
   other: Le rassemblement communautaire gratuit du peer-to-peer
 
 festival_content_it_soon:
-  other: ça commence dans quelques heures !
+  other: Ça commence bientôt !
 
 festival_content_it_current:
   other: C'est maintenant ! Et ça se termine dans
