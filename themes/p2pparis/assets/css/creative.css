@@ -12023,6 +12023,7 @@ a.block-legend-header:focus {
   position:absolute;
   right:0;
   top:1px;
+  height: 100%;
 }
 
 .col-20 {
