@@ -11693,6 +11693,17 @@ tag.v {
   margin-top:70px;
 }
 
+.section-cfp {
+  padding-top:150px;
+}
+
+.block-cfp {
+  padding: 40px 40px 30px 20px;
+}
+.block-cfp .col-btn {
+  padding-left:0px;
+  padding-right:5px;
+}
 
 .section-donate {
   padding-top:150px;
