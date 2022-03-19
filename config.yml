@@ -1,5 +1,5 @@
 theme: p2pparis
-baseURL: https://p2p.paris
+# baseURL: https://p2p.paris
 title: Paris P2P
 
 languageCode: en
@@ -18,25 +18,25 @@ languages:
     menu:
       main:
         - name: Events
-          url: "/en/#events"
+          url: '/en/#events'
           weight: -100
         - name: About
-          url: "/en/#about"
+          url: '/en/#about'
           weight: -90
         - name: Call for proposal
-          url: "/en/#call-for-proposal"
+          url: '/en/#call-for-proposal'
           weight: -80
         - name: Meetup
-          url: "#meetup"
+          url: '#meetup'
           weight: -70
         - name: Discord
-          url: "#discord"
+          url: '#discord'
           weight: -60
         - name: Github
-          url: "#github"
+          url: '#github'
           weight: -50
         - name: Contact
-          url: "#contact"
+          url: '#contact'
           weight: -40
   fr:
     languageName: French
@@ -47,69 +47,69 @@ languages:
       404_desc: Page introuvable
       404_cta: Aller à la page d'accueil
       months:
-        1: "janvier"
-        2: "février"
-        3: "mars"
-        4: "avril"
-        5: "mai"
-        6: "juin"
-        7: "juillet"
-        8: "août"
-        9: "septembre"
-        10: "octobre"
-        11: "novembre"
-        12: "décembre"
+        1: 'janvier'
+        2: 'février'
+        3: 'mars'
+        4: 'avril'
+        5: 'mai'
+        6: 'juin'
+        7: 'juillet'
+        8: 'août'
+        9: 'septembre'
+        10: 'octobre'
+        11: 'novembre'
+        12: 'décembre'
       months_short:
-        1: "janv"
-        2: "févr"
-        3: "mars"
-        4: "avr"
-        5: "mai"
-        6: "juin"
-        7: "juil"
-        8: "août"
-        9: "sept"
-        10: "oct"
-        11: "nov"
-        12: "déc"
+        1: 'janv'
+        2: 'févr'
+        3: 'mars'
+        4: 'avr'
+        5: 'mai'
+        6: 'juin'
+        7: 'juil'
+        8: 'août'
+        9: 'sept'
+        10: 'oct'
+        11: 'nov'
+        12: 'déc'
       days:
-        0: "dimanche"
-        1: "lundi"
-        2: "mardi"
-        3: "mercredi"
-        4: "jeudi"
-        5: "vendredi"
-        6: "samedi"
+        0: 'dimanche'
+        1: 'lundi'
+        2: 'mardi'
+        3: 'mercredi'
+        4: 'jeudi'
+        5: 'vendredi'
+        6: 'samedi'
       days_short:
-        0: "dim"
-        1: "lun"
-        2: "mar"
-        3: "mer"
-        4: "jeu"
-        5: "ven"
-        6: "sam"
+        0: 'dim'
+        1: 'lun'
+        2: 'mar'
+        3: 'mer'
+        4: 'jeu'
+        5: 'ven'
+        6: 'sam'
     menu:
       main:
         - name: Événements
-          url: "/fr/#events"
+          url: '/fr/#events'
           weight: -100
         - name: À propos
-          url: "/fr/#about"
+          url: '/fr/#about'
           weight: -90
         - name: Envoyez vos sujets
-          url: "/fr/#call-for-proposal"
+          url: '/fr/#call-for-proposal'
           weight: -80
         - name: Meetup
-          url: "#meetup"
+          url: '#meetup'
           weight: -70
         - name: Discord
-          url: "#discord"
+          url: '#discord'
           weight: -60
         - name: Github
-          url: "#github"
+          url: '#github'
           weight: -50
         - name: Contact
-          url: "#contact"
+          url: '#contact'
           weight: -50
 
 params:
