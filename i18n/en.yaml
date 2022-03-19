@@ -124,11 +124,14 @@ learn_more:
 back_to_festival_schedule:
   other: Back to festival schedule
 
-call_for_papers:
-  other: Want to propose a Talk or a Workshop?
+call_for_papers_title:
+  other: Call for Papers
+
+call_for_papers_description:
+  other: We are looking for contributors to host Talks, Workshops and Round Tables. Feel free to submit you ideas before April 1st!
 
 call_for_papers_button:
-  other: Propose Content
+  other: Contribute
 
 talks:
   other: Talks

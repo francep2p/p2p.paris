@@ -124,11 +124,14 @@ back_to_festival_schedule:
 talks:
   other: Présentations
 
-call_for_papers:
-  other: Vous voulez propose un Talk ou un Workshop ?
+call_for_papers_title:
+  other: Call for Papers
+
+call_for_papers_description:
+  other: Nous recherchons des contributeurs pour organiser des Talks, Workshops et Tables Rondes. Tout le monde peut faire une proposition de sujet avant le 1er Avril.
 
 call_for_papers_button:
-  other: Proposer un événement
+  other: Contribuer
 
 festival_nav_schedule:
   other: Programme
