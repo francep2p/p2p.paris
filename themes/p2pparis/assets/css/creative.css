@@ -12024,6 +12024,11 @@ a.block-legend-header:focus {
   right:0;
   top:1px;
   height: 100%;
+  width: 30px;
+}
+
+.form-newsletter .far {
+    width: 15px;
 }
 
 .col-20 {
