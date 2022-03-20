@@ -12019,13 +12019,7 @@ a.block-legend-header:focus {
 .form-newsletter input:focus {
   outline:none;
 }
-.form-newsletter .btn {
-  position:absolute;
-  right:0;
-  top:1px;
-  height: 100%;
-  width: 30px;
-}
+
 
 .form-newsletter .far {
     width: 15px;
