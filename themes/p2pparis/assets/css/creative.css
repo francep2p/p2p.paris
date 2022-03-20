@@ -1,5 +1,5 @@
 /*!
- * Start Bootstrap - Creative v5.1.7 (https://startbootstrap.com/template-overviews/creative)
+ * Start Bootstrap - Creative v5.1.7 (htps://startbootstrap.com/template-overviews/creative)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
  */
@@ -11693,6 +11693,19 @@ tag.v {
   margin-top:70px;
 }
 
+.section-cfp {
+  padding-top:50px;
+  padding-bottom:100px;
+}
+
+.block-cfp {
+  padding: 40px 40px 30px 20px;
+}
+
+.block-cfp .col-btn {
+  padding-left:0px;
+  padding-right:5px;
+}
 
 .section-donate {
   padding-top:150px;
@@ -11705,7 +11718,7 @@ tag.v {
   padding: 40px 40px 30px 20px;
 }
 .block-donate .col-btn {
-  padding-left:0px;
+  padding-left:0;
   padding-right:5px;
 }
 .block-speaker {
@@ -12010,6 +12023,12 @@ a.block-legend-header:focus {
   position:absolute;
   right:0;
   top:1px;
+  height: 100%;
+  width: 30px;
+}
+
+.form-newsletter .far {
+    width: 15px;
 }
 
 .col-20 {
@@ -12079,3 +12098,4 @@ a.block-legend-header:focus {
     box-shadow: 0 6px 12px 6px rgba(171,174,209,0.25);
   }
 }
+

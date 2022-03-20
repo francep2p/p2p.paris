@@ -124,6 +124,15 @@ learn_more:
 back_to_festival_schedule:
   other: Back to festival schedule
 
+call_for_papers_title:
+  other: Call for Papers
+
+call_for_papers_description:
+  other: We are looking for contributors to host Talks, Workshops and Round Tables. Feel free to submit you ideas before April 1st!
+
+call_for_papers_button:
+  other: Contribute
+
 talks:
   other: Talks
 
@@ -207,6 +216,9 @@ festival_content_intro_text:
 
 festival_content_it_soon:
   other: Starting soon!
+
+get_tickets_button:
+  other: Get your Ticket
 
 festival_content_it_current:
   other: It's happening now! Ending in
