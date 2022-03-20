@@ -12007,7 +12007,6 @@ a.block-legend-header:focus {
 
 .form-newsletter {
   position:relative;
-  display: flex;
 }
 .form-newsletter input {
   border: 1px solid #77237F;
@@ -12020,7 +12019,13 @@ a.block-legend-header:focus {
 .form-newsletter input:focus {
   outline:none;
 }
-
+.form-newsletter .btn {
+  position:absolute;
+  right:0;
+  top:1px;
+  height: 100%;
+  width: 30px;
+}
 
 .form-newsletter .far {
     width: 15px;
