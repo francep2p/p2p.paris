@@ -217,6 +217,9 @@ festival_content_intro_text:
 festival_content_it_soon:
   other: Starting soon!
 
+get_tickets_button:
+  other: Get your Ticket
+
 festival_content_it_current:
   other: It's happening now! Ending in
 
