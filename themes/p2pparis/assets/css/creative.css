@@ -12007,6 +12007,7 @@ a.block-legend-header:focus {
 
 .form-newsletter {
   position:relative;
+  display: flex;
 }
 .form-newsletter input {
   border: 1px solid #77237F;
