@@ -1,1 +1,13 @@
-<p>test</p>
+{{ partial "ldjson/event" (dict "ctx" . "id" .Params.id) }}
+
+{{.Scratch.Set "body-class" "page-festival-1"}}
+{{ partial "header" . }}
+
+{{ partial "navbar_festival" . }}
+{{ partial "masthead_hackathon_1" . }}
+<!-- {{ partial "section_hackathon_numbers" . }} -->
+<!-- {{ partial "section_hackathon_guidelines" . }} -->
+{{ partial "section_info_1" . }}
+{{ partial "section_plan" . }}
+{{ partial "section_links" . }}
+{{ partial "footer" . }}
