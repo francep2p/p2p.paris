@@ -12,4 +12,8 @@ hackathon_info_title_2: 🏆 Side-Quests
 hackathon_info_description_2: Participants can register in teams of 2 to 6 people and have to propose an innovating solution for “building a decentralized future”. A solution is expected to have a working demo and an open source codebase. Every project will be tested by the hackathon jury
 hackathon_info_title_3: 🗓️ Timeline
 hackathon_info_description_3: Participants can register in teams of 2 to 6 people and have to propose an innovating solution for “building a decentralized future”. A solution is expected to have a working demo and an open source codebase. Every project will be tested by the hackathon jury
+hackathon_info_title_4: 🌈 Sponsors
+hackathon_info_description_4: Participants can register in teams of 2 to 6 people and have to propose an innovating solution for “building a decentralized future”. A solution is expected to have a working demo and an open source codebase. Every project will be tested by the hackathon jury
+hackathon_info_title_5: ❓ FAQs
+hackathon_info_description_5: Participants can register in teams of 2 to 6 people and have to propose an innovating solution for “building a decentralized future”. A solution is expected to have a working demo and an open source codebase. Every project will be tested by the hackathon jury
 ---
