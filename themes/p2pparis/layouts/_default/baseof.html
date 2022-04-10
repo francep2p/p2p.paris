@@ -29,7 +29,7 @@
     {{ $.Scratch.Add "past_events" . }}
   {{ end }}
 
-  {{ $.Scratch.SetInMap "event_status" .UniqueID $status }}
+  {{ $.Scratch.SetInMap "event_status" .File.UniqueID $status }}
 {{ end }}
 <!-- END: get event status -->
 

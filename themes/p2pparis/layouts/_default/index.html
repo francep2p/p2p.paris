@@ -32,7 +32,7 @@
         <div class="row events-loadmore-list">
             {{ range $index, $item := $.Scratch.Get "upcoming_events" }}
             <div class="col-lg-4 col-md-6 event-item" {{ if gt $index 2 }}style="display:none;"{{ end }}>
-                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
+                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .File.UniqueID)) }}
             </div><!-- /.col -->
             {{ end }}
 
@@ -53,7 +53,7 @@
         <div class="row events-loadmore-list">
             {{ range $index, $item := $.Scratch.Get "past_events" }}
             <div class="col-lg-4 col-md-6 event-item" {{ if gt $index 2 }}style="display:none;"{{ end }}>
-                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
+                {{ partial "block_event" (dict "ctx" . "status" (index $statuses .File.UniqueID)) }}
             </div><!-- /.col -->
             {{ end }}
 
