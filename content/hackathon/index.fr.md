@@ -15,7 +15,7 @@ hackathon_info_description_3: Les inscriptions pour le Hackathon ouvrent le 11 A
 hackathon_info_title_4: 🌈 Sponsors
 hackathon_info_description_4: Les sponsors sont des acteurs majeurs de l'écosystème Peer to Peer. Ils contribuent au P2P Festival et à son hackathon et aide les participants à faire des solutions plus impactantes en utisant leur technologie dans les Side-Quests.
 hackathon_info_title_5: ❓ FAQs
-hackathon_info_description_5: >- test
+hackathon_info_description_5: "- test
 - test2
-- test3
+- test3"
 ---
