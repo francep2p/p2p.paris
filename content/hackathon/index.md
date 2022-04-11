@@ -15,7 +15,7 @@ hackathon_info_description_3: Hackathon registration opens on April 11th, and cl
 hackathon_info_title_4: 🌈 Sponsors
 hackathon_info_description_4: Sponsors are major actors of the P2P world. They contribute to the P2P Festival and its hackathon, and help participants to leverage their solution with their technology thanks to Side-Quests.
 hackathon_info_title_5: ❓ FAQs
-hackathon_info_description_5: "- test
-- test2
-- test3"
+hackathon_info_description_5: "- test\n
+- test2\n
+- test3\n"
 ---
