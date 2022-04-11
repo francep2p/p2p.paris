@@ -10310,7 +10310,7 @@ body.page-festival-1 {
   }
 }
 
-@media(min-width:768px){
+/*@media(min-width:768px){*/
   body.page-festival-1 {
     background: -webkit-gradient(linear, left top, left bottom, from( rgba(6, 0, 99, 0.4)), to(rgba(0, 0, 0, 0.8))), url("../img/bg_people.jpg");
     background: linear-gradient(to bottom, rgba(6, 0, 99, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%), url("../img/bg_people.jpg");
@@ -10319,7 +10319,7 @@ body.page-festival-1 {
     background-attachment: fixed;
     background-size: cover;
   }
-}
+/*}*/
 
 
 .bg-people-pink {
@@ -12099,3 +12099,42 @@ a.block-legend-header:focus {
   }
 }
 
+/* new color for festival-1 */
+body.page-festival-1 {
+  color:#a8bcff;
+}
+body.page-festival-1 .text-white {
+    color: #d8ddfa !important;
+}
+body.page-festival-1 hr.light {
+    border-color: #d8ddfa;
+}
+body.page-festival-1 .c-gradient {
+  background: -webkit-linear-gradient(#2cbceb, #051fcf);
+      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+body.page-festival-1 .btn-purple {
+    color: #fff !important;
+    background-image: -webkit-linear-gradient(left, #2F8DD4 0%, #1737BC 100%);
+    background-image: linear-gradient(to right, #2F8DD4 0%, #1737BC 100%);
+    border: none;
+}
+
+body.page-festival-1 .bg-light {
+    background-color: #16152E !important;
+    background:none;
+}
+
+body.page-festival-1 .block {
+    background-color: #1B214C;
+    opacity:0.8;
+    box-shadow: none;
+  }
+
+body.page-festival-1 a.block {
+    color: #a8bcff;
+}
+body.page-festival-1 a.block:hover {
+  color:#FFF;
+}
