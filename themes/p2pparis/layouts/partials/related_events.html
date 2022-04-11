@@ -33,6 +33,6 @@
 
 {{ range sort $related "Params.start_date" }}
   <div class="col-lg-4 col-sm-6">
-    {{ partial "block_event" (dict "ctx" . "status" (index $statuses .UniqueID)) }}
+    {{ partial "block_event" (dict "ctx" . "status" (index $statuses .File.UniqueID)) }}
   </div><!-- /.col -->
 {{ end }}
