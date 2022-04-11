@@ -1,5 +1,5 @@
 theme: p2pparis
-baseURL: https://p2p.paris
+# baseURL: https://p2p.paris
 title: Paris P2P
 
 languageCode: en
