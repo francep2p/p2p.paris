@@ -30,7 +30,7 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row events-loadmore-list">
-            <a class="block block-event" href="/hackathon">
+            <a class="block block-event next-event" href="/hackathon">
                 <div class="block-img">
                     <img src="/hackathon-preview.png">
                 </div><!-- /.block-img -->
@@ -39,7 +39,7 @@
                     <p class="event-subtitle">Hackathon for P2P builders</p>
                     <span class="event-info event-location"><i class="far fa-map-marker"></i>GoundControl, Paris & Online</span>
                     <span class="event-info event-date"><i class="far fa-calendar-alt"></i>April 29, 2022</span>
-                    <span class="tag tag-{{.status}}">NEXT</span>
+                    <span class="tag tag-next">NEXT</span>
                 </div><!-- /.block-content -->
             </a><!-- /.block-event -->
             {{ range $index, $item := $.Scratch.Get "upcoming_events" }}
