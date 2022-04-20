@@ -18,7 +18,7 @@
     </div>
     <div class="speaker-links">
         {{ with .Params.twitter }}
-        <a target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-twitter text-primary"></i></a>
+        <a target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-twitter c-twitter"></i></a>
         {{ end }}
         {{ with .Params.github }}
         <a  target="_blank" rel="noopener" href="{{ cond (hasPrefix . `http`) . (print `https://` .) }}"><i class="fab fa-github c-github"></i></a>

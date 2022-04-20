@@ -107,7 +107,7 @@ speakers:
   other: Intervenants
 
 filters:
-  other: Filtrer<span class="to-hide"> les événements</span>
+  other: Filtrer les événements
 
 kind:
   other: Type
