@@ -10186,7 +10186,7 @@ section h1 notif {
   color: rgba(255, 255, 255, 0.7);
   padding: 0 1rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .navbar .navbar-nav .nav-item .nav-link:hover {
   color: #fff;
@@ -10312,8 +10312,11 @@ body.page-festival-1 {
 
 /*@media(min-width:768px){*/
   body.page-festival-1 {
-    background: -webkit-gradient(linear, left top, left bottom, from( rgba(6, 0, 99, 0.4)), to(rgba(0, 0, 0, 0.8))), url("../img/bg_people.jpg");
+/*    background: -webkit-gradient(linear, left top, left bottom, from( rgba(6, 0, 99, 0.4)), to(rgba(0, 0, 0, 0.8))), url("../img/bg_people.jpg");
     background: linear-gradient(to bottom, rgba(6, 0, 99, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%), url("../img/bg_people.jpg");
+*/
+    background: url("../img/bg_festival_1.png");
+
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10413,6 +10416,9 @@ header.masthead .logo-center img {
 }
 
 /* paris p2p */
+.c-twitter {
+  color:#00acee;
+}
 .c-github {
   color:#373737;
 }
@@ -10426,7 +10432,7 @@ header.masthead .logo-center img {
   color:#F6405E;
 }
 .c-discord {
-  color:#7289DA;
+  color:#5865F2;
 }
 .c-primary {
   color:#6ED3F0;
@@ -10443,6 +10449,9 @@ header.masthead .logo-center img {
 .c-pink {
   color:#bd1fab;
 }
+
+
+
 a {
   transition: .3s ease-in-out;
 }
@@ -12103,11 +12112,11 @@ a.block-legend-header:focus {
 body.page-festival-1 {
   color:#a8bcff;
 }
-body.page-festival-1 .text-white {
+/*body.page-festival-1 .text-white {
     color: #d8ddfa !important;
-}
-body.page-festival-1 hr.light {
-    border-color: #d8ddfa;
+}*/
+body.page-festival-1 .text-white hr{
+    border-color: #FFF;
 }
 body.page-festival-1 .c-gradient {
   background: -webkit-linear-gradient(#2cbceb, #051fcf);
@@ -12116,8 +12125,8 @@ body.page-festival-1 .c-gradient {
 }
 body.page-festival-1 .btn-purple {
     color: #fff !important;
-    background-image: -webkit-linear-gradient(left, #2F8DD4 0%, #1737BC 100%);
-    background-image: linear-gradient(to right, #2F8DD4 0%, #1737BC 100%);
+    background-image: -webkit-linear-gradient(left, #2cbceb  0%, #135bdb 100%);
+    background-image: linear-gradient(to right, #2cbceb  0%, #135bdb 100%);
     border: none;
 }
 
@@ -12126,9 +12135,12 @@ body.page-festival-1 .bg-light {
     background:none;
 }
 
-body.page-festival-1 .block {
-    background-color: #1B214C;
-    opacity:0.8;
+body.page-festival-1 .block,
+body.page-festival-1 .s-nav,
+body.page-festival-1 .navbar.s-filters  {
+    /*background-color: #1B214C;
+    opacity:0.8;*/
+    background-color: #1a1f45;
     box-shadow: none;
   }
 
@@ -12138,3 +12150,98 @@ body.page-festival-1 a.block {
 body.page-festival-1 a.block:hover {
   color:#FFF;
 }
+
+
+body.page-festival-1 .s-nav.nav-pills a.nav-link,
+body.page-festival-1 .navbar.s-filters .navbar-brand,
+body.page-festival-1 .navbar.s-filters .navbar-nav .nav-item .nav-link {
+  color: #a8bcff;
+}
+
+body.page-festival-1 .s-day .s-day-title .pill {
+    background-image: -webkit-linear-gradient(left, #2cbceb  0%, #1e88e3 100%);
+    background-image: linear-gradient(to right, #2cbceb  0%, #1e88e3 100%);
+    box-shadow: none;
+}
+body.page-festival-1 .nav-pills a.nav-link.active, .nav-pills .show > a.nav-link {
+    background-image: -webkit-linear-gradient(left, #2cbceb  0%, #1e88e3 100%);
+    background-image: linear-gradient(to right, #2cbceb  0%, #1e88e3 100%);
+    color: #fff;
+}
+
+body.page-festival-1 .btn-group-toggle {
+  border: 2px solid #2cbceb;
+}
+body.page-festival-1 .btn-group-toggle .btn.active {
+    background-color: #2cbceb;
+    color:#FFF;
+}
+body.page-festival-1 .btn-group-toggle .btn {
+  color:  #2cbceb;
+}
+
+body.page-festival-1 .navbar.s-filters .dropdown-menu {
+    box-shadow: 0 4px 12px 2px rgb(22 21 45);
+    background-color:#1a1f45;
+}
+
+body.page-festival-1 .navbar.s-filters .dropdown-item {
+  color:#a8bcff;
+}
+body.page-festival-1 .navbar.s-filters .dropdown-item:hover,
+body.page-festival-1 .navbar.s-filters .dropdown-item:focus {
+    background-color: #292f5c;
+}
+
+body.page-festival-1 .s-day .s-day-title:before {
+    border-top: 6px dotted #2cbceb;
+}
+
+
+body.page-festival-1 .block-speaker .speaker-picture-hover .speaker-picture-inner {
+  background: #2cbceb;
+}
+
+body.page-festival-1 .block-speaker .speaker-picture img {
+  border-color: #2cbceb;
+}
+
+body.page-festival-1 .c-pink {
+    color: #2cbceb;
+}
+
+body.page-festival-1 .c-linkedin {
+    color: #135bdb;
+}
+body.page-festival-1 .c-github {
+  color: #a8bcff;
+}
+
+
+
+body.page-festival-1 tag.o  {
+  background-color:#ffae3a;
+  color:#fff0d4;
+}
+body.page-festival-1 tag.r {
+  background-color: #f74868;
+  color: #fee4e9;
+}
+body.page-festival-1 tag.g {
+  background-color: #1fc5ae;
+  color: #c9f3ed;
+}
+body.page-festival-1 tag.b {
+  background-color: #2660e0;
+  color: #dce7ff;
+}
+body.page-festival-1 tag.p {
+  background-color: #d90ead;
+  color: #ffdff8;
+}
+body.page-festival-1 tag.v {
+  background-color: #a02ea8;
+  color: #fee4e9;
+}
+
+
