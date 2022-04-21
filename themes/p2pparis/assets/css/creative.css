@@ -12265,9 +12265,14 @@ body.page-festival-1 tag.v {
   overflow: hidden;
   text-overflow: ellipsis;
   display:block;
+  margin-top:20px;
 }
 .block-sponsor-s a:hover,
 .block-sponsor-s a:focus {
   color:#a8bcff;
   text-decoration:none;
 }
+
+.block-sponsor-s img {
+  max-width: 100%;
+}    
