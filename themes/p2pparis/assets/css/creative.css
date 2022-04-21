@@ -12245,3 +12245,29 @@ body.page-festival-1 tag.v {
 }
 
 
+.block-sponsor-s {
+  padding:20px;
+  margin-bottom:20px;
+  min-height:90px;
+}
+
+.block-sponsor-s .title {
+  font-weight:bold;
+  font-size:110%;
+  display:block;
+}
+
+.block-sponsor-s a {
+  color:#7b89ba;
+  font-size:90%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:block;
+}
+.block-sponsor-s a:hover,
+.block-sponsor-s a:focus {
+  color:#a8bcff;
+  text-decoration:none;
+}

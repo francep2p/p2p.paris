@@ -273,3 +273,6 @@ festival_content_hotel_title:
 
 festival_content_hotel_text:
   other: "Get a 20% discount at the Zazie Hotel using the code: <tag class='p'>P2PFESTIVAL</tag>"
+
+festival_content_sponsors:
+  other: Sponsors

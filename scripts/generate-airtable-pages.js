@@ -26,7 +26,8 @@ async function main() {
     'Organization',
     'Location',
     'Donation',
-    'Place'
+    'Place',
+    'Sponsors'
   ];
 
   try {
