@@ -43,6 +43,9 @@ location:
 location_text:
   other: This meetups are hosted at <strong>Ground Control</strong>, close to Gare de Lyon, Paris.<br/>Friendly spaces, Bar (wine, beer) & snacks available.
 
+hackathon_button:
+  other: Join Hackathon
+
 register:
   other: Register
 

@@ -43,6 +43,9 @@ location:
 location_text:
   other: Ces rencontres se déroulent à <strong>Ground Control</strong>, à deux pas de Gare de Lyon, Paris.<br/>Espaces conviviaux, Bar (vin, bières) & snacks sont disponibles sur place.
 
+hackathon_button:
+  other: P2P Hackathon
+
 register:
   other: Inscription
 
