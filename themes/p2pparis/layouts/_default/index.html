@@ -12,7 +12,8 @@
                 <h1 class="text-uppercase text-white font-weight-bold">{{ .Params.content.intro_text | markdownify }}</h1>
             </div><!-- /.col -->
             <div class="col-lg-8 align-self-baseline">
-                <a class="btn btn-primary btn-purple btn-xl js-scroll-trigger" href="https://www.meetup.com/France-P2P/events/">{{ i18n "festival_cta" | markdownify }}</a>
+                <!-- TODO: fix link here once we have the redirect for festival-2 on /festival -->
+                <a class="btn btn-primary btn-purple btn-xl js-scroll-trigger" href="/en/event/festival-2">{{ i18n "festival_cta" | markdownify }}</a>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -30,20 +31,6 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row events-loadmore-list">
-            <div class="col-lg-4 col-md-6 event-item">
-                <a class="block block-event next-event" href="/hackathon">
-                    <div class="block-img">
-                        <img src="/img/hackathon-preview.png">
-                    </div><!-- /.block-img -->
-                    <div class="block-content">
-                        <h4 class="event-title">P2P Hackathon</h4>
-                        <p class="event-subtitle">Hackathon for P2P builders</p>
-                        <span class="event-info event-location"><i class="far fa-map-marker"></i>GoundControl, Paris & Online</span>
-                        <span class="event-info event-date"><i class="far fa-calendar-alt"></i>April 29, 2022</span>
-                        <span class="tag tag-next">NEXT</span>
-                    </div><!-- /.block-content -->
-                </a><!-- /.block-event -->
-            </div>
             {{ range $index, $item := $.Scratch.Get "upcoming_events" }}
                 <div class="col-lg-4 col-md-6 event-item" {{ if gt $index 2 }}style="display:none;"{{ end }}>
                     {{ partial "block_event" (dict "ctx" . "status" (index $statuses .File.UniqueID)) }}

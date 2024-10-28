@@ -175,6 +175,19 @@ festival_clock_minutes:
 festival_clock_seconds:
   other: Seconds
 
+
+festival_announcement_part_1:
+  other: France P2P is coming back next year with the Second edition of the Paris P2P Festival from April 9th to 11th! And an online hackathon from April 4th to 11th.
+
+festival_announcement_part_2:
+  other: 'We are looking for sponsors, speakers, and volunteers to help us make this event a success. If you are interested, join the discord and fill the form below!'
+
+announcement_form_cta:
+  other: Participate
+
+announcement_form_sponsor_cta:
+  other: Become a sponsor
+
 festival_numbers_b1_title:
   other: Days
 
