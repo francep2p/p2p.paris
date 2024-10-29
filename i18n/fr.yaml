@@ -175,6 +175,18 @@ festival_clock_minutes:
 festival_clock_seconds:
   other: Secondes
 
+festival_announcement_part_1:
+  other: France P2P revient l'année prochaine avec la deuxième édition du Paris P2P Festival du 9 au 11 Avril ! Ainsi qu'un hackathon en ligne du 4 au 11.
+
+festival_announcement_part_2:
+  other:  'Nous recherchons des sponsors, des speakers et des bénévoles pour nous aider à faire de cet événement un succès. Si vous êtes intéressé, rejoignez le discord et remplissez le formulaire ci-dessous:'
+
+announcement_form_cta:
+  other: Participer
+
+announcement_form_sponsor_cta:
+  other: Devenir sponsor
+
 festival_numbers_b1_title:
   other: Jours
 
