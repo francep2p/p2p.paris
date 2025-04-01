@@ -41,14 +41,14 @@ export const HomeEventsSection = ({
         <p className="text-[13px] uppercase text-gray-999 my-3">
           {content.hero.nextMainEvent.descriptionTitle}
         </p>
-        {content.hero.nextMainEvent.descriptionItems.map((item) => (
+        {/* {content.hero.nextMainEvent.descriptionItems.map((item) => (
           <p
             className="text-[13px] leading-[20px] tracking-[5%] text-center text-gray-999 m-0 p-0"
             key={item}
           >
             {item}
           </p>
-        ))}
+        ))} */}
       </Link>
       <div className={containerStyles}>
         <h1 className="text-base uppercase">{content.hero.parisP2P.title}</h1>
