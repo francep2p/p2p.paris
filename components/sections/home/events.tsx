@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { ClientEvent } from "@/types/client";
 import { formatEventFullDate } from "@/utils/dates";
 import { HomePage } from "@/utils/pageTypes";
@@ -26,6 +25,16 @@ export const HomeEventsSection = ({
           alt="Paris P2P"
           className="my-6"
         />
+        {event.slug === "festival-2" ? (
+          <div className="bg-red-500 border-red-600 text-sm text-white text-center p-4 mb-4">
+            <p className="text-base uppercase">
+              THIS EVENT IS CANCELLED, SEE DISCORD ANNOUNCEMENT FOR FUTURE
+              EVENTS.
+            </p>
+          </div>
+        ) : (
+          <></>
+        )}
         <p className="text-base uppercase max-w-[260px] mx-auto">
           {formatEventFullDate(event.startDateTime, event.endDateTime)}
         </p>
@@ -72,7 +81,7 @@ export const HomeEventsSection = ({
           href="https://airtable.com/appVBIJFBUheVWS0Q/shrGTsouY2ITUcQwY"
           target="__blank"
         >
-          <Button variant="outline">{content.hero.hackathon.btn.text}</Button>
+          {/* <Button variant="outline">{content.hero.hackathon.btn.text}</Button> */}
         </Link>
       </div>
     </div>
