@@ -24,6 +24,16 @@ export const Event = ({
         <p className="text-[13px] uppercase text-gray-999 my-3">
           {content.hero.nextMainEvent.descriptionTitle}
         </p>
+        {event.slug === "festival-2" ? (
+          <div className="bg-red-500 border-red-600  text-white text-center p-4 mb-4">
+            <p className="text-base uppercase">
+              THIS EVENT IS CANCELLED, SEE DISCORD ANNOUNCEMENT FOR FUTURE
+              EVENTS.
+            </p>
+          </div>
+        ) : (
+          <></>
+        )}
         {content.hero.nextMainEvent.descriptionItems.map((item) => (
           <p
             className="text-[13px] leading-[20px] tracking-[5%] text-gray-999 m-0 p-0"
