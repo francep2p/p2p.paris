@@ -1,0 +1,128 @@
+model Page {
+  slug       String @id
+  content_en String @default("{}")
+  content_fr String @default("{}")
+}
+
+model Event {
+  slug             String         @id
+  name_en          String
+  name_fr          String
+  image_id         String
+  subtitle_en      String
+  subtitle_fr      String
+  description_en   String
+  description_fr   String
+  start_date       DateTime
+  end_date         DateTime
+  location         Location       @relation(fields: [location_id], references: [slug])
+  location_id      String
+  link             String
+  github_issue_url String
+  talks            Talk[]
+  sponsors         Organization[]
+  tags             Tag[]
+  active           Boolean        @default(false)
+}
+
+model Location {
+  slug           String  @id
+  name_en        String
+  name_fr        String
+  image_id       String
+  description_en String
+  description_fr String
+  address        String
+  events         Event[]
+  talks          Talk[]
+}
+
+enum TalkType {
+  TALK
+  WORKSHOP
+  PARTY
+  PROJECTION
+  STAND
+  MEET_UP
+  HACKATHON
+}
+
+model Talk {
+  slug                     String    @id
+  type                     TalkType
+  title_en                 String
+  title_fr                 String
+  description_en           String
+  description_fr           String
+  start_date               DateTime
+  end_date                 DateTime
+  github_issue_url         String
+  video_url                String
+  video_thumbnail_image_id String
+  speakers                 Speaker[]
+  tags                     Tag[]
+  location                 Location  @relation(fields: [location_id], references: [slug])
+  location_id              String
+  event                    Event     @relation(fields: [event_id], references: [slug])
+  event_id                 String
+}
+
+model Speaker {
+  slug          String         @id
+  name          String
+  headline_en   String
+  headline_fr   String
+  image_id      String
+  website_url   String
+  twitter_url   String
+  github_url    String
+  linkedin_url  String
+  facebook_url  String
+  email         String
+  organizations Organization[]
+  tags          Tag[]
+  talks         Talk[]
+}
+
+model Organization {
+  slug           String    @id
+  name_en        String
+  name_fr        String
+  description_en String
+  description_fr String
+  image_id       String
+  website_url    String
+  twitter_url    String
+  github_url     String
+  linkedin_url   String
+  facebook_url   String
+  speakers       Speaker[]
+  tags           Tag[]
+  events         Event[]
+}
+
+model Tag {
+  name           String         @id
+  description_en String
+  description_fr String
+  speakers       Speaker[]
+  organizations  Organization[]
+  talks          Talk[]
+  events         Event[]
+}
+
+model Image {
+  id                String @id @default(cuid())
+  bucket            String
+  filename          String
+  original_filename String
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

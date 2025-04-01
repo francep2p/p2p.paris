@@ -1,25 +1,64 @@
 {
-  "name": "p2pparis",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "name": "a",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "dev-local": "npx prisma migrate dev && yarn cache clean && yarn && npx tsx ./scripts/populate-db.ts && next dev",
+    "build": "next build",
+    "db:generate": "prisma generate",
+    "start": "next start",
+    "docker": "docker compose -f docker-compose.local.yaml up -d",
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "csvtojson": "^2.0.10",
-    "html-minifier": "^4.0.0",
-    "mime": "^2.4.4",
-    "netlify-plugin-hugo-cache-resources": "^0.1.4",
-    "netlify-plugin-submit-sitemap": "^0.1.4",
-    "node-fetch": "^2.6.7"
+    "@aws-sdk/client-s3": "^3.717.0",
+    "@prisma/client": "6.1.0",
+    "@radix-ui/react-collapsible": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-navigation-menu": "^1.2.3",
+    "@radix-ui/react-separator": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-tooltip": "^1.1.6",
+    "@types/next-seo": "^2.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
+    "dayjs": "^1.11.13",
+    "formidable": "^3.5.2",
+    "lucide-react": "^0.469.0",
+    "mime": "^4.0.6",
+    "minio": "^8.0.3",
+    "multer": "^1.4.5-lts.1",
+    "next": "^15.1.2",
+    "next-auth": "^4.24.11",
+    "next-seo": "^6.6.0",
+    "next-sitemap": "^4.2.3",
+    "next-themes": "^0.4.4",
+    "nextjs-toploader": "^3.7.15",
+    "node-fetch": "^3.3.2",
+    "prisma": "^6.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-spinners": "^0.15.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
   },
-  "browserslist": [
-    "> 1%"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/formidable": "^3.4.5",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.2",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
 }

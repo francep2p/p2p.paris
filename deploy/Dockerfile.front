@@ -1,0 +1,28 @@
+# must be run on root
+FROM node:18-alpine as builder
+
+RUN apk update && apk add --no-cache nginx
+
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+
+ARG DATABASE_URL
+ARG S3_ENDPOINT
+ARG S3_BUCKET_NAME
+ARG S3_PORT
+ARG S3_ACCESS_KEY
+ARG S3_SECRET_KEY
+ARG S3_USE_SSL
+ARG NEXT_PUBLIC_UMAMI_SCRIPT_URL
+ARG NEXT_PUBLIC_UMAMI_WEBSITE_ID
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN yarn install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["./deploy/entrypoint.front.sh"]
